@@ -56,28 +56,18 @@ enum RequiredActionStatus: String {
     case pending, completed, failed, skipped
 }
 
-enum FailureReason: String, CaseIterable {
-    case workRequiresIt = "WORK_REQUIRES_IT"
-    case familyRequiresIt = "FAMILY_REQUIRES_IT"
-    case systemLimitation = "SYSTEM_LIMITATION"
-    case tooDifficult = "TOO_DIFFICULT"
-    case notRelevant = "NOT_RELEVANT"
-    case forgot = "FORGOT"
-    case didNotWantTo = "DID_NOT_WANT_TO"
-    case other = "OTHER"
+enum FailureReason: String, CaseIterable, Identifiable, Codable {
+    case tooDifficult = "TROP DIFFICILE"
+    case workNeed = "BESOIN POUR LE TRAVAIL"
+    case familyNeed = "BESOIN POUR LA FAMILLE"
+    case iosLimitation = "LIMITATION IOS"
+    case notRelevant = "PAS PERTINENT"
+    case forgot = "J'AI OUBLIÉ"
+    case didNotWant = "JE NE VEUX PAS"
+    case other = "AUTRE"
 
-    var fr: String {
-        switch self {
-        case .workRequiresIt: return "Le travail l'exige"
-        case .familyRequiresIt: return "La famille l'exige"
-        case .systemLimitation: return "Limitation du système"
-        case .tooDifficult: return "Trop difficile"
-        case .notRelevant: return "Pas pertinent"
-        case .forgot: return "J'ai oublié"
-        case .didNotWantTo: return "Je n'ai pas voulu"
-        case .other: return "Autre"
-        }
-    }
+    var id: String { rawValue }
+    var fr: String { rawValue }
 }
 
 enum ExperimentStatus: String {

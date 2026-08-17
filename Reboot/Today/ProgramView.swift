@@ -194,10 +194,10 @@ struct ProgramView: View {
         Button {
             if !(day.dayNumber > currentDay) {
                 if let p = prescriptions.activePrescription(forDay: day.dayNumber) {
-                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: day)
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: day, context: modelContext)
                 } else {
                     let p = AdaptiveRebootEngineDriver.generatePrescription(forDay: day.dayNumber, context: modelContext)
-                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: day)
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: day, context: modelContext)
                 }
             }
         } label: {

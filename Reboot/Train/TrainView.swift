@@ -89,26 +89,31 @@ struct TrainView: View {
     }
 
     private var assignedToday: some View {
-        RBSignalPlate(cut: 24, accent: Color.phaseAccent(plan.phase), fill: .deepCarbon) {
+        let prescription = activePrescriptionForToday
+        let assignedMode = prescription.flatMap { SessionMode(rawValue: $0.trainingMode) } ?? plan.mode
+        let assignedDuration = prescription?.trainingDuration ?? plan.recommendedDuration
+        let assignedTarget = prescription?.primaryTarget ?? plan.skill
+
+        return RBSignalPlate(cut: 24, accent: Color.phaseAccent(plan.phase), fill: .deepCarbon) {
             Button {
-                if let p = activePrescriptionForToday {
-                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: plan)
+                if let p = prescription {
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: plan, context: modelContext)
                 } else {
                     let p = AdaptiveRebootEngineDriver.generatePrescription(forDay: dayNumber, context: modelContext)
-                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: plan)
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: plan, context: modelContext)
                 }
             } label: {
                 HStack(spacing: 16) {
-                    RBModeGlyph(kind: modeGlyph(plan.mode), size: 40)
+                    RBModeGlyph(kind: modeGlyph(assignedMode), size: 40)
                     VStack(alignment: .leading, spacing: 4) {
                         Text("ASSIGNÉ AUJOURD'HUI")
                             .font(.metadata(size: 9))
                             .tracking(2)
                             .foregroundStyle(.ash)
-                        Text("DAY \(String(format: "%03d", dayNumber)) — \(plan.mode.frenchLabel)")
+                        Text("DAY \(String(format: "%03d", dayNumber)) — \(assignedMode.frenchLabel)")
                             .font(.system(size: 17, weight: .bold, design: .default))
                             .foregroundStyle(.bone)
-                        Text("\(plan.recommendedDuration) MIN · \(plan.skill)")
+                        Text("\(assignedDuration) MIN · \(assignedTarget)")
                             .font(.body(size: 12))
                             .foregroundStyle(.softBone)
                     }
@@ -158,7 +163,7 @@ struct TrainView: View {
 
     private func contentFor(_ mode: SessionMode, accent: Color) -> some View {
         Button {
-            activeRequest = SessionRequestFactory.discipline(mode, day: dayNumber)
+            activeRequest = SessionRequestFactory.discipline(mode, day: dayNumber, context: modelContext)
         } label: {
             VStack(alignment: .leading, spacing: 5) {
                 Text(mode.label)
@@ -364,7 +369,8 @@ struct ExploreLibraryView: View {
             day: ProtocolEngine.currentDay(progress: nil),
             duration: 15,
             title: titleFor(id: id),
-            contentID: id
+            contentID: id,
+            origin: .explore
         )
     }
 

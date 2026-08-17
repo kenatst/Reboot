@@ -1,6 +1,29 @@
 import Foundation
 import SwiftData
 
+/// Canonical repository for managing required actions across Engine and UI.
+@MainActor
+enum RequiredActionRepository {
+    static func activeAction(
+        forDay day: Int,
+        prescription: DailyPrescription?,
+        context: ModelContext
+    ) -> RequiredAction? {
+        if let id = prescription?.requiredActionID {
+            let desc = FetchDescriptor<RequiredAction>(predicate: #Predicate { $0.id == id })
+            if let match = (try? context.fetch(desc))?.first {
+                return match
+            }
+        }
+        let desc = FetchDescriptor<RequiredAction>(
+            predicate: #Predicate { $0.day == day },
+            sortBy: [SortDescriptor(\.createdAt, order: .reverse)]
+        )
+        let actions = (try? context.fetch(desc)) ?? []
+        return actions.first { $0.status == "pending" || $0.status == "failed" }
+    }
+}
+
 /// Versioned prescription lifecycle. A prescription is only regenerated when
 /// materially relevant evidence changes — never on every screen render.
 @MainActor
@@ -15,6 +38,7 @@ enum PrescriptionEngine {
 
     /// Deterministic fingerprint of the material evidence that can change a plan.
     static func fingerprint(
+        day: Int,
         profile: RebootUserProfile?,
         sessions: [TrainingSession],
         interventions: [CompletedIntervention],
@@ -31,13 +55,15 @@ enum PrescriptionEngine {
         }
         let recent = sessions.prefix(6)
         parts.append("s=\(recent.map { "\($0.modeRaw):\($0.actualDurationSeconds/60):\($0.switchedCount):\($0.evaluation?.overallScore ?? -1)" }.joined(separator: "|"))")
-        parts.append("i=\(interventions.map { "\($0.interventionID):\($0.outcome)" }.joined(separator: "|"))")
-        parts.append("e=\(experiments.map { "\($0.templateID):\($0.status)" }.joined(separator: "|"))")
-        parts.append("a=\(requiredActions.map { "\($0.kind):\($0.status)" }.joined(separator: "|"))")
+        parts.append("i=\(interventions.prefix(5).map { "\($0.interventionID):\($0.outcome)" }.joined(separator: "|"))")
+        parts.append("e=\(experiments.map { "\($0.templateID):\($0.status):\($0.currentCondition)" }.joined(separator: "|"))")
+        
+        let scopedActions = requiredActions.filter { $0.day == day || $0.status == "pending" || $0.status == "failed" }
+        parts.append("a=\(scopedActions.map { "\($0.kind):\($0.status):\($0.failureReason)" }.joined(separator: "|"))")
         if let energyCheckIn {
             parts.append("energy=\(energyCheckIn.energy)|\(energyCheckIn.sleepHours)")
         }
-        parts.append("flow=\(flowProjects.count)")
+        parts.append("flow=\(flowProjects.map { "\($0.id.uuidString.prefix(4)):\($0.category):\($0.sessionsCompleted)" }.joined(separator: "|"))")
         return parts.joined(separator: ";")
     }
 
@@ -46,20 +72,39 @@ enum PrescriptionEngine {
     @discardableResult
     static func refreshIfNeeded(forDay day: Int, context: ModelContext) -> DailyPrescription {
         let profile = AdaptiveRebootEngineDriver.ensureProfile(context: context)
-        let sessions = (try? context.fetch(FetchDescriptor<TrainingSession>())) ?? []
-        let interventions = (try? context.fetch(FetchDescriptor<CompletedIntervention>())) ?? []
-        let experiments = (try? context.fetch(FetchDescriptor<BehaviorExperiment>())) ?? []
-        let requiredActions = (try? context.fetch(FetchDescriptor<RequiredAction>())) ?? []
-        let checkIns = (try? context.fetch(FetchDescriptor<DailyEnergyCheckIn>())) ?? []
-        let flowProjects = (try? context.fetch(FetchDescriptor<FlowProject>())) ?? []
+        
+        let sessions = (try? context.fetch(FetchDescriptor<TrainingSession>(
+            sortBy: [SortDescriptor(\.date, order: .reverse)]
+        ))) ?? []
+        
+        let interventions = (try? context.fetch(FetchDescriptor<CompletedIntervention>(
+            sortBy: [SortDescriptor(\.completedAt, order: .reverse)]
+        ))) ?? []
+        
+        let experiments = (try? context.fetch(FetchDescriptor<BehaviorExperiment>(
+            sortBy: [SortDescriptor(\.startedAt, order: .reverse)]
+        ))) ?? []
+        
+        let requiredActions = (try? context.fetch(FetchDescriptor<RequiredAction>(
+            sortBy: [SortDescriptor(\.createdAt, order: .reverse)]
+        ))) ?? []
+        
+        let checkIns = (try? context.fetch(FetchDescriptor<DailyEnergyCheckIn>(
+            sortBy: [SortDescriptor(\.date, order: .reverse)]
+        ))) ?? []
+        
+        let flowProjects = (try? context.fetch(FetchDescriptor<FlowProject>(
+            sortBy: [SortDescriptor(\.createdAt, order: .reverse)]
+        ))) ?? []
 
         let fingerprint = fingerprint(
+            day: day,
             profile: profile,
             sessions: sessions,
             interventions: interventions,
             experiments: experiments,
             requiredActions: requiredActions,
-            energyCheckIn: checkIns.last,
+            energyCheckIn: checkIns.first,
             flowProjects: flowProjects
         )
 
@@ -73,15 +118,10 @@ enum PrescriptionEngine {
         ))) ?? []
         let previous = existingActive.max { $0.version < $1.version }
 
-        let interruptions = (try? context.fetch(FetchDescriptor<SessionInterruption>())) ?? []
-        let flowSessions = (try? context.fetch(FetchDescriptor<FlowSession>())) ?? []
+        let allEvidence = EvidenceRepository.allEvidence(context: context)
         let attention = AttentionProfileBuilder.build(
-            profile: profile,
-            sessions: sessions,
-            checkIns: checkIns,
-            interruptions: interruptions,
-            interventions: interventions,
-            flowSessions: flowSessions
+            evidence: allEvidence,
+            profile: profile
         )
         let plan = AdaptiveRebootEngine.prescribe(
             profile: attention,
@@ -90,9 +130,10 @@ enum PrescriptionEngine {
             interventions: interventions,
             experiments: experiments,
             requiredActions: requiredActions,
-            energyCheckIn: checkIns.last,
+            energyCheckIn: checkIns.first,
             flowProjects: flowProjects,
-            curriculum: ProtocolCurriculum.day(day)
+            curriculum: ProtocolCurriculum.day(day),
+            userProfile: profile
         )
 
         let nextVersion = (previous?.version ?? 0) + 1
@@ -103,7 +144,7 @@ enum PrescriptionEngine {
         // Link the canonical RequiredAction
         let linkedAction: RequiredAction?
         if !plan.realWorldAction.isEmpty {
-            if let existing = requiredActions.first(where: { $0.day == day && ($0.status == "pending" || $0.status == "failed") }) {
+            if let existing = RequiredActionRepository.activeAction(forDay: day, prescription: previous, context: context) {
                 linkedAction = existing
             } else {
                 let created = RequiredAction(day: day, kind: "environment", title: plan.realWorldAction)

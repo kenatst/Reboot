@@ -9,8 +9,20 @@ struct FlowLabView: View {
     @Query private var tasks: [FlowTask]
 
     @State private var showBuilder = false
-    @State private var activeProject: FlowProject?
     @State private var selectedLesson: FlowLesson?
+
+    // Project selection & resume state
+    @State private var projectForAction: FlowProject?
+    @State private var incompleteTaskForAction: FlowTask?
+    @State private var showResumeChoice = false
+    @State private var creatingTaskForProject: FlowProject?
+    @State private var activeFlowSession: FlowSessionLaunchItem?
+
+    struct FlowSessionLaunchItem: Identifiable {
+        let id = UUID()
+        let project: FlowProject
+        let task: FlowTask
+    }
 
     var body: some View {
         ZStack {
@@ -70,7 +82,7 @@ struct FlowLabView: View {
                         VStack(spacing: 10) {
                             ForEach(projects) { project in
                                 Button {
-                                    activeProject = project
+                                    handleProjectTap(project)
                                 } label: {
                                     HStack {
                                         VStack(alignment: .leading, spacing: 4) {
@@ -138,10 +150,29 @@ struct FlowLabView: View {
         .sheet(isPresented: $showBuilder) {
             FlowBuilderView()
         }
-        .fullScreenCover(item: $activeProject) { project in
-            let task = tasks.first(where: { $0.projectID == project.id && $0.actualDuration == 0 })
-                ?? tasks.first(where: { $0.projectID == project.id })
-            FlowSessionView(project: project, task: task)
+        .sheet(item: $creatingTaskForProject) { project in
+            NewFlowTaskView(project: project) { newTask in
+                creatingTaskForProject = nil
+                activeFlowSession = FlowSessionLaunchItem(project: project, task: newTask)
+            }
+        }
+        .confirmationDialog(
+            "SESSION FLOW",
+            isPresented: $showResumeChoice,
+            titleVisibility: .visible
+        ) {
+            if let task = incompleteTaskForAction, let project = projectForAction {
+                Button("REPRENDRE : \(task.taskTitle)") {
+                    activeFlowSession = FlowSessionLaunchItem(project: project, task: task)
+                }
+                Button("NOUVELLE FENÊTRE FLOW") {
+                    creatingTaskForProject = project
+                }
+            }
+            Button("ANNULER", role: .cancel) {}
+        }
+        .fullScreenCover(item: $activeFlowSession) { item in
+            FlowSessionView(project: item.project, task: item.task)
         }
         .sheet(item: $selectedLesson) { lesson in
             ZStack {
@@ -164,31 +195,16 @@ struct FlowLabView: View {
             }
             .presentationDetents([.medium, .large])
         }
-        .onAppear {
-            #if DEBUG
-            if UITestDriver.autoTour || UITestDriver.flowBuilderAuto {
-                Task {
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
-                    showBuilder = true
-                }
-            }
-            if UITestDriver.autoTour {
-                Task {
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
-                    let project: FlowProject
-                    if let first = projects.first {
-                        project = first
-                    } else {
-                        project = FlowProject(title: "Préparer la présentation client", definitionOfDone: "Slides 1–5 finalisées", feedbackType: "slides")
-                        modelContext.insert(project)
-                        let task = FlowTask(projectID: project.id, taskTitle: project.title, definitionOfDone: project.definitionOfDone)
-                        modelContext.insert(task)
-                        try? modelContext.save()
-                    }
-                    activeProject = project
-                }
-            }
-            #endif
+    }
+
+    private func handleProjectTap(_ project: FlowProject) {
+        let incomplete = tasks.first(where: { $0.projectID == project.id && $0.actualDurationSeconds == 0 })
+        if let incomplete = incomplete {
+            projectForAction = project
+            incompleteTaskForAction = incomplete
+            showResumeChoice = true
+        } else {
+            creatingTaskForProject = project
         }
     }
 }
@@ -358,7 +374,7 @@ struct FlowBuilderView: View {
                             skillRatingBefore: skill,
                             feedbackMechanism: feedback,
                             distractionContract: contract,
-                            plannedDuration: duration
+                            plannedDurationSeconds: duration * 60
                         )
                         modelContext.insert(task)
                         try? modelContext.save()
@@ -399,14 +415,162 @@ struct FlowBuilderView: View {
     }
 }
 
-/// A Flow session: timer with the project contract and concrete FlowTask, then post questions.
+/// Creates a new concrete FlowTask for a specific work window.
+struct NewFlowTaskView: View {
+    let project: FlowProject
+    var onStart: (FlowTask) -> Void
+
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+
+    @State private var taskTitle = ""
+    @State private var definitionOfDone = ""
+    @State private var plannedMinutes = 25
+    @State private var feedbackMechanism: String
+    @State private var distractionContract: String
+    @State private var challenge = 2
+    @State private var skill = 2
+
+    init(project: FlowProject, onStart: @escaping (FlowTask) -> Void) {
+        self.project = project
+        self.onStart = onStart
+        self._feedbackMechanism = State(initialValue: project.feedbackType.isEmpty ? "étapes" : project.feedbackType)
+        self._distractionContract = State(initialValue: project.defaultDistractionContract.isEmpty ? "hors de la pièce" : project.defaultDistractionContract)
+        self._plannedMinutes = State(initialValue: project.defaultSessionLength > 0 ? project.defaultSessionLength : 25)
+    }
+
+    var body: some View {
+        ZStack {
+            Color.void.ignoresSafeArea()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    RBStatusChip(text: "NOUVELLE FENÊTRE FLOW", color: .signalCyan, pulse: false)
+                        .padding(.top, 30)
+
+                    Text("DÉFINIS CETTE\nSESSION DE TRAVAIL.")
+                        .font(.heroBlack(size: 32))
+                        .foregroundStyle(.bone)
+                        .padding(.top, 16)
+
+                    Text("PROJET : \(project.title.uppercased())")
+                        .font(.metadata(size: 10))
+                        .tracking(1.8)
+                        .foregroundStyle(.signalCyan)
+                        .padding(.top, 8)
+
+                    field("QU'EST-CE QUE TU FAIS MAINTENANT ?", placeholder: "Ex: Écrire les 3 premières sections…", text: $taskTitle)
+                        .padding(.top, 24)
+
+                    field("À QUOI RESSEMBLE LA FIN ?", placeholder: "Ex: Fichier exporté en PDF et relu…", text: $definitionOfDone)
+                        .padding(.top, 18)
+
+                    Text("DURÉE PRÉVUE")
+                        .font(.metadata(size: 10))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                        .padding(.top, 20)
+                    HStack(spacing: 8) {
+                        ForEach([15, 25, 40, 60], id: \.self) { d in
+                            Button {
+                                plannedMinutes = d
+                            } label: {
+                                Text("\(d) MIN")
+                                    .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                    .foregroundStyle(plannedMinutes == d ? .ink : .bone)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 11)
+                                    .background(plannedMinutes == d ? Color.bonePlate : Color.deepCarbon)
+                                    .clipShape(RBChamferedShape(cut: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, 8)
+
+                    Text("TÉLÉPHONE PENDANT LA SESSION")
+                        .font(.metadata(size: 10))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                        .padding(.top, 20)
+                    HStack(spacing: 8) {
+                        ForEach(["hors de la pièce", "face cachée", "mode focus"], id: \.self) { option in
+                            Button {
+                                distractionContract = option
+                            } label: {
+                                Text(option)
+                                    .font(.metadata(size: 9))
+                                    .foregroundStyle(distractionContract == option ? .ink : .bone)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 11)
+                                    .background(distractionContract == option ? Color.bonePlate : Color.deepCarbon)
+                                    .clipShape(RBChamferedShape(cut: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, 8)
+
+                    Button {
+                        guard !taskTitle.isEmpty, !definitionOfDone.isEmpty else { return }
+                        let newTask = FlowTask(
+                            projectID: project.id,
+                            taskTitle: taskTitle,
+                            definitionOfDone: definitionOfDone,
+                            challengeRatingBefore: challenge,
+                            skillRatingBefore: skill,
+                            feedbackMechanism: feedbackMechanism,
+                            distractionContract: distractionContract,
+                            plannedDurationSeconds: plannedMinutes * 60
+                        )
+                        modelContext.insert(newTask)
+                        try? modelContext.save()
+                        dismiss()
+                        onStart(newTask)
+                    } label: {
+                        HStack {
+                            Text("COMMENCER LA SESSION")
+                            Spacer()
+                            Image(systemName: "arrow.right")
+                        }
+                    }
+                    .buttonStyle(.rbSystem)
+                    .padding(.top, 30)
+                    .padding(.bottom, 40)
+                    .disabled(taskTitle.isEmpty || definitionOfDone.isEmpty)
+                    .opacity(taskTitle.isEmpty || definitionOfDone.isEmpty ? 0.4 : 1)
+                }
+                .padding(.horizontal, RBSpacing.screen)
+            }
+            .scrollDismissesKeyboard(.interactively)
+        }
+    }
+
+    private func field(_ label: String, placeholder: String, text: Binding<String>) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(label)
+                .font(.metadata(size: 10))
+                .tracking(1.6)
+                .foregroundStyle(.ash)
+            TextField(placeholder, text: text, axis: .vertical)
+                .font(.body(size: 16))
+                .foregroundStyle(.bone)
+                .lineLimit(2...4)
+                .padding(14)
+                .background(Color.deepCarbon)
+                .overlay(Rectangle().stroke(Color.line, lineWidth: 1))
+        }
+    }
+}
+
+/// A Flow session: timer with concrete FlowTask parameters, then post questions.
 struct FlowSessionView: View {
     let project: FlowProject
-    var task: FlowTask?
+    let task: FlowTask
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
     let plannedDurationSeconds: Int
+    @State private var targetEndDate: Date
     @State private var remaining: Int
     @State private var switches = 0
     @State private var finished = false
@@ -418,12 +582,24 @@ struct FlowSessionView: View {
 
     init(project: FlowProject, task: FlowTask? = nil) {
         self.project = project
-        self.task = task
-        let planned = max(10, task?.plannedDuration ?? project.defaultSessionLength) * 60
+        let t = task ?? FlowTask(
+            projectID: project.id,
+            taskTitle: project.title,
+            definitionOfDone: project.definitionOfDone,
+            challengeRatingBefore: project.skillEstimate,
+            skillRatingBefore: project.skillEstimate,
+            feedbackMechanism: project.feedbackType,
+            distractionContract: project.defaultDistractionContract,
+            plannedDurationSeconds: max(10, project.defaultSessionLength) * 60
+        )
+        self.task = t
+        let planned = max(60, t.plannedDurationSeconds)
         self.plannedDurationSeconds = planned
+        let target = Date.now.addingTimeInterval(Double(planned))
+        self._targetEndDate = State(initialValue: target)
         self._remaining = State(initialValue: planned)
-        self._challenge = State(initialValue: task?.challengeRatingBefore ?? 2)
-        self._skill = State(initialValue: task?.skillRatingBefore ?? 2)
+        self._challenge = State(initialValue: t.challengeRatingBefore)
+        self._skill = State(initialValue: t.skillRatingBefore)
     }
 
     var body: some View {
@@ -444,21 +620,26 @@ struct FlowSessionView: View {
                     .padding(.horizontal, 20)
                     RBSystemLabel(text: "FLOW / \(project.title.uppercased())", color: .signalCyan)
                         .padding(.top, 14)
-                    Text("TERMINÉ : \(task?.definitionOfDone.isEmpty == false ? (task?.definitionOfDone ?? "") : project.definitionOfDone)")
+                    Text(task.taskTitle)
+                        .font(.system(size: 18, weight: .bold, design: .default))
+                        .foregroundStyle(.bone)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 6)
+                    Text("TERMINÉ : \(task.definitionOfDone)")
                         .font(.body(size: 13))
                         .foregroundStyle(.softBone)
                         .multilineTextAlignment(.center)
                         .lineSpacing(3)
                         .padding(.horizontal, 24)
-                        .padding(.top, 10)
+                        .padding(.top, 6)
                     Spacer()
                     RBTimerDisplay(seconds: remaining, size: 70)
-                    Text("FEEDBACK : \(project.feedbackType.uppercased())")
+                    Text("FEEDBACK : \(task.feedbackMechanism.uppercased())")
                         .font(.metadata(size: 9))
                         .tracking(1.4)
                         .foregroundStyle(.signalCyan)
                         .padding(.top, 10)
-                    Text("CONTRAT : TÉLÉPHONE \(project.defaultDistractionContract.isEmpty ? "HORS DE LA PIÈCE" : project.defaultDistractionContract.uppercased())")
+                    Text("CONTRAT : TÉLÉPHONE \(task.distractionContract.uppercased())")
                         .font(.metadata(size: 9))
                         .tracking(1.4)
                         .foregroundStyle(.ash)
@@ -496,10 +677,14 @@ struct FlowSessionView: View {
                     Task {
                         while remaining > 0 && !finished {
                             try? await Task.sleep(nanoseconds: 1_000_000_000)
-                            remaining -= 1
+                            remaining = max(0, Int(ceil(targetEndDate.timeIntervalSinceNow)))
                         }
                         if remaining <= 0 { finish() }
                     }
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                    remaining = max(0, Int(ceil(targetEndDate.timeIntervalSinceNow)))
+                    if remaining <= 0 { finish() }
                 }
             } else {
                 postSession
@@ -671,7 +856,7 @@ struct FlowSessionView: View {
         let actual = max(1, plannedDurationSeconds - remaining)
         let flowSession = FlowSession(
             projectID: project.id,
-            flowTaskID: task?.id,
+            flowTaskID: task.id,
             plannedDurationSeconds: plannedDurationSeconds,
             actualDurationSeconds: actual
         )
@@ -684,11 +869,10 @@ struct FlowSessionView: View {
         flowSession.completed = true
         modelContext.insert(flowSession)
 
-        if let task {
-            task.actualDuration = actual
-            task.switchCount = switches
-            task.completionFraction = min(1.0, Double(actual) / Double(plannedDurationSeconds))
-        }
+        task.actualDurationSeconds = actual
+        task.switchCount = switches
+        task.completionFraction = min(1.0, Double(actual) / Double(plannedDurationSeconds))
+
         project.sessionsCompleted += 1
         AdaptiveRebootEngineDriver.recordFlowEvidence(flowSession, context: modelContext)
         try? modelContext.save()

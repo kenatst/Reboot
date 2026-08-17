@@ -69,7 +69,7 @@ enum EngineTests {
 
         // 6. Invariant 7, 8, 9: FlowTask, separate challenge/skill, actual duration
         let fProject = FlowProject(title: "Code review", definitionOfDone: "PR #42 reviewed", feedbackType: "comments")
-        let fTask = FlowTask(projectID: fProject.id, taskTitle: "Review core", definitionOfDone: "Check diffs", challengeRatingBefore: 3, skillRatingBefore: 2, plannedDuration: 40)
+        let fTask = FlowTask(projectID: fProject.id, taskTitle: "Review core", definitionOfDone: "Check diffs", challengeRatingBefore: 3, skillRatingBefore: 2, plannedDurationSeconds: 40 * 60)
         let fSession = FlowSession(projectID: fProject.id, flowTaskID: fTask.id, plannedDurationSeconds: 40 * 60, actualDurationSeconds: 38 * 60)
         fSession.challengeRating = 3
         fSession.skillRating = 2
@@ -77,14 +77,51 @@ enum EngineTests {
         check("Invariant 8: FlowSession stores actual duration (not hardcoded 25)", fSession.actualDurationSeconds == 38 * 60 && fSession.plannedDurationSeconds == 40 * 60)
         check("Invariant 9: Flow Challenge and Skill separated", fSession.challengeRating == 3 && fSession.skillRating == 2 && fTask.challengeRatingBefore != fTask.skillRatingBefore)
 
-        // 7. Invariant 12: Context-Aware Intervention Selection (TikTok -> SOCIAL MEDIA / PHONE)
-        let userProf = RebootUserProfile()
-        userProf.primaryDistractor = "TikTok videos"
-        userProf.primaryGoal = "Deep focus"
-        let selectedIntervention = AdaptiveRebootEngine.selectIntervention(profile: profile(), userProfile: userProf, interventions: [])
-        check("Invariant 12: Primary distractor TikTok selects phone/social media intervention", selectedIntervention != nil && (selectedIntervention?.category == "PHONE" || selectedIntervention?.category == "SOCIAL MEDIA" || selectedIntervention?.category == "HOME SCREEN"))
+        // 7. Invariant 14: SessionOrigin & advancesProtocol
+        let reqProtocol = SessionRequest(mode: .stay, day: 1, duration: 10, title: "Stay", contentID: nil, origin: .protocol)
+        let reqFree = SessionRequest(mode: .stay, day: 1, duration: 10, title: "Stay", contentID: nil, origin: .freeTraining)
+        let reqExplore = SessionRequest(mode: .recall, day: 1, duration: 15, title: "Read", contentID: 1, origin: .explore)
+        let reqFlow = SessionRequest(mode: .stay, day: 1, duration: 25, title: "Flow", contentID: nil, origin: .flow)
+        check("Invariant 14a: Protocol origin advances protocol", reqProtocol.advancesProtocol)
+        check("Invariant 14b: Free training origin never advances protocol", !reqFree.advancesProtocol)
+        check("Invariant 14c: Explore origin never advances protocol", !reqExplore.advancesProtocol)
+        check("Invariant 14d: Flow origin never advances protocol", !reqFlow.advancesProtocol)
 
-        // 8. Low energy blocks duration increase
+        // 8. Invariant 12: Context-Aware Intervention Selection (TikTok -> SOCIAL MEDIA / PHONE; Tabs -> BROWSER; Work -> NOTIFICATIONS)
+        let userProfTikTok = RebootUserProfile()
+        userProfTikTok.primaryDistractor = "TikTok videos"
+        userProfTikTok.primaryGoal = "Deep focus"
+        let selTikTok = AdaptiveRebootEngine.selectIntervention(profile: profile(), userProfile: userProfTikTok, interventions: [])
+        check("Invariant 12a: TikTok maps to PHONE/SOCIAL MEDIA", selTikTok != nil && (selTikTok?.category == "PHONE" || selTikTok?.category == "SOCIAL MEDIA" || selTikTok?.category == "HOME SCREEN"))
+
+        let userProfTabs = RebootUserProfile()
+        userProfTabs.primaryDistractor = "Browser tabs and Wikipedia"
+        userProfTabs.primaryGoal = "Deep focus"
+        let selTabs = AdaptiveRebootEngine.selectIntervention(profile: profile(), userProfile: userProfTabs, interventions: [])
+        check("Invariant 12b: Browser/Tabs maps to BROWSER/TABS/WORKSPACE", selTabs != nil && (selTabs?.category == "BROWSER" || selTabs?.category == "TABS" || selTabs?.category == "WORKSPACE"))
+
+        let userProfNotif = RebootUserProfile()
+        userProfNotif.primaryDistractor = "Work messages and Slack notifications"
+        userProfNotif.primaryGoal = "Deep focus"
+        let selNotif = AdaptiveRebootEngine.selectIntervention(profile: profile(), userProfile: userProfNotif, interventions: [])
+        check("Invariant 12c: Work notifications maps to NOTIFICATIONS/MESSAGING", selNotif != nil && (selNotif?.category == "NOTIFICATIONS" || selNotif?.category == "MESSAGING"))
+
+        // 9. Invariant 15: Content LRU and Freshness (Never repeat one of last 10 unless exhausted)
+        let allReadingIDs = ContentStore.readings.map(\.id)
+        let recent10 = Array(allReadingIDs.prefix(10))
+        let lruContext = ContentSelectionContext(
+            mode: .recall,
+            targetSkill: "",
+            difficulty: 2,
+            recentContentIDs: recent10,
+            phase: 1,
+            completedContentIDs: recent10,
+            day: 1
+        )
+        let lruSelected = ContentSelector.select(context: lruContext)
+        check("Invariant 15: ContentSelector excludes recent 10 IDs when pool has fresh items", lruSelected != nil && !recent10.contains(lruSelected!))
+
+        // 10. Low energy blocks duration increase
         let lowEnergy = AdaptiveRebootEngine.prescribe(
             profile: profile(energy: "Low"),
             day: 10, sessions: [], interventions: [], experiments: [], requiredActions: [],
@@ -93,7 +130,7 @@ enum EngineTests {
         )
         check("Low energy blocks duration increase", lowEnergy.trainingDuration <= day.recommendedDuration && !lowEnergy.recoveryAction.isEmpty)
 
-        // 9. Failed required action → fallback plan present
+        // 11. Failed required action → fallback plan present
         let failedAction = RequiredAction(day: 10, kind: "environment", title: "Téléphone ailleurs")
         failedAction.status = "failed"
         let withFailure = AdaptiveRebootEngine.prescribe(
@@ -104,7 +141,7 @@ enum EngineTests {
         )
         check("Failed action gets fallback", !withFailure.fallbackPlan.isEmpty && withFailure.realWorldAction.contains("Téléphone"))
 
-        // 10. CRITICAL WIRING: prescription controls the actual SessionRequest
+        // 12. CRITICAL WIRING: prescription controls the actual SessionRequest
         let wiringPrescription = DailyPrescription(
             day: 18, phase: 2, primaryTarget: "STABILITY", whyToday: "w",
             realWorldAction: "a", trainingMode: "stay", trainingDuration: 12,
@@ -117,10 +154,10 @@ enum EngineTests {
         )
         check(
             "Prescription controls session request",
-            wiringRequest.mode == .stay && wiringRequest.duration == 12
+            wiringRequest.mode == .stay && wiringRequest.duration == 12 && wiringRequest.advancesProtocol
         )
 
-        // 11. Invariant 6 & 13: In-Memory SwiftData tests (Lifecycle, ExperimentObservation, Immediate Refresh)
+        // 13. SwiftData In-Memory Tests (Idempotence, 60s Return Threshold, Lifecycle)
         do {
             let schema = Schema([
                 TrainingSession.self, EvaluationResult.self, Restitution.self,
@@ -143,6 +180,46 @@ enum EngineTests {
             p.phoneLocation = "desk"
             p.notificationsLevel = "many"
             try? context.save()
+
+            // Invariant 16: Idempotent recordSessionEvidence
+            let testSession = TrainingSession(protocolDay: 1, phase: 1, mode: .stay, title: "Stay Test", intention: "i", plannedDurationSeconds: 600, completionOrdinal: 1)
+            testSession.actualDurationSeconds = 600
+            testSession.switchedCount = 1
+            context.insert(testSession)
+            try? context.save()
+
+            AdaptiveRebootEngineDriver.recordSessionEvidence(session: testSession, context: context)
+            let evCount1 = (try? context.fetch(FetchDescriptor<AttentionEvidence>()))?.count ?? 0
+            AdaptiveRebootEngineDriver.recordSessionEvidence(session: testSession, context: context)
+            let evCount2 = (try? context.fetch(FetchDescriptor<AttentionEvidence>()))?.count ?? 0
+            check("Invariant 16: recordSessionEvidence is strictly idempotent", evCount1 == evCount2 && evCount1 > 0)
+
+            // Invariant 17: Return evidence 60-second threshold
+            let shortReturnSession = TrainingSession(protocolDay: 2, phase: 1, mode: .stay, title: "Short Return", intention: "i", plannedDurationSeconds: 120, completionOrdinal: 2)
+            shortReturnSession.actualDurationSeconds = 120
+            shortReturnSession.switchedCount = 1
+            context.insert(shortReturnSession)
+            // Interruption at second 110 (only 10 seconds before session end < 60s)
+            context.insert(SessionInterruption(sessionID: shortReturnSession.id, elapsedSeconds: 110, kind: "switch"))
+            try? context.save()
+
+            AdaptiveRebootEngineDriver.recordSessionEvidence(session: shortReturnSession, context: context)
+            let allEv = (try? context.fetch(FetchDescriptor<AttentionEvidence>())) ?? []
+            let returnEvShort = allEv.first { $0.sourceID == shortReturnSession.id.uuidString && $0.dimension == "RETURN" }
+            check("Invariant 17a: Switch 10s before end does NOT record return evidence", returnEvShort == nil)
+
+            let validReturnSession = TrainingSession(protocolDay: 3, phase: 1, mode: .stay, title: "Valid Return", intention: "i", plannedDurationSeconds: 300, completionOrdinal: 3)
+            validReturnSession.actualDurationSeconds = 300
+            validReturnSession.switchedCount = 1
+            context.insert(validReturnSession)
+            // Interruption at second 60 (240 seconds remaining >= 60s)
+            context.insert(SessionInterruption(sessionID: validReturnSession.id, elapsedSeconds: 60, kind: "switch"))
+            try? context.save()
+
+            AdaptiveRebootEngineDriver.recordSessionEvidence(session: validReturnSession, context: context)
+            let allEv2 = (try? context.fetch(FetchDescriptor<AttentionEvidence>())) ?? []
+            let returnEvValid = allEv2.first { $0.sourceID == validReturnSession.id.uuidString && $0.dimension == "RETURN" }
+            check("Invariant 17b: Switch 240s before end DOES record return evidence", returnEvValid != nil && returnEvValid?.categoricalValue == "RESUMED_SESSION")
 
             // Invariant 2 & 13: Refresh supersedes older versions
             let v1 = PrescriptionEngine.refreshIfNeeded(forDay: 18, context: context)
@@ -171,7 +248,7 @@ enum EngineTests {
 
             // Add 3rd baseline observation
             AdaptiveRebootEngineDriver.recordExperimentObservation(experiment: exp, session: dummySession, condition: "BASELINE", context: context)
-            check("Invariant 6b: 3 baseline observations transitions to RUNNING", exp.status == "RUNNING")
+            check("Invariant 6b: 3 baseline observations transitions to RUNNING", exp.status == "RUNNING" && exp.currentCondition == "TEST")
 
             // Add 2 test observations
             AdaptiveRebootEngineDriver.recordExperimentObservation(experiment: exp, session: dummySession, condition: "TEST", context: context)

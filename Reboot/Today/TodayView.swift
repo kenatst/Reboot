@@ -14,6 +14,8 @@ struct TodayView: View {
     @State private var showingProgram = false
     @State private var showDiagnosis = false
     @State private var showFlowLab = false
+    @State private var showFailureReasonPicker = false
+    @State private var failedActionTarget: RequiredAction?
 
     private var progress: RebootProgress? {
         progressList.first
@@ -76,8 +78,10 @@ struct TodayView: View {
                     v2PrescriptionBlock
                         .padding(.top, 24)
 
-                    whyToday
-                        .padding(.top, 34)
+                    if prescription == nil {
+                        whyToday
+                            .padding(.top, 34)
+                    }
 
                     signalBrief
                         .padding(.top, 24)
@@ -106,6 +110,16 @@ struct TodayView: View {
         .sheet(isPresented: $showFlowLab) {
             FlowLabView()
         }
+        .confirmationDialog("POURQUOI N'AS-TU PAS PU ?", isPresented: $showFailureReasonPicker, titleVisibility: .visible) {
+            ForEach(FailureReason.allCases) { reason in
+                Button(reason.rawValue) {
+                    if let action = failedActionTarget {
+                        markActionFailed(action, reason: reason.rawValue)
+                    }
+                }
+            }
+            Button("ANNULER", role: .cancel) {}
+        }
         .onAppear {
             refreshPrescription()
         }
@@ -120,8 +134,8 @@ struct TodayView: View {
         AdaptiveRebootEngineDriver.setRequiredActionDone(action: action, context: modelContext)
     }
 
-    private func markActionFailed(_ action: RequiredAction) {
-        AdaptiveRebootEngineDriver.setRequiredActionFailed(action: action, reason: "impossible", context: modelContext)
+    private func markActionFailed(_ action: RequiredAction, reason: String = FailureReason.tooDifficult.rawValue) {
+        AdaptiveRebootEngineDriver.setRequiredActionFailed(action: action, reason: reason, context: modelContext)
     }
 
     private func checkInEnergy(_ level: String) {
@@ -234,7 +248,8 @@ struct TodayView: View {
                 Button {
                     activeRequest = SessionRequestFactory.prescription(
                         prescription: prescription,
-                        curriculum: plan
+                        curriculum: plan,
+                        context: modelContext
                     )
                 } label: {
                     HStack {
@@ -297,7 +312,8 @@ struct TodayView: View {
                 .buttonStyle(.plain)
                 Button {
                     if let action = pendingAction {
-                        markActionFailed(action)
+                        failedActionTarget = action
+                        showFailureReasonPicker = true
                     }
                 } label: {
                     Text("JE N'AI PAS PU")

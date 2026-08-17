@@ -270,6 +270,44 @@ final class AttentionEvidence {
     }
 }
 
+struct ExperimentEligibility: Codable, Hashable {
+    var allowedModes: [SessionMode]
+    var taskCategory: String?
+    var minimumDurationSeconds: Int?
+    var projectID: UUID?
+
+    static func forTemplate(templateID: Int, title: String) -> ExperimentEligibility {
+        let t = title.uppercased()
+        if t.contains("PHONE") || t.contains("TÉLÉPHONE") || t.contains("ROOM") || t.contains("PIÈCE") {
+            return ExperimentEligibility(allowedModes: [.stay], minimumDurationSeconds: 10 * 60)
+        }
+        if t.contains("MUSIC") || t.contains("MUSIQUE") || t.contains("SILENCE") {
+            return ExperimentEligibility(allowedModes: [.stay], minimumDurationSeconds: 10 * 60)
+        }
+        if t.contains("READ") || t.contains("LECTURE") || t.contains("LOCATION") || t.contains("LIEU") {
+            return ExperimentEligibility(allowedModes: [.recall], minimumDurationSeconds: 5 * 60)
+        }
+        if t.contains("EXPLAIN") || t.contains("ENSEIGN") {
+            return ExperimentEligibility(allowedModes: [.explain], minimumDurationSeconds: 5 * 60)
+        }
+        return ExperimentEligibility(allowedModes: [.stay], minimumDurationSeconds: 5 * 60)
+    }
+
+    func isEligible(mode: SessionMode, durationSeconds: Int, taskCategory: String? = nil, projectID: UUID? = nil) -> Bool {
+        guard allowedModes.contains(mode) else { return false }
+        if let minDur = minimumDurationSeconds, durationSeconds < minDur {
+            return false
+        }
+        if let reqCat = self.taskCategory, let actualCat = taskCategory, !actualCat.localizedCaseInsensitiveContains(reqCat) {
+            return false
+        }
+        if let reqProj = self.projectID, reqProj != projectID {
+            return false
+        }
+        return true
+    }
+}
+
 @Model
 final class FlowTask {
     var id: UUID
@@ -280,8 +318,8 @@ final class FlowTask {
     var skillRatingBefore: Int
     var feedbackMechanism: String
     var distractionContract: String
-    var plannedDuration: Int
-    var actualDuration: Int
+    var plannedDurationSeconds: Int
+    var actualDurationSeconds: Int
     var completionFraction: Double
     var switchCount: Int
     var createdAt: Date
@@ -294,7 +332,7 @@ final class FlowTask {
         skillRatingBefore: Int = 2,
         feedbackMechanism: String = "étapes",
         distractionContract: String = "hors de la pièce",
-        plannedDuration: Int = 25
+        plannedDurationSeconds: Int = 25 * 60
     ) {
         self.id = UUID()
         self.projectID = projectID
@@ -304,8 +342,8 @@ final class FlowTask {
         self.skillRatingBefore = skillRatingBefore
         self.feedbackMechanism = feedbackMechanism
         self.distractionContract = distractionContract
-        self.plannedDuration = plannedDuration
-        self.actualDuration = 0
+        self.plannedDurationSeconds = plannedDurationSeconds
+        self.actualDurationSeconds = 0
         self.completionFraction = 0
         self.switchCount = 0
         self.createdAt = .now
@@ -372,11 +410,13 @@ final class BehaviorExperiment {
     var hypothesis: String
     var metric: String
     var status: String // PROPOSED, BASELINE, RUNNING, READY_TO_REVIEW, COMPLETED, ABANDONED
+    var currentCondition: String // "BASELINE" or "TEST"
     var baselineNote: String
     var result: String
     var confidence: Double
     var recommendation: String
     var startedAt: Date
+    var completedAt: Date?
     var observationsRaw: [String]
 
     init(templateID: Int, title: String, hypothesis: String, metric: String) {
@@ -386,11 +426,13 @@ final class BehaviorExperiment {
         self.hypothesis = hypothesis
         self.metric = metric
         self.status = "BASELINE"
+        self.currentCondition = "BASELINE"
         self.baselineNote = ""
         self.result = "inconclusive"
         self.confidence = 0
         self.recommendation = ""
         self.startedAt = .now
+        self.completedAt = nil
         self.observationsRaw = []
     }
 }

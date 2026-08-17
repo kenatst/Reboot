@@ -44,6 +44,16 @@ enum AdaptiveRebootEngineDriver {
         sourceID: String? = nil,
         context: ModelContext
     ) {
+        if let sourceID = sourceID {
+            let all = (try? context.fetch(FetchDescriptor<AttentionEvidence>())) ?? []
+            if let existing = all.first(where: { $0.sourceID == sourceID && $0.dimension == dimension && $0.evidenceType == evidenceType }) {
+                existing.numericValue = numericValue
+                existing.categoricalValue = categoricalValue
+                existing.timestamp = .now
+                try? context.save()
+                return
+            }
+        }
         context.insert(AttentionEvidence(
             dimension: dimension,
             evidenceType: evidenceType,
@@ -89,14 +99,24 @@ enum AdaptiveRebootEngineDriver {
                 context: context
             )
         }
-        if session.switchedCount > 0 && session.actualDurationSeconds > 60 {
-            recordEvidence(
-                dimension: "RETURN",
-                evidenceType: "RETURN_AFTER_SWITCH",
-                categoricalValue: "RESUMED_SESSION",
-                sourceID: session.id.uuidString,
-                context: context
-            )
+
+        // Return evidence: only observed if user resumed and session ran >= 60 seconds after switch
+        if session.switchedCount > 0 {
+            let interruptions = (try? context.fetch(FetchDescriptor<SessionInterruption>()))?
+                .filter { $0.sessionID == session.id } ?? []
+            let returnObserved = interruptions.contains { interruption in
+                let timeAfter = session.actualDurationSeconds - interruption.elapsedSeconds
+                return timeAfter >= 60
+            }
+            if returnObserved {
+                recordEvidence(
+                    dimension: "RETURN",
+                    evidenceType: "RETURN_AFTER_SWITCH",
+                    categoricalValue: "RESUMED_SESSION",
+                    sourceID: session.id.uuidString,
+                    context: context
+                )
+            }
         }
         PrescriptionEngine.refreshIfNeeded(forDay: session.protocolDay, context: context)
     }
@@ -115,6 +135,7 @@ enum AdaptiveRebootEngineDriver {
             dimension: "ENVIRONMENT",
             evidenceType: EvidenceType.environmentAction.rawValue,
             categoricalValue: "\(intervention.interventionID):\(intervention.outcome)",
+            sourceID: intervention.id.uuidString,
             context: context
         )
     }
@@ -125,6 +146,7 @@ enum AdaptiveRebootEngineDriver {
             evidenceType: EvidenceType.flowSession.rawValue,
             numericValue: Double(session.challengeRating),
             categoricalValue: "\(session.skillRating):\(session.lostTrackOfTime)",
+            sourceID: session.id.uuidString,
             context: context
         )
     }
@@ -249,44 +271,26 @@ enum AdaptiveRebootEngineDriver {
 
         if baseline.count < minBaseline {
             experiment.status = "BASELINE"
+            experiment.currentCondition = "BASELINE"
             experiment.result = "inconclusive"
-            experiment.recommendation = "En attente d'au moins \(minBaseline) sessions de baseline (actuel : \(baseline.count))."
+            experiment.recommendation = "En attente de \(minBaseline) sessions de baseline (actuel : \(baseline.count))."
             return
         }
 
         if test.count < minTest {
             experiment.status = "RUNNING"
+            experiment.currentCondition = "TEST"
             experiment.result = "inconclusive"
-            experiment.recommendation = "Baseline établie (\(baseline.count) sessions). En attente d'au moins \(minTest) sessions test (actuel : \(test.count))."
+            experiment.recommendation = "Baseline établie (\(baseline.count) sessions). En attente de \(minTest) sessions test (actuel : \(test.count))."
             return
         }
 
         experiment.status = "READY_TO_REVIEW"
-        let avgBaseSwitches = baseline.map { Double($0.switchCount) }.reduce(0, +) / Double(baseline.count)
-        let avgTestSwitches = test.map { Double($0.switchCount) }.reduce(0, +) / Double(test.count)
-
-        let baseLatencies = baseline.compactMap { $0.firstSwitchSeconds.map { Double($0) } }
-        let testLatencies = test.compactMap { $0.firstSwitchSeconds.map { Double($0) } }
-
-        let switchImproved = (avgTestSwitches - avgBaseSwitches) <= -0.5
-        let latencyImproved: Bool
-        if !baseLatencies.isEmpty && !testLatencies.isEmpty {
-            let avgBaseLat = baseLatencies.reduce(0, +) / Double(baseLatencies.count)
-            let avgTestLat = testLatencies.reduce(0, +) / Double(testLatencies.count)
-            latencyImproved = avgTestLat > avgBaseLat
-        } else {
-            latencyImproved = false
-        }
-
-        let signal = switchImproved || latencyImproved
-        experiment.result = signal ? "PROMISING" : "INCONCLUSIVE"
+        experiment.currentCondition = "TEST"
+        let comparison = SessionComparator.compare(observations: observations)
+        experiment.result = comparison.isComparable ? (comparison.switchDelta < -0.5 || (comparison.latencyDeltaSeconds ?? 0) > 60 ? "PROMISING" : "INCONCLUSIVE") : "INCONCLUSIVE"
         experiment.confidence = min(0.85, 0.4 + Double(baseline.count + test.count) * 0.05)
-
-        if signal {
-            experiment.recommendation = "Dans tes sessions observées, la condition test était associée à une amélioration (baseline : \(String(format: "%.1f", avgBaseSwitches)) sorties/session, test : \(String(format: "%.1f", avgTestSwitches)) sorties/session)."
-        } else {
-            experiment.recommendation = "Dans tes sessions observées, aucune différence nette n'a été mesurée entre la baseline (\(String(format: "%.1f", avgBaseSwitches)) sorties) et le test (\(String(format: "%.1f", avgTestSwitches)) sorties)."
-        }
+        experiment.recommendation = comparison.summaryNote
     }
 
     /// A kept experiment or intervention becomes a personal rule.

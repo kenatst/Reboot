@@ -189,8 +189,14 @@ struct SessionFlowView: View {
             completionOrdinal: (progress?.completedSessions ?? 0) + 1,
             contentID: lockedRequest.contentID
         )
-        session.experimentID = activeExperiment?.id
-        session.experimentCondition = activeExperiment?.title
+        // Attach experiment only if eligible
+        if let exp = activeExperiment {
+            let eligibility = ExperimentEligibility.forTemplate(templateID: exp.templateID, title: exp.title)
+            if eligibility.isEligible(mode: lockedRequest.mode, durationSeconds: lockedRequest.duration * 60, taskCategory: lockedRequest.title) {
+                session.experimentID = exp.id
+                session.experimentCondition = exp.currentCondition
+            }
+        }
         modelContext.insert(session)
         activeSession = session
         RBHaptics.play(.lock)
@@ -221,9 +227,17 @@ struct SessionFlowView: View {
         if let experimentID = session.experimentID,
            let experiment = (try? modelContext.fetch(FetchDescriptor<BehaviorExperiment>()))?
             .first(where: { $0.id == experimentID }) {
-            AdaptiveRebootEngineDriver.recordExperimentObservation(experiment: experiment, session: session, context: modelContext)
+            let cond = session.experimentCondition ?? experiment.currentCondition
+            AdaptiveRebootEngineDriver.recordExperimentObservation(
+                experiment: experiment,
+                session: session,
+                condition: cond,
+                context: modelContext
+            )
         }
-        advanceProgress()
+        if request.advancesProtocol {
+            advanceProgress()
+        }
         withAnimation(.easeInOut(duration: 0.25)) {
             phase = .complete
         }
