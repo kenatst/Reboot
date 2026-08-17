@@ -116,6 +116,31 @@ def main() -> int:
     if len(checkpoints) != 13:
         failures.append(f"checkpoints: expected 13, got {len(checkpoints)}")
 
+    # 5b. V2 libraries
+    interventions = load("environment_interventions")
+    if len(interventions) < 60:
+        failures.append(f"environment_interventions: expected >= 60, got {len(interventions)}")
+    intervention_ids = {i["id"] for i in interventions}
+    if len(intervention_ids) != len(interventions):
+        failures.append("environment_interventions: duplicate ids")
+    for i in interventions:
+        check_empty(i, f"intervention {i.get('id')}", ["category", "title", "reason", "instructions", "difficulty", "verificationType", "expectedFriction", "followUpQuestion"])
+        if i.get("fallbackActionID") is not None and i["fallbackActionID"] not in intervention_ids:
+            failures.append(f"intervention {i.get('id')}: broken fallbackActionID")
+
+    experiments = load("experiments")
+    if len(experiments) < 40:
+        failures.append(f"experiments: expected >= 40, got {len(experiments)}")
+    if len({e["id"] for e in experiments}) != len(experiments):
+        failures.append("experiments: duplicate ids")
+
+    for name, minimum in [("micro_lessons", 30), ("flow_lessons", 12), ("fuel_lessons", 8)]:
+        items = load(name)
+        if len(items) < minimum:
+            failures.append(f"{name}: expected >= {minimum}, got {len(items)}")
+        if len({x["id"] for x in items}) != len(items):
+            failures.append(f"{name}: duplicate ids")
+
     # 6. Readings
     readings = load("readings")
     reading_ids = [r["id"] for r in readings]

@@ -50,6 +50,26 @@ enum ContentStore {
         (try? load("phase_intros", as: [PhaseIntro].self)) ?? []
     }
 
+    static var environmentInterventions: [EnvironmentIntervention] {
+        (try? load("environment_interventions", as: [EnvironmentIntervention].self)) ?? []
+    }
+
+    static var experimentTemplates: [ExperimentTemplate] {
+        (try? load("experiments", as: [ExperimentTemplate].self)) ?? []
+    }
+
+    static var microLessons: [MicroLesson] {
+        (try? load("micro_lessons", as: [MicroLesson].self)) ?? []
+    }
+
+    static var flowLessons: [FlowLesson] {
+        (try? load("flow_lessons", as: [FlowLesson].self)) ?? []
+    }
+
+    static var fuelLessons: [FuelLesson] {
+        (try? load("fuel_lessons", as: [FuelLesson].self)) ?? []
+    }
+
     static func reading(id: Int) -> ReadingExercise? {
         readings.first { $0.id == id }
     }
@@ -82,6 +102,14 @@ enum ContentStore {
 
     static func phaseIntro(phase: Int) -> PhaseIntro? {
         phaseIntros.first { $0.phase == phase }
+    }
+
+    static func environmentIntervention(id: Int) -> EnvironmentIntervention? {
+        environmentInterventions.first { $0.id == id }
+    }
+
+    static func experimentTemplate(id: Int) -> ExperimentTemplate? {
+        experimentTemplates.first { $0.id == id }
     }
 
     static func validateProtocolContent() -> Bool {

@@ -14,7 +14,19 @@ struct RebootApp: App {
             ProtocolDayCompletion.self,
             WeeklyCheckpoint.self,
             SelfEvaluation.self,
-            ClaritySnapshot.self
+            ClaritySnapshot.self,
+            RebootUserProfile.self,
+            AttentionDimensionState.self,
+            DailyPrescription.self,
+            RequiredAction.self,
+            CompletedIntervention.self,
+            BehaviorExperiment.self,
+            FlowProject.self,
+            FlowSession.self,
+            DailyEnergyCheckIn.self,
+            SessionInterruption.self,
+            PersonalRule.self,
+            AdaptiveDecisionRecord.self
         ])
         if let resolved = Self.makeContainer(schema: schema) {
             container = resolved

@@ -7,6 +7,8 @@ struct TrainView: View {
     @State private var activeRequest: SessionRequest?
     @State private var showingProgram = false
     @State private var exploreMode: SessionMode?
+    @State private var showFlowLab = false
+    @State private var showExperiments = false
 
     private var progress: RebootProgress? {
         progressList.first
@@ -63,6 +65,12 @@ struct TrainView: View {
         }
         .sheet(item: $exploreMode) { mode in
             ExploreLibraryView(mode: mode)
+        }
+        .sheet(isPresented: $showFlowLab) {
+            FlowLabView()
+        }
+        .sheet(isPresented: $showExperiments) {
+            ExperimentsView()
         }
     }
 
@@ -176,6 +184,15 @@ struct TrainView: View {
                 exploreButton("OBSERVER", .observe)
             }
             .padding(.top, 14)
+            HStack(spacing: 10) {
+                systemButton("FLOW LAB", "waveform.path.ecg") {
+                    showFlowLab = true
+                }
+                systemButton("EXPÉRIENCES", "flask") {
+                    showExperiments = true
+                }
+            }
+            .padding(.top, 10)
         }
     }
 
@@ -190,6 +207,24 @@ struct TrainView: View {
                     .tracking(1.4)
                     .foregroundStyle(.softBone)
             }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background(Color.graphiteSurface)
+            .clipShape(RBChamferedShape(cut: 10))
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func systemButton(_ label: String, _ icon: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.system(size: 12, weight: .bold))
+                Text(label)
+                    .font(.metadata(size: 10))
+                    .tracking(1.4)
+            }
+            .foregroundStyle(.bone)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 14)
             .background(Color.graphiteSurface)

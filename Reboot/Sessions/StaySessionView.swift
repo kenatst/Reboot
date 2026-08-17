@@ -2,6 +2,7 @@ import SwiftUI
 
 /// CONCENTRATION — a single task, nothing else.
 struct StaySessionView: View {
+    @Environment(\.modelContext) private var modelContext
     let session: TrainingSession
     var fastTimer = false
     var onComplete: (TrainingSession) -> Void
@@ -174,6 +175,12 @@ struct StaySessionView: View {
 
     private func registerSwitch() {
         session.switchedCount += 1
+        AdaptiveRebootEngineDriver.recordSwitch(
+            sessionID: session.id,
+            elapsedSeconds: session.plannedDurationSeconds - remaining,
+            kind: session.switchedCount == 1 ? "firstSwitch" : "switch",
+            context: modelContext
+        )
         RBHaptics.play(.interruption)
         switchNotice = true
         Task {

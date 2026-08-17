@@ -12,6 +12,7 @@ struct RootView: View {
     @State private var testMilestone: Milestone?
     @State private var showSettings = false
     @State private var showProgram = false
+    @State private var showDiagnosis = false
 
     private var progress: RebootProgress? {
         progressList.first
@@ -46,6 +47,14 @@ struct RootView: View {
                 onboardingCompleted = true
                 if commit {
                     RBHaptics.play(.lock)
+                    let profile = AdaptiveRebootEngineDriver.ensureProfile(context: modelContext)
+                    if !profile.isCalibrated {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            showDiagnosis = true
+                        }
+                    } else {
+                        AdaptiveRebootEngineDriver.generatePrescription(forDay: 1, context: modelContext)
+                    }
                 }
             }
         }
@@ -66,6 +75,9 @@ struct RootView: View {
             NavigationStack {
                 ProgramView()
             }
+        }
+        .fullScreenCover(isPresented: $showDiagnosis) {
+            OnboardingDiagnosisView()
         }
         .preferredColorScheme(preferredScheme)
         .tint(.signalCyan)
@@ -134,6 +146,37 @@ struct RootView: View {
         if UITestDriver.program {
             showProgram = true
         }
+        #if DEBUG
+        if let name = UITestDriver.profileName {
+            let profile = AdaptiveRebootEngineDriver.ensureProfile(context: modelContext)
+            let injected = AdaptiveDebug.profile(name: name)
+            profile.goalsRaw = injected.goalsRaw
+            profile.primaryGoal = injected.primaryGoal
+            profile.primaryDistractor = injected.primaryDistractor
+            profile.checkMomentsRaw = injected.checkMomentsRaw
+            profile.capacityBucket = injected.capacityBucket
+            profile.returnDifficulty = injected.returnDifficulty
+            profile.readsTenPages = injected.readsTenPages
+            profile.switchingFrequency = injected.switchingFrequency
+            profile.existingFlowActivitiesRaw = injected.existingFlowActivitiesRaw
+            profile.flowDifferenceRaw = injected.flowDifferenceRaw
+            profile.phoneLocation = injected.phoneLocation
+            profile.notificationsLevel = injected.notificationsLevel
+            profile.openTabsBucket = injected.openTabsBucket
+            profile.usesScreenTimeLimits = injected.usesScreenTimeLimits
+            profile.bestWindow = injected.bestWindow
+            profile.typicalSleep = injected.typicalSleep
+            profile.currentEnergy = injected.currentEnergy
+            profile.caffeine = injected.caffeine
+            try? modelContext.save()
+            AdaptiveRebootEngineDriver.generatePrescription(forDay: 10, context: modelContext)
+        }
+        if UITestDriver.engineTests {
+            for line in EngineTests.run() {
+                print("ENGINE-TEST: \(line)")
+            }
+        }
+        #endif
         if let raw = UITestDriver.milestone {
             switch raw {
             case "day30": testMilestone = .day30

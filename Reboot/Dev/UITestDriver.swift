@@ -83,6 +83,15 @@ enum UITestDriver {
         arguments.contains("-OnboardingAutoAdvance")
     }
 
+    static var engineTests: Bool {
+        arguments.contains("-EngineTests")
+    }
+
+    static var profileName: String? {
+        guard let index = arguments.firstIndex(of: "-Profile"), arguments.count > index + 1 else { return nil }
+        return arguments[index + 1]
+    }
+
     static var forceOffline: Bool {
         arguments.contains("-uitest-offline")
     }

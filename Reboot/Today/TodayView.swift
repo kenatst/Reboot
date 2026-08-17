@@ -3,10 +3,17 @@ import SwiftData
 
 /// TODAY — the daily protocol as a destination, not a document.
 struct TodayView: View {
+    @Environment(\.modelContext) private var modelContext
     @Query private var progressList: [RebootProgress]
     @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
+    @Query private var profiles: [RebootUserProfile]
+    @Query private var prescriptions: [DailyPrescription]
+    @Query(sort: \DailyEnergyCheckIn.date, order: .reverse) private var checkIns: [DailyEnergyCheckIn]
+    @Query private var requiredActions: [RequiredAction]
     @State private var activeRequest: SessionRequest?
     @State private var showingProgram = false
+    @State private var showDiagnosis = false
+    @State private var showFlowLab = false
 
     private var progress: RebootProgress? {
         progressList.first
@@ -32,6 +39,18 @@ struct TodayView: View {
         ContentStore.microInsight(day: dayNumber)
     }
 
+    private var profile: RebootUserProfile? {
+        profiles.first
+    }
+
+    private var prescription: DailyPrescription? {
+        prescriptions.first { $0.day == dayNumber }
+    }
+
+    private var pendingAction: RequiredAction? {
+        requiredActions.first { $0.day == dayNumber && ($0.status == "pending" || $0.status == "failed") }
+    }
+
     var body: some View {
         ZStack {
             Color.void.ignoresSafeArea()
@@ -50,6 +69,9 @@ struct TodayView: View {
 
                     instrumentRow
                         .padding(.top, 30)
+
+                    v2PrescriptionBlock
+                        .padding(.top, 24)
 
                     todayProtocolPlate
                         .padding(.top, 30)
@@ -76,6 +98,197 @@ struct TodayView: View {
         .sheet(isPresented: $showingProgram) {
             NavigationStack {
                 ProgramView()
+            }
+        }
+        .fullScreenCover(isPresented: $showDiagnosis) {
+            OnboardingDiagnosisView()
+        }
+        .sheet(isPresented: $showFlowLab) {
+            FlowLabView()
+        }
+        .onAppear {
+            generatePrescriptionIfNeeded()
+        }
+    }
+
+    private func generatePrescriptionIfNeeded() {
+        guard let profile, profile.isCalibrated, prescription == nil else { return }
+        AdaptiveRebootEngineDriver.generatePrescription(forDay: dayNumber, context: modelContext)
+    }
+
+    private func markActionDone(_ action: RequiredAction) {
+        AdaptiveRebootEngineDriver.setRequiredActionDone(action: action, context: modelContext)
+    }
+
+    private func markActionFailed(_ action: RequiredAction) {
+        AdaptiveRebootEngineDriver.setRequiredActionFailed(action: action, reason: "impossible", context: modelContext)
+    }
+
+    private func checkInEnergy(_ level: String) {
+        AdaptiveRebootEngineDriver.recordEnergyCheckIn(
+            energy: level,
+            sleep: profile?.typicalSleep ?? "7–8",
+            caffeine: profile?.caffeine ?? "Morning only",
+            window: profile?.bestWindow ?? "morning",
+            context: modelContext
+        )
+    }
+
+    @ViewBuilder
+    private var v2PrescriptionBlock: some View {
+        if let profile, !profile.isCalibrated {
+            Button {
+                showDiagnosis = true
+            } label: {
+                HStack(spacing: 12) {
+                    RBCalibrationCore(completed: 0, size: 64)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("REBOOT / CALIBRATION")
+                            .font(.metadata(size: 10))
+                            .tracking(2)
+                            .foregroundStyle(.signalCyan)
+                        Text("Quelques questions pour que le système apprenne ton attention.")
+                            .font(.body(size: 13))
+                            .foregroundStyle(.softBone)
+                            .lineSpacing(3)
+                    }
+                    Spacer()
+                    Image(systemName: "arrow.right")
+                        .foregroundStyle(.signalCyan)
+                }
+                .padding(16)
+                .background(Color.deepCarbon)
+                .clipShape(RBChamferedShape(cut: 16))
+            }
+            .buttonStyle(.plain)
+        } else if let prescription {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("CIBLE DU JOUR")
+                            .font(.metadata(size: 9))
+                            .tracking(2)
+                            .foregroundStyle(.signalCyan)
+                        Text(prescription.primaryTarget)
+                            .font(.system(size: 20, weight: .heavy, design: .default))
+                            .foregroundStyle(.bone)
+                    }
+                    Spacer()
+                    Text("ADAPTATIF")
+                        .font(.metadata(size: 8))
+                        .tracking(1.6)
+                        .foregroundStyle(.acid)
+                }
+
+                Text(prescription.whyToday)
+                    .font(.body(size: 13))
+                    .foregroundStyle(.softBone)
+                    .lineSpacing(3)
+                    .padding(.top, 10)
+
+                if !prescription.realWorldAction.isEmpty {
+                    actionRow(prescription)
+                }
+
+                HStack(spacing: 10) {
+                    RBDataBlock(label: "TRAIN", value: "\(prescription.trainingMode.uppercased()) \(prescription.trainingDuration) MIN")
+                    if !prescription.flowWindow.isEmpty {
+                        Button {
+                            showFlowLab = true
+                        } label: {
+                            RBDataBlock(label: "FLOW", value: "OUVRIR")
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.top, 12)
+
+                if !prescription.recoveryAction.isEmpty {
+                    RBInsightStrip(text: prescription.recoveryAction, accent: .acid)
+                        .padding(.top, 12)
+                }
+
+                energyCheckIn
+                    .padding(.top, 12)
+
+                #if DEBUG
+                Text("WHY : \(prescription.adaptationReason)")
+                    .font(.metadata(size: 8))
+                    .foregroundStyle(.ash.opacity(0.7))
+                    .padding(.top, 10)
+                #endif
+            }
+            .padding(16)
+            .background(Color.graphiteSurface)
+            .clipShape(RBChamferedShape(cut: 16))
+        }
+    }
+
+    private func actionRow(_ prescription: DailyPrescription) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("ACTION RÉELLE")
+                .font(.metadata(size: 9))
+                .tracking(2)
+                .foregroundStyle(.ash)
+            Text(prescription.realWorldAction)
+                .font(.body(size: 13))
+                .foregroundStyle(.bone)
+                .lineSpacing(3)
+            HStack(spacing: 10) {
+                Button {
+                    if let action = pendingAction {
+                        markActionDone(action)
+                    }
+                } label: {
+                    Text("C'EST FAIT")
+                        .font(.metadata(size: 9))
+                        .foregroundStyle(.ink)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(Color.bonePlate)
+                        .clipShape(RBChamferedShape(cut: 8))
+                }
+                .buttonStyle(.plain)
+                Button {
+                    if let action = pendingAction {
+                        markActionFailed(action)
+                    }
+                } label: {
+                    Text("JE N'AI PAS PU")
+                        .font(.metadata(size: 9))
+                        .foregroundStyle(.ash)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .overlay(Rectangle().stroke(Color.line, lineWidth: 1))
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.top, 12)
+    }
+
+    private var energyCheckIn: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("ÉNERGIE AUJOURD'HUI")
+                .font(.metadata(size: 9))
+                .tracking(2)
+                .foregroundStyle(.ash)
+            HStack(spacing: 8) {
+                ForEach(["Low", "Normal", "High"], id: \.self) { level in
+                    let selected = checkIns.first?.energy == level
+                    Button {
+                        checkInEnergy(level)
+                    } label: {
+                        Text(level)
+                            .font(.metadata(size: 9))
+                            .foregroundStyle(selected ? .ink : .bone)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 10)
+                            .background(selected ? Color.bonePlate : Color.deepCarbon)
+                            .clipShape(RBChamferedShape(cut: 8))
+                    }
+                    .buttonStyle(.plain)
+                }
             }
         }
     }
