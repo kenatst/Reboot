@@ -8,6 +8,7 @@ struct MilestoneView: View {
 
     @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
     @Query private var progressList: [RebootProgress]
+    @State private var showManual = false
 
     private var progress: RebootProgress? {
         progressList.first
@@ -44,21 +45,37 @@ struct MilestoneView: View {
                     if milestone == .day90 {
                         coreModeChip
                             .padding(.top, 30)
+
+                        Button {
+                            showManual = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "doc.text.magnifyingglass")
+                                Text("CONSULTER MON MANUEL OPÉRATOIRE")
+                                Spacer()
+                                Image(systemName: "arrow.right")
+                            }
+                        }
+                        .buttonStyle(.rbSystem)
+                        .padding(.top, 14)
                     }
 
                     Button(action: onContinue) {
                         HStack {
-                            Text("CONTINUER")
+                            Text(milestone == .day90 ? "CLÔTURER LE PROTOCOLE" : "CONTINUER")
                             Spacer()
                             Image(systemName: "arrow.right")
                         }
                     }
                     .buttonStyle(.rbPrimary())
-                    .padding(.top, 34)
+                    .padding(.top, milestone == .day90 ? 14 : 34)
                     .padding(.bottom, 40)
                 }
                 .padding(.horizontal, RBSpacing.screen)
             }
+        }
+        .sheet(isPresented: $showManual) {
+            AttentionOperatingManualView()
         }
         .statusBarHidden()
         .onAppear {

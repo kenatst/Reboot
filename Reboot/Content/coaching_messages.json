@@ -1,0 +1,1298 @@
+[
+  {
+    "id": 1,
+    "category": "return",
+    "text": "Tu as décroché. Pas de drame. Reviens dans les 60 secondes.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 2,
+    "category": "return",
+    "text": "Le switch est un réflexe, le retour est un choix. Repose tes yeux sur la tâche.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 3,
+    "category": "return",
+    "text": "Ne t'arrête pas au décrochage. La vraie mesure de ta force, c'est la vitesse de ton retour.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 4,
+    "category": "return",
+    "text": "L'impulsion a gagné une manche. Reprends la phrase où tu t'étais arrêté.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 5,
+    "category": "return",
+    "text": "Chaque retour rapide réécrit le circuit du réflexe. Reviens maintenant.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 6,
+    "category": "return",
+    "text": "Tu as touché ton téléphone ? Pose-le à l'envers et termine la minute en cours.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 7,
+    "category": "return",
+    "text": "La distraction est un fait, l'abandon est une décision. Reviens.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 8,
+    "category": "return",
+    "text": "Un retour immédiat annule le coût de changement d'attention. Reprends.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 9,
+    "category": "return",
+    "text": "Pas d'autocritique. Respire et replace ton focus sur l'objectif.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 10,
+    "category": "return",
+    "text": "C'est dans le retour que réside l'entraînement. Tu es exactement là où il faut.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 11,
+    "category": "return",
+    "text": "Tu as glissé. Rien de grave. Le protocole t'attend.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 12,
+    "category": "return",
+    "text": "Ce n'est pas le premier switch qui compte, c'est le temps que tu mets à réagir.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 13,
+    "category": "return",
+    "text": "Reviens sans négocier avec l'envie de vérifier un dernier onglet.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 14,
+    "category": "return",
+    "text": "L'attention est un muscle : chaque ré-engagement est une répétition.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 15,
+    "category": "return",
+    "text": "Ferme la fenêtre parasite. Reprends ton fil.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 16,
+    "category": "return",
+    "text": "Tu as senti l'urge ? Parfait. Maintenant, reviens à la tâche principale.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 17,
+    "category": "return",
+    "text": "Le décrochage est de l'information. Utilise-le pour durcir ton environnement.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 18,
+    "category": "return",
+    "text": "Reviens maintenant. Pas dans cinq minutes.",
+    "contextCondition": "condition_return"
+  },
+  {
+    "id": 19,
+    "category": "failure",
+    "text": "L'action a échoué. On ne force pas un mur : on adapte la friction.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 20,
+    "category": "failure",
+    "text": "Le blocage complet était trop dur ? On passe à une règle de consultation planifiée.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 21,
+    "category": "failure",
+    "text": "L'échec d'une règle n'est pas un échec de volonté. C'est un problème de conception.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 22,
+    "category": "failure",
+    "text": "On jette ce qui ne marche pas. On garde ce qui protège ton temps.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 23,
+    "category": "failure",
+    "text": "Si l'obstacle est le travail ou la famille, le blocage total est absurde. Trouve la nuance.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 24,
+    "category": "failure",
+    "text": "Une règle trop rigide casse au premier imprévu. Rends-la réaliste.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 25,
+    "category": "failure",
+    "text": "Pas de culpabilité. On réajuste le niveau de défi dès aujourd'hui.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 26,
+    "category": "failure",
+    "text": "Tu n'as pas réussi l'action ? Analyse où la friction a cédé.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 27,
+    "category": "failure",
+    "text": "L'environnement a gagné cette fois. On déplace le verrou.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 28,
+    "category": "failure",
+    "text": "Une règle contournée est une règle mal calibrée. Simplifie-la.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 29,
+    "category": "failure",
+    "text": "Reconnaître qu'une méthode ne convient pas est un gain de temps précieux.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 30,
+    "category": "failure",
+    "text": "On teste le plan B. C'est pour ça qu'il existe.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 31,
+    "category": "failure",
+    "text": "Ce n'est pas un abandon, c'est un calibrage empirique.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 32,
+    "category": "failure",
+    "text": "La règle doit servir ton focus, pas flatter une idée abstraite de discipline.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 33,
+    "category": "failure",
+    "text": "On baisse la contrainte pour restaurer la constance.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 34,
+    "category": "failure",
+    "text": "Si ton travail exige d'être joignable, sanctuarise une seule heure par jour, pas la journée entière.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 35,
+    "category": "failure",
+    "text": "Apprends de la brèche. Repars sur un objectif plus ciblé.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 36,
+    "category": "failure",
+    "text": "L'échec est une donnée. On recalcule la trajectoire.",
+    "contextCondition": "condition_failure"
+  },
+  {
+    "id": 37,
+    "category": "low_energy",
+    "text": "Énergie basse aujourd'hui. On réduit la durée, pas la qualité de l'attention.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 38,
+    "category": "low_energy",
+    "text": "La fatigue n'est pas un manque de volonté. Protège ton cerveau avec un bloc court.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 39,
+    "category": "low_energy",
+    "text": "Mieux vaut 10 minutes d'attention pure que 40 minutes de lutte molle.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 40,
+    "category": "low_energy",
+    "text": "Ton sommeil était court. Ne place pas ta tâche la plus difficile maintenant.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 41,
+    "category": "low_energy",
+    "text": "Journée difficile ? Fais le minimum du protocole et dors plus tôt ce soir.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 42,
+    "category": "low_energy",
+    "text": "Quand le carburant est bas, élimine toute friction superflue.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 43,
+    "category": "low_energy",
+    "text": "Une session courte mais propre préserve la dynamique sans épuiser tes réserves.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 44,
+    "category": "low_energy",
+    "text": "Ne compense pas la fatigue par du café tardif. Respecte le rythme biologique.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 45,
+    "category": "low_energy",
+    "text": "Aujourd'hui, l'objectif est de maintenir le cadre, pas de battre un record.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 46,
+    "category": "low_energy",
+    "text": "Un esprit fatigué est plus vulnérable aux impulsions. Double la distance avec le téléphone.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 47,
+    "category": "low_energy",
+    "text": "Prends l'air cinq minutes avant de poser les mains sur le clavier.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 48,
+    "category": "low_energy",
+    "text": "La récupération fait partie intégrante de l'entraînement de l'attention.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 49,
+    "category": "low_energy",
+    "text": "Laisse les grands projets pour ta fenêtre de haute énergie. Fais l'essentiel.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 50,
+    "category": "low_energy",
+    "text": "Accepte la baisse de régime sans te déconcentrer.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 51,
+    "category": "low_energy",
+    "text": "Une pause sans écran restaure plus d'énergie que trente minutes de scroll passif.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 52,
+    "category": "low_energy",
+    "text": "Ce soir, le sommeil est ta priorité absolue.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 53,
+    "category": "low_energy",
+    "text": "Baisse la voilure, garde le cap.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 54,
+    "category": "low_energy",
+    "text": "La constance dans les jours de basse énergie construit la vraie résilience.",
+    "contextCondition": "condition_low_energy"
+  },
+  {
+    "id": 55,
+    "category": "progress",
+    "text": "Tu tiens plus longtemps qu'au Jour 1. Ce n'est pas un hasard, c'est de l'entraînement.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 56,
+    "category": "progress",
+    "text": "Ta capacité de maintien s'étend. Continue de consolider chaque palier.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 57,
+    "category": "progress",
+    "text": "Moins de bruit, plus de clarté. Ton espace mental s'élargit.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 58,
+    "category": "progress",
+    "text": "Le réflexe de vérification automatique commence à céder. Remarque la différence.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 59,
+    "category": "progress",
+    "text": "Tes blocs de travail deviennent plus denses. Tu gagnes du temps de vie.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 60,
+    "category": "progress",
+    "text": "Tu as franchi un cap d'endurance cognitive. Reste vigilant sur l'environnement.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 61,
+    "category": "progress",
+    "text": "Le calme devient ton état par défaut pendant les sessions.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 62,
+    "category": "progress",
+    "text": "Tu ne subis plus les notifications : tu choisis tes moments de connexion.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 63,
+    "category": "progress",
+    "text": "Chaque semaine valide un niveau de contrôle supérieur.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 64,
+    "category": "progress",
+    "text": "Ta capacité de restitution s'affine. Tu retiens l'architecture, pas seulement des bribes.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 65,
+    "category": "progress",
+    "text": "La friction n'est plus une souffrance, c'est un repère familier.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 66,
+    "category": "progress",
+    "text": "Ce que tu faisais avec effort au début devient une seconde nature.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 67,
+    "category": "progress",
+    "text": "Tu as prouvé que l'attention se rééduque par la méthode.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 68,
+    "category": "progress",
+    "text": "Le temps de focus s'allonge naturellement sans forcer.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 69,
+    "category": "progress",
+    "text": "Continue sur cette lancée. La régularité est ton plus grand levier.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 70,
+    "category": "progress",
+    "text": "Tu construis une forteresse que les algorithmes ne peuvent plus pénétrer facilement.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 71,
+    "category": "progress",
+    "text": "Regarde le chemin parcouru depuis le calibrage initial.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 72,
+    "category": "progress",
+    "text": "La maîtrise s'installe dans la répétition tranquille.",
+    "contextCondition": "condition_progress"
+  },
+  {
+    "id": 73,
+    "category": "refusal",
+    "text": "Tu as refusé l'intervention ? Pas de problème. On explore une autre voie.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 74,
+    "category": "refusal",
+    "text": "Une consigne qui ne fait pas sens pour toi ne sera jamais appliquée. On ajuste.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 75,
+    "category": "refusal",
+    "text": "Tu connais tes contraintes mieux que quiconque. Choisis ton propre compromis.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 76,
+    "category": "refusal",
+    "text": "Le refus est une décision légitime si elle s'accompagne d'une alternative.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 77,
+    "category": "refusal",
+    "text": "On ne force rien. L'important est de garder le contrôle de ton temps.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 78,
+    "category": "refusal",
+    "text": "Si cette méthode te semble artificielle, revenons aux fondamentaux de l'environnement.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 79,
+    "category": "refusal",
+    "text": "Pas d'injonction dogmatique dans REBOOT. Trouve ce qui fonctionne chez toi.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 80,
+    "category": "refusal",
+    "text": "On supprime cette règle de ton profil et on teste une approche différente.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 81,
+    "category": "refusal",
+    "text": "L'autonomie est le but ultime : tu es le seul juge de tes outils.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 82,
+    "category": "refusal",
+    "text": "Choisis la friction qui te paraît tolérable et durable.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 83,
+    "category": "refusal",
+    "text": "Un système respecté à 80% vaut mieux qu'un idéal théorique abandonné à 100%.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 84,
+    "category": "refusal",
+    "text": "Refuser le superflu fait aussi partie de l'entraînement.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 85,
+    "category": "refusal",
+    "text": "Adapte le protocole à ta réalité professionnelle et personnelle.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 86,
+    "category": "refusal",
+    "text": "On note ton retour et on réoriente les prochaines suggestions.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 87,
+    "category": "refusal",
+    "text": "Ta liberté de choix reste totale. Seul le résultat de focus compte.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 88,
+    "category": "refusal",
+    "text": "Cherche la simplicité plutôt que l'accumulation de contraintes.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 89,
+    "category": "refusal",
+    "text": "Ton retour permet d'affiner l'intelligence de ton parcours.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 90,
+    "category": "refusal",
+    "text": "On avance avec ce qui fait consensus pour toi.",
+    "contextCondition": "condition_refusal"
+  },
+  {
+    "id": 91,
+    "category": "overwhelm",
+    "text": "Trop d'onglets, trop de tâches, trop de signaux. Respire et isole une seule unité.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 92,
+    "category": "overwhelm",
+    "text": "Le sentiment de submersion vient de la taille perçue de la tâche. Découpe-la.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 93,
+    "category": "overwhelm",
+    "text": "Tu ne peux pas tout faire aujourd'hui. Fais une seule chose remarquablement bien.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 94,
+    "category": "overwhelm",
+    "text": "Ferme tout sauf le document en cours. Le reste attendra la fin du bloc.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 95,
+    "category": "overwhelm",
+    "text": "Quand tout paraît urgent, rien n'est important. Choisis ton unique priorité.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 96,
+    "category": "overwhelm",
+    "text": "La panique cognitive se dissout dans l'action concrète sur un micro-détail.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 97,
+    "category": "overwhelm",
+    "text": "Écris les trois premières étapes sur papier. Ton cerveau retrouvera son calme.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 98,
+    "category": "overwhelm",
+    "text": "La clarté revient dès que tu réduis le champ de vision à la prochaine demi-heure.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 99,
+    "category": "overwhelm",
+    "text": "Baisse le niveau d'exigence sur la perfection, monte le niveau sur la présence.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 100,
+    "category": "overwhelm",
+    "text": "Une tâche de dix minutes suffit à relancer la dynamique.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 101,
+    "category": "overwhelm",
+    "text": "Ne regarde pas la montagne : regarde le prochain pas.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 102,
+    "category": "overwhelm",
+    "text": "L'encombrement mental se traite comme l'encombrement physique : on jette le bruit.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 103,
+    "category": "overwhelm",
+    "text": "Accorde-toi le droit de ne traiter qu'un seul problème à la fois.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 104,
+    "category": "overwhelm",
+    "text": "Ce bloc est sanctuarisé. Les urgences extérieures sont suspendues.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 105,
+    "category": "overwhelm",
+    "text": "Le soulagement vient de la fermeture des boucles ouvertes, une par une.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 106,
+    "category": "overwhelm",
+    "text": "Pose tout. Cinq minutes de marche. Puis une seule tâche propre.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 107,
+    "category": "overwhelm",
+    "text": "La simplicité est le remède absolu à la submersion.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 108,
+    "category": "overwhelm",
+    "text": "Reviens au sol. Un objet, un geste, un résultat.",
+    "contextCondition": "condition_overwhelm"
+  },
+  {
+    "id": 109,
+    "category": "boredom",
+    "text": "L'ennui arrive ? C'est le signal que ton cerveau cherche sa dose facile. Reste.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 110,
+    "category": "boredom",
+    "text": "Traverse la zone d'ennui : c'est là que naît la pensée originale.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 111,
+    "category": "boredom",
+    "text": "Ne comble pas chaque seconde vide avec un stimulus passif.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 112,
+    "category": "boredom",
+    "text": "L'ennui n'est pas un vide à fuir, c'est un espace à habiter.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 113,
+    "category": "boredom",
+    "text": "La tolérance au calme est le prérequis de toute grande œuvre intellectuelle.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 114,
+    "category": "boredom",
+    "text": "Quand tu t'ennuies en session, monte légèrement la difficulté ou la précision exigée.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 115,
+    "category": "boredom",
+    "text": "Le réflexe de scroll est une tentative désespérée d'éviter le silence. Accueille le silence.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 116,
+    "category": "boredom",
+    "text": "Dans l'ennui prolongé, ton cerveau commence enfin à relier ses propres idées.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 117,
+    "category": "boredom",
+    "text": "Ce que tu ressens comme un manque est simplement une baisse de stimulation superficielle.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 118,
+    "category": "boredom",
+    "text": "Reste assis sans écran pendant deux minutes. Remarque comment l'esprit s'apaise.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 119,
+    "category": "boredom",
+    "text": "Les esprits les plus créatifs ont tous apprivoisé l'ennui.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 120,
+    "category": "boredom",
+    "text": "Ne fuis pas la lenteur. Les grandes idées ne poussent pas dans la précipitation.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 121,
+    "category": "boredom",
+    "text": "Chaque seconde passée dans le calme sans céder au réflexe renforce ton contrôle.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 122,
+    "category": "boredom",
+    "text": "L'ennui est la porte d'entrée du flow profond si tu ne fais pas demi-tour.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 123,
+    "category": "boredom",
+    "text": "Regarde par la fenêtre. Observe les formes sans chercher à consommer de l'information.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 124,
+    "category": "boredom",
+    "text": "Le vide sensoriel permet la consolidation mnésique. Laisse agir.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 125,
+    "category": "boredom",
+    "text": "Tu n'as pas besoin de nouveau contenu. Tu as besoin d'espace mental.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 126,
+    "category": "boredom",
+    "text": "L'esprit saturé ne crée rien. L'esprit reposé invente.",
+    "contextCondition": "condition_boredom"
+  },
+  {
+    "id": 127,
+    "category": "recall",
+    "text": "Lis avec l'intention de reconstruire. Ton niveau d'attention s'en trouvera décuplé.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 128,
+    "category": "recall",
+    "text": "Ferme le support avant d'écrire. C'est l'effort de rappel qui crée la mémoire durable.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 129,
+    "category": "recall",
+    "text": "Ne te contente pas de mots-clés isolés : cherche la chaîne causale qui les relie.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 130,
+    "category": "recall",
+    "text": "Si tu ne peux pas l'expliquer simplement, c'est que la structure n'est pas encore claire.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 131,
+    "category": "recall",
+    "text": "La relecture passive donne une illusion de maîtrise. Seul le test réel compte.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 132,
+    "category": "recall",
+    "text": "Ce qui a été difficile à récupérer en mémoire sera difficile à oublier.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 133,
+    "category": "recall",
+    "text": "Recherche le contre-exemple ou la limite du concept : c'est là que se loge l'expertise.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 134,
+    "category": "recall",
+    "text": "Résume le paragraphe en trois points cardinaux avant de tourner la page.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 135,
+    "category": "recall",
+    "text": "La mémoire n'est pas un réservoir passif, c'est un réseau qu'on active par l'interrogation.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 136,
+    "category": "recall",
+    "text": "Explique l'idée comme si ton interlocuteur n'avait aucune connaissance préalable.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 137,
+    "category": "recall",
+    "text": "L'erreur de restitution est ton meilleur guide : elle montre exactement où travailler.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 138,
+    "category": "recall",
+    "text": "Structure ton résumé : Thèse d'abord, Mécanisme ensuite, Conséquence enfin.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 139,
+    "category": "recall",
+    "text": "Ne consulte pas la réponse trop vite. Laisse ton cerveau chercher pendant trente secondes.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 140,
+    "category": "recall",
+    "text": "L'effet de génération : formuler toi-même la réponse ancre le souvenir 3× plus fort.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 141,
+    "category": "recall",
+    "text": "Relie ce que tu viens de lire à une expérience vécue ou un projet en cours.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 142,
+    "category": "recall",
+    "text": "La précision du vocabulaire reflète la netteté du modèle mental.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 143,
+    "category": "recall",
+    "text": "Un bon résumé est plus court et plus dense que le texte original.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 144,
+    "category": "recall",
+    "text": "Tu apprends pour agir, pas pour empiler des phrases.",
+    "contextCondition": "condition_recall"
+  },
+  {
+    "id": 145,
+    "category": "strong_result",
+    "text": "Excellente session. Le maintien était net et sans résidu attentionnel.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 146,
+    "category": "strong_result",
+    "text": "Zéro switch sur un bloc exigeant : c'est le standard de haute performance.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 147,
+    "category": "strong_result",
+    "text": "Ta capacité de restitution a atteint un niveau de précision remarquable.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 148,
+    "category": "strong_result",
+    "text": "Tu as tenu ton contrat d'environnement de bout en bout. Félicitations.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 149,
+    "category": "strong_result",
+    "text": "Ce niveau de clarté mentale est le résultat direct de ta méthode.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 150,
+    "category": "strong_result",
+    "text": "Session propre. Note les conditions exactes qui ont permis cette réussite.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 151,
+    "category": "strong_result",
+    "text": "Tu as transformé une friction potentielle en un flux de travail continu.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 152,
+    "category": "strong_result",
+    "text": "C'est exactement ce type de bloc qui fait avancer les projets décisifs.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 153,
+    "category": "strong_result",
+    "text": "Ton focus a été constant du début à la fin de la fenêtre.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 154,
+    "category": "strong_result",
+    "text": "La qualité de ton travail s'en ressent immédiatement.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 155,
+    "category": "strong_result",
+    "text": "Conserve ce sentiment de maîtrise pour aborder le prochain bloc.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 156,
+    "category": "strong_result",
+    "text": "Tu as prouvé que les conditions adéquates produisent des résultats spectaculaires.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 157,
+    "category": "strong_result",
+    "text": "La discipline appliquée produit de la liberté intellectuelle.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 158,
+    "category": "strong_result",
+    "text": "Un bloc de cette qualité vaut quatre heures de travail fragmenté.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 159,
+    "category": "strong_result",
+    "text": "Prends le temps d'apprécier la sensation d'un travail véritablement achevé.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 160,
+    "category": "strong_result",
+    "text": "Le standard monte. Tu sais désormais ce dont tu es capable.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 161,
+    "category": "strong_result",
+    "text": "Bravo pour cette démonstration de contrôle de bout en bout.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 162,
+    "category": "strong_result",
+    "text": "Ton attention est devenue une arme de précision.",
+    "contextCondition": "condition_strong_result"
+  },
+  {
+    "id": 163,
+    "category": "missed_day",
+    "text": "Tu as manqué un jour ? Le programme n'a pas avancé sans toi. Reprends au Jour exact.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 164,
+    "category": "missed_day",
+    "text": "Tu n'as rien cassé. Pas de punition, pas de double session. Reviens dans le rythme.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 165,
+    "category": "missed_day",
+    "text": "Le protocole est un chemin, pas une chaîne fragile. On reprend là où tu t'es arrêté.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 166,
+    "category": "missed_day",
+    "text": "La constance sur 90 jours tolère des imprévus. Ce qui compte, c'est de ne pas laisser le vide s'installer.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 167,
+    "category": "missed_day",
+    "text": "Pas de culpabilité inutile. Pose les mains sur le Jour d'aujourd'hui et fais ta session.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 168,
+    "category": "missed_day",
+    "text": "Une absence n'annule pas les acquis des semaines précédentes. Rebranche la machine.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 169,
+    "category": "missed_day",
+    "text": "Le temps perdu n'existe pas si tu tires les leçons du décrochage.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 170,
+    "category": "missed_day",
+    "text": "Reviens avec simplicité. Un seul bloc aujourd'hui suffit pour relancer le moteur.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 171,
+    "category": "missed_day",
+    "text": "Ne cherche pas à rattraper en force : fais la session du jour avec une attention totale.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 172,
+    "category": "missed_day",
+    "text": "Ton espace REBOOT est intact. Bienvenue de retour.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 173,
+    "category": "missed_day",
+    "text": "La vie a créé une friction. Tu as su revenir : c'est cela la vraie compétence.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 174,
+    "category": "missed_day",
+    "text": "Un jour off ne détruit pas une habitude si le retour se fait sans délai.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 175,
+    "category": "missed_day",
+    "text": "Reprends ton rituel d'entrée : bureau propre, téléphone loin, intention posée.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 176,
+    "category": "missed_day",
+    "text": "L'important n'est pas de ne jamais tomber, mais de toujours remonter sur le vélo.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 177,
+    "category": "missed_day",
+    "text": "On efface le bruit d'hier. On joue la partition d'aujourd'hui.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 178,
+    "category": "missed_day",
+    "text": "Reviens au calme. Ta séance du jour t'attend.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 179,
+    "category": "missed_day",
+    "text": "La constance se mesure sur le long terme, pas sur la perfection d'un calendrier.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 180,
+    "category": "missed_day",
+    "text": "Bienvenue. On reprend la marche en avant.",
+    "contextCondition": "condition_missed_day"
+  },
+  {
+    "id": 181,
+    "category": "experiment",
+    "text": "L'expérience est en cours. Ne change aucun autre paramètre pour garder la mesure propre.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 182,
+    "category": "experiment",
+    "text": "Observe les faits sans juger. Est-ce que le premier switch arrive plus tard ?",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 183,
+    "category": "experiment",
+    "text": "Une expérience qui infirme une hypothèse est tout aussi utile qu'un succès.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 184,
+    "category": "experiment",
+    "text": "Note fidèlement tes ressentis après la session : les données guident la règle.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 185,
+    "category": "experiment",
+    "text": "On teste pour savoir, pas pour se conformer à une injonction de productivité.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 186,
+    "category": "experiment",
+    "text": "Si l'effet n'est pas mesurable après trois sessions, on abandonne l'expérience sans regret.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 187,
+    "category": "experiment",
+    "text": "Garde la rigueur du protocole : même contexte, même tâche, seule la condition varie.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 188,
+    "category": "experiment",
+    "text": "Les chiffres ne mentent pas : compare la latence moyenne avec et sans la contrainte.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 189,
+    "category": "experiment",
+    "text": "Tu es ton propre laboratoire attentionnel. Reste curieux et objectif.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 190,
+    "category": "experiment",
+    "text": "L'expérimentation méthodique remplace les croyances vagues par des certitudes opérationnelles.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 191,
+    "category": "experiment",
+    "text": "Une bonne hypothèse doit pouvoir être testée en trois blocs de travail.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 192,
+    "category": "experiment",
+    "text": "Ne conclus rien sur une seule session atypique : attends le volume requis.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 193,
+    "category": "experiment",
+    "text": "La science de ton attention se construit session après session.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 194,
+    "category": "experiment",
+    "text": "Reste neutre face aux résultats : on cherche l'efficacité réelle, pas l'élégance théorique.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 195,
+    "category": "experiment",
+    "text": "Cette expérience affine la compréhension de tes déclencheurs profonds.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 196,
+    "category": "experiment",
+    "text": "La mesure objective bat l'intuition subjective.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 197,
+    "category": "experiment",
+    "text": "Note le résultat dans ton carnet de bord et passe à l'analyse.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 198,
+    "category": "experiment",
+    "text": "Tu es en train de concevoir ton propre manuel d'utilisation.",
+    "contextCondition": "condition_experiment"
+  },
+  {
+    "id": 199,
+    "category": "flow",
+    "text": "Le flow demande une ligne d'arrivée nette. Si tu ne sais pas où tu t'arrêtes, clarifie.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 200,
+    "category": "flow",
+    "text": "Ajuste le niveau : un peu plus dur que ton habitude, mais jamais insurmontable.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 201,
+    "category": "flow",
+    "text": "Installe ton retour visuel immédiat : compteur de mots, code qui compile, page qui noircit.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 202,
+    "category": "flow",
+    "text": "Ne négocie aucune interruption pendant cette fenêtre de flow. Porte fermée.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 203,
+    "category": "flow",
+    "text": "La tâche doit avoir un sens pour toi. Rappelle-toi pourquoi ce travail compte.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 204,
+    "category": "flow",
+    "text": "Le flow s'installe quand l'action et la conscience fusionnent sur l'objet.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 205,
+    "category": "flow",
+    "text": "Pas de téléphone visible, pas d'onglet tiers, pas de musique à paroles. Que l'essentiel.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 206,
+    "category": "flow",
+    "text": "Découpe le gros bloc en micro-unités de quinze minutes pour entretenir l'élan.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 207,
+    "category": "flow",
+    "text": "Quand tu perds la notion du temps, tu as touché la zone. Remarque ce qui l'a permis.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 208,
+    "category": "flow",
+    "text": "Le flow n'est pas magique : c'est la conséquence naturelle de conditions bien réglées.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 209,
+    "category": "flow",
+    "text": "Si la fatigue arrive, termine proprement l'unité en cours et sors du bloc.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 210,
+    "category": "flow",
+    "text": "Ne cherche pas le flow avec anxiété : prépare les conditions et laisse l'attention plonger.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 211,
+    "category": "flow",
+    "text": "Un défi bien calibré absorbe l'esprit sans laisser de place aux pensées parasites.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 212,
+    "category": "flow",
+    "text": "Observe comment le plaisir émerge de la maîtrise d'une difficulté surmontée.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 213,
+    "category": "flow",
+    "text": "Garde ton contrat de distraction intact jusqu'à la sonnerie finale.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 214,
+    "category": "flow",
+    "text": "Le flow est le mode de fonctionnement le plus économique pour le cerveau.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 215,
+    "category": "flow",
+    "text": "Clôture la session en notant la première action de demain pour faciliter le prochain amorçage.",
+    "contextCondition": "condition_flow"
+  },
+  {
+    "id": 216,
+    "category": "flow",
+    "text": "Tu as goûté à la profondeur. C'est ton nouveau standard de travail.",
+    "contextCondition": "condition_flow"
+  }
+]

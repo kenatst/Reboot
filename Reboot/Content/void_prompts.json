@@ -1,47 +1,562 @@
 [
-{"id": 1, "title": "Cessation de tout input", "prompt": "Pendant 5 minutes, aucun écran, aucune lecture, aucun son. Laisse ton esprit décanter.", "durationMinutes": 5, "context": "Phase 1 - Rupture du réflexe"},
-{"id": 2, "title": "L'immobilité des mains", "prompt": "Pose tes mains sur tes cuisses. Ne les déplace pas pendant 5 minutes entières.", "durationMinutes": 5, "context": "Phase 1 - Contrôle moteur"},
-{"id": 3, "title": "Observer l'impulsion de départ", "prompt": "Reste assis. Dès qu'une envie de te lever ou de toucher un objet survient, contente-toi de la nommer.", "durationMinutes": 7, "context": "Phase 1 - Conscience de l'impulsion"},
-{"id": 4, "title": "Le regard immobile", "prompt": "Choisis un point fixe et garde le regard dessus, sans le laisser dériver.", "durationMinutes": 5, "context": "Phase 1 - Stabilisation"},
-{"id": 5, "title": "Le corps sans consigne", "prompt": "Assieds-toi sans posture imposée et laisse le corps trouver son équilibre, sans le corriger.", "durationMinutes": 5, "context": "Phase 1 - Présence corporelle"},
-{"id": 6, "title": "L'attente sans téléphone", "prompt": "Dans une attente réelle — file, transport, rendez-vous — laisse le téléphone dans la poche et ne sors aucun écran.", "durationMinutes": 5, "context": "Phase 2 - Transfert réel"},
-{"id": 7, "title": "La fenêtre ouverte", "prompt": "Regarde par une fenêtre pendant quelques minutes, sans chercher de scène particulière. Laisse le réel venir.", "durationMinutes": 8, "context": "Phase 2 - Le réel comme flux"},
-{"id": 8, "title": "La pause non remplie", "prompt": "Repère ta prochaine pause naturelle et décide de n'y introduire aucun contenu : ni lecture, ni écran, ni conversation.", "durationMinutes": 8, "context": "Phase 2 - Pauses"},
-{"id": 9, "title": "La marche sans audio", "prompt": "Marche dix minutes sans écouteurs, sans musique, sans podcast. Laisse les sons du réel te rejoindre.", "durationMinutes": 10, "context": "Phase 2 - Transfert réel"},
-{"id": 10, "title": "Le transport sans écran", "prompt": "Dans un trajet en transport, ne sors aucun écran. Regarde, écoute, ou ne fais rien.", "durationMinutes": 10, "context": "Phase 2 - Transfert réel"},
-{"id": 11, "title": "Les mains vides dans la file", "prompt": "Dans une file d'attente, garde les mains libres et ne vérifie rien. Observe ce que ton corps fait.", "durationMinutes": 5, "context": "Phase 2 - Attente"},
-{"id": 12, "title": "Le premier café sans stimulus", "prompt": "Bois un café ou un verre d'eau sans écran, sans lecture, sans conversation. Juste la boisson et toi.", "durationMinutes": 10, "context": "Phase 3 - Présence ordinaire"},
-{"id": 13, "title": "Les premières minutes d'un repas", "prompt": "Au début d'un repas, ne touche à rien d'autre qu'à la nourriture pendant les dix premières minutes.", "durationMinutes": 10, "context": "Phase 3 - Présence ordinaire"},
-{"id": 14, "title": "La transition travail-maison", "prompt": "Entre deux activités — travail et maison, deux rendez-vous — traverse la transition sans aucun contenu.", "durationMinutes": 8, "context": "Phase 3 - Transitions"},
-{"id": 15, "title": "Le silence avant le sommeil", "prompt": "Les dix minutes avant de dormir, sans écran ni audio. Laisse la journée se déposer.", "durationMinutes": 10, "context": "Phase 3 - Clôture"},
-{"id": 16, "title": "L'attente du thé", "prompt": "Pendant que l'eau chauffe ou que le thé infuse, reste sans rien faire, sans prendre le téléphone.", "durationMinutes": 4, "context": "Phase 3 - Micro-vides"},
-{"id": 17, "title": "Le lever sans écran", "prompt": "Les premières minutes après le réveil, sans téléphone. Laisse le jour arriver avant le flux.", "durationMinutes": 5, "context": "Phase 3 - Réglage du jour"},
-{"id": 18, "title": "La fenêtre en mouvement", "prompt": "Depuis un train ou une voiture, regarde défiler le paysage sans écran ni audio.", "durationMinutes": 10, "context": "Phase 4 - Présence"},
-{"id": 19, "title": "Le regard sur une seule chose", "prompt": "Choisis un objet ordinaire et regarde-le pendant cinq minutes, sans le toucher ni le juger.", "durationMinutes": 5, "context": "Phase 4 - Profondeur du regard"},
-{"id": 20, "title": "La conversation silencieuse", "prompt": "Reste en présence d'une autre personne sans chercher à parler ni à remplir le silence.", "durationMinutes": 5, "context": "Phase 4 - Présence partagée"},
-{"id": 21, "title": "Le pas ralenti", "prompt": "Pendant cinq minutes de marche, ralentis volontairement ton pas et laisse le corps trouver son tempo.", "durationMinutes": 5, "context": "Phase 4 - Rythme"},
-{"id": 22, "title": "L'attente sans agitation", "prompt": "Dans une attente, ne cherche aucune occupation. Laisse l'agitation intérieure monter et se poser.", "durationMinutes": 7, "context": "Phase 4 - Tolérance"},
-{"id": 23, "title": "Le silence avant l'action", "prompt": "Avant de commencer un travail important, accorde-toi quelques minutes de silence complet.", "durationMinutes": 5, "context": "Phase 4 - Préparation"},
-{"id": 24, "title": "Le bilan intérieur silencieux", "prompt": "Laisse la journée ou la semaine infuser dans ta mémoire sans chercher à l'analyser.", "durationMinutes": 10, "context": "Phase 4 - Intégration"},
-{"id": 25, "title": "La souveraineté finale", "prompt": "Un moment de liberté attentionnelle totale : tu choisis de ne rien faire, et tu le tiens.", "durationMinutes": 10, "context": "Phase 4 - Autonomie"},
-{"id": 26, "title": "Le couloir sans porte", "prompt": "En passant d'une pièce à l'autre, ne sors aucun écran et laisse la transition être vide.", "durationMinutes": 3, "context": "Micro-vide - Maison"},
-{"id": 27, "title": "L'ascenseur sans écran", "prompt": "Dans un ascenseur ou un escalier, ne vérifie rien. Laisse tes mains rester où elles sont.", "durationMinutes": 2, "context": "Micro-vide - Attente"},
-{"id": 28, "title": "Le matin sans nouvelles", "prompt": "Avant de consulter les nouvelles, reste dix minutes sans information nouvelle.", "durationMinutes": 10, "context": "Phase 3 - Contrôle de l'entrée"},
-{"id": 29, "title": "Le soir sans flux", "prompt": "La dernière heure avant de dormir, sans flux : ni défilement, ni vidéo, ni fil d'actualité.", "durationMinutes": 15, "context": "Phase 4 - Clôture"},
-{"id": 30, "title": "La pause café debout", "prompt": "Prends une pause debout, sans but, sans écran, sans même t'asseoir.", "durationMinutes": 4, "context": "Micro-vide - Pause"},
-{"id": 31, "title": "Le regard par-dessus l'épaule", "prompt": "À un moment de la journée, lève les yeux de ce que tu fais et regarde simplement autour de toi, sans rien chercher.", "durationMinutes": 3, "context": "Micro-vide - Regard"},
-{"id": 32, "title": "La douche sans podcast", "prompt": "Prends une douche sans audio, sans penser à autre chose. Laisse l'eau et le corps suffire.", "durationMinutes": 8, "context": "Phase 4 - Présence"},
-{"id": 33, "title": "L'épicerie sans liste mentale", "prompt": "Pendant quelques minutes de course, ne planifie rien : sois présent à ce que tu choisis et à ce que tu touches.", "durationMinutes": 5, "context": "Micro-vide - Vie réelle"},
-{"id": 34, "title": "Le pas après la pluie", "prompt": "Marche cinq minutes en observant uniquement le sol et les reflets, sans autre stimulus.", "durationMinutes": 5, "context": "Phase 4 - Observation"},
-{"id": 35, "title": "La main qui attend", "prompt": "Assieds-toi, pose la main à plat sur la table et laisse-la y rester cinq minutes, sans la déplacer.", "durationMinutes": 5, "context": "Phase 3 - Corps"},
-{"id": 36, "title": "Le trajet à pied sans destination", "prompt": "Marche sans destination pendant dix minutes. Aucun écran, aucun but, aucun audio.", "durationMinutes": 10, "context": "Phase 4 - Autonomie"},
-{"id": 37, "title": "Le silence du milieu de journée", "prompt": "Au milieu de la journée, prends trois minutes de silence total, sans fermer les yeux ni t'isoler.", "durationMinutes": 3, "context": "Micro-vide - Journée"},
-{"id": 38, "title": "L'attente du feu vert", "prompt": "À un feu rouge ou un passage piéton, reste immobile sans sortir le téléphone, même si l'attente dure.", "durationMinutes": 2, "context": "Micro-vide - Ville"},
-{"id": 39, "title": "La tasse entre les mains", "prompt": "Tiens une tasse chaude entre tes mains et sens-la pendant cinq minutes, sans rien faire d'autre.", "durationMinutes": 5, "context": "Phase 4 - Sens"},
-{"id": 40, "title": "Le livre fermé sur les genoux", "prompt": "Assieds-toi avec un livre fermé sur les genoux et ne l'ouvre pas. Reste avec l'envie de l'ouvrir.", "durationMinutes": 5, "context": "Phase 3 - Désir d'input"},
-{"id": 41, "title": "Le coucher de soleil immobile", "prompt": "Regarde un coucher de soleil ou un ciel du soir pendant cinq minutes, sans le photographier.", "durationMinutes": 5, "context": "Phase 4 - Présence"},
-{"id": 42, "title": "La porte d'entrée", "prompt": "À la porte de chez toi ou de ton bureau, reste dix secondes immobile avant d'entrer.", "durationMinutes": 1, "context": "Micro-vide - Transition"},
-{"id": 43, "title": "Le silence du réveil prolongé", "prompt": "Après le réveil, reste cinq minutes de plus au lit sans écran, sans audio, sans pensée dirigée.", "durationMinutes": 5, "context": "Phase 4 - Réglage"},
-{"id": 44, "title": "La nuit étoilée", "prompt": "Regarde le ciel nocturne pendant cinq minutes, sans identifier, sans commenter, sans photographier.", "durationMinutes": 5, "context": "Phase 4 - Présence"},
-{"id": 45, "title": "Le dernier silence du protocole", "prompt": "Une dernière session de vide choisie librement : le format, le lieu et la durée t'appartiennent.", "durationMinutes": 10, "context": "Phase 4 - Autonomie"}
+  {
+    "id": 1,
+    "title": "VIDE NIVEAU 01 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 1 minute. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 1,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 2,
+    "title": "VIDE NIVEAU 01 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 2 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 2,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 3,
+    "title": "VIDE NIVEAU 01 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 2 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 2,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 4,
+    "title": "VIDE NIVEAU 01 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 6 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 6,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 5,
+    "title": "VIDE NIVEAU 01 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 3 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 3,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 6,
+    "title": "VIDE NIVEAU 01 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 3 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 3,
+    "context": "Début de repas"
+  },
+  {
+    "id": 7,
+    "title": "VIDE NIVEAU 01 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 12 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 12,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 8,
+    "title": "VIDE NIVEAU 01 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 18 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 18,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 9,
+    "title": "VIDE NIVEAU 01 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 12 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 12,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 10,
+    "title": "VIDE NIVEAU 01 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 18 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 18,
+    "context": "Avant de dormir"
+  },
+  {
+    "id": 11,
+    "title": "VIDE NIVEAU 02 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 1 minute. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 1,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 12,
+    "title": "VIDE NIVEAU 02 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 3 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 3,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 13,
+    "title": "VIDE NIVEAU 02 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 3 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 3,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 14,
+    "title": "VIDE NIVEAU 02 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 7 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 7,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 15,
+    "title": "VIDE NIVEAU 02 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 4 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 4,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 16,
+    "title": "VIDE NIVEAU 02 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 4 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 4,
+    "context": "Début de repas"
+  },
+  {
+    "id": 17,
+    "title": "VIDE NIVEAU 02 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 15 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 15,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 18,
+    "title": "VIDE NIVEAU 02 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 22 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 22,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 19,
+    "title": "VIDE NIVEAU 02 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 15 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 15,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 20,
+    "title": "VIDE NIVEAU 02 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 22 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 22,
+    "context": "Avant de dormir"
+  },
+  {
+    "id": 21,
+    "title": "VIDE NIVEAU 03 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 1 minute. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 1,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 22,
+    "title": "VIDE NIVEAU 03 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 3 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 3,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 23,
+    "title": "VIDE NIVEAU 03 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 3 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 3,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 24,
+    "title": "VIDE NIVEAU 03 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 8 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 8,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 25,
+    "title": "VIDE NIVEAU 03 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 5 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 5,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 26,
+    "title": "VIDE NIVEAU 03 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 5 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 5,
+    "context": "Début de repas"
+  },
+  {
+    "id": 27,
+    "title": "VIDE NIVEAU 03 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 17 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 17,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 28,
+    "title": "VIDE NIVEAU 03 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 26 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 26,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 29,
+    "title": "VIDE NIVEAU 03 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 17 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 17,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 30,
+    "title": "VIDE NIVEAU 03 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 26 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 26,
+    "context": "Avant de dormir"
+  },
+  {
+    "id": 31,
+    "title": "VIDE NIVEAU 04 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 2 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 2,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 32,
+    "title": "VIDE NIVEAU 04 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 4 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 4,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 33,
+    "title": "VIDE NIVEAU 04 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 4 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 4,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 34,
+    "title": "VIDE NIVEAU 04 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 10 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 10,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 35,
+    "title": "VIDE NIVEAU 04 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 6 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 6,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 36,
+    "title": "VIDE NIVEAU 04 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 6 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 6,
+    "context": "Début de repas"
+  },
+  {
+    "id": 37,
+    "title": "VIDE NIVEAU 04 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 20 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 20,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 38,
+    "title": "VIDE NIVEAU 04 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 39,
+    "title": "VIDE NIVEAU 04 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 20 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 20,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 40,
+    "title": "VIDE NIVEAU 04 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Avant de dormir"
+  },
+  {
+    "id": 41,
+    "title": "VIDE NIVEAU 05 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 2 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 2,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 42,
+    "title": "VIDE NIVEAU 05 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 4 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 4,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 43,
+    "title": "VIDE NIVEAU 05 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 4 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 4,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 44,
+    "title": "VIDE NIVEAU 05 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 11 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 11,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 45,
+    "title": "VIDE NIVEAU 05 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 6 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 6,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 46,
+    "title": "VIDE NIVEAU 05 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 6 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 6,
+    "context": "Début de repas"
+  },
+  {
+    "id": 47,
+    "title": "VIDE NIVEAU 05 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 22 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 22,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 48,
+    "title": "VIDE NIVEAU 05 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 49,
+    "title": "VIDE NIVEAU 05 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 22 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 22,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 50,
+    "title": "VIDE NIVEAU 05 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Avant de dormir"
+  },
+  {
+    "id": 51,
+    "title": "VIDE NIVEAU 06 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 2 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 2,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 52,
+    "title": "VIDE NIVEAU 06 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 5 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 5,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 53,
+    "title": "VIDE NIVEAU 06 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 5 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 5,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 54,
+    "title": "VIDE NIVEAU 06 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 12 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 12,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 55,
+    "title": "VIDE NIVEAU 06 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 7 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 7,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 56,
+    "title": "VIDE NIVEAU 06 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 7 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 7,
+    "context": "Début de repas"
+  },
+  {
+    "id": 57,
+    "title": "VIDE NIVEAU 06 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 25 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 25,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 58,
+    "title": "VIDE NIVEAU 06 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 59,
+    "title": "VIDE NIVEAU 06 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 25 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 25,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 60,
+    "title": "VIDE NIVEAU 06 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Avant de dormir"
+  },
+  {
+    "id": 61,
+    "title": "VIDE NIVEAU 07 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 2 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 2,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 62,
+    "title": "VIDE NIVEAU 07 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 5 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 5,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 63,
+    "title": "VIDE NIVEAU 07 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 5 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 5,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 64,
+    "title": "VIDE NIVEAU 07 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 13 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 13,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 65,
+    "title": "VIDE NIVEAU 07 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 8 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 8,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 66,
+    "title": "VIDE NIVEAU 07 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 8 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 8,
+    "context": "Début de repas"
+  },
+  {
+    "id": 67,
+    "title": "VIDE NIVEAU 07 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 27 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 27,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 68,
+    "title": "VIDE NIVEAU 07 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 69,
+    "title": "VIDE NIVEAU 07 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 27 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 27,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 70,
+    "title": "VIDE NIVEAU 07 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Avant de dormir"
+  },
+  {
+    "id": 71,
+    "title": "VIDE NIVEAU 08 — AVANT DE DÉVERROUILLER LE TÉLÉPHONE",
+    "prompt": "Reste 30 secondes sans toucher l'écran. Durée cible : 3 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 3,
+    "context": "Avant de déverrouiller le téléphone"
+  },
+  {
+    "id": 72,
+    "title": "VIDE NIVEAU 08 — ATTENTE DU CAFÉ OU DU THÉ",
+    "prompt": "Observe la vapeur monter sans sortir ton appareil. Durée cible : 6 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 6,
+    "context": "Attente du café ou du thé"
+  },
+  {
+    "id": 73,
+    "title": "VIDE NIVEAU 08 — FILE D'ATTENTE OU ASCENSEUR",
+    "prompt": "Garde les mains dans les poches et regarde autour de toi. Durée cible : 6 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 6,
+    "context": "File d'attente ou ascenseur"
+  },
+  {
+    "id": 74,
+    "title": "VIDE NIVEAU 08 — TRAJET EN TRANSPORT EN COMMUN",
+    "prompt": "Regarde le paysage défiler sans écouteurs ni écran. Durée cible : 15 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 15,
+    "context": "Trajet en transport en commun"
+  },
+  {
+    "id": 75,
+    "title": "VIDE NIVEAU 08 — TRANSITION ENTRE DEUX TÂCHES",
+    "prompt": "Ferme les yeux et laisse décanter le travail précédent. Durée cible : 9 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 9,
+    "context": "Transition entre deux tâches"
+  },
+  {
+    "id": 76,
+    "title": "VIDE NIVEAU 08 — DÉBUT DE REPAS",
+    "prompt": "Mange les premières bouchées en silence complet sans média. Durée cible : 9 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 9,
+    "context": "Début de repas"
+  },
+  {
+    "id": 77,
+    "title": "VIDE NIVEAU 08 — MARCHE EXTÉRIEURE COURTE",
+    "prompt": "Marche à rythme régulier en écoutant les bruits réels. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Marche extérieure courte"
+  },
+  {
+    "id": 78,
+    "title": "VIDE NIVEAU 08 — PAUSE DE MI-JOURNÉE",
+    "prompt": "Assieds-toi confortablement sans aucune entrée sensorielle artificielle. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Pause de mi-journée"
+  },
+  {
+    "id": 79,
+    "title": "VIDE NIVEAU 08 — FIN DE JOURNÉE DE TRAVAIL",
+    "prompt": "Marque la coupure en restant assis dans le calme avant d'allumer quoi que ce soit. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Fin de journée de travail"
+  },
+  {
+    "id": 80,
+    "title": "VIDE NIVEAU 08 — AVANT DE DORMIR",
+    "prompt": "Reste dans l'obscurité sans écran pour laisser le cerveau basculer. Durée cible : 30 minutes. Pas de nouveau stimulus, pas de texte, pas de musique.",
+    "durationMinutes": 30,
+    "context": "Avant de dormir"
+  }
 ]

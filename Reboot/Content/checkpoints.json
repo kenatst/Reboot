@@ -1,15 +1,145 @@
 [
-{"week": 1, "title": "Le premier signal", "insight": "La première semaine ne change pas encore la durée : elle change la visibilité du réflexe.", "questions": ["Qu'est-ce qui te distrait le plus cette semaine ?", "Quel déclencheur as-tu repéré avant de céder ?", "Qu'est-ce qui t'a le plus surpris dans ton propre comportement ?"], "objective": "Semaine 2 : retirer un déclencheur réel de ton environnement."},
-{"week": 2, "title": "Les portes fermées", "insight": "Retirer un déclencheur coûte moins cher que résister à sa présence.", "questions": ["Quel déclencheur as-tu supprimé, et qu'est-ce que cela a changé ?", "Où la tentation visuelle reste-t-elle la plus forte ?", "Quel environnement veux-tu aménager la semaine prochaine ?"], "objective": "Semaine 3 : traverser un moment vide sans le remplir."},
-{"week": 3, "title": "Le vide habité", "insight": "L'agitation du vide diminue avec l'exposition : ce qui protestait se calme.", "questions": ["Qu'est-ce qui occupait ton esprit pendant les vides ?", "Quand l'agitation a-t-elle baissé ?", "Quel moment vide veux-tu récupérer dans ta journée ?"], "objective": "Semaine 4 : mesurer et raccourcir le délai de retour."},
-{"week": 4, "title": "Le retour rapide", "insight": "La compétence n'est pas de ne jamais sortir : c'est de revenir vite.", "questions": ["Quel est ton délai de retour moyen cette semaine ?", "Qu'est-ce qui rend le retour difficile ?", "Quelle soupape de trois secondes veux-tu installer ?"], "objective": "Semaine 5 : lire un texte entier sans échapper."},
-{"week": 5, "title": "La lecture tenue", "insight": "Lire sans échapper est une forme de concentration qui se mesure à ce qui reste.", "questions": ["Quel texte t'a demandé le plus d'effort pour rester ?", "Qu'est-ce qui t'a fait vouloir échapper ?", "Quelle reconstruction t'a le plus appris ?"], "objective": "Semaine 6 : reconstruire systématiquement ce que tu lis."},
-{"week": 6, "title": "La reconstruction", "insight": "Reconstruire, c'est posséder : ce qui est reformulé t'appartient.", "questions": ["Où tes reconstructions montrent-elles des trous ?", "Quelle structure retiens-tu le mieux ?", "Quel contenu veux-tu reconstruire de mémoire cette semaine ?"], "objective": "Semaine 7 : tenir une fenêtre de vingt-cinq minutes."},
-{"week": 7, "title": "La fenêtre de 25", "insight": "Vingt-cinq minutes est un seuil : au-delà, la nature du travail change.", "questions": ["Qu'est-ce qui apparaît après la quinzième minute ?", "Quelles pulsions ont résisté le plus ?", "Quelle fenêtre veux-tu allonger la semaine prochaine ?"], "objective": "Semaine 8 : aller plus profond, textes plus durs."},
-{"week": 8, "title": "La profondeur", "insight": "Un texte difficile se traverse seul, et la traversée change le rapport à la difficulté.", "questions": ["Où as-tu bloqué dans les textes difficiles ?", "Comment as-tu débloqué ?", "Quelle difficulté as-tu envie d'affronter encore ?"], "objective": "Semaine 9 : apprendre en enseignant."},
-{"week": 9, "title": "L'enseignement", "insight": "Enseigner révèle les trous que la lecture cache : c'est le meilleur test de compréhension.", "questions": ["Quel trou ton enseignement a-t-il révélé ?", "Quelle explication t'a paru la plus claire ?", "Quel concept veux-tu maîtriser par l'enseignement ?"], "objective": "Semaine 10 : contrôler tes entrées d'information."},
-{"week": 10, "title": "Le contrôle des entrées", "insight": "L'information qui ne change rien est du bruit, même exacte.", "questions": ["Quelles entrées as-tu choisies cette semaine ?", "Quelles entrées t'ont choisi ?", "Quelle source mérite vraiment ton attention ?"], "objective": "Semaine 11 : transférer le protocole dans ta vie réelle."},
-{"week": 11, "title": "Le transfert", "insight": "Le protocole devient réel quand il s'applique à des travaux réels, pas à des exercices.", "questions": ["Où as-tu appliqué le protocole à du travail réel ?", "Qu'est-ce qui a tenu, qu'est-ce qui a cédé ?", "Quel environnement veux-tu redessiner ?"], "objective": "Semaine 12 : construire l'endurance cognitive."},
-{"week": 12, "title": "L'endurance", "insight": "L'endurance se construit par l'enchaînement de fenêtres tenues, pas par l'héroïsme ponctuel.", "questions": ["Quelle est ta plus longue session tenue ?", "Qu'est-ce que la fatigue a changé dans tes sessions ?", "Quel format veux-tu tenir régulièrement ?"], "objective": "Semaine 13 : posséder le protocole et le transmettre."},
-{"week": 13, "title": "La possession", "insight": "Quatre-vingt-dix jours n'achèvent pas une transformation : ils installent une direction.", "questions": ["Qu'est-ce que ces quatre-vingt-dix jours ont réellement changé ?", "Que veux-tu garder, que veux-tu laisser ?", "Quelle sera ta cadence d'entretien ?"], "objective": "CORE MODE : trois sessions par semaine, choisies par toi."}
+  {
+    "week": 1,
+    "title": "SEMAINE 01 / CALIBRAGE INITIAL",
+    "insight": "La première semaine n'est pas là pour juger ta volonté, mais pour mesurer la réalité de tes impulsions et cartographier tes zones de fragilité.",
+    "objective": "Établir la ligne de base de ton attention sans artifice.",
+    "questions": [
+      "Quelle a été ta durée moyenne avant le premier réflexe de vérification ?",
+      "Quel distracteur s'est manifesté le plus souvent ?",
+      "Quelle est la principale source de friction repérée dans ton environnement ?"
+    ]
+  },
+  {
+    "week": 2,
+    "title": "SEMAINE 02 / CONTRÔLE DE L'ENTRÉE",
+    "insight": "L'installation des premières frictions physiques réduit la charge mentale automatique de plus de moitié.",
+    "objective": "Couper les déclencheurs passifs et protéger le réveil.",
+    "questions": [
+      "As-tu réussi à garder ton téléphone hors de portée pendant tes sessions ?",
+      "Quel changement de notification a eu le plus d'impact ?",
+      "Comment s'est passée ta première heure de réveil sans flux ?"
+    ]
+  },
+  {
+    "week": 3,
+    "title": "SEMAINE 03 / STABILISATION DES BLOCS",
+    "insight": "L'attention soutenue commence à se consolider lorsque tu dépasses la friction des cinq premières minutes.",
+    "objective": "Atteindre 25 minutes de focus continu sans bascule.",
+    "questions": [
+      "À quel moment précis de la session ressens-tu la tension de quitter la tâche ?",
+      "As-tu appliqué la règle des 60 secondes après une interruption ?",
+      "Quelle discipline (Stay, Recall, Nothing) t'a semblé la plus exigeante ?"
+    ]
+  },
+  {
+    "week": 4,
+    "title": "SEMAINE 04 / BILAN DE FIN DE PHASE 01",
+    "insight": "Un mois complet. Les automatismes réflexes sont affaiblis. Le premier tiers du protocole est validé.",
+    "objective": "Vérifier le recul mesurable du réflexe numérique.",
+    "questions": [
+      "Quel est ton nouveau temps médian avant le premier switch ?",
+      "Quelle règle d'environnement vas-tu conserver définitivement ?",
+      "Quel est ton niveau d'énergie moyen lors des sessions ?"
+    ]
+  },
+  {
+    "week": 5,
+    "title": "SEMAINE 05 / RESTITUTION ET MÉMOIRE ACTIVE",
+    "insight": "Lire sans fermer le livre pour reconstruire est une illusion de compétence. L'effort de rappel est la clé.",
+    "objective": "Augmenter la précision de tes synthèses après lecture.",
+    "questions": [
+      "Arrives-tu à extraire la thèse centrale d'un texte dès la première lecture ?",
+      "Quels sont les détails ou mécanismes qui t'échappent le plus souvent ?",
+      "La technique 'LIS · FERME · RECONSTRUIS' devient-elle plus naturelle ?"
+    ]
+  },
+  {
+    "week": 6,
+    "title": "SEMAINE 06 / RÉSISTANCE COGNITIVE",
+    "insight": "La difficulté intellectuelle d'une tâche ne doit plus être interprétée comme un signal d'ennui, mais comme un effort d'encodage.",
+    "objective": "Maintenir 35 minutes de focus sur une tâche complexe.",
+    "questions": [
+      "Comment réagis-tu face à une idée difficile ou abstraite ?",
+      "Combien de fois as-tu ressenti l'envie de fuir vers un onglet secondaire ?",
+      "Quelle stratégie de décomposition as-tu utilisée ?"
+    ]
+  },
+  {
+    "week": 7,
+    "title": "SEMAINE 07 / AMORÇAGE DU FLOW LAB",
+    "insight": "Le flow exige un contrat clair : une définition de fin explicite, un feedback visible et une tâche découpée.",
+    "objective": "Définir et lancer ton premier projet Flow avec critères précis.",
+    "questions": [
+      "Ta définition de 'terminé' était-elle suffisamment concrète ?",
+      "Quel mécanisme de feedback as-tu choisi pour mesurer ta progression ?",
+      "As-tu perdu la notion du temps pendant ta session de flow ?"
+    ]
+  },
+  {
+    "week": 8,
+    "title": "SEMAINE 08 / BILAN DE FIN DE PHASE 02",
+    "insight": "Deux mois de transformation. Ta capacité attentionnelle a doublé par rapport à la semaine de calibrage.",
+    "objective": "Consolider la transition vers le travail en profondeur.",
+    "questions": [
+      "Quels progrès observes-tu dans ta vitesse de démarrage d'une session ?",
+      "Ton sommeil et ton énergie sont-ils mieux synchronisés avec tes blocs ?",
+      "Quelles sont les conditions indispensables à ton focus ?"
+    ]
+  },
+  {
+    "week": 9,
+    "title": "SEMAINE 09 / TRANSFERT DES CONDITIONS DE FLOW",
+    "insight": "Les conditions qui te font oublier ton téléphone dans tes loisirs peuvent être importées dans ton travail intellectuel.",
+    "objective": "Appliquer tes leviers d'absorption à une tâche administrative ou rébarbative.",
+    "questions": [
+      "Quel levier (défi, feedback, décomposition) a le mieux fonctionné ?",
+      "As-tu ressenti une baisse de friction au démarrage ?",
+      "Comment as-tu géré les micro-interruptions internes ?"
+    ]
+  },
+  {
+    "week": 10,
+    "title": "SEMAINE 10 / TOLÉRANCE AU CALME COMPLET",
+    "insight": "Être capable de traverser un temps mort sans chercher de stimulation externe est la marque d'un esprit souverain.",
+    "objective": "Réussir des transitions nettes de 5 minutes sans écran entre les tâches.",
+    "questions": [
+      "Comment vis-tu les moments d'attente imprévus dans ta journée ?",
+      "As-tu réussi à faire une pause sans toucher à un média ou un flux ?",
+      "Quelle clarté mentale ressens-tu après un exercice Nothing ?"
+    ]
+  },
+  {
+    "week": 11,
+    "title": "SEMAINE 11 / STRUCTURATION DES RÈGLES PERSONNELLES",
+    "insight": "Tes règles personnelles ne doivent pas être des contraintes subies, mais des protocoles protecteurs testés et approuvés.",
+    "objective": "Sélectionner et formaliser tes 5 règles de vie attentionnelles pérennes.",
+    "questions": [
+      "Quelles sont les 3 règles les plus efficaces de ton système ?",
+      "Y a-t-il une règle que tu souhaites abandonner ou assouplir ?",
+      "Comment réagis-tu face aux sollicitations imprévues de ton entourage ?"
+    ]
+  },
+  {
+    "week": 12,
+    "title": "SEMAINE 12 / AUTONOMIE ET PROTOCOLE PERSONNEL",
+    "insight": "Tu n'as plus besoin d'un cadre rigide imposé : tu conçois toi-même les blocs adaptés à tes projets du moment.",
+    "objective": "Piloter une semaine entière selon ton propre calendrier de focus.",
+    "questions": [
+      "Quelles disciplines choisis-tu spontanément chaque matin ?",
+      "Quelle durée de bloc te paraît aujourd'hui la plus productive ?",
+      "Comment prépares-tu la transition vers la fin des 90 jours ?"
+    ]
+  },
+  {
+    "week": 13,
+    "title": "SEMAINE 13 / CLÔTURE ET MANUEL OPÉRATOIRE",
+    "insight": "Le protocole de 90 jours s'achève. Ton attention est rééduquée et armée. Ton manuel opératoire personnel prend le relais.",
+    "objective": "Consulter ton Manuel Opératoire et entrer en Core Mode permanent.",
+    "questions": [
+      "Quelle est la plus grande transformation constatée depuis le Jour 1 ?",
+      "Quels sont les signaux d'alerte que tu sais désormais repérer immédiatement ?",
+      "Comment vas-tu organiser ta pratique hebdomadaire de maintenance ?"
+    ]
+  }
 ]

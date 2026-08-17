@@ -26,6 +26,8 @@ enum ContentStore {
     private static let microLessonsCache: [MicroLesson] = (try? load("micro_lessons", as: [MicroLesson].self)) ?? []
     private static let flowLessonsCache: [FlowLesson] = (try? load("flow_lessons", as: [FlowLesson].self)) ?? []
     private static let fuelLessonsCache: [FuelLesson] = (try? load("fuel_lessons", as: [FuelLesson].self)) ?? []
+    private static let coachingMessagesCache: [CoachingMessage] = (try? load("coaching_messages", as: [CoachingMessage].self)) ?? []
+    private static let evidenceRecordsCache: [ContentEvidenceRecord] = (try? load("ContentEvidence", as: [ContentEvidenceRecord].self)) ?? []
 
     private static func load<T: Decodable>(_ name: String, as type: T.Type) throws -> T {
         guard let url = Bundle.main.url(forResource: name, withExtension: "json") else {
@@ -81,6 +83,18 @@ enum ContentStore {
 
     static var fuelLessons: [FuelLesson] {
         fuelLessonsCache
+    }
+
+    static var coachingMessages: [CoachingMessage] {
+        coachingMessagesCache
+    }
+
+    static var evidenceRecords: [ContentEvidenceRecord] {
+        evidenceRecordsCache
+    }
+
+    static func coachingMessage(forCategory category: String) -> String? {
+        coachingMessages.filter { $0.category.lowercased() == category.lowercased() }.randomElement()?.text
     }
 
     static func reading(id: Int) -> ReadingExercise? {

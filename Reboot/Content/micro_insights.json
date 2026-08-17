@@ -1,92 +1,362 @@
 [
-{"day": 1, "text": "Une interruption ne se décide pas toujours : elle se déclenche. La première étape est de la voir avant de la juger."},
-{"day": 2, "text": "Chaque fenêtre ouverte est une proposition renouvelée. Fermer une porte, c'est retirer une négociation."},
-{"day": 3, "text": "Les arrêts des autres révèlent leurs priorités. Observer où ils s'arrêtent, c'est lire ce qui compte pour eux."},
-{"day": 4, "text": "Quand on ne nourrit plus l'esprit, il ne s'arrête pas : il cherche. Observer la recherche, c'est déjà la ralentir."},
-{"day": 5, "text": "Terminer une chose change la sensation du temps : la fin donne à l'effort une forme."},
-{"day": 6, "text": "Ce qui reste après une lecture, ce n'est pas le texte : c'est ce que le texte a déclenché en toi."},
-{"day": 7, "text": "L'attention ne se juge pas au départ, mais au retour. Revenir vite est un réflexe qui s'entraîne."},
-{"day": 8, "text": "Un objet visible dans le champ périphérique attire l'attention avant la pensée. Le retirer, c'est protéger la scène."},
-{"day": 9, "text": "Une notification est une saillance construite : elle signale, elle ne juge pas de l'importance. La vérifier reste un choix."},
-{"day": 10, "text": "Une attente sans téléphone laisse les mains et le regard sans consigne. Ce vide apparent est un espace d'observation."},
-{"day": 11, "text": "Un texte a une fin ; un flux n'en a pas. Le point final est un allié que le défilement a supprimé."},
-{"day": 12, "text": "Entre la cinquième et la quinzième minute, l'esprit cesse souvent de négocier. Ce seuil s'atteint par la pratique."},
-{"day": 13, "text": "Une vitrine est une interface : elle choisit ce qu'elle met en avant. Lire ses choix, c'est lire ses intentions."},
-{"day": 14, "text": "La première phase ne supprime pas les distractions : elle les rend visibles. Voir est déjà une victoire."},
-{"day": 15, "text": "L'agitation du vide est un symptôme d'habitude au flux, pas un manque. Elle monte, puis elle retombe."},
-{"day": 16, "text": "Une fenêtre donne sur un flux que l'on ne contrôle pas. La laisser venir, c'est s'entraîner à ne pas tout diriger."},
-{"day": 17, "text": "Le rythme d'une rue se lit dans les pas : qui accélère, qui ralentit, qui s'arrête. Le tempo est un langage."},
-{"day": 18, "text": "L'ennui au milieu d'une tâche n'est pas un signal d'arrêt : c'est un moment que l'entraînement apprend à traverser."},
-{"day": 19, "text": "Une pause remplie n'est plus une pause. La laisser vide, c'est lui rendre sa fonction."},
-{"day": 20, "text": "La reconstruction est un test plus sévère que la relecture : elle montre ce qui a réellement été compris."},
-{"day": 21, "text": "Recommencer ailleurs promet un départ neuf ; rester promet une arrivée. Les deux ne pèsent pas le même poids."},
-{"day": 22, "text": "Mesurer le délai de retour transforme une distraction vague en donnée précise. La donnée s'entraîne."},
-{"day": 23, "text": "Une action courte de trois secondes donne à la pulsion une issue sans lui donner le contrôle."},
-{"day": 24, "text": "Une thèse reformulée en ses propres mots est une thèse possédée. La copie reste chez l'auteur."},
-{"day": 25, "text": "Protéger une fenêtre de travail est une négociation avec le monde : annoncer, couper, tenir."},
-{"day": 26, "text": "Les mains racontent l'état d'attention : les gestes répétés trahissent l'attente et l'ennui."},
-{"day": 27, "text": "Une pulsion forte est une vague : elle monte, culmine et redescend. La traverser, c'est la voir passer."},
-{"day": 28, "text": "La tendance des retours importe plus que le nombre des sorties. La semaine se lit sur la courbe."},
-{"day": 29, "text": "Lire sans échapper, c'est rester avec un texte jusqu'à sa fin. L'engagement commence au premier mot."},
-{"day": 30, "text": "Extraire cinq points, c'est choisir. Chaque choix de rétention est un acte de compréhension."},
-{"day": 31, "text": "Faire de la lecture la tâche, et non une pause, change son poids : elle devient un travail au sens plein."},
-{"day": 32, "text": "Un raisonnement est une chaîne. Reconstruire les maillons, c'est vérifier que rien ne tient par habitude."},
-{"day": 33, "text": "Marcher sans son, c'est rendre au réel sa place : les bruits reviennent dès que rien ne les couvre."},
-{"day": 34, "text": "Chercher une objection pendant la lecture change la relation au texte : on cesse de le subir, on l'examine."},
-{"day": 35, "text": "Une reconstruction complète — thèse, points, objection, exemple — est le portrait fidèle d'une lecture."},
-{"day": 36, "text": "Dessiner la carte d'un texte rend sa structure visible. Les trous de la carte sont des trous de compréhension."},
-{"day": 37, "text": "Un exemple retenu par le détail porte l'idée avec lui. La précision est une forme de mémoire."},
-{"day": 38, "text": "Enseigner de mémoire expose les trous que la lecture masque. Les trouver est le but, pas l'échec."},
-{"day": 39, "text": "Reconstruire un paragraphe entier sans le regarder : c'est prouver que la lecture a eu lieu."},
-{"day": 40, "text": "La consolidation commence pendant la tâche. Ce qui reste après la fermeture est ce qui a été réellement travaillé."},
-{"day": 41, "text": "Réorganiser l'ordre d'un texte, c'est le rendre sien. L'auteur a donné la matière ; toi, tu donnes la forme."},
-{"day": 42, "text": "Un contre-exemple trace la frontière d'un concept. Savoir où il ne s'applique pas, c'est savoir ce qu'il est."},
-{"day": 43, "text": "Vingt-cinq minutes est un seuil : au-delà, le travail prend une autre épaisseur. La fenêtre s'apprend."},
-{"day": 44, "text": "Une pause vraiment vide prépare le bloc suivant. La récupération est une partie de la performance."},
-{"day": 45, "text": "Un texte long se conquiert par étapes. Découper sans abandonner est une compétence de lecture, pas un compromis."},
-{"day": 46, "text": "Une pulsion forte ne dure pas autant qu'elle le promet. La laisser monter sans la suivre, c'est la démesurer."},
-{"day": 47, "text": "Une explication en trois temps — concept, exemple, application — transforme une impression en structure."},
-{"day": 48, "text": "Élargir la tâche est une fuite déguisée. Noter l'idée parasite, c'est la ranger sans la laisser ouvrir une porte."},
-{"day": 49, "text": "La tolérance au vide se mesure sur des semaines, pas sur une session. La comparer, c'est voir la pente."},
-{"day": 50, "text": "Après vingt minutes, le travail change souvent de nature : la surface est épuisée, la matière commence."},
-{"day": 51, "text": "Un texte difficile se traverse seul, passage par passage. Chercher un résumé, c'est demander à quelqu'un de penser à ta place."},
-{"day": 52, "text": "Le bruit perd de sa pertinence quand la tâche est assez engageante. La profondeur n'exige pas le silence : elle le crée parfois."},
-{"day": 53, "text": "Une analogie personnelle est une preuve de compréhension : elle transporte l'idée dans ton propre monde."},
-{"day": 54, "text": "Un raisonnement reconstruit entier révèle les étapes que l'auteur a sautées. Les retrouver, c'est comprendre plus que le texte."},
-{"day": 55, "text": "L'erreur n'est pas une sortie autorisée. Revenir dans les cinq secondes, c'est transformer la chute en entraînement."},
-{"day": 56, "text": "Un espace conçu oriente les choix sans que personne les décide. Le lire, c'est retrouver les décisions cachées."},
-{"day": 57, "text": "Expliquer à un enfant, c'est traduire chaque mot savant. La traduction révèle ce qui était confus."},
-{"day": 58, "text": "Sans jargon, la compréhension ne peut pas se cacher derrière les termes. Ce qui reste est ce qui est vraiment compris."},
-{"day": 59, "text": "Une lecture engagée transforme le texte en interlocuteur. Prendre position, c'est entrer dans la conversation."},
-{"day": 60, "text": "Défendre une idée contre des objections sérieuses, c'est en cartographier les limites. La défense éclaire."},
-{"day": 61, "text": "Une seule entrée ouverte réduit le nombre de négociations. Le contrôle commence par la porte, pas par la volonté."},
-{"day": 62, "text": "L'information qui ne change rien est du bruit, même exacte. Lire pour décider, c'est donner au texte une conséquence."},
-{"day": 63, "text": "Hors ligne, la tension de l'attente baisse d'elle-même : ce qui ne peut pas arriver cesse de solliciter."},
-{"day": 64, "text": "Une leçon appliquée deux fois à sa propre vie cesse d'être une connaissance : elle devient une pratique."},
-{"day": 65, "text": "Un lieu public est un réseau de canaux. Les compter, c'est reprendre conscience de ce qui te parle sans ta permission."},
-{"day": 66, "text": "La dernière demi-heure d'une longue session contient souvent le meilleur du travail : c'est là que la matière s'installe."},
-{"day": 67, "text": "Examiner une source, c'est lire aussi ce qu'elle ne dit pas. Les silences sont des informations."},
-{"day": 68, "text": "Le transfert réussit quand la session n'est plus un exercice. Travailler réellement, c'est le test final du protocole."},
-{"day": 69, "text": "Ta table est un dispositif. L'inventorier, c'est découvrir quels éléments travaillent pour toi et lesquels contre toi."},
-{"day": 70, "text": "Avancer sans voir la fin change le rapport à l'effort : on cesse d'attendre une ligne pour continuer."},
-{"day": 71, "text": "Réorganiser un texte pour un but, c'est le rendre utilisable. La structure devient une extension de ta pensée."},
-{"day": 72, "text": "Transférer une idée dans un autre domaine la met à l'épreuve : ce qui survit au transfert est essentiel."},
-{"day": 73, "text": "Une journée en blocs protégés donne au temps une architecture. Les pauses deviennent des événements, pas des fuites."},
-{"day": 74, "text": "Une transition vide laisse à l'esprit le temps de se retourner. Ce qui arrive dans ce vide est souvent une pensée réelle."},
-{"day": 75, "text": "Une heure pleine change l'échelle du travail : ce qui semblait impossible en blocs courts devient une forme familière."},
-{"day": 76, "text": "L'endurance se construit par l'enchaînement : deux blocs tenus valent plus qu'un bloc héroïque suivi d'un abandon."},
-{"day": 77, "text": "Un texte profond demande ce que les autres ne demandent pas : accepter de ne pas tout comprendre du premier coup."},
-{"day": 78, "text": "Enseigner la chaîne des causes, c'est vérifier que chaque maillon tient. La causalité se prouve en s'expliquant."},
-{"day": 79, "text": "Travailler fatigué révèle la vraie endurance : celle qui ne dépend pas du niveau de la ressource."},
-{"day": 80, "text": "Un système se lit dans ses relations plus que dans ses éléments. La règle cachée est souvent dans le lien."},
-{"day": 81, "text": "Quatre-vingt-dix minutes permettent à un travail de changer plusieurs fois de nature. La durée est un instrument."},
-{"day": 82, "text": "Une session sans consigne est le test de possession : ce que tu décides, tu le tiens."},
-{"day": 83, "text": "Lire pour le plaisir avec profondeur, c'est réunir les deux régimes que le flux avait séparés."},
-{"day": 84, "text": "Enseigner à une personne réelle ajoute une contrainte que rien ne remplace : l'autre peut poser la question qui manque."},
-{"day": 85, "text": "Relever trois fois où était ton attention, c'est sortir de l'impression pour entrer dans la donnée."},
-{"day": 86, "text": "Une longue fenêtre autonome est la forme achevée du protocole : les règles sont devenues les tiennes."},
-{"day": 87, "text": "Se restituer sa semaine, c'est appliquer à sa propre vie la reconstruction apprise sur les textes."},
-{"day": 88, "text": "Enseigner le protocole oblige à le rendre cohérent. La règle du retour s'explique mieux qu'elle ne se résume."},
-{"day": 89, "text": "La veille de la fin n'est pas une attente : c'est une session. La clôture se prépare en présence."},
-{"day": 90, "text": "Quatre-vingt-dix jours ne promettent pas une transformation achevée : ils installent une direction que la suite entretient."}
+  {
+    "day": 1,
+    "text": "L'attention n'est pas une réserve d'énergie magique, c'est un mécanisme de filtrage. Ce que tu ne laisses pas entrer n'a pas besoin d'être combattu."
+  },
+  {
+    "day": 2,
+    "text": "Le geste vers le téléphone précède la pensée de 300 millisecondes. Repérer le micro-mouvement est la première barrière de défense."
+  },
+  {
+    "day": 3,
+    "text": "L'illusion de fluidité te fait croire que lire, c'est savoir. La seule connaissance réelle est celle que tu peux reconstruire sans support."
+  },
+  {
+    "day": 4,
+    "text": "Le vide n'est pas du temps perdu, c'est le moment où ton réseau cérébral par défaut réorganise ce que tu viens d'apprendre."
+  },
+  {
+    "day": 5,
+    "text": "Une tâche sans fin mesurable est une invitation permanente au décrochage. Définis l'arrêt avant de poser les mains."
+  },
+  {
+    "day": 6,
+    "text": "Les environnements propres réduisent la charge cognitive passive. Chaque objet visible réclame une fraction d'analyse attentionnelle."
+  },
+  {
+    "day": 7,
+    "text": "Une semaine de calibrage ne juge pas ta volonté. Elle trace la carte exacte de tes points de friction."
+  },
+  {
+    "day": 8,
+    "text": "Les pastilles rouges exploitent ton biais de complétion. Les désactiver coupe le stimulus avant qu'il ne déclenche l'impulsion."
+  },
+  {
+    "day": 9,
+    "text": "Le multitâche n'existe pas pour les tâches cognitives exigeantes. Tu ne fais que payer le coût de réactivation à chaque saut."
+  },
+  {
+    "day": 10,
+    "text": "Le premier switch survient souvent quand la difficulté augmente légèrement. Reconnais la tension comme un signal d'apprentissage, pas d'ennui."
+  },
+  {
+    "day": 11,
+    "text": "Le téléphone posé sur le bureau réduit la capacité de mémoire de travail disponible, même éteint. La distance physique libère du processeur."
+  },
+  {
+    "day": 12,
+    "text": "Une friction de vingt secondes suffit à briser 80% des automatismes numériques. Rend l'accès légèrement pénible."
+  },
+  {
+    "day": 13,
+    "text": "Le flux infini est conçu sans ligne d'arrivée. Tu ne t'arrêteras jamais naturellement : c'est à toi d'imposer le cadre temporel."
+  },
+  {
+    "day": 14,
+    "text": "Deux semaines de friction changent le réflexe. Ton cerveau commence à tolérer trois minutes sans chercher de nouveau stimulus."
+  },
+  {
+    "day": 15,
+    "text": "La clarté de l'étape suivante est le plus puissant antidote à la procrastination. Si tu hésites plus de dix secondes, décompose la tâche."
+  },
+  {
+    "day": 16,
+    "text": "L'ennui est le terreau de l'imagination profonde. Les esprits constamment stimulés ne produisent que des échos."
+  },
+  {
+    "day": 17,
+    "text": "Quand tu fermes un livre, résume l'idée centrale en une phrase. C'est l'effort de rappel qui consolide les traces mnésiques."
+  },
+  {
+    "day": 18,
+    "text": "Le mode focus n'est pas une punition, c'est un contrat avec toi-même. Protège ton temps comme un actif rare."
+  },
+  {
+    "day": 19,
+    "text": "Observer les détails physiques d'une pièce ancre ton attention dans le réel. C'est un entraînement direct de ton orientation perceptive."
+  },
+  {
+    "day": 20,
+    "text": "La fatigue mentale ressemble à de la paresse, mais c'est une baisse de carburant attentionnel. Choisis une vraie pause, pas du scroll."
+  },
+  {
+    "day": 21,
+    "text": "Trois semaines pour reprendre le contrôle de l'entrée. Moins de bruit entrant signifie plus de clarté pour penser."
+  },
+  {
+    "day": 22,
+    "text": "La stabilité attentionnelle se muscle comme un tendon. Chaque minute supplémentaire au-delà de l'envie de décrocher compte double."
+  },
+  {
+    "day": 23,
+    "text": "Ne confonds pas réactivité et efficacité. Répondre à un message dans la minute détruit vingt minutes de focus profond."
+  },
+  {
+    "day": 24,
+    "text": "Le sommeil n'est pas négociable pour l'attention. Une nuit tronquée dégrade la fonction exécutive dès le lendemain matin."
+  },
+  {
+    "day": 25,
+    "text": "La répétition espacée bat l'accumulation massive. Vaut mieux quinze minutes de rappel trois fois par semaine que trois heures d'affilée."
+  },
+  {
+    "day": 26,
+    "text": "L'éclairage et l'air frais ont un impact mesurable sur la vigilance. Optimise ton poste de travail avant de blâmer ta volonté."
+  },
+  {
+    "day": 27,
+    "text": "Quand tu décroches, ne t'insulte pas. Prends acte du switch et reviens à la tâche en moins de soixante secondes."
+  },
+  {
+    "day": 28,
+    "text": "Un mois complet. Les réflexes automatiques ont reculé. Tu commences à habiter ton propre espace mental."
+  },
+  {
+    "day": 29,
+    "text": "La dopamine récompense la nouveauté, pas la valeur. Les flux sociaux te vendent du signal sans contenu."
+  },
+  {
+    "day": 30,
+    "text": "Le travail en profondeur exige une porte fermée, physique ou symbolique. Préviens ton entourage : ce bloc t'appartient."
+  },
+  {
+    "day": 31,
+    "text": "La lecture lente n'est pas un retard, c'est une digestion. Ruminer un paragraphe complexe vaut mieux que survoler dix pages."
+  },
+  {
+    "day": 32,
+    "text": "Le bruit ambiant cohérent peut aider certains profils, mais le silence complet reste la référence pour l'abstraction pure."
+  },
+  {
+    "day": 33,
+    "text": "Un objectif flou produit une attention fuyante. Écris exactement ce qui doit exister à la fin de cette session."
+  },
+  {
+    "day": 34,
+    "text": "Apprendre, c'est encoder, stocker et récupérer. La plupart des gens oublient la troisième étape, qui est pourtant la seule décisive."
+  },
+  {
+    "day": 35,
+    "text": "Le café masque l'adénosine mais ne crée pas d'énergie. Chronomètre sa prise pour ne pas cannibaliser ton sommeil profond."
+  },
+  {
+    "day": 36,
+    "text": "La marche sans écran est le plus puissant réinitialisateur attentionnel. Dix minutes dehors rétablissent la vigilance descendante."
+  },
+  {
+    "day": 37,
+    "text": "Chaque onglet ouvert est une boucle ouverte dans ta mémoire de travail. Ferme tout ce qui ne sert pas la tâche active."
+  },
+  {
+    "day": 38,
+    "text": "La résistance mentale est maximale dans les cinq premières minutes. Traverse ce mur et la tâche devient fluide."
+  },
+  {
+    "day": 39,
+    "text": "Ne lis pas pour accumuler des faits isolés. Cherche les modèles sous-jacents qui relient des domaines différents."
+  },
+  {
+    "day": 40,
+    "text": "Mi-parcours. Tu ne subis plus tes impulsions avec la même fatalité. Tu sais désormais ce que coûte chaque distraction."
+  },
+  {
+    "day": 41,
+    "text": "Le flow n'est pas un coup de chance, c'est une équation : clarté de but, retour immédiat et niveau de défi adapté."
+  },
+  {
+    "day": 42,
+    "text": "Quand la tâche est trop facile, tu t'ennuies et tu switches. Augmente la contrainte de temps ou la précision exigée."
+  },
+  {
+    "day": 43,
+    "text": "Quand la tâche est trop difficile, tu paniques et tu fuis. Découpe-la jusqu'à ce que la première sous-tâche soit évidente."
+  },
+  {
+    "day": 44,
+    "text": "La métacognition est la capacité de t'observer en train de penser. Remarque quand ton esprit s'échappe sans paniquer."
+  },
+  {
+    "day": 45,
+    "text": "Un feedback visuel d'avancement transforme une corvée en jeu d'absorption. Rends tes progrès visibles en direct."
+  },
+  {
+    "day": 46,
+    "text": "La pause active ne comporte aucun texte. Bouge, bois de l'eau, regarde au loin, mais ne nourris pas tes yeux de pixels."
+  },
+  {
+    "day": 47,
+    "text": "Expliquer un concept complexe à un profane révèle impitoyablement tes zones d'ombre. C'est le test ultime de maîtrise."
+  },
+  {
+    "day": 48,
+    "text": "Les notifications de groupe sont la pire invention pour l'attention. Mets en sourdine tout ce qui n'est pas urgent."
+  },
+  {
+    "day": 49,
+    "text": "La friction positive t'oblige à décider consciemment. Chaque barrière installée est un hommage à ton travail futur."
+  },
+  {
+    "day": 50,
+    "text": "Cinquante jours. Ton attention n'est plus à la merci des algorithmes. Tu as bâti une forteresse opérationnelle."
+  },
+  {
+    "day": 51,
+    "text": "La créativité émerge de la collision d'idées bien digérées, pas du zapping continu. Nourris-toi de lectures denses."
+  },
+  {
+    "day": 52,
+    "text": "La capacité à rester seul dans une pièce sans divertissement est le super-pouvoir du XXIe siècle."
+  },
+  {
+    "day": 53,
+    "text": "La musique instrumentale à tempo régulier stabilise le rythme cardiaque sans surcharger le cortex verbal."
+  },
+  {
+    "day": 54,
+    "text": "Quand tu écris, écris d'abord sans corriger. La critique prématurée paralyse le flux de pensée."
+  },
+  {
+    "day": 55,
+    "text": "Le test d'interrogation élaborative : demande-toi systématiquement 'Pourquoi ce fait est-il vrai ?' pour l'ancrer en profondeur."
+  },
+  {
+    "day": 56,
+    "text": "L'alimentation lourde détourne le flux sanguin vers la digestion. Place tes blocs cognitifs les plus rudes avant les gros repas."
+  },
+  {
+    "day": 57,
+    "text": "La qualité de ton travail dépend directement du niveau de focus multiplié par le temps passé sans résidu attentionnel."
+  },
+  {
+    "day": 58,
+    "text": "Observer l'architecture d'un lieu t'apprend à décoder les intentions des concepteurs. Rien dans l'espace n'est neutre."
+  },
+  {
+    "day": 59,
+    "text": "Deux mois de transformation. Tu as prouvé que ton attention peut être reconstruite méthodiquement."
+  },
+  {
+    "day": 60,
+    "text": "Le flow durable demande un rituel d'entrée. Même heure, même bureau, même musique, même intention."
+  },
+  {
+    "day": 61,
+    "text": "Transfère les conditions de tes passions dans ton travail : feedback clair, défi calibré et absence totale d'interruption."
+  },
+  {
+    "day": 62,
+    "text": "La règle des deux minutes : si une sous-tâche prend moins de deux minutes pendant un bloc de focus, note-la mais ne la fais pas."
+  },
+  {
+    "day": 63,
+    "text": "L'interleaving consiste à alterner deux types de problèmes liés. C'est plus dur au début, mais la rétention finale est doublée."
+  },
+  {
+    "day": 64,
+    "text": "La lumière naturelle du matin synchronise ton horloge biologique. Expose tes yeux au jour dès le réveil."
+  },
+  {
+    "day": 65,
+    "text": "Un bloc de travail réussi se termine par un shutdown propre : notes rangées, prochaine action écrite, écran fermé."
+  },
+  {
+    "day": 66,
+    "text": "Ne négocie jamais avec une impulsion en plein vol. Applique la règle établie avant la session."
+  },
+  {
+    "day": 67,
+    "text": "La mémoire humaine n'est pas un magnétophone, c'est un processus de reconstruction dynamique. Réactive régulièrement tes acquis."
+  },
+  {
+    "day": 68,
+    "text": "Quand le doute s'installe sur un projet, reviens à la ligne d'arrivée minimale. Que faut-il pour que ce soit fini ?"
+  },
+  {
+    "day": 69,
+    "text": "Les environnements d'apprentissage doivent être variés pour favoriser la généralisation des concepts."
+  },
+  {
+    "day": 70,
+    "text": "Dix semaines. Tu as développé une tolérance exemplaire à l'effort mental prolongé."
+  },
+  {
+    "day": 71,
+    "text": "Les meilleurs penseurs ne sont pas plus intelligents, ils protègent mieux leurs fenêtres de concentration."
+  },
+  {
+    "day": 72,
+    "text": "L'impulsion de vérifier ses mails cache souvent une peur de s'attaquer au problème fondamental. Affronte le dur."
+  },
+  {
+    "day": 73,
+    "text": "La clarté d'exposition est la politesse de l'esprit. Simplifie tes explications sans en trahir la rigueur."
+  },
+  {
+    "day": 74,
+    "text": "Prendre une pause complète entre deux projets évite le résidu attentionnel qui pollue la tâche suivante."
+  },
+  {
+    "day": 75,
+    "text": "Tes conditions de flow sont désormais identifiées. Tu sais quel levier actionner pour entrer dans la zone."
+  },
+  {
+    "day": 76,
+    "text": "Tes règles personnelles ne sont pas des dogmes : ce sont des outils pragmatiques validés par l'expérience."
+  },
+  {
+    "day": 77,
+    "text": "La discipline n'est pas une contrainte imposée de l'extérieur, c'est la liberté choisie de diriger ton esprit."
+  },
+  {
+    "day": 78,
+    "text": "Relire tes notes de lecture stimule la sérendipité et permet d'associer des idées distantes."
+  },
+  {
+    "day": 79,
+    "text": "Le vrai luxe contemporain n'est pas d'avoir accès à tout, c'est de pouvoir s'isoler volontairement."
+  },
+  {
+    "day": 80,
+    "text": "Quatre-vingts jours. Ton architecture cognitive est solide. Tu es prêt pour la phase finale d'appropriation."
+  },
+  {
+    "day": 81,
+    "text": "Conçois tes journées autour de tes blocs de haute valeur, pas autour des urgences des autres."
+  },
+  {
+    "day": 82,
+    "text": "La fatigue décisionnelle s'accumule avec chaque micro-choix. Automatise les détails matériels pour garder ton énergie."
+  },
+  {
+    "day": 83,
+    "text": "L'écoute active est une forme suprême d'attention soutenue. Entraîne-toi à ne pas préparer ta réponse pendant qu'on te parle."
+  },
+  {
+    "day": 84,
+    "text": "La maîtrise d'un sujet se mesure à ta capacité à en réfuter les thèses adverses avec honnêteté intellectuelle."
+  },
+  {
+    "day": 85,
+    "text": "Tu es l'architecte de ton protocole. Choisis les exercices qui résonnent le plus avec tes objectifs de vie."
+  },
+  {
+    "day": 86,
+    "text": "La constance bat l'intensité. Mieux vaut une heure de focus chaque jour qu'une nuit blanche chaotique."
+  },
+  {
+    "day": 87,
+    "text": "Ce que tu as appris au cours de ces 90 jours ne s'effacera pas si tu maintiens les règles d'environnement clés."
+  },
+  {
+    "day": 88,
+    "text": "Le calme mental n'est pas l'absence de pensées, c'est l'absence d'agitation impulsive."
+  },
+  {
+    "day": 89,
+    "text": "Demain s'achève le protocole officiel. Ton manuel opératoire personnel deviendra ta boussole permanente."
+  },
+  {
+    "day": 90,
+    "text": "Quatre-vingt-dix jours. Tu as reconstruit ton attention. Elle t'appartient désormais."
+  }
 ]

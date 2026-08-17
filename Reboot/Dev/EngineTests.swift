@@ -259,6 +259,40 @@ enum EngineTests {
             AdaptiveRebootEngineDriver.recordExperimentObservation(experiment: exp, session: dummySession, condition: "TEST", context: context)
             check("Invariant 6d: >= 3 baseline and >= 3 test becomes READY_TO_REVIEW", exp.status == "READY_TO_REVIEW" && !exp.recommendation.isEmpty)
 
+            // Invariant 18: DiagnosisQuestionEngine dynamic branching & question range
+            var diagState = DiagnosisQuestionEngine.DiagnosisState()
+            diagState.selectedGoals = ["ARRÊTER DE SCROLLER", "MIEUX TRAVAILLER"]
+            diagState.primaryGoal = "ARRÊTER DE SCROLLER"
+            diagState.goalBranch = "scroll"
+            let scrollQuestions = DiagnosisQuestionEngine.buildQuestions(state: diagState)
+            check("Invariant 18a: Diagnosis produces 8–14 questions for scroll branch", scrollQuestions.count >= 8 && scrollQuestions.count <= 14)
+
+            diagState.primaryGoal = "MIEUX TRAVAILLER"
+            diagState.goalBranch = "work"
+            let workQuestions = DiagnosisQuestionEngine.buildQuestions(state: diagState)
+            check("Invariant 18b: Diagnosis produces 8–14 questions for work branch", workQuestions.count >= 8 && workQuestions.count <= 14)
+
+            // Invariant 19: AttentionOperatingManualEngine 16 sections synthesis
+            let manual = AttentionOperatingManualEngine.generate(context: context)
+            check("Invariant 19a: Attention Operating Manual generates exactly 16 sections", manual.sections.count == 16)
+            check("Invariant 19b: Attention Operating Manual has non-empty core maintenance mode", !manual.coreMaintenanceMode.isEmpty)
+
+            // Invariant 20: ContentStores validation
+            check("Invariant 20a: ProtocolCurriculum contains exactly 90 days", ProtocolCurriculum.days.count == 90)
+            check("Invariant 20b: MicroInsights contains exactly 90 unique insights", ContentStore.microInsights.count == 90)
+            check("Invariant 20c: Readings store contains >= 120 items", ContentStore.readings.count >= 120)
+            check("Invariant 20d: Learnings store contains >= 80 items", ContentStore.learningModules.count >= 80)
+            check("Invariant 20e: MicroLessons store contains >= 120 items", ContentStore.microLessons.count >= 120)
+            check("Invariant 20f: FlowLessons store contains >= 30 items", ContentStore.flowLessons.count >= 30)
+            check("Invariant 20g: FuelLessons store contains >= 24 items", ContentStore.fuelLessons.count >= 24)
+            check("Invariant 20h: EnvironmentInterventions store contains >= 100 items", ContentStore.environmentInterventions.count >= 100)
+            check("Invariant 20i: Experiments store contains >= 60 items", ContentStore.experimentTemplates.count >= 60)
+            check("Invariant 20j: Missions store contains >= 120 items", ContentStore.observationMissions.count >= 120)
+            check("Invariant 20k: VoidPrompts store contains >= 75 items", ContentStore.voidPrompts.count >= 75)
+            check("Invariant 20l: CoachingMessages store contains >= 200 items", ContentStore.coachingMessages.count >= 200)
+            check("Invariant 20m: ContentEvidence store contains >= 100 items", ContentStore.evidenceRecords.count >= 100)
+            check("Invariant 20n: Checkpoints store contains exactly 13 items", ContentStore.checkpoints.count == 13)
+
         } catch {
             check("SwiftData in-memory container setup error: \(error.localizedDescription)", false)
         }

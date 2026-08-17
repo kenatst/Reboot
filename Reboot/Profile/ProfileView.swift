@@ -6,6 +6,8 @@ struct ProfileView: View {
     @Query private var progressList: [RebootProgress]
     @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
 
+    @State private var showManual = false
+
     private var progress: RebootProgress? {
         progressList.first
     }
@@ -58,6 +60,9 @@ struct ProfileView: View {
                     }
                 }
             }
+        }
+        .sheet(isPresented: $showManual) {
+            AttentionOperatingManualView()
         }
     }
 
@@ -194,6 +199,33 @@ struct ProfileView: View {
                 RBDataBlock(label: "CLARTÉ", value: clarity.value.map { String(format: "%.0f", $0) } ?? clarity.status.rawValue)
             }
             .padding(.top, 10)
+
+            Button {
+                showManual = true
+            } label: {
+                HStack {
+                    Image(systemName: "doc.text.magnifyingglass")
+                        .foregroundStyle(.signalCyan)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("MANUEL OPÉRATOIRE D'ATTENTION")
+                            .font(.metadata(size: 9))
+                            .tracking(1.4)
+                            .foregroundStyle(.signalCyan)
+                        Text("Consulter la synthèse de tes données et règles")
+                            .font(.body(size: 12))
+                            .foregroundStyle(.bone)
+                    }
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundStyle(.ash)
+                }
+                .padding(14)
+                .background(Color.deepCarbon)
+                .clipShape(RBChamferedShape(cut: 12))
+            }
+            .buttonStyle(.plain)
+            .padding(.top, 14)
         }
     }
 

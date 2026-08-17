@@ -329,22 +329,32 @@ struct ReadingExercise: Codable, Identifiable, Hashable {
     let category: String
     let length: ReadingLength
     let text: String
+    var body: String?
+    var centralThesis: String?
+    var keyIdeas: [String]?
+    var causalLinks: [String]?
+    var examples: [String]?
     var question: String?
     var reconstructionPrompt: String?
     var transferPrompt: String?
     var difficulty: Int?
+    var subtopic: String?
+
+    var resolvedText: String {
+        body ?? text
+    }
 
     var resolvedQuestion: String {
-        question ?? reconstructionPrompt ?? "Qu'est-ce qui est réellement resté ?"
+        reconstructionPrompt ?? question ?? "Qu'est-ce qui est réellement resté ?"
     }
 
     var readingMinutes: Int {
-        let words = text.split(whereSeparator: \.isWhitespace).count
+        let words = resolvedText.split(whereSeparator: \.isWhitespace).count
         return max(1, Int((Double(words) / 220.0).rounded(.up)))
     }
 
     var wordCount: Int {
-        text.split(whereSeparator: \.isWhitespace).count
+        resolvedText.split(whereSeparator: \.isWhitespace).count
     }
 }
 
@@ -353,7 +363,17 @@ struct LearningModule: Codable, Identifiable, Hashable {
     let title: String
     let topic: String
     let text: String
+    var hook: String?
+    var coreIdea: String?
+    var sections: [String]?
+    var example: String?
+    var counterExample: String?
+    var commonMisconception: String?
+    var application: String?
+    var keyPoints: [String]?
     let teachBackPrompt: String
+    var followUpPrompts: [String]?
+    var difficulty: Int?
 
     var wordCount: Int {
         text.split(whereSeparator: \.isWhitespace).count

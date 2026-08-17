@@ -1,42 +1,1237 @@
 [
-{"id": 1, "title": "PHONE OUTSIDE ROOM", "hypothesis": "Travailler téléphone hors de la pièce augmente le temps avant la première vérification.", "metric": "firstSwitch", "testInstructions": ["3 sessions comparables avec le téléphone hors de la pièce.", "Note le temps avant la première vérification à chaque session."], "minimumSessions": 3, "category": "PHONE"},
-{"id": 2, "title": "PHONE FACE DOWN", "hypothesis": "Un téléphone face cachée réduit le nombre de vérifications automatiques.", "metric": "switches", "testInstructions": ["3 sessions avec téléphone face cachée.", "Compare avec les sessions précédentes."], "minimumSessions": 3, "category": "PHONE"},
-{"id": 3, "title": "WALK BEFORE WORK", "hypothesis": "Une marche de dix minutes avant le travail améliore l'entrée en session.", "metric": "firstSwitch", "testInstructions": ["Marche dix minutes avant 3 sessions.", "Note le démarrage et la première vérification."], "minimumSessions": 3, "category": "ROUTINE"},
-{"id": 4, "title": "NO MUSIC", "hypothesis": "Travailler en silence allonge la durée de maintien.", "metric": "duration", "testInstructions": ["3 sessions en silence complet.", "Compare avec les sessions habituelles."], "minimumSessions": 3, "category": "AUDIO"},
-{"id": 5, "title": "INSTRUMENTAL MUSIC", "hypothesis": "La musique instrumentale soutient le maintien sans distraire.", "metric": "duration", "testInstructions": ["3 sessions avec musique instrumentale.", "Note la sensation de maintien."], "minimumSessions": 3, "category": "AUDIO"},
-{"id": 6, "title": "MORNING FEED DELAY", "hypothesis": "Repousser le premier flux du matin améliore le premier bloc de travail.", "metric": "firstSwitch", "testInstructions": ["3 matins sans flux avant le premier travail.", "Note le premier bloc."], "minimumSessions": 3, "category": "MORNING"},
-{"id": 7, "title": "CAFFEINE CUTOFF", "hypothesis": "Arrêter le café en début d'après-midi stabilise les sessions du soir.", "metric": "duration", "testInstructions": ["Pas de caféine après 14h pendant 4 jours.", "Note l'énergie et les sessions du soir."], "minimumSessions": 4, "category": "ENERGY"},
-{"id": 8, "title": "ONE TAB MODE", "hypothesis": "Une seule fenêtre ouverte réduit les changements de tâche.", "metric": "switches", "testInstructions": ["3 sessions avec une seule fenêtre.", "Note les changements."], "minimumSessions": 3, "category": "BROWSER"},
-{"id": 9, "title": "WEBSITE BLOCKER", "hypothesis": "Bloquer le site distrayant pendant le travail réduit les sorties.", "metric": "switches", "testInstructions": ["Bloque le site principal pendant 3 sessions.", "Note ce que tu fais à la place."], "minimumSessions": 3, "category": "BROWSER"},
-{"id": 10, "title": "GRAYSCALE", "hypothesis": "L'écran en niveaux de gris réduit l'attrait des applications.", "metric": "switches", "testInstructions": ["Active les niveaux de gris pendant 3 jours.", "Note les ouvertures automatiques."], "minimumSessions": 3, "category": "PHONE"},
-{"id": 11, "title": "MESSAGE WINDOWS", "hypothesis": "Vérifier les messages à heures fixes réduit les interruptions.", "metric": "interruptions", "testInstructions": ["Deux fenêtres de messagerie par jour pendant 3 jours.", "Note ce qui a attendu."], "minimumSessions": 3, "category": "MESSAGING"},
-{"id": 12, "title": "NO PHONE IN BED", "hypothesis": "Le téléphone hors de la chambre améliore le sommeil et la session du matin.", "metric": "energy", "testInstructions": ["3 nuits sans téléphone dans la chambre.", "Note le sommeil et la matinée."], "minimumSessions": 3, "category": "SLEEP"},
-{"id": 13, "title": "TASK LIST OF THREE", "hypothesis": "Une liste de trois étapes réduit l'ambiguïté et le temps de démarrage.", "metric": "start", "testInstructions": ["3 sessions avec une liste de trois étapes.", "Note le temps avant de commencer."], "minimumSessions": 3, "category": "WORKSPACE"},
-{"id": 14, "title": "PARKING SPOT", "hypothesis": "Un lieu fixe pour le téléphone rend la déconnexion automatique.", "metric": "firstSwitch", "testInstructions": ["Utilise le parking à téléphone pendant 3 sessions.", "Note la première vérification."], "minimumSessions": 3, "category": "PHONE"},
-{"id": 15, "title": "TIMED SOCIAL", "hypothesis": "Un minuteur avant d'ouvrir le réseau réduit la durée de consommation.", "metric": "duration", "testInstructions": ["Minuteur de 10 minutes avant chaque ouverture pendant 3 jours.", "Note si tu fermes au signal."], "minimumSessions": 3, "category": "SOCIAL"},
-{"id": 16, "title": "EVENING RECAP", "hypothesis": "Clôturer la journée par un récapitulatif améliore le lendemain.", "metric": "start", "testInstructions": ["3 soirs avec récapitulatif.", "Note le démarrage du lendemain."], "minimumSessions": 3, "category": "EVENING"},
-{"id": 17, "title": "FLOW DONE DEFINITION", "hypothesis": "Définir précisément ce que signifie « terminé » augmente l'absorption.", "metric": "flowAbsorption", "testInstructions": ["3 sessions avec définition de fin écrite.", "Note l'absorption ressentie."], "minimumSessions": 3, "category": "FLOW"},
-{"id": 18, "title": "IMMEDIATE FEEDBACK", "hypothesis": "Un retour immédiat pendant la tâche améliore l'engagement.", "metric": "flowAbsorption", "testInstructions": ["3 sessions avec feedback immédiat (questions, tests, étapes).", "Note l'engagement."], "minimumSessions": 3, "category": "FLOW"},
-{"id": 19, "title": "CHALLENGE RAISE", "hypothesis": "Augmenter légèrement la difficulté réduit l'ennui.", "metric": "absorption", "testInstructions": ["3 sessions sur une tâche légèrement plus difficile.", "Note l'ennui et l'absorption."], "minimumSessions": 3, "category": "FLOW"},
-{"id": 20, "title": "CHALLENGE LOWER", "hypothesis": "Réduire le périmètre de la tâche réduit la surcharge.", "metric": "completion", "testInstructions": ["3 sessions avec un périmètre réduit.", "Note les complétions."], "minimumSessions": 3, "category": "FLOW"},
-{"id": 21, "title": "NO FEED BEFORE 09:00", "hypothesis": "Pas de flux avant 9h améliore la première heure de travail.", "metric": "firstSwitch", "testInstructions": ["3 jours sans flux avant 9h.", "Note le premier bloc."], "minimumSessions": 3, "category": "MORNING"},
-{"id": 22, "title": "NOISE LEVEL", "hypothesis": "Un lieu plus calme augmente la durée de maintien.", "metric": "duration", "testInstructions": ["3 sessions dans un lieu calme.", "Compare avec le lieu habituel."], "minimumSessions": 3, "category": "ENVIRONMENT"},
-{"id": 23, "title": "STANDING SESSION", "hypothesis": "Travailler debout change la vigilance et le maintien.", "metric": "duration", "testInstructions": ["3 sessions debout.", "Note la vigilance."], "minimumSessions": 3, "category": "PHYSICAL"},
-{"id": 24, "title": "BREATHING START", "hypothesis": "Trois respirations lentes avant la session stabilisent le démarrage.", "metric": "start", "testInstructions": ["3 sessions précédées de trois respirations.", "Note le démarrage."], "minimumSessions": 3, "category": "ROUTINE"},
-{"id": 25, "title": "DELAYED RESPONSES", "hypothesis": "Répondre aux messages à heures fixes réduit la fragmentation.", "metric": "interruptions", "testInstructions": ["Réponds uniquement aux fenêtres choisies pendant 3 jours.", "Note ce qui a changé."], "minimumSessions": 3, "category": "MESSAGING"},
-{"id": 26, "title": "PHONE IN BAG", "hypothesis": "Le téléphone dans le sac pendant les repas augmente la présence.", "metric": "absorption", "testInstructions": ["3 repas avec téléphone dans le sac.", "Note la présence."], "minimumSessions": 3, "category": "PHONE"},
-{"id": 27, "title": "EVENING LIGHT LOW", "hypothesis": "Une lumière basse le soir améliore le sommeil.", "metric": "energy", "testInstructions": ["3 soirs à lumière basse.", "Note la fatigue du soir et le réveil."], "minimumSessions": 3, "category": "SLEEP"},
-{"id": 28, "title": "SINGLE WINDOW WORK", "hypothesis": "Une seule application de travail réduit les changements.", "metric": "switches", "testInstructions": ["3 sessions dans une seule application.", "Note les changements."], "minimumSessions": 3, "category": "WORKSPACE"},
-{"id": 29, "title": "PREP THE NIGHT BEFORE", "hypothesis": "Préparer la tâche la veille accélère le démarrage.", "metric": "start", "testInstructions": ["3 soirs de préparation.", "Note le temps avant de commencer au matin."], "minimumSessions": 3, "category": "ROUTINE"},
-{"id": 30, "title": "NO PHONE FIRST HOUR", "hypothesis": "Une heure sans téléphone au réveil améliore la matinée.", "metric": "firstSwitch", "testInstructions": ["3 matins sans téléphone la première heure.", "Note le premier bloc."], "minimumSessions": 3, "category": "MORNING"},
-{"id": 31, "title": "WRITE THE URGE", "hypothesis": "Écrire la pulsion au lieu de la suivre la réduit.", "metric": "switches", "testInstructions": ["3 sessions en écrivant chaque pulsion.", "Note la fréquence."], "minimumSessions": 3, "category": "BEHAVIOR"},
-{"id": 32, "title": "URGE DELAY 5 MIN", "hypothesis": "Retarder une vérification de cinq minutes réduit son attrait.", "metric": "firstSwitch", "testInstructions": ["À chaque pulsion, attends cinq minutes.", "Note combien de fois tu y retournes."], "minimumSessions": 3, "category": "BEHAVIOR"},
-{"id": 33, "title": "FEEDBACK BLOCKS", "hypothesis": "Découper le travail en blocs à feedback immédiat augmente la profondeur.", "metric": "absorption", "testInstructions": ["3 sessions en blocs de 10 questions ou étapes vérifiées.", "Note l'absorption."], "minimumSessions": 3, "category": "FLOW"},
-{"id": 34, "title": "RECALL AFTER WORK", "hypothesis": "Restituer ce que tu viens de faire améliore la rétention.", "metric": "recall", "testInstructions": ["3 sessions suivies d'une restitution immédiate.", "Note ce qui reste."], "minimumSessions": 3, "category": "LEARNING"},
-{"id": 35, "title": "TEACH-BACK", "hypothesis": "Enseigner ce que tu apprends améliore la compréhension.", "metric": "recall", "testInstructions": ["3 leçons suivies d'un enseignement sans notes.", "Note les trous."], "minimumSessions": 3, "category": "LEARNING"},
-{"id": 36, "title": "10 PAGE READING", "hypothesis": "Lire dix pages sans vérifier le téléphone est possible avec un engagement clair.", "metric": "completion", "testInstructions": ["3 lectures de dix pages sans vérification.", "Note les pulsions."], "minimumSessions": 3, "category": "READING"},
-{"id": 37, "title": "BEDTIME NO SCREEN", "hypothesis": "Pas d'écran la dernière heure améliore l'endormissement.", "metric": "energy", "testInstructions": ["3 soirs sans écran la dernière heure.", "Note l'endormissement."], "minimumSessions": 3, "category": "SLEEP"},
-{"id": 38, "title": "MEAL NO PHONE", "hypothesis": "Les repas sans téléphone augmentent la présence et réduisent la vitesse.", "metric": "absorption", "testInstructions": ["3 repas sans téléphone.", "Note la présence."], "minimumSessions": 3, "category": "PHONE"},
-{"id": 39, "title": "FLOW PROJECT WEEK", "hypothesis": "Un projet Flow clair produit plus d'absorption qu'une tâche vague.", "metric": "flowAbsorption", "testInstructions": ["Définis un projet Flow avec fin précise.", "3 sessions dessus.", "Compare avec une tâche vague."], "minimumSessions": 3, "category": "FLOW"},
-{"id": 40, "title": "RECOVERY BREAK", "hypothesis": "Une pause réellement vide entre deux blocs améliore le second bloc.", "metric": "duration", "testInstructions": ["3 sessions en deux blocs avec pause vide.", "Compare les deux blocs."], "minimumSessions": 3, "category": "ROUTINE"}
+  {
+    "id": 1,
+    "title": "EXPÉRIENCE 001 — TÉLÉPHONE HORS DE LA PIÈCE",
+    "category": "PHONE",
+    "hypothesis": "Placer le téléphone dans une autre pièce augmente la latence du premier switch de plus de 50%.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Placer l'appareil dans une autre pièce fermée pendant 3 sessions"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 2,
+    "title": "EXPÉRIENCE 002 — TÉLÉPHONE HORS DE LA PIÈCE (VARIANTE 2)",
+    "category": "PHONE",
+    "hypothesis": "Placer le téléphone dans une autre pièce augmente la latence du premier switch de plus de 50%.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Placer l'appareil dans une autre pièce fermée pendant 3 sessions"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 3,
+    "title": "EXPÉRIENCE 003 — TÉLÉPHONE HORS DE LA PIÈCE (VARIANTE 3)",
+    "category": "PHONE",
+    "hypothesis": "Placer le téléphone dans une autre pièce augmente la latence du premier switch de plus de 50%.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Placer l'appareil dans une autre pièce fermée pendant 3 sessions"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 4,
+    "title": "EXPÉRIENCE 004 — TÉLÉPHONE HORS DE LA PIÈCE (VARIANTE 4)",
+    "category": "PHONE",
+    "hypothesis": "Placer le téléphone dans une autre pièce augmente la latence du premier switch de plus de 50%.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Placer l'appareil dans une autre pièce fermée pendant 3 sessions"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 5,
+    "title": "EXPÉRIENCE 005 — TÉLÉPHONE HORS DE LA PIÈCE (VARIANTE 5)",
+    "category": "PHONE",
+    "hypothesis": "Placer le téléphone dans une autre pièce augmente la latence du premier switch de plus de 50%.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Placer l'appareil dans une autre pièce fermée pendant 3 sessions"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 6,
+    "title": "EXPÉRIENCE 006 — UN SEUL ONGLET OUVERT",
+    "category": "BROWSER",
+    "hypothesis": "Travailler sur un seul onglet sans recherche réduit le nombre total de décrochages.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Fermer tous les onglets secondaires avant de démarrer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 7,
+    "title": "EXPÉRIENCE 007 — UN SEUL ONGLET OUVERT (VARIANTE 2)",
+    "category": "BROWSER",
+    "hypothesis": "Travailler sur un seul onglet sans recherche réduit le nombre total de décrochages.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Fermer tous les onglets secondaires avant de démarrer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 8,
+    "title": "EXPÉRIENCE 008 — UN SEUL ONGLET OUVERT (VARIANTE 3)",
+    "category": "BROWSER",
+    "hypothesis": "Travailler sur un seul onglet sans recherche réduit le nombre total de décrochages.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Fermer tous les onglets secondaires avant de démarrer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 9,
+    "title": "EXPÉRIENCE 009 — UN SEUL ONGLET OUVERT (VARIANTE 4)",
+    "category": "BROWSER",
+    "hypothesis": "Travailler sur un seul onglet sans recherche réduit le nombre total de décrochages.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Fermer tous les onglets secondaires avant de démarrer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 10,
+    "title": "EXPÉRIENCE 010 — UN SEUL ONGLET OUVERT (VARIANTE 5)",
+    "category": "BROWSER",
+    "hypothesis": "Travailler sur un seul onglet sans recherche réduit le nombre total de décrochages.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Fermer tous les onglets secondaires avant de démarrer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 11,
+    "title": "EXPÉRIENCE 011 — SILENCE VS MUSIQUE INSTRUMENTALE",
+    "category": "AUDIO",
+    "hypothesis": "Le silence complet produit une meilleure précision de restitution sur les textes abstraits.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Alterner 3 sessions en silence et 3 sessions avec musique instrumentale"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 12,
+    "title": "EXPÉRIENCE 012 — SILENCE VS MUSIQUE INSTRUMENTALE (VARIANTE 2)",
+    "category": "AUDIO",
+    "hypothesis": "Le silence complet produit une meilleure précision de restitution sur les textes abstraits.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Alterner 3 sessions en silence et 3 sessions avec musique instrumentale"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 13,
+    "title": "EXPÉRIENCE 013 — SILENCE VS MUSIQUE INSTRUMENTALE (VARIANTE 3)",
+    "category": "AUDIO",
+    "hypothesis": "Le silence complet produit une meilleure précision de restitution sur les textes abstraits.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Alterner 3 sessions en silence et 3 sessions avec musique instrumentale"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 14,
+    "title": "EXPÉRIENCE 014 — SILENCE VS MUSIQUE INSTRUMENTALE (VARIANTE 4)",
+    "category": "AUDIO",
+    "hypothesis": "Le silence complet produit une meilleure précision de restitution sur les textes abstraits.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Alterner 3 sessions en silence et 3 sessions avec musique instrumentale"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 15,
+    "title": "EXPÉRIENCE 015 — SILENCE VS MUSIQUE INSTRUMENTALE (VARIANTE 5)",
+    "category": "AUDIO",
+    "hypothesis": "Le silence complet produit une meilleure précision de restitution sur les textes abstraits.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Alterner 3 sessions en silence et 3 sessions avec musique instrumentale"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 16,
+    "title": "EXPÉRIENCE 016 — MATIN TÔT VS FIN D'APRÈS-MIDI",
+    "category": "TIME",
+    "hypothesis": "Les blocs placés avant 10h affichent une stabilité attentionnelle supérieure.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Planifier les 3 prochaines sessions STAY avant 09h30"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 17,
+    "title": "EXPÉRIENCE 017 — MATIN TÔT VS FIN D'APRÈS-MIDI (VARIANTE 2)",
+    "category": "TIME",
+    "hypothesis": "Les blocs placés avant 10h affichent une stabilité attentionnelle supérieure.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Planifier les 3 prochaines sessions STAY avant 09h30"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 18,
+    "title": "EXPÉRIENCE 018 — MATIN TÔT VS FIN D'APRÈS-MIDI (VARIANTE 3)",
+    "category": "TIME",
+    "hypothesis": "Les blocs placés avant 10h affichent une stabilité attentionnelle supérieure.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Planifier les 3 prochaines sessions STAY avant 09h30"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 19,
+    "title": "EXPÉRIENCE 019 — MATIN TÔT VS FIN D'APRÈS-MIDI (VARIANTE 4)",
+    "category": "TIME",
+    "hypothesis": "Les blocs placés avant 10h affichent une stabilité attentionnelle supérieure.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Planifier les 3 prochaines sessions STAY avant 09h30"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 20,
+    "title": "EXPÉRIENCE 020 — MATIN TÔT VS FIN D'APRÈS-MIDI (VARIANTE 5)",
+    "category": "TIME",
+    "hypothesis": "Les blocs placés avant 10h affichent une stabilité attentionnelle supérieure.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Planifier les 3 prochaines sessions STAY avant 09h30"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 21,
+    "title": "EXPÉRIENCE 021 — MARCHE DE 10 MIN AVANT LE TRAVAIL",
+    "category": "MOVEMENT",
+    "hypothesis": "Une marche active sans écran dissipe la fatigue et retarde le premier switch.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Marcher 10 minutes dehors juste avant de lancer la session"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 22,
+    "title": "EXPÉRIENCE 022 — MARCHE DE 10 MIN AVANT LE TRAVAIL (VARIANTE 2)",
+    "category": "MOVEMENT",
+    "hypothesis": "Une marche active sans écran dissipe la fatigue et retarde le premier switch.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Marcher 10 minutes dehors juste avant de lancer la session"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 23,
+    "title": "EXPÉRIENCE 023 — MARCHE DE 10 MIN AVANT LE TRAVAIL (VARIANTE 3)",
+    "category": "MOVEMENT",
+    "hypothesis": "Une marche active sans écran dissipe la fatigue et retarde le premier switch.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Marcher 10 minutes dehors juste avant de lancer la session"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 24,
+    "title": "EXPÉRIENCE 024 — MARCHE DE 10 MIN AVANT LE TRAVAIL (VARIANTE 4)",
+    "category": "MOVEMENT",
+    "hypothesis": "Une marche active sans écran dissipe la fatigue et retarde le premier switch.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Marcher 10 minutes dehors juste avant de lancer la session"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 25,
+    "title": "EXPÉRIENCE 025 — MARCHE DE 10 MIN AVANT LE TRAVAIL (VARIANTE 5)",
+    "category": "MOVEMENT",
+    "hypothesis": "Une marche active sans écran dissipe la fatigue et retarde le premier switch.",
+    "metric": "FIRST_SWITCH_LATENCY",
+    "testInstructions": [
+      "Marcher 10 minutes dehors juste avant de lancer la session"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 26,
+    "title": "EXPÉRIENCE 026 — COUPURE CAFÉINE À 13H",
+    "category": "CAFFEINE",
+    "hypothesis": "Arrêter la caféine en début d'après-midi améliore la qualité du focus matinal du lendemain.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne consommer aucun café après 13h pendant 4 jours"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 27,
+    "title": "EXPÉRIENCE 027 — COUPURE CAFÉINE À 13H (VARIANTE 2)",
+    "category": "CAFFEINE",
+    "hypothesis": "Arrêter la caféine en début d'après-midi améliore la qualité du focus matinal du lendemain.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne consommer aucun café après 13h pendant 4 jours"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 28,
+    "title": "EXPÉRIENCE 028 — COUPURE CAFÉINE À 13H (VARIANTE 3)",
+    "category": "CAFFEINE",
+    "hypothesis": "Arrêter la caféine en début d'après-midi améliore la qualité du focus matinal du lendemain.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne consommer aucun café après 13h pendant 4 jours"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 29,
+    "title": "EXPÉRIENCE 029 — COUPURE CAFÉINE À 13H (VARIANTE 4)",
+    "category": "CAFFEINE",
+    "hypothesis": "Arrêter la caféine en début d'après-midi améliore la qualité du focus matinal du lendemain.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne consommer aucun café après 13h pendant 4 jours"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 30,
+    "title": "EXPÉRIENCE 030 — COUPURE CAFÉINE À 13H (VARIANTE 5)",
+    "category": "CAFFEINE",
+    "hypothesis": "Arrêter la caféine en début d'après-midi améliore la qualité du focus matinal du lendemain.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne consommer aucun café après 13h pendant 4 jours"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 31,
+    "title": "EXPÉRIENCE 031 — DÉJEUNER LÉGER VS REPAS COPIEUX",
+    "category": "MEAL CONTEXT",
+    "hypothesis": "Un déjeuner léger évite la somnolence et préserve la vigilance de 14h.",
+    "metric": "ACTUAL_DURATION",
+    "testInstructions": [
+      "Consommer un repas digeste avant les sessions de début d'après-midi"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 32,
+    "title": "EXPÉRIENCE 032 — DÉJEUNER LÉGER VS REPAS COPIEUX (VARIANTE 2)",
+    "category": "MEAL CONTEXT",
+    "hypothesis": "Un déjeuner léger évite la somnolence et préserve la vigilance de 14h.",
+    "metric": "ACTUAL_DURATION",
+    "testInstructions": [
+      "Consommer un repas digeste avant les sessions de début d'après-midi"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 33,
+    "title": "EXPÉRIENCE 033 — DÉJEUNER LÉGER VS REPAS COPIEUX (VARIANTE 3)",
+    "category": "MEAL CONTEXT",
+    "hypothesis": "Un déjeuner léger évite la somnolence et préserve la vigilance de 14h.",
+    "metric": "ACTUAL_DURATION",
+    "testInstructions": [
+      "Consommer un repas digeste avant les sessions de début d'après-midi"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 34,
+    "title": "EXPÉRIENCE 034 — DÉJEUNER LÉGER VS REPAS COPIEUX (VARIANTE 4)",
+    "category": "MEAL CONTEXT",
+    "hypothesis": "Un déjeuner léger évite la somnolence et préserve la vigilance de 14h.",
+    "metric": "ACTUAL_DURATION",
+    "testInstructions": [
+      "Consommer un repas digeste avant les sessions de début d'après-midi"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 35,
+    "title": "EXPÉRIENCE 035 — DÉJEUNER LÉGER VS REPAS COPIEUX (VARIANTE 5)",
+    "category": "MEAL CONTEXT",
+    "hypothesis": "Un déjeuner léger évite la somnolence et préserve la vigilance de 14h.",
+    "metric": "ACTUAL_DURATION",
+    "testInstructions": [
+      "Consommer un repas digeste avant les sessions de début d'après-midi"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 36,
+    "title": "EXPÉRIENCE 036 — LECTURE PAPIER VS LECTURE ÉCRAN",
+    "category": "READING",
+    "hypothesis": "Le support papier favorise une reconstruction causale plus détaillée du texte.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Lire le texte sur papier imprimé avant de le résumer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 37,
+    "title": "EXPÉRIENCE 037 — LECTURE PAPIER VS LECTURE ÉCRAN (VARIANTE 2)",
+    "category": "READING",
+    "hypothesis": "Le support papier favorise une reconstruction causale plus détaillée du texte.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Lire le texte sur papier imprimé avant de le résumer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 38,
+    "title": "EXPÉRIENCE 038 — LECTURE PAPIER VS LECTURE ÉCRAN (VARIANTE 3)",
+    "category": "READING",
+    "hypothesis": "Le support papier favorise une reconstruction causale plus détaillée du texte.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Lire le texte sur papier imprimé avant de le résumer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 39,
+    "title": "EXPÉRIENCE 039 — LECTURE PAPIER VS LECTURE ÉCRAN (VARIANTE 4)",
+    "category": "READING",
+    "hypothesis": "Le support papier favorise une reconstruction causale plus détaillée du texte.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Lire le texte sur papier imprimé avant de le résumer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 40,
+    "title": "EXPÉRIENCE 040 — LECTURE PAPIER VS LECTURE ÉCRAN (VARIANTE 5)",
+    "category": "READING",
+    "hypothesis": "Le support papier favorise une reconstruction causale plus détaillée du texte.",
+    "metric": "RECALL_SCORE",
+    "testInstructions": [
+      "Lire le texte sur papier imprimé avant de le résumer"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 41,
+    "title": "EXPÉRIENCE 041 — RESTITUTION IMMÉDIATE VS DIFFÉRÉE",
+    "category": "LEARNING",
+    "hypothesis": "Expliquer le concept immédiatement après lecture ancre le modèle mental plus solidement.",
+    "metric": "TEACH_BACK_SCORE",
+    "testInstructions": [
+      "Rédiger la synthèse dans les 60 secondes suivant la fermeture"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 42,
+    "title": "EXPÉRIENCE 042 — RESTITUTION IMMÉDIATE VS DIFFÉRÉE (VARIANTE 2)",
+    "category": "LEARNING",
+    "hypothesis": "Expliquer le concept immédiatement après lecture ancre le modèle mental plus solidement.",
+    "metric": "TEACH_BACK_SCORE",
+    "testInstructions": [
+      "Rédiger la synthèse dans les 60 secondes suivant la fermeture"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 43,
+    "title": "EXPÉRIENCE 043 — RESTITUTION IMMÉDIATE VS DIFFÉRÉE (VARIANTE 3)",
+    "category": "LEARNING",
+    "hypothesis": "Expliquer le concept immédiatement après lecture ancre le modèle mental plus solidement.",
+    "metric": "TEACH_BACK_SCORE",
+    "testInstructions": [
+      "Rédiger la synthèse dans les 60 secondes suivant la fermeture"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 44,
+    "title": "EXPÉRIENCE 044 — RESTITUTION IMMÉDIATE VS DIFFÉRÉE (VARIANTE 4)",
+    "category": "LEARNING",
+    "hypothesis": "Expliquer le concept immédiatement après lecture ancre le modèle mental plus solidement.",
+    "metric": "TEACH_BACK_SCORE",
+    "testInstructions": [
+      "Rédiger la synthèse dans les 60 secondes suivant la fermeture"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 45,
+    "title": "EXPÉRIENCE 045 — RESTITUTION IMMÉDIATE VS DIFFÉRÉE (VARIANTE 5)",
+    "category": "LEARNING",
+    "hypothesis": "Expliquer le concept immédiatement après lecture ancre le modèle mental plus solidement.",
+    "metric": "TEACH_BACK_SCORE",
+    "testInstructions": [
+      "Rédiger la synthèse dans les 60 secondes suivant la fermeture"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 46,
+    "title": "EXPÉRIENCE 046 — DÉSACTIVATION DES BADGES",
+    "category": "NOTIFICATIONS",
+    "hypothesis": "Supprimer les pastilles rouges fait chuter de 70% les ouvertures impulsives.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Couper tous les badges de l'écran d'accueil pendant une semaine"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 47,
+    "title": "EXPÉRIENCE 047 — DÉSACTIVATION DES BADGES (VARIANTE 2)",
+    "category": "NOTIFICATIONS",
+    "hypothesis": "Supprimer les pastilles rouges fait chuter de 70% les ouvertures impulsives.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Couper tous les badges de l'écran d'accueil pendant une semaine"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 48,
+    "title": "EXPÉRIENCE 048 — DÉSACTIVATION DES BADGES (VARIANTE 3)",
+    "category": "NOTIFICATIONS",
+    "hypothesis": "Supprimer les pastilles rouges fait chuter de 70% les ouvertures impulsives.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Couper tous les badges de l'écran d'accueil pendant une semaine"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 49,
+    "title": "EXPÉRIENCE 049 — DÉSACTIVATION DES BADGES (VARIANTE 4)",
+    "category": "NOTIFICATIONS",
+    "hypothesis": "Supprimer les pastilles rouges fait chuter de 70% les ouvertures impulsives.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Couper tous les badges de l'écran d'accueil pendant une semaine"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 50,
+    "title": "EXPÉRIENCE 050 — DÉSACTIVATION DES BADGES (VARIANTE 5)",
+    "category": "NOTIFICATIONS",
+    "hypothesis": "Supprimer les pastilles rouges fait chuter de 70% les ouvertures impulsives.",
+    "metric": "SWITCH_COUNT",
+    "testInstructions": [
+      "Couper tous les badges de l'écran d'accueil pendant une semaine"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 51,
+    "title": "EXPÉRIENCE 051 — RÉVEIL SANS ÉCRAN PENDANT 45 MIN",
+    "category": "MORNING",
+    "hypothesis": "Protéger la première heure matinale augmente la sérénité et le focus de la matinée.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne pas toucher au téléphone avant d'avoir terminé son rituel du matin"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 52,
+    "title": "EXPÉRIENCE 052 — RÉVEIL SANS ÉCRAN PENDANT 45 MIN (VARIANTE 2)",
+    "category": "MORNING",
+    "hypothesis": "Protéger la première heure matinale augmente la sérénité et le focus de la matinée.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne pas toucher au téléphone avant d'avoir terminé son rituel du matin"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 53,
+    "title": "EXPÉRIENCE 053 — RÉVEIL SANS ÉCRAN PENDANT 45 MIN (VARIANTE 3)",
+    "category": "MORNING",
+    "hypothesis": "Protéger la première heure matinale augmente la sérénité et le focus de la matinée.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne pas toucher au téléphone avant d'avoir terminé son rituel du matin"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 54,
+    "title": "EXPÉRIENCE 054 — RÉVEIL SANS ÉCRAN PENDANT 45 MIN (VARIANTE 4)",
+    "category": "MORNING",
+    "hypothesis": "Protéger la première heure matinale augmente la sérénité et le focus de la matinée.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne pas toucher au téléphone avant d'avoir terminé son rituel du matin"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 55,
+    "title": "EXPÉRIENCE 055 — RÉVEIL SANS ÉCRAN PENDANT 45 MIN (VARIANTE 5)",
+    "category": "MORNING",
+    "hypothesis": "Protéger la première heure matinale augmente la sérénité et le focus de la matinée.",
+    "metric": "STABILITY_SCORE",
+    "testInstructions": [
+      "Ne pas toucher au téléphone avant d'avoir terminé son rituel du matin"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 56,
+    "title": "EXPÉRIENCE 056 — COUVERTURE CHAUDE ET PÉNOMBRE LE SOIR",
+    "category": "EVENING",
+    "hypothesis": "Tamiser les lumières à 21h favorise un endormissement rapide et un sommeil profond.",
+    "metric": "SLEEP_QUALITY",
+    "testInstructions": [
+      "Éteindre les plafonniers et n'utiliser que des lampes d'appoint"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 57,
+    "title": "EXPÉRIENCE 057 — COUVERTURE CHAUDE ET PÉNOMBRE LE SOIR (VARIANTE 2)",
+    "category": "EVENING",
+    "hypothesis": "Tamiser les lumières à 21h favorise un endormissement rapide et un sommeil profond.",
+    "metric": "SLEEP_QUALITY",
+    "testInstructions": [
+      "Éteindre les plafonniers et n'utiliser que des lampes d'appoint"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 58,
+    "title": "EXPÉRIENCE 058 — COUVERTURE CHAUDE ET PÉNOMBRE LE SOIR (VARIANTE 3)",
+    "category": "EVENING",
+    "hypothesis": "Tamiser les lumières à 21h favorise un endormissement rapide et un sommeil profond.",
+    "metric": "SLEEP_QUALITY",
+    "testInstructions": [
+      "Éteindre les plafonniers et n'utiliser que des lampes d'appoint"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 59,
+    "title": "EXPÉRIENCE 059 — COUVERTURE CHAUDE ET PÉNOMBRE LE SOIR (VARIANTE 4)",
+    "category": "EVENING",
+    "hypothesis": "Tamiser les lumières à 21h favorise un endormissement rapide et un sommeil profond.",
+    "metric": "SLEEP_QUALITY",
+    "testInstructions": [
+      "Éteindre les plafonniers et n'utiliser que des lampes d'appoint"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 60,
+    "title": "EXPÉRIENCE 060 — COUVERTURE CHAUDE ET PÉNOMBRE LE SOIR (VARIANTE 5)",
+    "category": "EVENING",
+    "hypothesis": "Tamiser les lumières à 21h favorise un endormissement rapide et un sommeil profond.",
+    "metric": "SLEEP_QUALITY",
+    "testInstructions": [
+      "Éteindre les plafonniers et n'utiliser que des lampes d'appoint"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 61,
+    "title": "EXPÉRIENCE 061 — LIGNE D'ARRIVÉE EXPLICITE VS DURÉE OUVERTE",
+    "category": "FLOW",
+    "hypothesis": "Définir précisément le livrable de fin de bloc double la probabilité d'entrer en flow.",
+    "metric": "FLOW_RATING",
+    "testInstructions": [
+      "Écrire la définition exacte de 'terminé' avant d'entamer la tâche"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 62,
+    "title": "EXPÉRIENCE 062 — LIGNE D'ARRIVÉE EXPLICITE VS DURÉE OUVERTE (VARIANTE 2)",
+    "category": "FLOW",
+    "hypothesis": "Définir précisément le livrable de fin de bloc double la probabilité d'entrer en flow.",
+    "metric": "FLOW_RATING",
+    "testInstructions": [
+      "Écrire la définition exacte de 'terminé' avant d'entamer la tâche"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 63,
+    "title": "EXPÉRIENCE 063 — LIGNE D'ARRIVÉE EXPLICITE VS DURÉE OUVERTE (VARIANTE 3)",
+    "category": "FLOW",
+    "hypothesis": "Définir précisément le livrable de fin de bloc double la probabilité d'entrer en flow.",
+    "metric": "FLOW_RATING",
+    "testInstructions": [
+      "Écrire la définition exacte de 'terminé' avant d'entamer la tâche"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 64,
+    "title": "EXPÉRIENCE 064 — LIGNE D'ARRIVÉE EXPLICITE VS DURÉE OUVERTE (VARIANTE 4)",
+    "category": "FLOW",
+    "hypothesis": "Définir précisément le livrable de fin de bloc double la probabilité d'entrer en flow.",
+    "metric": "FLOW_RATING",
+    "testInstructions": [
+      "Écrire la définition exacte de 'terminé' avant d'entamer la tâche"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  },
+  {
+    "id": 65,
+    "title": "EXPÉRIENCE 065 — LIGNE D'ARRIVÉE EXPLICITE VS DURÉE OUVERTE (VARIANTE 5)",
+    "category": "FLOW",
+    "hypothesis": "Définir précisément le livrable de fin de bloc double la probabilité d'entrer en flow.",
+    "metric": "FLOW_RATING",
+    "testInstructions": [
+      "Écrire la définition exacte de 'terminé' avant d'entamer la tâche"
+    ],
+    "minimumSessions": 3,
+    "eligibleSessionTypes": [
+      "stay",
+      "recall",
+      "explain",
+      "flow"
+    ],
+    "whatMustStaySimilar": "Même heure de la journée, même espace de travail et même nature de tâche.",
+    "interpretationLimits": "Un résultat isolé ne prouve pas une loi universelle : il valide une règle personnelle."
+  }
 ]

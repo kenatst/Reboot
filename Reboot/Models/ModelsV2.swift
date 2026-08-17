@@ -32,12 +32,25 @@ struct MicroLesson: Codable, Identifiable, Hashable {
     let topic: String
     let text: String
     let action: String
+    var hook: String?
+    var example: String?
+    var whatToNotice: String?
+    var skills: [String]?
+    var evidenceIDs: [String]?
+    var estimatedMinutes: Int?
+    var difficulty: Int?
 }
 
 struct FlowLesson: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
     let text: String
+    var concept: String?
+    var goodExample: String?
+    var badExample: String?
+    var exercise: String?
+    var transferQuestion: String?
+    var evidenceIDs: [String]?
 }
 
 struct FuelLesson: Codable, Identifiable, Hashable {
@@ -45,6 +58,28 @@ struct FuelLesson: Codable, Identifiable, Hashable {
     let title: String
     let text: String
     let scope: String
+    var takeaway: String?
+    var experiment: String?
+    var evidenceIDs: [String]?
+}
+
+struct CoachingMessage: Codable, Identifiable, Hashable {
+    let id: Int
+    let category: String
+    let text: String
+    var contextCondition: String?
+}
+
+struct ContentEvidenceRecord: Codable, Identifiable, Hashable {
+    let id: String
+    let topic: String
+    let claim: String
+    let sourceType: String
+    let citation: String
+    let url: String?
+    let year: Int?
+    let confidence: String
+    let notes: String?
 }
 
 // MARK: - V2 SwiftData models
@@ -58,20 +93,32 @@ final class RebootUserProfile {
     var goalsRaw: [String]
     var winDescription: String
     var primaryGoal: String
+    var goalBranch: String
 
-    // Distraction
+    // Goal-specific branches
     var primaryDistractor: String
-    var checkMomentsRaw: [String]
+    var distractorTriggerContext: String
+    var desiredOutcome: String
+    var workType: String
+    var workBreaker: String
+    var studyPurpose: String
+    var studyBottleneck: String
+    var canExplainCourse: String
+    var readingTarget: String
+    var readingFailureMode: String
 
-    // Capacity
+    // Distraction & Capacity
+    var checkMomentsRaw: [String]
     var capacityBucket: String
     var returnDifficulty: Int
     var readsTenPages: String
     var switchingFrequency: Int
 
-    // Flow
+    // Flow & Absorption
     var existingFlowActivitiesRaw: [String]
     var flowDifferenceRaw: [String]
+    var knownAbsorptionContext: String
+    var flowConditionHypothesesRaw: [String]
 
     // Environment
     var phoneLocation: String
@@ -79,11 +126,14 @@ final class RebootUserProfile {
     var openTabsBucket: String
     var usesScreenTimeLimits: String
 
-    // Energy
+    // Energy & Preferences
     var bestWindow: String
     var typicalSleep: String
     var currentEnergy: String
     var caffeine: String
+    var includeFuel: Bool
+    var includeFlowLab: Bool
+    var includeDigitalInterventions: Bool
 
     init() {
         self.id = UUID()
@@ -91,26 +141,41 @@ final class RebootUserProfile {
         self.goalsRaw = []
         self.winDescription = ""
         self.primaryGoal = ""
+        self.goalBranch = "general"
         self.primaryDistractor = ""
+        self.distractorTriggerContext = ""
+        self.desiredOutcome = ""
+        self.workType = ""
+        self.workBreaker = ""
+        self.studyPurpose = ""
+        self.studyBottleneck = ""
+        self.canExplainCourse = ""
+        self.readingTarget = ""
+        self.readingFailureMode = ""
         self.checkMomentsRaw = []
-        self.capacityBucket = ""
-        self.returnDifficulty = 0
+        self.capacityBucket = "10–20"
+        self.returnDifficulty = 3
         self.readsTenPages = ""
-        self.switchingFrequency = 0
+        self.switchingFrequency = 3
         self.existingFlowActivitiesRaw = []
         self.flowDifferenceRaw = []
-        self.phoneLocation = ""
-        self.notificationsLevel = ""
-        self.openTabsBucket = ""
-        self.usesScreenTimeLimits = ""
-        self.bestWindow = ""
-        self.typicalSleep = ""
-        self.currentEnergy = ""
-        self.caffeine = ""
+        self.knownAbsorptionContext = ""
+        self.flowConditionHypothesesRaw = []
+        self.phoneLocation = "desk"
+        self.notificationsLevel = "many"
+        self.openTabsBucket = "4–10"
+        self.usesScreenTimeLimits = "Non"
+        self.bestWindow = "morning"
+        self.typicalSleep = "7–8"
+        self.currentEnergy = "Normal"
+        self.caffeine = "Morning only"
+        self.includeFuel = true
+        self.includeFlowLab = true
+        self.includeDigitalInterventions = true
     }
 
     var isCalibrated: Bool {
-        !primaryGoal.isEmpty && !primaryDistractor.isEmpty && !capacityBucket.isEmpty
+        !primaryGoal.isEmpty && (!primaryDistractor.isEmpty || !workBreaker.isEmpty || !studyBottleneck.isEmpty)
     }
 }
 

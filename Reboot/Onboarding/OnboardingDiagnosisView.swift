@@ -1,62 +1,36 @@
 import SwiftUI
 import SwiftData
 
-/// REBOOT / CALIBRATION — a fast conversational diagnosis after the cinematic
-/// introduction. Outputs are stored in RebootUserProfile; no scores invented.
+/// REBOOT V3 — Adaptive Branching Diagnosis View
+/// Dynamically queries 8–14 questions based on primary goal branch and produces
+/// the genuine starting map without synthetic scores.
 struct OnboardingDiagnosisView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
-    @State private var step = 0
-    @State private var goals: Set<String> = []
-    @State private var win = ""
-    @State private var distractor = ""
-    @State private var moments: Set<String> = []
-    @State private var capacity = ""
-    @State private var returnDifficulty = 3
-    @State private var readsTenPages = ""
-    @State private var switching = 3
-    @State private var flowActivities: Set<String> = []
-    @State private var flowDifference: Set<String> = []
-    @State private var phoneLocation = ""
-    @State private var notifications = ""
-    @State private var tabs = ""
-    @State private var screenLimits = ""
-    @State private var bestWindow = ""
-    @State private var sleep = ""
-    @State private var energy = ""
-    @State private var caffeine = ""
+    @State private var state = DiagnosisQuestionEngine.DiagnosisState()
+    @State private var currentIndex = 0
     @State private var finished = false
 
-    private let goalOptions = [
-        "Arrêter de scroller automatiquement", "Mieux travailler", "Mieux étudier",
-        "Lire plus longtemps", "Retrouver de la concentration", "Faire du deep work",
-        "Mieux apprendre", "Retrouver du calme mental", "Moins dépendre du téléphone",
-        "Construire une vraie discipline"
-    ]
-    private let distractorOptions = ["Instagram", "TikTok", "YouTube", "X", "Reddit", "WhatsApp", "Messages", "Email", "News", "Gaming", "Browser", "Work notifications"]
-    private let momentOptions = ["réveil", "lit", "transport", "pendant le travail", "pendant les études", "repas", "attente", "ennui", "conversations", "télévision"]
-    private let capacityOptions = ["<5", "5–10", "10–20", "20–30", "30–45", "45–60", "60+"]
-    private let flowOptions = ["sport", "gaming", "music", "cooking", "drawing", "coding", "reading", "writing", "crafting", "conversation", "work"]
-    private let differenceOptions = ["difficile mais faisable", "je sais quoi faire", "résultat visible", "personne ne m'interrompt", "j'aime vraiment ça", "je vois mes progrès", "avec d'autres", "physiquement engagé", "je perds la notion du temps"]
-    private let phoneOptions = ["in-hand", "desk", "pocket", "nearby", "another-room"]
-    private let notificationOptions = ["nearly-all", "many", "only-important", "mostly-disabled"]
-    private let tabOptions = ["1–3", "4–10", "10–20", "20+"]
-    private let sleepOptions = ["<5", "5–6", "6–7", "7–8", "8+"]
-    private let windowOptions = ["morning", "late-morning", "afternoon", "evening", "variable"]
-    private let energyOptions = ["Low", "Normal", "High"]
-    private let caffeineOptions = ["None", "Morning only", "Morning + afternoon", "Late afternoon/evening"]
+    private var questions: [DiagnosisQuestionEngine.Question] {
+        DiagnosisQuestionEngine.buildQuestions(state: state)
+    }
+
+    private var currentQuestion: DiagnosisQuestionEngine.Question? {
+        guard currentIndex < questions.count else { return nil }
+        return questions[currentIndex]
+    }
 
     var body: some View {
         ZStack {
             Color.void.ignoresSafeArea()
             if finished {
-                summary
-            } else {
+                startingMap
+            } else if let q = currentQuestion {
                 VStack(spacing: 0) {
                     header
                     ScrollView {
-                        stepView
+                        renderQuestion(q)
                             .padding(.horizontal, RBSpacing.screen)
                             .padding(.top, 24)
                     }
@@ -84,7 +58,7 @@ struct OnboardingDiagnosisView: View {
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.ash)
             }
-            Text(String(format: "%02d / 14", min(step + 1, 14)))
+            Text(String(format: "%02d / %02d", min(currentIndex + 1, questions.count), questions.count))
                 .font(.metadata(size: 10))
                 .tracking(1.6)
                 .foregroundStyle(.ash)
@@ -94,87 +68,106 @@ struct OnboardingDiagnosisView: View {
         .padding(.top, 12)
     }
 
-    #if DEBUG
-    private func runAutoDiagnosis() {
-        goals = [goalOptions[0]]
-        win = "Travailler 60 minutes sans téléphone."
-        distractor = distractorOptions[0]
-        moments = [momentOptions[0]]
-        capacity = capacityOptions[2]
-        readsTenPages = "Parfois"
-        flowActivities = [flowOptions[0]]
-        flowDifference = [differenceOptions[0]]
-        phoneLocation = phoneOptions[1]
-        notifications = notificationOptions[1]
-        tabs = tabOptions[1]
-        screenLimits = "Non"
-        bestWindow = windowOptions[0]
-        sleep = sleepOptions[3]
-        energy = energyOptions[1]
-        caffeine = caffeineOptions[1]
-        Task {
-            for _ in 0..<14 {
-                try? await Task.sleep(nanoseconds: 1_100_000_000)
-                guard step < 14 else { break }
-                withAnimation { advance() }
-            }
-            try? await Task.sleep(nanoseconds: 2_000_000_000)
-            dismiss()
-        }
-    }
-    #endif
-
     @ViewBuilder
-    private var stepView: some View {
-        switch step {
-        case 0:
-            multiQuestion("POURQUOI ES-TU LÀ ?", subtitle: "Choisis tout ce qui te parle.", options: goalOptions, selection: $goals)
-        case 1:
-            textQuestion("UNE VICTOIRE DANS 90 JOURS ?", subtitle: "Ce qui serait un vrai win pour toi.", text: $win, placeholder: "travailler 60 minutes sans téléphone…")
-        case 2:
-            singleQuestion("QU'EST-CE QUI VOLE TON ATTENTION ?", subtitle: "Ton distrait principal.", options: distractorOptions, selection: $distractor)
-        case 3:
-            multiQuestion("QUAND VÉRIFIES-TU LE PLUS AUTOMATIQUEMENT ?", subtitle: "Les moments réflexes.", options: momentOptions, selection: $moments)
-        case 4:
-            singleQuestion("COMBIEN DE TEMPS PEUX-TU TRAVAILLER AVANT DE CHANGER ?", subtitle: "Minutes.", options: capacityOptions, selection: $capacity)
-        case 5:
-            sliderQuestion("QUAND TU ES DISTRAIT, REVENIR EST…", value: $returnDifficulty, low: "FACILE", high: "DIFFICILE")
-        case 6:
-            singleQuestion("PEUX-TU LIRE 10 PAGES SANS VÉRIFIER TON TÉLÉPHONE ?", subtitle: "", options: ["Oui", "Parfois", "Non"], selection: $readsTenPages)
-        case 7:
-            sliderQuestion("COMMENCES-TU DES CHOSES ET CHANGES AVANT DE FINIR ?", value: $switching, low: "RAREMENT", high: "TOUT LE TEMPS")
-        case 8:
-            multiQuestion("QU'EST-CE QUI TE FAIT DÉJÀ OUBLIER TON TÉLÉPHONE ?", subtitle: "Tes activités d'absorption existantes.", options: flowOptions, selection: $flowActivities)
-        case 9:
-            multiQuestion("QU'EST-CE QUI REND CES ACTIVITÉS DIFFÉRENTES ?", subtitle: "Les conditions de ton flow.", options: differenceOptions, selection: $flowDifference)
-        case 10:
-            VStack(spacing: 18) {
-                singleQuestion("OÙ EST TON TÉLÉPHONE QUAND TU TRAVAILLES ?", subtitle: "", options: phoneOptions, selection: $phoneLocation)
-                singleQuestion("NOTIFICATIONS ?", subtitle: "", options: notificationOptions, selection: $notifications)
+    private func renderQuestion(_ q: DiagnosisQuestionEngine.Question) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text(q.title)
+                .font(.heroBlack(size: 26))
+                .foregroundStyle(.bone)
+                .lineSpacing(-2)
+            if !q.subtitle.isEmpty {
+                Text(q.subtitle)
+                    .font(.body(size: 13))
+                    .foregroundStyle(.ash)
             }
-        case 11:
-            VStack(spacing: 18) {
-                singleQuestion("COMBIEN D'ONGLETS OUVERTS EN GÉNÉRAL ?", subtitle: "", options: tabOptions, selection: $tabs)
-                singleQuestion("LIMITES D'ÉCRAN ACTIVES ?", subtitle: "", options: ["Oui", "Non", "Parfois"], selection: $screenLimits)
-            }
-        case 12:
-            VStack(spacing: 18) {
-                singleQuestion("TA MEILLEURE FENÊTRE MENTALE ?", subtitle: "", options: windowOptions, selection: $bestWindow)
-                singleQuestion("SOMMEIL TYPIQUE ?", subtitle: "Heures.", options: sleepOptions, selection: $sleep)
-            }
-        default:
-            VStack(spacing: 18) {
-                singleQuestion("ÉNERGIE ACTUELLE ?", subtitle: "", options: energyOptions, selection: $energy)
-                singleQuestion("CAFÉINE ?", subtitle: "", options: caffeineOptions, selection: $caffeine)
+
+            switch q.kind {
+            case .single(let options):
+                VStack(spacing: 8) {
+                    ForEach(options, id: \.self) { option in
+                        let isSelected = getSingleSelection(q.id) == option
+                        selectableRow(option, selected: isSelected) {
+                            setSingleSelection(q.id, value: option)
+                        }
+                    }
+                }
+
+            case .multi(let options):
+                VStack(spacing: 8) {
+                    ForEach(options, id: \.self) { option in
+                        let selectedList = getMultiSelection(q.id)
+                        let isSelected = selectedList.contains(option)
+                        selectableRow(option, selected: isSelected) {
+                            toggleMultiSelection(q.id, value: option)
+                        }
+                    }
+                }
+
+            case .text(let placeholder, let presets):
+                VStack(alignment: .leading, spacing: 12) {
+                    TextField(placeholder, text: Binding(
+                        get: { getTextSelection(q.id) },
+                        set: { setTextSelection(q.id, value: $0) }
+                    ), axis: .vertical)
+                    .font(.body(size: 16))
+                    .foregroundStyle(.bone)
+                    .lineLimit(2...4)
+                    .padding(16)
+                    .background(Color.deepCarbon)
+                    .overlay(Rectangle().stroke(Color.line, lineWidth: 1))
+
+                    if !presets.isEmpty {
+                        Text("OU CHOISIS UNE CIBLE TYPIQUE :")
+                            .font(.metadata(size: 9))
+                            .tracking(1.4)
+                            .foregroundStyle(.ash)
+                            .padding(.top, 6)
+
+                        ForEach(presets, id: \.self) { preset in
+                            Button {
+                                setTextSelection(q.id, value: preset)
+                            } label: {
+                                HStack {
+                                    Text(preset)
+                                        .font(.body(size: 13))
+                                        .foregroundStyle(getTextSelection(q.id) == preset ? .ink : .bone)
+                                    Spacer()
+                                }
+                                .padding(12)
+                                .background(getTextSelection(q.id) == preset ? Color.bonePlate : Color.deepCarbon)
+                                .clipShape(RBChamferedShape(cut: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+
+            case .slider(let low, let high):
+                VStack(spacing: 12) {
+                    Slider(value: Binding(
+                        get: { Double(getSliderSelection(q.id)) },
+                        set: { setSliderSelection(q.id, value: Int($0.rounded())) }
+                    ), in: 1...5, step: 1)
+                    .tint(.signalCyan)
+                    HStack {
+                        Text(low).font(.metadata(size: 9)).foregroundStyle(.ash)
+                        Spacer()
+                        Text("\(getSliderSelection(q.id))").font(.system(size: 18, weight: .bold, design: .monospaced)).foregroundStyle(.signalCyan)
+                        Spacer()
+                        Text(high).font(.metadata(size: 9)).foregroundStyle(.ash)
+                    }
+                }
+                .padding(.vertical, 12)
             }
         }
+        .padding(.bottom, 20)
     }
 
     private var footer: some View {
         HStack(spacing: 12) {
-            if step > 0 {
+            if currentIndex > 0 {
                 Button {
-                    withAnimation { step -= 1 }
+                    withAnimation { currentIndex -= 1 }
                 } label: {
                     Text("RETOUR")
                         .font(.metadata(size: 10))
@@ -188,7 +181,7 @@ struct OnboardingDiagnosisView: View {
                 withAnimation { advance() }
             } label: {
                 HStack {
-                    Text(step >= 13 ? "TERMINER" : "SUIVANT")
+                    Text(currentIndex >= questions.count - 1 ? "VOIR MA CARTE" : "SUIVANT")
                     Spacer()
                     Image(systemName: "arrow.right")
                 }
@@ -202,97 +195,269 @@ struct OnboardingDiagnosisView: View {
     }
 
     private var canAdvance: Bool {
-        switch step {
-        case 0: return !goals.isEmpty
-        case 1: return !win.trimmingCharacters(in: .whitespaces).isEmpty
-        case 2: return !distractor.isEmpty
-        case 3: return !moments.isEmpty
-        case 4: return !capacity.isEmpty
-        case 6: return !readsTenPages.isEmpty
-        case 8: return !flowActivities.isEmpty
-        case 10: return !phoneLocation.isEmpty && !notifications.isEmpty
-        case 11: return !tabs.isEmpty && !screenLimits.isEmpty
-        case 12: return !bestWindow.isEmpty && !sleep.isEmpty
-        case 13: return !energy.isEmpty && !caffeine.isEmpty
-        default: return true
+        guard let q = currentQuestion else { return false }
+        switch q.kind {
+        case .single:
+            return !getSingleSelection(q.id).isEmpty
+        case .multi:
+            return !getMultiSelection(q.id).isEmpty
+        case .text:
+            return !getTextSelection(q.id).trimmingCharacters(in: .whitespaces).isEmpty
+        case .slider:
+            return true
         }
     }
 
     private func advance() {
-        if step >= 13 {
+        if currentIndex >= questions.count - 1 {
             save()
             withAnimation(.easeOut(duration: 0.3)) {
                 finished = true
             }
         } else {
-            step += 1
+            currentIndex += 1
+        }
+    }
+
+    // State Accessors
+    private func getSingleSelection(_ id: String) -> String {
+        switch id {
+        case "primaryGoal": return state.primaryGoal
+        case "scroll_app": return state.primaryDistractor
+        case "scroll_moments": return state.triggerContext
+        case "work_type": return state.workType
+        case "work_breaker": return state.workBreaker
+        case "work_capacity": return state.capacityBucket
+        case "study_purpose": return state.studyPurpose
+        case "study_bottleneck": return state.studyBottleneck
+        case "study_explain": return state.canExplainCourse
+        case "study_capacity": return state.capacityBucket
+        case "reading_target": return state.readingTarget
+        case "reading_mode": return state.readingFailureMode
+        case "reading_ten_pages": return state.readsTenPages
+        case "focus_breaker": return state.primaryDistractor
+        case "focus_capacity": return state.capacityBucket
+        case "env_phone": return state.phoneLocation
+        case "env_notifs": return state.notifications
+        case "env_tabs": return state.tabs
+        case "energy_window": return state.bestWindow
+        case "energy_sleep": return state.sleep
+        default: return ""
+        }
+    }
+
+    private func setSingleSelection(_ id: String, value: String) {
+        switch id {
+        case "primaryGoal":
+            state.primaryGoal = value
+            state.goalBranch = DiagnosisQuestionEngine.determineBranch(primaryGoal: value)
+        case "scroll_app": state.primaryDistractor = value
+        case "scroll_moments": state.triggerContext = value
+        case "work_type": state.workType = value
+        case "work_breaker":
+            state.workBreaker = value
+            state.primaryDistractor = value
+        case "work_capacity": state.capacityBucket = value
+        case "study_purpose": state.studyPurpose = value
+        case "study_bottleneck": state.studyBottleneck = value
+        case "study_explain": state.canExplainCourse = value
+        case "study_capacity": state.capacityBucket = value
+        case "reading_target": state.readingTarget = value
+        case "reading_mode": state.readingFailureMode = value
+        case "reading_ten_pages": state.readsTenPages = value
+        case "focus_breaker": state.primaryDistractor = value
+        case "focus_capacity": state.capacityBucket = value
+        case "env_phone": state.phoneLocation = value
+        case "env_notifs": state.notifications = value
+        case "env_tabs": state.tabs = value
+        case "energy_window": state.bestWindow = value
+        case "energy_sleep": state.sleep = value
+        default: break
+        }
+    }
+
+    private func getMultiSelection(_ id: String) -> [String] {
+        switch id {
+        case "goals": return state.selectedGoals
+        case "flow_activities": return state.flowActivities
+        case "flow_why": return state.flowDifferences
+        default: return []
+        }
+    }
+
+    private func toggleMultiSelection(_ id: String, value: String) {
+        switch id {
+        case "goals":
+            if state.selectedGoals.contains(value) {
+                state.selectedGoals.removeAll { $0 == value }
+            } else {
+                state.selectedGoals.append(value)
+            }
+            if state.primaryGoal.isEmpty || !state.selectedGoals.contains(state.primaryGoal) {
+                state.primaryGoal = state.selectedGoals.first ?? ""
+                state.goalBranch = DiagnosisQuestionEngine.determineBranch(primaryGoal: state.primaryGoal)
+            }
+        case "flow_activities":
+            if state.flowActivities.contains(value) {
+                state.flowActivities.removeAll { $0 == value }
+            } else {
+                state.flowActivities.append(value)
+            }
+        case "flow_why":
+            if state.flowDifferences.contains(value) {
+                state.flowDifferences.removeAll { $0 == value }
+            } else {
+                state.flowDifferences.append(value)
+            }
+        default: break
+        }
+    }
+
+    private func getTextSelection(_ id: String) -> String {
+        switch id {
+        case "scroll_outcome", "work_outcome": return state.desiredOutcome
+        default: return ""
+        }
+    }
+
+    private func setTextSelection(_ id: String, value: String) {
+        switch id {
+        case "scroll_outcome", "work_outcome": state.desiredOutcome = value
+        default: break
+        }
+    }
+
+    private func getSliderSelection(_ id: String) -> Int {
+        switch id {
+        case "return_diff": return state.returnDifficulty
+        default: return 3
+        }
+    }
+
+    private func setSliderSelection(_ id: String, value: Int) {
+        switch id {
+        case "return_diff": state.returnDifficulty = value
+        default: break
         }
     }
 
     private func save() {
         let profile = AdaptiveRebootEngineDriver.ensureProfile(context: modelContext)
-        profile.goalsRaw = Array(goals)
-        profile.primaryGoal = goals.first ?? ""
-        profile.winDescription = win
-        profile.primaryDistractor = distractor
-        profile.checkMomentsRaw = Array(moments)
-        profile.capacityBucket = capacity
-        profile.returnDifficulty = returnDifficulty
-        profile.readsTenPages = readsTenPages
-        profile.switchingFrequency = switching
-        profile.existingFlowActivitiesRaw = Array(flowActivities)
-        profile.flowDifferenceRaw = Array(flowDifference)
-        profile.phoneLocation = phoneLocation
-        profile.notificationsLevel = notifications
-        profile.openTabsBucket = tabs
-        profile.usesScreenTimeLimits = screenLimits
-        profile.bestWindow = bestWindow
-        profile.typicalSleep = sleep
-        profile.currentEnergy = energy
-        profile.caffeine = caffeine
+        profile.goalsRaw = state.selectedGoals
+        profile.primaryGoal = state.primaryGoal.isEmpty ? (state.selectedGoals.first ?? "RETROUVER DE LA CONCENTRATION") : state.primaryGoal
+        profile.goalBranch = DiagnosisQuestionEngine.determineBranch(primaryGoal: profile.primaryGoal)
+        profile.primaryDistractor = !state.primaryDistractor.isEmpty ? state.primaryDistractor : (state.workBreaker.isEmpty ? "Téléphone" : state.workBreaker)
+        profile.distractorTriggerContext = state.triggerContext
+        profile.desiredOutcome = state.desiredOutcome
+        profile.workType = state.workType
+        profile.workBreaker = state.workBreaker
+        profile.studyPurpose = state.studyPurpose
+        profile.studyBottleneck = state.studyBottleneck
+        profile.canExplainCourse = state.canExplainCourse
+        profile.readingTarget = state.readingTarget
+        profile.readingFailureMode = state.readingFailureMode
+        profile.capacityBucket = state.capacityBucket
+        profile.returnDifficulty = state.returnDifficulty
+        profile.readsTenPages = state.readsTenPages
+        profile.switchingFrequency = state.switchingFrequency
+        profile.existingFlowActivitiesRaw = state.flowActivities
+        profile.flowDifferenceRaw = state.flowDifferences
+        profile.knownAbsorptionContext = state.flowActivities.first ?? "Non renseigné"
+        profile.flowConditionHypothesesRaw = state.flowDifferences
+        profile.phoneLocation = state.phoneLocation
+        profile.notificationsLevel = state.notifications
+        profile.openTabsBucket = state.tabs
+        profile.bestWindow = state.bestWindow
+        profile.typicalSleep = state.sleep
+        profile.currentEnergy = state.energy
+        profile.caffeine = state.caffeine
         try? modelContext.save()
+
         AdaptiveRebootEngineDriver.recordEnergyCheckIn(
-            energy: energy, sleep: sleep, caffeine: caffeine, window: bestWindow, context: modelContext
+            energy: state.energy, sleep: state.sleep, caffeine: state.caffeine, window: state.bestWindow, context: modelContext
         )
     }
 
-    private var summary: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            RBSystemLabel(text: "REBOOT / PROFILE", color: .ash)
-                .padding(.top, 34)
-            Text("TON\nREBOOT PROFILE.")
-                .font(.heroBlack(size: 40))
-                .tracking(-0.4)
-                .foregroundStyle(.bone)
-                .padding(.top, 18)
+    // Starting Map Output
+    private var startingMap: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                RBSystemLabel(text: "REBOOT / CARTE INITIALE", color: .signalCyan)
+                    .padding(.top, 34)
 
-            VStack(spacing: 12) {
-                summaryRow("OBJECTIF PRINCIPAL", goals.first ?? "—")
-                summaryRow("DISTRACTEUR PRINCIPAL", distractor)
-                summaryRow("CAPACITÉ ACTUELLE", "\(capacity) MIN")
-                summaryRow("FAIBLESSE PRINCIPALE", switching >= 4 ? "CHANGEMENT AUTOMATIQUE" : "MAINTIEN")
-                summaryRow("MEILLEURE FENÊTRE", bestWindow)
-            }
-            .padding(16)
-            .background(Color.graphiteSurface)
-            .clipShape(RBChamferedShape(cut: 16))
-            .padding(.top, 26)
+                Text("TA CARTE\nDE DÉPART.")
+                    .font(.heroBlack(size: 38))
+                    .tracking(-0.4)
+                    .foregroundStyle(.bone)
+                    .padding(.top, 16)
 
-            Spacer()
-            Button {
-                AdaptiveRebootEngineDriver.generatePrescription(forDay: 1, context: modelContext)
-                dismiss()
-            } label: {
-                HStack {
-                    Text("BUILD MY REBOOT")
-                    Spacer()
-                    Image(systemName: "arrow.right")
+                Text("Pas de faux score. REBOOT calibre ton attention réelle à partir d'aujourd'hui.")
+                    .font(.body(size: 13))
+                    .foregroundStyle(.ash)
+                    .lineSpacing(3)
+                    .padding(.top, 8)
+
+                VStack(spacing: 12) {
+                    summaryRow("OBJECTIF PRINCIPAL", state.primaryGoal.isEmpty ? (state.selectedGoals.first ?? "CONCENTRATION") : state.primaryGoal)
+                    summaryRow("BRISURE PRINCIPALE", !state.primaryDistractor.isEmpty ? state.primaryDistractor : (!state.workBreaker.isEmpty ? state.workBreaker : "TÉLÉPHONE"))
+                    summaryRow("FENÊTRE ACTUELLE", "\(state.capacityBucket) MIN")
+                    summaryRow("OBSTACLE LIKELY", determineBottleneck())
+                    summaryRow("ABSORPTION CONNUE", state.flowActivities.first ?? "EN COURS")
+                    summaryRow("ENVIRONNEMENT", "\(state.phoneLocation.uppercased()) · \(state.notifications.uppercased())")
+                    summaryRow("STATUT", "CALIBRATION (JOURS 01–07)")
                 }
+                .padding(18)
+                .background(Color.graphiteSurface)
+                .clipShape(RBChamferedShape(cut: 16))
+                .padding(.top, 24)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("CE QUI SE PASSE MAINTENANT")
+                        .font(.metadata(size: 10))
+                        .tracking(1.8)
+                        .foregroundStyle(.signalCyan)
+                    Text("Les 7 premiers jours ne te demandent pas d'être parfait. Ils mesurent ta stabilité de base, ta friction d'environnement et ton seuil de décrochage.")
+                        .font(.body(size: 13))
+                        .foregroundStyle(.softBone)
+                        .lineSpacing(4)
+                }
+                .padding(16)
+                .background(Color.deepCarbon)
+                .clipShape(RBChamferedShape(cut: 12))
+                .padding(.top, 20)
+
+                Button {
+                    AdaptiveRebootEngineDriver.generatePrescription(forDay: 1, context: modelContext)
+                    dismiss()
+                } label: {
+                    HStack {
+                        Text("DÉMARRER LE PROTOCOLE")
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                }
+                .buttonStyle(.rbSystem)
+                .padding(.top, 30)
+                .padding(.bottom, 40)
             }
-            .buttonStyle(.rbSystem)
-            .padding(.bottom, 24)
+            .padding(.horizontal, RBSpacing.screen)
         }
-        .padding(.horizontal, RBSpacing.screen)
+    }
+
+    private func determineBottleneck() -> String {
+        if !state.studyBottleneck.isEmpty {
+            return state.studyBottleneck.uppercased()
+        }
+        if state.goalBranch == "scroll" {
+            return "RÉFLEXE DE VÉRIFICATION"
+        }
+        if state.goalBranch == "work" {
+            return state.workBreaker.isEmpty ? "DISPERSION NUMÉRIQUE" : state.workBreaker.uppercased()
+        }
+        if state.goalBranch == "reading" {
+            return state.readingFailureMode.isEmpty ? "VAGABONDAGE" : state.readingFailureMode.uppercased()
+        }
+        return "MAINTIEN ATTENTIONNEL"
     }
 
     private func summaryRow(_ label: String, _ value: String) -> some View {
@@ -303,82 +468,10 @@ struct OnboardingDiagnosisView: View {
                 .foregroundStyle(.ash)
             Spacer()
             Text(value)
-                .font(.system(size: 13, weight: .bold, design: .default))
+                .font(.system(size: 12, weight: .bold, design: .monospaced))
                 .foregroundStyle(.bone)
                 .multilineTextAlignment(.trailing)
         }
-    }
-
-    private func multiQuestion(_ title: String, subtitle: String, options: [String], selection: Binding<Set<String>>) -> some View {
-        question(title: title, subtitle: subtitle) {
-            ForEach(options, id: \.self) { option in
-                selectableRow(option, selected: selection.wrappedValue.contains(option)) {
-                    if selection.wrappedValue.contains(option) {
-                        selection.wrappedValue.remove(option)
-                    } else {
-                        selection.wrappedValue.insert(option)
-                    }
-                }
-            }
-        }
-    }
-
-    private func singleQuestion(_ title: String, subtitle: String, options: [String], selection: Binding<String>) -> some View {
-        question(title: title, subtitle: subtitle) {
-            ForEach(options, id: \.self) { option in
-                selectableRow(option, selected: selection.wrappedValue == option) {
-                    selection.wrappedValue = option
-                }
-            }
-        }
-    }
-
-    private func sliderQuestion(_ title: String, value: Binding<Int>, low: String, high: String) -> some View {
-        question(title: title, subtitle: "") {
-            VStack(spacing: 12) {
-                Slider(value: Binding(
-                    get: { Double(value.wrappedValue) },
-                    set: { value.wrappedValue = Int($0.rounded()) }
-                ), in: 1...5, step: 1)
-                .tint(.signalCyan)
-                HStack {
-                    Text(low).font(.metadata(size: 9)).foregroundStyle(.ash)
-                    Spacer()
-                    Text("\(value.wrappedValue)").font(.system(size: 18, weight: .bold, design: .monospaced)).foregroundStyle(.signalCyan)
-                    Spacer()
-                    Text(high).font(.metadata(size: 9)).foregroundStyle(.ash)
-                }
-            }
-            .padding(.vertical, 12)
-        }
-    }
-
-    private func textQuestion(_ title: String, subtitle: String, text: Binding<String>, placeholder: String) -> some View {
-        question(title: title, subtitle: subtitle) {
-            TextField(placeholder, text: text, axis: .vertical)
-                .font(.body(size: 16))
-                .foregroundStyle(.bone)
-                .lineLimit(2...4)
-                .padding(16)
-                .background(Color.deepCarbon)
-                .overlay(Rectangle().stroke(Color.line, lineWidth: 1))
-        }
-    }
-
-    private func question<Content: View>(title: String, subtitle: String, @ViewBuilder content: () -> Content) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(title)
-                .font(.heroBlack(size: 26))
-                .foregroundStyle(.bone)
-                .lineSpacing(-2)
-            if !subtitle.isEmpty {
-                Text(subtitle)
-                    .font(.body(size: 13))
-                    .foregroundStyle(.ash)
-            }
-            content()
-        }
-        .padding(.bottom, 20)
     }
 
     private func selectableRow(_ title: String, selected: Bool, action: @escaping () -> Void) -> some View {
@@ -400,4 +493,23 @@ struct OnboardingDiagnosisView: View {
         }
         .buttonStyle(.plain)
     }
+
+    #if DEBUG
+    private func runAutoDiagnosis() {
+        state.selectedGoals = ["ARRÊTER DE SCROLLER", "MIEUX TRAVAILLER"]
+        state.primaryGoal = "ARRÊTER DE SCROLLER"
+        state.primaryDistractor = "TikTok"
+        state.triggerContext = "Lit avant de dormir"
+        state.desiredOutcome = "Instagram ≤ 30 min / jour"
+        state.capacityBucket = "10–20"
+        state.flowActivities = ["Code & Programmation"]
+        state.flowDifferences = ["Feedback instantané"]
+        state.phoneLocation = "Sur le bureau"
+        state.notifications = "Beaucoup de bannières"
+        state.bestWindow = "Matin tôt"
+        state.sleep = "7–8 heures"
+        save()
+        finished = true
+    }
+    #endif
 }
