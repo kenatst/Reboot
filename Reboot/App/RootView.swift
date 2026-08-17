@@ -11,6 +11,7 @@ struct RootView: View {
     @State private var testSession: SessionRequest?
     @State private var testMilestone: Milestone?
     @State private var showSettings = false
+    @State private var showProgram = false
 
     private var progress: RebootProgress? {
         progressList.first
@@ -61,6 +62,11 @@ struct RootView: View {
                 SettingsView()
             }
         }
+        .fullScreenCover(isPresented: $showProgram) {
+            NavigationStack {
+                ProgramView()
+            }
+        }
         .preferredColorScheme(preferredScheme)
         .tint(.signalCyan)
         .onReceive(NotificationCenter.default.publisher(for: .rebootShowOnboarding)) { _ in
@@ -92,6 +98,10 @@ struct RootView: View {
     private func configureForUITest() {
         DevState.mockEvaluation = UITestDriver.mockEval
         DevState.forceEvaluationOffline = UITestDriver.forceOffline
+        if UITestDriver.resetOnboarding {
+            PreferencesStore.shared.onboardingCompleted = false
+            onboardingCompleted = false
+        }
         if UITestDriver.skipOnboarding || UITestDriver.autoFinishOnboarding {
             PreferencesStore.shared.onboardingCompleted = true
             onboardingCompleted = true
@@ -120,6 +130,9 @@ struct RootView: View {
         }
         if UITestDriver.settings {
             showSettings = true
+        }
+        if UITestDriver.program {
+            showProgram = true
         }
         if let raw = UITestDriver.milestone {
             switch raw {
@@ -160,13 +173,6 @@ struct MainTabsView: View {
         self._selection = State(initialValue: initialSelection)
     }
 
-    private let tabItems: [(tab: AppTab, label: String, glyph: RBProtocolGlyphKind)] = [
-        (.today, "AUJOURD'HUI", .today),
-        (.train, "ENTRAÎNER", .train),
-        (.trace, "TRACE", .trace),
-        (.profile, "PROFIL", .profile)
-    ]
-
     var body: some View {
         ZStack {
             Color.void.ignoresSafeArea()
@@ -190,7 +196,15 @@ struct MainTabsView: View {
             .id(selection)
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            RBCustomTabBar(selection: $selection, tabs: tabItems)
+            RBDockTabBar(
+                selection: $selection,
+                tabs: [
+                    (.today, "TODAY"),
+                    (.train, "TRAIN"),
+                    (.trace, "TRACE"),
+                    (.profile, "PROFILE")
+                ]
+            )
         }
     }
 }

@@ -42,6 +42,14 @@ enum ContentStore {
         (try? load("micro_insights", as: [MicroInsight].self)) ?? []
     }
 
+    static var checkpoints: [WeeklyCheckpointTemplate] {
+        (try? load("checkpoints", as: [WeeklyCheckpointTemplate].self)) ?? []
+    }
+
+    static var phaseIntros: [PhaseIntro] {
+        (try? load("phase_intros", as: [PhaseIntro].self)) ?? []
+    }
+
     static func reading(id: Int) -> ReadingExercise? {
         readings.first { $0.id == id }
     }
@@ -62,6 +70,30 @@ enum ContentStore {
         if let insight = microInsights.first(where: { $0.day == day }) {
             return insight.text
         }
-        return "L'attention n'est pas un don : c'est un muscle qui répond strictement à l'entraînement régulier."
+        #if DEBUG
+        assertionFailure("micro_insights.json is missing day \(day).")
+        #endif
+        return "SIGNAL BRIEF INDISPONIBLE"
+    }
+
+    static func checkpoint(week: Int) -> WeeklyCheckpointTemplate? {
+        checkpoints.first { $0.week == week }
+    }
+
+    static func phaseIntro(phase: Int) -> PhaseIntro? {
+        phaseIntros.first { $0.phase == phase }
+    }
+
+    static func validateProtocolContent() -> Bool {
+        #if DEBUG
+        let days = ProtocolCurriculum.days
+        guard days.count == 90 else {
+            assertionFailure("daily_protocol.json must contain 90 days.")
+            return false
+        }
+        return true
+        #else
+        return true
+        #endif
     }
 }

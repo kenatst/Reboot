@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-/// PROFILE — your attention in data, with honest sample sizes.
+/// PROFILE — a personal instrument panel built from real data only.
 struct ProfileView: View {
     @Query private var progressList: [RebootProgress]
     @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
@@ -10,42 +10,39 @@ struct ProfileView: View {
         progressList.first
     }
 
-    private var clarity: ProtocolEngine.ClarityStatus {
-        ProtocolEngine.clarityStatus(sessionsCompleted: progress?.completedSessions ?? 0)
-    }
-
-    private var completedSessions: Int {
-        progress?.completedSessions ?? 0
+    private var clarity: ClarityEngine.Result {
+        ClarityEngine.compute(sessions: sessions)
     }
 
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.void.ignoresSafeArea()
+                RBRadialField(color: .signalCyan, opacity: 0.04, diameter: 380)
+                    .position(x: UIScreen.main.bounds.width * 0.8, y: 160)
                 ScrollView {
                     VStack(alignment: .leading, spacing: 0) {
-                        HStack {
-                            RBSystemLabel(text: "REBOOT / PROFILE", color: .ash)
-                            Spacer()
-                        }
-                        .padding(.top, 10)
+                        RBSystemLabel(text: "REBOOT / PROFILE", color: .ash)
+                            .padding(.top, 14)
 
                         Text("TON ATTENTION.\nEN DONNÉES.")
                             .font(.heroBlack(size: 38))
-                            .tracking(-0.5)
+                            .tracking(-0.4)
                             .foregroundStyle(.bone)
-                            .lineSpacing(-4)
-                            .padding(.top, 20)
+                            .padding(.top, 18)
 
-                        claritySection
-                            .padding(.top, 30)
+                        clarityPanel
+                            .padding(.top, 28)
 
-                        dimensionsSection
-                            .padding(.top, 34)
+                        matrixPanel
+                            .padding(.top, 32)
 
-                        observedSection
-                            .padding(.top, 34)
-                            .padding(.bottom, 100)
+                        observedPanel
+                            .padding(.top, 32)
+
+                        positionPanel
+                            .padding(.top, 32)
+                            .padding(.bottom, 110)
                     }
                     .padding(.horizontal, RBSpacing.screen)
                 }
@@ -57,105 +54,94 @@ struct ProfileView: View {
                     } label: {
                         Image(systemName: "slider.horizontal.3")
                             .font(.system(size: 15, weight: .bold))
-                            .foregroundStyle(.bone)
+                            .foregroundStyle(.ash)
                     }
                 }
             }
         }
     }
 
-    private var claritySection: some View {
+    private var clarityPanel: some View {
         VStack(alignment: .leading, spacing: 0) {
-            RBEditorialDivider(label: "INDICE DE CLARTÉ")
-
-            HStack(alignment: .firstTextBaseline) {
-                if completedSessions < 3 {
-                    HStack(spacing: 8) {
-                        Text("CALIBRATION")
-                            .font(.system(size: 24, weight: .black, design: .monospaced))
-                            .foregroundStyle(.ash)
-                        Text("\(completedSessions)/3")
-                            .font(.system(size: 24, weight: .black, design: .monospaced))
-                            .foregroundStyle(.signalCyan)
+            RBEditorialDivider(label: "CLARITY CORE")
+            HStack(spacing: 22) {
+                clarityCore
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(clarity.status.rawValue)
+                        .font(.system(size: 15, weight: .bold, design: .monospaced))
+                        .foregroundStyle(statusColor)
+                        .contentTransition(.numericText())
+                    if let value = clarity.value {
+                        Text(String(format: "%.0f / 100", value))
+                            .font(.system(size: 28, weight: .black, design: .monospaced))
+                            .foregroundStyle(.bone)
                             .contentTransition(.numericText())
                     }
-                } else if completedSessions < 7 {
-                    HStack(spacing: 8) {
-                        Text("CLARITÉ 62")
-                            .font(.system(size: 26, weight: .black, design: .monospaced))
-                            .foregroundStyle(.acid)
-                        Text("PROVISOIRE")
-                            .font(.metadata(size: 10))
-                            .tracking(1.4)
-                            .foregroundStyle(.acid)
-                    }
-                } else {
-                    HStack(spacing: 8) {
-                        Text("CLARITÉ 78")
-                            .font(.system(size: 26, weight: .black, design: .monospaced))
-                            .foregroundStyle(.signalCyan)
-                        Text("CALIBRÉ")
-                            .font(.metadata(size: 10))
-                            .tracking(1.4)
-                            .foregroundStyle(.signalCyan)
-                    }
+                    Text("\(clarity.sampleSize) session\(clarity.sampleSize > 1 ? "s" : "") · confiance \(String(format: "%.0f%%", clarity.confidence * 100))")
+                        .font(.metadata(size: 9))
+                        .tracking(1)
+                        .foregroundStyle(.ash)
+                    Text("Indicateur interne REBOOT — pas une mesure médicale, neurologique, clinique ni de QI.")
+                        .font(.metadata(size: 8))
+                        .tracking(0.5)
+                        .foregroundStyle(.ash.opacity(0.65))
+                        .lineSpacing(3)
                 }
-
-                Spacer()
-                Text("DONNÉES LOCALES")
-                    .font(.metadata(size: 9))
-                    .tracking(1.4)
-                    .foregroundStyle(.ash)
+                Spacer(minLength: 0)
             }
-            .padding(.top, 16)
+            .padding(16)
+            .background(Color.graphiteSurface)
+            .clipShape(RBChamferedShape(cut: 16))
+            .padding(.top, 14)
         }
     }
 
-    private var dimensionsSection: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            RBEditorialDivider(label: "DIMENSIONS COGNITIVES")
-
-            let scored = sessions.compactMap { $0.evaluation }
-            let focusScore = average(scores: scored, matching: ["FOCUS", "CLARTÉ", "STRUCTURE"])
-            let stabilityScore = average(scores: scored, matching: ["STABILITY", "STABILITÉ", "STRUCTURE"])
-            let recallScore = average(scores: scored, matching: ["RECALL", "RESTITUTION", "MÉMOIRE", "CLARTÉ"])
-            let depthScore = average(scores: scored, matching: ["DEPTH", "PROFONDEUR", "PRÉCISION"])
-
-            VStack(spacing: 12) {
-                RBSignalRail(
-                    label: "FOCUS",
-                    score: focusScore,
-                    note: focusScore != nil ? "Capacité de maintien sur une cible sans déviation." : "Nécessite des sessions Stay."
-                )
-
-                RBSignalRail(
-                    label: "STABILITÉ",
-                    score: stabilityScore,
-                    note: stabilityScore != nil ? "Résistance aux interruptions et retours rapides." : "Nécessite des sessions régulières."
-                )
-
-                RBSignalRail(
-                    label: "RESTITUTION",
-                    score: recallScore,
-                    note: recallScore != nil ? "Fidélité de la mémoire de travail après fermeture." : "Nécessite des sessions Recall."
-                )
-
-                RBSignalRail(
-                    label: "PROFONDEUR",
-                    score: depthScore,
-                    note: depthScore != nil ? "Compréhension structurelle et capacité d'explication." : "Nécessite des sessions Explain."
-                )
+    @ViewBuilder
+    private var clarityCore: some View {
+        if clarity.sampleSize < 3 {
+            RBCalibrationCore(completed: min(3, clarity.sampleSize), size: 110)
+        } else {
+            ZStack {
+                Circle()
+                    .stroke(Color.line.opacity(0.4), lineWidth: 8)
+                Circle()
+                    .trim(from: 0, to: clarity.value.map { CGFloat($0 / 100) } ?? 0)
+                    .stroke(Color.signalCyan, style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                    .rotationEffect(.degrees(-90))
+                VStack(spacing: 0) {
+                    Text(clarity.value.map { String(format: "%.0f", $0) } ?? "—")
+                        .font(.system(size: 30, weight: .black, design: .monospaced))
+                        .foregroundStyle(.bone)
+                    Text("CLARTÉ")
+                        .font(.metadata(size: 7))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                }
             }
-            .padding(.top, 16)
+            .frame(width: 110, height: 110)
         }
     }
 
-    private var observedSection: some View {
+    private var matrixPanel: some View {
         VStack(alignment: .leading, spacing: 0) {
-            RBEditorialDivider(label: "OBSERVATIONS DERIVÉES")
+            RBEditorialDivider(label: "ATTENTION MATRIX")
+            VStack(spacing: 16) {
+                RBMetricInstrument(label: "FOCUS", value: average(scores: scored, matching: ["FOCUS", "CLARTÉ", "STRUCTURE"]))
+                RBMetricInstrument(label: "STABILITÉ", value: average(scores: scored, matching: ["STABILITY", "STABILITÉ", "STRUCTURE"]))
+                RBMetricInstrument(label: "RESTITUTION", value: average(scores: scored, matching: ["RECALL", "RESTITUTION", "MÉMOIRE", "CLARTÉ"]))
+                RBMetricInstrument(label: "PROFONDEUR", value: average(scores: scored, matching: ["DEPTH", "PROFONDEUR", "PRÉCISION"]))
+            }
+            .padding(16)
+            .background(Color.deepCarbon)
+            .clipShape(RBChamferedShape(cut: 16))
+            .padding(.top, 14)
+        }
+    }
 
-            let count = sessions.count
-            if count == 0 {
+    private var observedPanel: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            RBEditorialDivider(label: "OBSERVED")
+            if sessions.isEmpty {
                 Text("Aucune donnée pour l'instant. Le profil se construit avec de vraies sessions.")
                     .font(.body(size: 15))
                     .foregroundStyle(.ash)
@@ -164,30 +150,27 @@ struct ProfileView: View {
             } else {
                 VStack(alignment: .leading, spacing: 14) {
                     insightRow(
-                        title: "TEMPS TOTAL ENTRAÎNÉ",
+                        title: "TEMPS TOTAL",
                         value: "\(sessions.reduce(0) { $0 + $1.actualDurationSeconds } / 60) MIN",
-                        note: "Basé sur \(count) session\(count > 1 ? "s" : "") réelles complétées."
+                        note: "Sur \(sessions.count) session\(sessions.count > 1 ? "s" : "")."
                     )
-                    if count >= 3 {
+                    if sessions.count >= 3 {
                         let recent = sessions.prefix(3)
                         let older = sessions.dropFirst(3).prefix(3)
-                        let recentAvg = averageDuration(recent)
-                        let olderAvg = averageDuration(older)
-                        let delta = recentAvg - olderAvg
+                        let delta = averageDuration(recent) - averageDuration(older)
                         insightRow(
-                            title: "TENDANCE DE DURÉE",
+                            title: "DURÉE",
                             value: delta >= 0 ? "+\(Int(delta)) MIN" : "\(Int(delta)) MIN",
-                            note: "Comparaison entre tes \(older.count) sessions précédentes et tes \(recent.count) dernières sessions."
+                            note: "Comparaison entre tes \(older.count) sessions précédentes et tes \(recent.count) dernières sessions\(older.isEmpty ? " (échantillon encore petit)" : "")."
                         )
                     }
-                    if count >= 2 {
+                    if sessions.count >= 2 {
                         let modeCounts = Dictionary(grouping: sessions, by: \.mode).mapValues(\.count)
-                        let top = modeCounts.max { $0.value < $1.value }
-                        if let top {
+                        if let top = modeCounts.max(by: { $0.value < $1.value }) {
                             insightRow(
-                                title: "DISCIPLINE DOMINANTE",
-                                value: top.key.frenchLabel,
-                                note: "\(top.value) de tes \(count) sessions (\(Int(Double(top.value) / Double(count) * 100))%)."
+                                title: "DISCIPLINE PRINCIPALE",
+                                value: top.key.label,
+                                note: "\(top.value) de tes \(sessions.count) sessions (\(Int(Double(top.value) / Double(sessions.count) * 100))%)."
                             )
                         }
                     }
@@ -195,6 +178,46 @@ struct ProfileView: View {
                 .padding(.top, 16)
             }
         }
+    }
+
+    private var positionPanel: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            RBEditorialDivider(label: "90 DAY POSITION")
+            HStack(spacing: 10) {
+                RBDataBlock(label: "PHASE", value: "\(String(format: "%02d", currentPhase))")
+                RBDataBlock(label: "SESSIONS", value: "\(progress?.completedSessions ?? 0)")
+                RBDataBlock(label: "MINUTES", value: "\(sessions.reduce(0) { $0 + $1.actualDurationSeconds } / 60)")
+            }
+            .padding(.top, 14)
+            HStack(spacing: 10) {
+                RBDataBlock(label: "DISCIPLINES", value: "\(Set(sessions.map(\.mode)).count)")
+                RBDataBlock(label: "CLARTÉ", value: clarity.value.map { String(format: "%.0f", $0) } ?? clarity.status.rawValue)
+            }
+            .padding(.top, 10)
+        }
+    }
+
+    private var scored: [EvaluationResult] {
+        sessions.compactMap { $0.evaluation }
+    }
+
+    private var currentPhase: Int {
+        ProtocolEngine.phaseNumber(forDay: ProtocolEngine.currentDay(progress: progress))
+    }
+
+    private func average(scores: [EvaluationResult], matching names: [String]) -> Double? {
+        let values = scores.flatMap(\.dimensions)
+            .filter { dimension in
+                names.contains { dimension.name.uppercased().contains($0) }
+            }
+            .map(\.score)
+        guard !values.isEmpty else { return nil }
+        return (values.reduce(0, +) / Double(values.count) * 10).rounded() / 10
+    }
+
+    private func averageDuration(_ items: ArraySlice<TrainingSession>) -> Double {
+        guard !items.isEmpty else { return 0 }
+        return Double(items.reduce(0) { $0 + $1.actualDurationSeconds }) / Double(items.count) / 60.0
     }
 
     private func insightRow(title: String, value: String, note: String) -> some View {
@@ -214,18 +237,12 @@ struct ProfileView: View {
         .padding(.vertical, 4)
     }
 
-    private func averageDuration(_ items: ArraySlice<TrainingSession>) -> Double {
-        guard !items.isEmpty else { return 0 }
-        return Double(items.reduce(0) { $0 + $1.actualDurationSeconds }) / Double(items.count) / 60.0
-    }
-
-    private func average(scores: [EvaluationResult], matching names: [String]) -> Double? {
-        let values = scores.flatMap(\.dimensions)
-            .filter { dimension in
-                names.contains { dimension.name.uppercased().contains($0) }
-            }
-            .map(\.score)
-        guard !values.isEmpty else { return nil }
-        return values.reduce(0, +) / Double(values.count)
+    private var statusColor: Color {
+        switch clarity.status {
+        case .established: return .signalCyan
+        case .provisional: return .acid
+        case .pendingAnalysis: return .ash
+        default: return .ash
+        }
     }
 }

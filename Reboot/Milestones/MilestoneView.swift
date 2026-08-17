@@ -66,11 +66,11 @@ struct MilestoneView: View {
     private var milestoneTitle: String {
         switch milestone {
         case .day30:
-            return staysLonger ? "YOU'RE\nSTAYING\nLONGER." : "PHASE II\nCOMPLETE."
+            return staysLonger ? "TU RESTES\nPLUS\nLONGTEMPS." : "30 SESSIONS.\nPHASE 02\nCOMPLETE."
         case .day60:
-            return "GO\nDEEPER."
+            return "60 SESSIONS.\nPHASE 03\nCOMPLETE."
         case .day90:
-            return "THE REBOOT\nENDS HERE.\nTHE TRAINING\nDOESN'T."
+            return "90 JOURS.\nLE REBOOT\nS'ACHÈVE.\nLA PRATIQUE\nCONTINUE."
         }
     }
 

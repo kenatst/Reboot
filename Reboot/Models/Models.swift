@@ -376,21 +376,67 @@ struct MicroInsight: Codable, Identifiable, Hashable {
     var id: Int { day }
 }
 
+struct WeeklyCheckpointTemplate: Codable, Identifiable, Hashable {
+    let week: Int
+    let title: String
+    let insight: String
+    let questions: [String]
+    let objective: String
+
+    var id: Int { week }
+}
+
+struct PhaseIntro: Codable, Identifiable, Hashable {
+    let phase: Int
+    let title: String
+    let lines: [String]
+    let body: String
+
+    var id: Int { phase }
+}
+
 // MARK: - Protocol curriculum
 
 struct ProtocolDay: Identifiable, Hashable, Codable {
     let dayNumber: Int
     let phase: Int
+    let week: Int
     let mode: SessionMode
+    let skill: String
     let title: String
     let intention: String
+    let whyToday: String
     let recommendedDuration: Int
+    let difficulty: Int
+    let setup: String
     let instructions: [String]
     let optionalChallenge: String
-    let difficulty: Int
+    let reflection: String
+    let contentType: String
     let contentID: Int?
+    let completionMessage: String
 
     var id: Int { dayNumber }
+
+    enum CodingKeys: String, CodingKey {
+        case dayNumber = "day"
+        case phase
+        case week
+        case mode
+        case skill
+        case title
+        case intention
+        case whyToday
+        case recommendedDuration = "duration"
+        case difficulty
+        case setup
+        case instructions
+        case optionalChallenge = "challenge"
+        case reflection
+        case contentType
+        case contentID
+        case completionMessage
+    }
 }
 
 struct PhaseInfo: Identifiable, Hashable {

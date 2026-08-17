@@ -1,12 +1,12 @@
 import SwiftUI
 import SwiftData
 
-/// TRAIN — the five disciplines and the full 90-day curriculum.
+/// TRAIN — choose your signal. Editorial discipline system, curated not generated.
 struct TrainView: View {
     @Query private var progressList: [RebootProgress]
-    @Query private var completions: [ProtocolDayCompletion]
     @State private var activeRequest: SessionRequest?
-    @State private var showCurriculum = false
+    @State private var showingProgram = false
+    @State private var exploreMode: SessionMode?
 
     private var progress: RebootProgress? {
         progressList.first
@@ -16,8 +16,8 @@ struct TrainView: View {
         ProtocolEngine.currentDay(progress: progress)
     }
 
-    private var completedDays: Set<Int> {
-        Set(completions.map(\.dayNumber))
+    private var plan: ProtocolDay {
+        ProtocolCurriculum.day(dayNumber)
     }
 
     var body: some View {
@@ -25,140 +25,308 @@ struct TrainView: View {
             Color.void.ignoresSafeArea()
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    RBProtocolHeader(day: dayNumber, phase: ProtocolCurriculum.day(dayNumber).phase)
-                        .padding(.top, 10)
+                    header
+                        .padding(.top, 14)
 
-                    Text("CHOISIS TON\nENTRAÎNEMENT.")
-                        .font(.heroBlack(size: 38))
-                        .tracking(-0.5)
+                    Text("CHOISIS\nTON SIGNAL.")
+                        .font(.heroBlack(size: 40))
+                        .tracking(-0.4)
                         .foregroundStyle(.bone)
-                        .lineSpacing(-4)
-                        .padding(.top, 28)
+                        .padding(.top, 26)
 
-                    Button {
-                        activeRequest = SessionRequestFactory.today(day: dayNumber)
-                    } label: {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("RECOMMANDÉ AUJOURD'HUI")
-                                    .font(.metadata(size: 10))
-                                    .tracking(2)
-                                    .foregroundStyle(.signalCyan)
-                                Text("JOUR \(String(format: "%03d", dayNumber)) — \(ProtocolCurriculum.day(dayNumber).mode.frenchLabel) · \(ProtocolCurriculum.day(dayNumber).recommendedDuration) MIN")
-                                    .font(.system(size: 15, weight: .bold, design: .default))
-                                    .foregroundStyle(.bone)
-                            }
-                            Spacer()
-                            Image(systemName: "arrow.right")
-                                .font(.system(size: 13, weight: .bold))
-                                .foregroundStyle(.signalCyan)
-                        }
-                        .padding(18)
-                        .background(Color.graphite.opacity(0.4))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: RBRadius.sm)
-                                .stroke(Color.signalCyan.opacity(0.6), lineWidth: 1)
-                        )
-                    }
-                    .buttonStyle(.plain)
-                    .padding(.top, 22)
+                    assignedToday
+                        .padding(.top, 26)
 
-                    Text("LES 5 DISCIPLINES")
-                        .font(.metadata(size: 11))
+                    Text("LES DISCIPLINES")
+                        .font(.metadata(size: 10))
                         .tracking(2)
                         .foregroundStyle(.ash)
-                        .padding(.top, 32)
+                        .padding(.top, 34)
 
-                    VStack(spacing: 12) {
-                        ForEach(Array(SessionMode.allCases.enumerated()), id: \.element) { index, mode in
-                            Button {
-                                activeRequest = SessionRequestFactory.discipline(mode, day: dayNumber)
-                            } label: {
-                                RBSessionRow(index: index + 1, mode: mode, accent: disciplineAccent(mode))
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }
-                    .padding(.top, 12)
+                    disciplineGrid
+                        .padding(.top, 14)
 
-                    HStack {
-                        Text("PROGRAMME COMPLET")
-                            .font(.metadata(size: 11))
-                            .tracking(2)
-                            .foregroundStyle(.ash)
-                        Spacer()
-                        Button {
-                            withAnimation(.easeOut(duration: 0.25)) {
-                                showCurriculum.toggle()
-                            }
-                        } label: {
-                            Text(showCurriculum ? "MASQUER" : "VOIR LES 90 JOURS")
-                                .font(.metadata(size: 10))
-                                .tracking(1.4)
-                                .foregroundStyle(.signalCyan)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                    .padding(.top, 34)
-
-                    if showCurriculum {
-                        curriculum
-                            .padding(.top, 14)
-                            .transition(.opacity.combined(with: .move(edge: .top)))
-                    }
+                    exploreSection
+                        .padding(.top, 34)
+                        .padding(.bottom, 110)
                 }
                 .padding(.horizontal, RBSpacing.screen)
-                .padding(.bottom, 100)
             }
         }
         .fullScreenCover(item: $activeRequest) { request in
             SessionFlowView(request: request)
         }
+        .sheet(isPresented: $showingProgram) {
+            NavigationStack {
+                ProgramView()
+            }
+        }
+        .sheet(item: $exploreMode) { mode in
+            ExploreLibraryView(mode: mode)
+        }
     }
 
-    private var curriculum: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            ForEach(ProtocolCurriculum.phases) { phase in
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack(spacing: 10) {
-                        Text(String(format: "PHASE %02d", phase.number))
-                            .font(.metadata(size: 11))
-                            .tracking(1.8)
-                            .foregroundStyle(phase.number <= 2 ? .signalRed : .signalCyan)
-                        Rectangle()
-                            .fill(Color.line)
-                            .frame(height: 1)
-                            .frame(maxWidth: 24)
-                        Text(phase.title)
-                            .font(.system(size: 15, weight: .bold, design: .default))
-                            .foregroundStyle(.softBone)
-                        Spacer()
-                        Text("JOURS \(String(format: "%02d", phase.range.lowerBound))–\(String(format: "%02d", phase.range.upperBound))")
-                            .font(.metadata(size: 9))
-                            .foregroundStyle(.ash)
-                    }
+    private var header: some View {
+        HStack {
+            RBSystemLabel(text: "REBOOT / TRAIN", color: .ash)
+            Spacer()
+            RBDayCounter(day: dayNumber)
+        }
+    }
 
-                    LazyVStack(spacing: 10) {
-                        ForEach(Array(phase.range), id: \.self) { number in
-                            let plan = ProtocolCurriculum.day(number)
-                            RBProtocolCard(
-                                day: plan,
-                                isToday: number == self.dayNumber,
-                                isCompleted: completedDays.contains(number)
-                            )
+    private var assignedToday: some View {
+        RBSignalPlate(cut: 24, accent: Color.phaseAccent(plan.phase), fill: .deepCarbon) {
+            Button {
+                activeRequest = SessionRequestFactory.today(day: dayNumber)
+            } label: {
+                HStack(spacing: 16) {
+                    RBModeGlyph(kind: modeGlyph(plan.mode), size: 40)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("ASSIGNÉ AUJOURD'HUI")
+                            .font(.metadata(size: 9))
+                            .tracking(2)
+                            .foregroundStyle(.ash)
+                        Text("DAY \(String(format: "%03d", dayNumber)) — \(plan.mode.frenchLabel)")
+                            .font(.system(size: 17, weight: .bold, design: .default))
+                            .foregroundStyle(.bone)
+                        Text("\(plan.recommendedDuration) MIN · \(plan.skill)")
+                            .font(.body(size: 12))
+                            .foregroundStyle(.softBone)
+                    }
+                    Spacer()
+                    Image(systemName: "arrow.right")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(Color.phaseAccent(plan.phase))
+                }
+                .padding(20)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+        }
+    }
+
+    private var disciplineGrid: some View {
+        VStack(spacing: 14) {
+            disciplineModule(.stay, index: 1, flip: false)
+            disciplineModule(.recall, index: 2, flip: true)
+            disciplineModule(.explain, index: 3, flip: false)
+            disciplineModule(.nothing, index: 4, flip: true)
+            disciplineModule(.observe, index: 5, flip: false)
+        }
+    }
+
+    private func disciplineModule(_ mode: SessionMode, index: Int, flip: Bool) -> some View {
+        let kind = modeGlyph(mode)
+        let accent = kind.accent
+        return HStack(spacing: 0) {
+            if flip {
+                contentFor(mode, accent: accent)
+                RBModeNode(kind: kind, index: index)
+                    .frame(width: 92)
+            } else {
+                RBModeNode(kind: kind, index: index)
+                    .frame(width: 92)
+                contentFor(mode, accent: accent)
+            }
+        }
+        .background(Color.deepCarbon)
+        .clipShape(RBChamferedShape(cut: flip ? 22 : 6))
+        .overlay(
+            RBChamferedShape(cut: flip ? 22 : 6)
+                .stroke(accent.opacity(0.35), lineWidth: 1)
+        )
+    }
+
+    private func contentFor(_ mode: SessionMode, accent: Color) -> some View {
+        Button {
+            activeRequest = SessionRequestFactory.discipline(mode, day: dayNumber)
+        } label: {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(mode.label)
+                    .font(.metadata(size: 10))
+                    .tracking(2)
+                    .foregroundStyle(accent)
+                Text(mode.frenchLabel)
+                    .font(.system(size: 18, weight: .heavy, design: .default))
+                    .foregroundStyle(.bone)
+                Text(mode.tagline)
+                    .font(.system(size: 12, weight: .medium, design: .default))
+                    .foregroundStyle(.ash)
+                    .lineSpacing(3)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var exploreSection: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            RBEditorialDivider(label: "EXPLORE")
+            Text("Explore des exercices hors protocole. Ces sessions ne font pas avancer les 90 jours.")
+                .font(.body(size: 13))
+                .foregroundStyle(.ash)
+                .lineSpacing(3)
+                .padding(.top, 12)
+
+            HStack(spacing: 10) {
+                exploreButton("LIRE", .recall)
+                exploreButton("APPRENDRE", .explain)
+                exploreButton("OBSERVER", .observe)
+            }
+            .padding(.top, 14)
+        }
+    }
+
+    private func exploreButton(_ label: String, _ mode: SessionMode) -> some View {
+        Button {
+            exploreMode = mode
+        } label: {
+            VStack(spacing: 6) {
+                RBModeGlyph(kind: modeGlyph(mode), size: 22)
+                Text(label)
+                    .font(.metadata(size: 9))
+                    .tracking(1.4)
+                    .foregroundStyle(.softBone)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background(Color.graphiteSurface)
+            .clipShape(RBChamferedShape(cut: 10))
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func modeGlyph(_ mode: SessionMode) -> RBModeGlyphKind {
+        switch mode {
+        case .stay: return .stay
+        case .recall: return .recall
+        case .explain: return .explain
+        case .nothing: return .nothing
+        case .observe: return .observe
+        }
+    }
+}
+
+/// Browsable content libraries for optional practice (does not advance the protocol).
+struct ExploreLibraryView: View {
+    let mode: SessionMode
+    @Environment(\.dismiss) private var dismiss
+    @State private var selection: ExploreSelection?
+
+    struct ExploreSelection: Identifiable {
+        let id: Int
+    }
+
+    var body: some View {
+        ZStack {
+            Color.void.ignoresSafeArea()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack {
+                        RBSystemLabel(text: "REBOOT / EXPLORE", color: .ash)
+                        Spacer()
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 13, weight: .bold))
+                                .foregroundStyle(.ash)
                         }
                     }
+                    .padding(.top, 18)
+
+                    Text(mode.frenchLabel)
+                        .font(.heroBlack(size: 36))
+                        .foregroundStyle(.bone)
+                        .padding(.top, 18)
+
+                    rows
+                        .padding(.top, 22)
+                        .padding(.bottom, 40)
                 }
+                .padding(.horizontal, RBSpacing.screen)
+            }
+        }
+        .fullScreenCover(item: $selection) { selection in
+            SessionFlowView(request: exploreRequest(id: selection.id))
+        }
+    }
+
+    @ViewBuilder
+    private var rows: some View {
+        switch mode {
+        case .recall:
+            ForEach(ContentStore.readings) { reading in
+                editorialRow(
+                    title: reading.title,
+                    meta: "\(reading.category) · \(reading.length.label) · \(reading.readingMinutes) MIN",
+                    accent: .softBone
+                ) { selection = ExploreSelection(id: reading.id) }
+            }
+        case .explain:
+            ForEach(ContentStore.learningModules) { module in
+                editorialRow(
+                    title: module.title,
+                    meta: "\(module.topic) · \(module.readingMinutes) MIN",
+                    accent: .acid
+                ) { selection = ExploreSelection(id: module.id) }
+            }
+        default:
+            ForEach(ContentStore.observationMissions) { mission in
+                editorialRow(
+                    title: mission.title,
+                    meta: "\(mission.category) · MISSION \(String(format: "%03d", mission.id))",
+                    accent: .signalRed
+                ) { selection = ExploreSelection(id: mission.id) }
             }
         }
     }
 
-    private func disciplineAccent(_ mode: SessionMode) -> Color {
+    private func editorialRow(title: String, meta: String, accent: Color, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(alignment: .top, spacing: 14) {
+                Rectangle()
+                    .fill(accent)
+                    .frame(width: 3, height: 40)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.system(size: 16, weight: .bold, design: .default))
+                        .foregroundStyle(.bone)
+                        .multilineTextAlignment(.leading)
+                    Text(meta)
+                        .font(.metadata(size: 9))
+                        .tracking(1.2)
+                        .foregroundStyle(.ash)
+                        .textCase(.uppercase)
+                }
+                Spacer()
+                Image(systemName: "arrow.right")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(accent)
+            }
+            .padding(.vertical, 13)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func exploreRequest(id: Int) -> SessionRequest {
+        SessionRequest(
+            mode: mode,
+            day: ProtocolEngine.currentDay(progress: nil),
+            duration: 15,
+            title: titleFor(id: id),
+            contentID: id
+        )
+    }
+
+    private func titleFor(id: Int) -> String {
         switch mode {
-        case .stay: return .signalCyan
-        case .recall, .explain: return .softBone
-        case .nothing: return .ash
-        case .observe: return .signalRed
+        case .recall: return ContentStore.reading(id: id)?.title ?? "LECTURE"
+        case .explain: return ContentStore.learning(id: id)?.title ?? "LEÇON"
+        default: return ContentStore.mission(id: id)?.title ?? "MISSION"
         }
     }
 }

@@ -16,6 +16,12 @@ extension Color {
 extension ShapeStyle where Self == Color {
     /// Primary dark background.
     static var void: Color { Color(hex: 0x080A09) }
+    /// Surface level 1 — deep carbon.
+    static var deepCarbon: Color { Color(hex: 0x0D100F) }
+    /// Surface level 2 — graphite surface.
+    static var graphiteSurface: Color { Color(hex: 0x151918) }
+    /// Surface level 3 — bone plate.
+    static var bonePlate: Color { Color(hex: 0xF2EEE5) }
     /// Primary light background.
     static var bone: Color { Color(hex: 0xF2EEE5) }
     static var ink: Color { Color(hex: 0x101916) }

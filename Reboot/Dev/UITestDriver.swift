@@ -7,7 +7,12 @@ enum UITestDriver {
     private static let arguments = ProcessInfo.processInfo.arguments
 
     static var isActive: Bool {
-        arguments.contains { $0.hasPrefix("-uitest") }
+        arguments.contains {
+            $0.hasPrefix("-uitest")
+                || $0 == "-OnboardingPage"
+                || $0 == "-ResetOnboarding"
+                || $0 == "-OnboardingAutoAdvance"
+        }
     }
 
     static var skipOnboarding: Bool {
@@ -19,7 +24,11 @@ enum UITestDriver {
     }
 
     static var initialOnboardingPage: Int {
-        intValue("-uitest-onboarding-page") ?? 0
+        intValue("-uitest-onboarding-page") ?? intValue("-OnboardingPage") ?? 0
+    }
+
+    static var resetOnboarding: Bool {
+        arguments.contains("-uitest-reset-onboarding") || arguments.contains("-ResetOnboarding")
     }
 
     static var selectedTab: String {
@@ -64,6 +73,14 @@ enum UITestDriver {
 
     static var settings: Bool {
         arguments.contains("-uitest-settings")
+    }
+
+    static var program: Bool {
+        arguments.contains("-uitest-program")
+    }
+
+    static var autoAdvanceOnboarding: Bool {
+        arguments.contains("-OnboardingAutoAdvance")
     }
 
     static var forceOffline: Bool {

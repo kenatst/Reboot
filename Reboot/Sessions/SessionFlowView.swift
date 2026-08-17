@@ -27,11 +27,13 @@ struct SessionFlowView: View {
     enum SessionOverlay: Identifiable {
         case checkpoint(week: Int)
         case milestone(Milestone)
+        case phaseIntro(phase: Int)
 
         var id: String {
             switch self {
             case .checkpoint(let week): return "cp\(week)"
             case .milestone(let m): return m.rawValue
+            case .phaseIntro(let phase): return "pi\(phase)"
             }
         }
     }
@@ -99,6 +101,11 @@ struct SessionFlowView: View {
         if let overlay {
             ZStack {
                 switch overlay {
+                case .phaseIntro(let phase):
+                    PhaseIntroView(phase: phase) {
+                        self.overlay = nil
+                        dismissAll()
+                    }
                 case .checkpoint(let week):
                     CheckpointView(week: week) {
                         self.overlay = nil
@@ -168,6 +175,7 @@ struct SessionFlowView: View {
     private func advanceProgress() {
         guard let progress else { return }
         let before = progress.completedSessions
+        let beforePhase = ProtocolEngine.phaseNumber(forDay: min(90, before + 1))
         progress.completedSessions += 1
         progress.currentDay = min(90, progress.completedSessions + 1)
         progress.lastSessionDate = .now
@@ -183,7 +191,10 @@ struct SessionFlowView: View {
         let status = ProtocolEngine.clarityStatus(sessionsCompleted: progress.completedSessions).label
         modelContext.insert(ClaritySnapshot(completedSessions: progress.completedSessions, statusRaw: status))
 
-        if let week = ProtocolEngine.checkpointDue(completedBefore: before, completedAfter: progress.completedSessions) {
+        let afterPhase = ProtocolEngine.phaseNumber(forDay: progress.completedSessions)
+        if afterPhase > beforePhase, afterPhase >= 2, afterPhase <= 4 {
+            overlay = .phaseIntro(phase: afterPhase)
+        } else if let week = ProtocolEngine.checkpointDue(completedBefore: before, completedAfter: progress.completedSessions) {
             overlay = .checkpoint(week: week)
         } else if let milestone = ProtocolEngine.milestoneReached(completedBefore: before, completedAfter: progress.completedSessions) {
             overlay = .milestone(milestone)

@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 import Charts
 
-/// TRACE — what you actually trained.
+/// TRACE — a continuous signal line of real sessions.
 struct TraceView: View {
     @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
     @State private var selected: TrainingSession?
@@ -13,45 +13,26 @@ struct TraceView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     RBSystemLabel(text: "REBOOT / TRACE", color: .ash)
-                        .padding(.top, 10)
+                        .padding(.top, 14)
 
                     Text("CE QUE\nTU AS\nENTRAÎNÉ.")
-                        .font(.heroBlack(size: 38))
-                        .tracking(-0.5)
+                        .font(.heroBlack(size: 40))
+                        .tracking(-0.4)
                         .foregroundStyle(.bone)
-                        .lineSpacing(-4)
                         .padding(.top, 18)
 
                     if sessions.isEmpty {
                         emptyState
-                            .padding(.top, 40)
+                            .padding(.top, 44)
                     } else {
-                        if sessions.count >= 7 {
-                            charts
-                                .padding(.top, 28)
+                        if sessions.count >= 4 {
+                            signalGraph
+                                .padding(.top, 30)
                         }
 
-                        RBEditorialDivider(label: "HISTORIQUE DES SESSIONS")
+                        signalTimeline
                             .padding(.top, 30)
-
-                        LazyVStack(spacing: 0) {
-                            ForEach(sessions) { session in
-                                Button {
-                                    selected = session
-                                } label: {
-                                    RBTraceRow(session: session)
-                                        .contentShape(Rectangle())
-                                }
-                                .buttonStyle(.plain)
-                                if session.id != sessions.last?.id {
-                                    Rectangle()
-                                        .fill(Color.line.opacity(0.6))
-                                        .frame(height: 1)
-                                }
-                            }
-                        }
-                        .padding(.top, 6)
-                        .padding(.bottom, 100)
+                            .padding(.bottom, 110)
                     }
                 }
                 .padding(.horizontal, RBSpacing.screen)
@@ -67,9 +48,7 @@ struct TraceView: View {
 
     private var emptyState: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Rectangle()
-                .fill(Color.line)
-                .frame(width: 40, height: 2)
+            RBTimelineNode(state: .current, size: 18)
             Text("AUCUNE SESSION\nPOUR L'INSTANT.")
                 .font(.system(size: 24, weight: .heavy, design: .default))
                 .foregroundStyle(.softBone)
@@ -83,14 +62,92 @@ struct TraceView: View {
         }
     }
 
-    @ViewBuilder
-    private var charts: some View {
+    private var signalTimeline: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(sessions.enumerated()), id: \.element.id) { index, session in
+                HStack(alignment: .top, spacing: 16) {
+                    VStack(spacing: 0) {
+                        RBTimelineNode(state: nodeState(session), size: 13)
+                        if index < sessions.count - 1 {
+                            Rectangle()
+                                .fill(Color.line.opacity(0.6))
+                                .frame(width: 1.5, height: 74)
+                        }
+                    }
+
+                    Button {
+                        selected = session
+                    } label: {
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack(spacing: 10) {
+                                    Text("DAY \(String(format: "%03d", session.protocolDay))")
+                                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                        .foregroundStyle(modeColor(session.mode))
+                                    Text(session.formattedDate)
+                                        .font(.metadata(size: 9))
+                                        .foregroundStyle(.ash)
+                                }
+                                Text(session.mode.frenchLabel)
+                                    .font(.system(size: 16, weight: .heavy, design: .default))
+                                    .foregroundStyle(.bone)
+                                if !session.task.isEmpty && session.mode == .stay {
+                                    Text(session.task)
+                                        .font(.body(size: 13))
+                                        .foregroundStyle(.softBone)
+                                        .lineLimit(1)
+                                }
+                            }
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: 4) {
+                                Text("\(session.actualDurationSeconds / 60) MIN")
+                                    .font(.system(size: 13, weight: .bold, design: .monospaced))
+                                    .foregroundStyle(.ash)
+                                if let evaluation = session.evaluation {
+                                    Text(String(format: "%.0f/10", evaluation.overallScore))
+                                        .font(.system(size: 15, weight: .black, design: .monospaced))
+                                        .foregroundStyle(.signalCyan)
+                                } else if session.analysisOffline {
+                                    Text("OFFLINE")
+                                        .font(.metadata(size: 9))
+                                        .foregroundStyle(.acid)
+                                } else {
+                                    Text("—")
+                                        .font(.metadata(size: 12))
+                                        .foregroundStyle(.ash.opacity(0.5))
+                                }
+                            }
+                        }
+                        .padding(.vertical, 6)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+    }
+
+    private func nodeState(_ session: TrainingSession) -> RBTimelineNode.NodeState {
+        session.evaluation != nil ? .completed : .future
+    }
+
+    private func modeColor(_ mode: SessionMode) -> Color {
+        switch mode {
+        case .stay: return .signalCyan
+        case .recall: return .softBone
+        case .explain: return .acid
+        case .nothing: return .ash
+        case .observe: return .signalRed
+        }
+    }
+
+    private var signalGraph: some View {
         let scored = sessions.compactMap { session -> (date: Date, score: Double)? in
             guard let evaluation = session.evaluation else { return nil }
             return (session.date, evaluation.overallScore)
         }
 
-        VStack(alignment: .leading, spacing: 18) {
+        return VStack(alignment: .leading, spacing: 16) {
             if !scored.isEmpty {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("SCORES / SESSION")
@@ -114,10 +171,8 @@ struct TraceView: View {
                     .frame(height: 130)
                 }
                 .padding(14)
-                .overlay(
-                    RoundedRectangle(cornerRadius: RBRadius.sm)
-                        .stroke(Color.line, lineWidth: 1)
-                )
+                .background(Color.graphiteSurface)
+                .clipShape(RBChamferedShape(cut: 14))
             }
 
             VStack(alignment: .leading, spacing: 10) {
@@ -132,13 +187,11 @@ struct TraceView: View {
                     )
                     .foregroundStyle(Color.signalRed.opacity(0.8))
                 }
-                .frame(height: 110)
+                .frame(height: 100)
             }
             .padding(14)
-            .overlay(
-                RoundedRectangle(cornerRadius: RBRadius.sm)
-                    .stroke(Color.line, lineWidth: 1)
-            )
+            .background(Color.graphiteSurface)
+            .clipShape(RBChamferedShape(cut: 14))
         }
     }
 
@@ -212,7 +265,6 @@ struct TraceDetailView: View {
                     if let evaluation = session.evaluation {
                         RBResultMetric(score: evaluation.overallScore, label: "SESSION / ANALYZED")
                             .padding(.top, 30)
-
                         VStack(alignment: .leading, spacing: 14) {
                             ForEach(evaluation.dimensions) { dimension in
                                 HStack(alignment: .firstTextBaseline) {

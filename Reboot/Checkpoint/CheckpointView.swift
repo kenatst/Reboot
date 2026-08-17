@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-/// Weekly checkpoints — every 7 completed protocol sessions. No trophies.
+/// Weekly signal review — real week data, one insight, three questions.
 struct CheckpointView: View {
     let week: Int
     var onContinue: () -> Void
@@ -9,10 +9,12 @@ struct CheckpointView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
 
-    @State private var distraction = ""
-    @State private var easier = ""
-    @State private var control = ""
+    @State private var answers: [String] = ["", "", ""]
     @State private var saved = false
+
+    private var template: WeeklyCheckpointTemplate? {
+        ContentStore.checkpoint(week: week)
+    }
 
     private var weekSessions: [TrainingSession] {
         let start = max(0, sessions.count - 7)
@@ -24,10 +26,10 @@ struct CheckpointView: View {
             Color.void.ignoresSafeArea()
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    RBStatusChip(text: "REBOOT CHECKPOINT \(String(format: "%02d", week))", color: .signalCyan, pulse: true)
+                    RBStatusChip(text: "REBOOT CHECKPOINT \(String(format: "%02d", week))", color: .signalCyan, pulse: false)
                         .padding(.top, 34)
 
-                    Text("OÙ EN EST\nTON ATTENTION ?")
+                    Text(template?.title ?? "LE POINT")
                         .font(.heroBlack(size: 40))
                         .foregroundStyle(.bone)
                         .padding(.top, 24)
@@ -35,23 +37,39 @@ struct CheckpointView: View {
                     weekData
                         .padding(.top, 26)
 
-                    questionField(
-                        title: "QU'EST-CE QUI TE DISTRAIT LE PLUS ?",
-                        text: $distraction
-                    )
-                    .padding(.top, 28)
+                    if let insight = template?.insight {
+                        RBInsightStrip(text: insight, accent: .signalCyan)
+                            .padding(.top, 24)
+                    }
 
-                    questionField(
-                        title: "QU'EST-CE QUI DEVIENT PLUS FACILE ?",
-                        text: $easier
-                    )
-                    .padding(.top, 22)
+                    if let questions = template?.questions {
+                        ForEach(Array(questions.enumerated()), id: \.offset) { index, question in
+                            questionField(title: question, text: $answers[index])
+                                .padding(.top, 24)
+                        }
+                    }
 
-                    questionField(
-                        title: "OÙ VEUX-TU MIEUX CONTRÔLER TON ATTENTION ?",
-                        text: $control
-                    )
-                    .padding(.top, 22)
+                    if let objective = template?.objective {
+                        HStack(alignment: .top, spacing: 12) {
+                            Rectangle()
+                                .fill(Color.acid)
+                                .frame(width: 3, height: 36)
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text("OBJECTIF DE LA SEMAINE PROCHAINE")
+                                    .font(.metadata(size: 9))
+                                    .tracking(1.6)
+                                    .foregroundStyle(.ash)
+                                Text(objective)
+                                    .font(.body(size: 14))
+                                    .foregroundStyle(.softBone)
+                                    .lineSpacing(3)
+                            }
+                        }
+                        .padding(14)
+                        .background(Color.deepCarbon)
+                        .clipShape(RBChamferedShape(cut: 12))
+                        .padding(.top, 26)
+                    }
 
                     Button {
                         save()
@@ -63,7 +81,7 @@ struct CheckpointView: View {
                             Image(systemName: "checkmark")
                         }
                     }
-                    .buttonStyle(.rbPrimary())
+                    .buttonStyle(.rbSystem)
                     .padding(.top, 30)
                     .padding(.bottom, 40)
                 }
@@ -75,33 +93,10 @@ struct CheckpointView: View {
     }
 
     private var weekData: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("SEMAINE RÉELLE")
-                .font(.metadata(size: 10))
-                .tracking(2)
-                .foregroundStyle(.ash)
-            HStack(spacing: 26) {
-                stat("SESSIONS", "\(weekSessions.count)")
-                stat("MINUTES", "\(weekSessions.reduce(0) { $0 + $1.actualDurationSeconds } / 60)")
-                stat("MODE PRINCIPAL", weekSessions.first?.mode.label ?? "—")
-            }
-        }
-        .padding(16)
-        .overlay(
-            RoundedRectangle(cornerRadius: RBRadius.sm)
-                .stroke(Color.line, lineWidth: 1)
-        )
-    }
-
-    private func stat(_ label: String, _ value: String) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(label)
-                .font(.metadata(size: 9))
-                .tracking(1.6)
-                .foregroundStyle(.ash)
-            Text(value)
-                .font(.system(size: 15, weight: .bold, design: .monospaced))
-                .foregroundStyle(.bone)
+        HStack(spacing: 10) {
+            RBDataBlock(label: "SESSIONS", value: "\(weekSessions.count)")
+            RBDataBlock(label: "MINUTES", value: "\(weekSessions.reduce(0) { $0 + $1.actualDurationSeconds } / 60)")
+            RBDataBlock(label: "MODE", value: weekSessions.first?.mode.label ?? "—")
         }
     }
 
@@ -109,15 +104,16 @@ struct CheckpointView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(title)
                 .font(.metadata(size: 11))
-                .tracking(1.6)
+                .tracking(1.4)
                 .foregroundStyle(.ash)
             TextField("Écris ce qui est vrai pour toi…", text: text, axis: .vertical)
                 .font(.body(size: 15))
                 .foregroundStyle(.bone)
-                .lineLimit(3...6)
+                .lineLimit(3...5)
                 .padding(14)
+                .background(Color.deepCarbon)
                 .overlay(
-                    RoundedRectangle(cornerRadius: RBRadius.sm)
+                    RoundedRectangle(cornerRadius: 0)
                         .stroke(Color.line, lineWidth: 1)
                 )
         }
@@ -128,9 +124,9 @@ struct CheckpointView: View {
         modelContext.insert(
             WeeklyCheckpoint(
                 weekNumber: week,
-                biggestDistraction: distraction,
-                easierNow: easier,
-                controlTarget: control,
+                biggestDistraction: answers.indices.contains(0) ? answers[0] : "",
+                easierNow: answers.indices.contains(1) ? answers[1] : "",
+                controlTarget: answers.indices.contains(2) ? answers[2] : "",
                 sessionsInWeek: weekSessions.count
             )
         )

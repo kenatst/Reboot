@@ -1,9 +1,10 @@
 import SwiftUI
 import SwiftData
 
-/// TODAY — the daily protocol, not a dashboard.
+/// TODAY — the daily protocol as a destination, not a document.
 struct TodayView: View {
     @Query private var progressList: [RebootProgress]
+    @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
     @State private var activeRequest: SessionRequest?
     @State private var showingProgram = false
 
@@ -23,6 +24,10 @@ struct TodayView: View {
         progress?.completedSessions ?? 0
     }
 
+    private var clarity: ClarityEngine.Result {
+        ClarityEngine.compute(sessions: sessions)
+    }
+
     private var microInsightText: String {
         ContentStore.microInsight(day: dayNumber)
     }
@@ -30,41 +35,37 @@ struct TodayView: View {
     var body: some View {
         ZStack {
             Color.void.ignoresSafeArea()
+            RBRadialField(color: accent, opacity: 0.045, diameter: 420)
+                .position(x: UIScreen.main.bounds.width * 0.78, y: 140)
             phaseNoiseDecoration
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    header
+                    systemHeader
                         .padding(.top, 10)
 
                     if let message = ProtocolEngine.welcomeBackMessage(progress: progress) {
                         welcomeBack(message)
                     }
 
-                    heroSection
-                        .padding(.top, 32)
+                    instrumentRow
+                        .padding(.top, 30)
 
-                    Button {
-                        activeRequest = SessionRequestFactory.today(day: dayNumber)
-                    } label: {
-                        HStack {
-                            Text("COMMENCER")
-                            Spacer()
-                            Image(systemName: "arrow.right")
-                        }
-                    }
-                    .buttonStyle(.rbPrimary())
-                    .padding(.top, 28)
+                    todayProtocolPlate
+                        .padding(.top, 30)
 
                     whyToday
-                        .padding(.top, 36)
+                        .padding(.top, 34)
 
-                    claritySection
-                        .padding(.top, 36)
+                    signalBrief
+                        .padding(.top, 24)
 
-                    progressSection
-                        .padding(.top, 36)
-                        .padding(.bottom, 100)
+                    clarityInstrument
+                        .padding(.top, 30)
+
+                    programStrip
+                        .padding(.top, 30)
+                        .padding(.bottom, 110)
                 }
                 .padding(.horizontal, RBSpacing.screen)
             }
@@ -79,15 +80,30 @@ struct TodayView: View {
         }
     }
 
-    private var header: some View {
-        RBProtocolHeader(day: dayNumber, phase: plan.phase)
+    private var systemHeader: some View {
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 5) {
+                RBSystemLabel(text: "REBOOT", color: .bone)
+                RBDayCounter(day: dayNumber)
+            }
+            Spacer()
+            VStack(alignment: .trailing, spacing: 5) {
+                Text("PHASE \(String(format: "%02d", plan.phase))")
+                    .font(.metadata(size: 11))
+                    .tracking(2)
+                    .foregroundStyle(accent)
+                Text(ProtocolCurriculum.phase(forPhase: plan.phase).title)
+                    .font(.metadata(size: 10))
+                    .foregroundStyle(.ash)
+            }
+        }
     }
 
     private func welcomeBack(_ message: String) -> some View {
         HStack(alignment: .top, spacing: 12) {
             Rectangle()
                 .fill(Color.acid)
-                .frame(width: 3, height: 34)
+                .frame(width: 3, height: 38)
             VStack(alignment: .leading, spacing: 4) {
                 Text("RETOUR AU PROTOCOLE.")
                     .font(.system(size: 14, weight: .bold, design: .default))
@@ -100,181 +116,186 @@ struct TodayView: View {
             }
         }
         .padding(14)
-        .overlay(
-            RoundedRectangle(cornerRadius: RBRadius.sm)
-                .stroke(Color.acid.opacity(0.4), lineWidth: 1)
-        )
+        .background(Color.deepCarbon)
+        .clipShape(RBChamferedShape(cut: 12))
         .padding(.top, 20)
     }
 
-    private var heroSection: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            RBSystemLabel(text: "TODAY / \(plan.mode.label)", color: accent)
+    private var instrumentRow: some View {
+        HStack(spacing: 24) {
+            RBSignalCore(day: dayNumber, total: 90, phase: plan.phase, size: 176)
+            VStack(alignment: .leading, spacing: 8) {
+                Text("PROGRAMME")
+                    .font(.metadata(size: 10))
+                    .tracking(2)
+                    .foregroundStyle(.ash)
+                Text("\(completedSessions) SESSIONS\nTERMINÉES")
+                    .font(.system(size: 17, weight: .bold, design: .default))
+                    .foregroundStyle(.bone)
+                    .lineSpacing(3)
+                Text(plan.skill)
+                    .font(.body(size: 13))
+                    .foregroundStyle(accent)
+                    .lineSpacing(3)
+            }
+            Spacer(minLength: 0)
+        }
+    }
 
-            RBNonBreakingHero(title: plan.mode.frenchLabel, baseSize: 42, color: .bone)
-                .padding(.top, 10)
+    private var todayProtocolPlate: some View {
+        RBSignalPlate(cut: 20, accent: accent, fill: .deepCarbon) {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(alignment: .top) {
+                    RBModeGlyph(kind: modeGlyph, size: 34)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("AUJOURD'HUI")
+                            .font(.metadata(size: 10))
+                            .tracking(2)
+                            .foregroundStyle(.ash)
+                        Text(plan.mode.frenchLabel)
+                            .font(.heroBlack(size: 34))
+                            .tracking(-0.4)
+                            .foregroundStyle(.bone)
+                    }
+                    Spacer()
+                    Text("\(plan.recommendedDuration) MIN")
+                        .font(.system(size: 16, weight: .bold, design: .monospaced))
+                        .foregroundStyle(accent)
+                }
 
-            Text("\(plan.recommendedDuration) MIN")
-                .font(.system(size: 21, weight: .bold, design: .monospaced))
-                .foregroundStyle(accent)
-                .padding(.top, 4)
+                Text(plan.mode.tagline)
+                    .font(.system(size: 15, weight: .bold, design: .default))
+                    .foregroundStyle(.softBone)
+                    .lineSpacing(3)
+                    .padding(.top, 16)
 
-            Text(plan.mode.tagline)
-                .font(.system(size: 16, weight: .bold, design: .default))
-                .foregroundStyle(.softBone)
-                .lineSpacing(4)
-                .padding(.top, 16)
+                Text(plan.title)
+                    .font(.body(size: 14))
+                    .foregroundStyle(.ash)
+                    .lineSpacing(3)
+                    .padding(.top, 12)
 
-            RBSignalLine(color: accent, thickness: 2)
-                .frame(width: 110)
+                Button {
+                    activeRequest = SessionRequestFactory.today(day: dayNumber)
+                } label: {
+                    HStack {
+                        Text("COMMENCER")
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                            .font(.system(size: 13, weight: .bold))
+                    }
+                }
+                .buttonStyle(.rbSystem)
                 .padding(.top, 20)
+            }
+            .padding(20)
         }
     }
 
     private var whyToday: some View {
         VStack(alignment: .leading, spacing: 0) {
             RBEditorialDivider(label: "WHY TODAY")
-
-            Text(plan.intention)
-                .font(.body(size: 16))
+            Text(plan.whyToday)
+                .font(.body(size: 17))
                 .foregroundStyle(.softBone)
                 .lineSpacing(4)
                 .padding(.top, 16)
-
-            Text(microInsightText)
-                .font(.body(size: 14))
-                .foregroundStyle(.ash)
-                .lineSpacing(3)
-                .padding(.top, 10)
-
-            HStack(alignment: .top, spacing: 10) {
-                Image(systemName: "bolt.fill")
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(.acid)
-                Text(plan.optionalChallenge)
-                    .font(.body(size: 13))
-                    .foregroundStyle(.ash)
-                    .lineSpacing(3)
-            }
-            .padding(.top, 14)
         }
     }
 
-    private var claritySection: some View {
+    private var signalBrief: some View {
+        RBInsightStrip(text: microInsightText, accent: .acid)
+    }
+
+    private var clarityInstrument: some View {
         VStack(alignment: .leading, spacing: 0) {
             RBEditorialDivider(label: "SIGNAL / CLARITY")
-
-            HStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: 4) {
-                    if completedSessions < 3 {
-                        HStack(spacing: 6) {
-                            Text("CALIBRATION")
-                                .font(.metadata(size: 11))
-                                .tracking(1.6)
-                                .foregroundStyle(.ash)
-                            Text("\(completedSessions)/3")
-                                .font(.system(size: 15, weight: .bold, design: .monospaced))
-                                .foregroundStyle(.signalCyan)
-                                .contentTransition(.numericText())
-                        }
-                        Text("3 sessions nécessaires pour le premier indice de clarté.")
-                            .font(.body(size: 12))
-                            .foregroundStyle(.ash.opacity(0.8))
-                    } else if completedSessions < 7 {
-                        HStack(spacing: 6) {
-                            Text("CLARITÉ 62")
-                                .font(.system(size: 16, weight: .bold, design: .monospaced))
-                                .foregroundStyle(.acid)
-                                .contentTransition(.numericText())
-                            Text("PROVISOIRE")
-                                .font(.metadata(size: 9))
-                                .tracking(1.4)
-                                .foregroundStyle(.acid)
-                        }
-                        Text("Indice basé sur tes premières restitutions.")
-                            .font(.body(size: 12))
-                            .foregroundStyle(.ash.opacity(0.8))
+            HStack(spacing: 18) {
+                clarityCore
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(clarity.status.rawValue)
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
+                        .foregroundStyle(clarityColor)
+                        .contentTransition(.numericText())
+                    if let value = clarity.value {
+                        Text(String(format: "%.0f / 100", value))
+                            .font(.system(size: 22, weight: .black, design: .monospaced))
+                            .foregroundStyle(.bone)
+                            .contentTransition(.numericText())
                     } else {
-                        HStack(spacing: 6) {
-                            Text("CLARITÉ 78")
-                                .font(.system(size: 16, weight: .bold, design: .monospaced))
-                                .foregroundStyle(.signalCyan)
-                                .contentTransition(.numericText())
-                            Text("CALIBRÉ")
-                                .font(.metadata(size: 9))
-                                .tracking(1.4)
-                                .foregroundStyle(.signalCyan)
-                        }
-                        Text("Signal attentionnel stable et mesuré.")
+                        Text(clarity.sampleSize == 0
+                             ? "3 restitutions nécessaires pour le premier indice."
+                             : "Indice interne basé sur de vraies restitutions.")
                             .font(.body(size: 12))
-                            .foregroundStyle(.ash.opacity(0.8))
+                            .foregroundStyle(.ash)
+                            .lineSpacing(3)
                     }
+                    Text("Indicateur interne REBOOT — pas une mesure médicale ni clinique.")
+                        .font(.metadata(size: 8))
+                        .tracking(0.6)
+                        .foregroundStyle(.ash.opacity(0.65))
                 }
-
-                Spacer()
-
-                RBSignalPulse(color: completedSessions < 3 ? .ash : .signalCyan, diameter: 8, active: true)
+                Spacer(minLength: 0)
             }
+            .padding(16)
+            .background(Color.graphiteSurface)
+            .clipShape(RBChamferedShape(cut: 14))
             .padding(.top, 16)
         }
     }
 
-    private var progressSection: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            RBEditorialDivider(label: "PROGRESSION DU PROTOCOLE")
+    @ViewBuilder
+    private var clarityCore: some View {
+        if clarity.sampleSize < 3 {
+            RBCalibrationCore(completed: min(3, clarity.sampleSize), size: 96)
+        } else {
+            ZStack {
+                Circle()
+                    .stroke(Color.line.opacity(0.4), lineWidth: 7)
+                Circle()
+                    .trim(from: 0, to: clarity.value.map { CGFloat($0 / 100) } ?? 0)
+                    .stroke(Color.signalCyan, style: StrokeStyle(lineWidth: 7, lineCap: .round))
+                    .rotationEffect(.degrees(-90))
+                VStack(spacing: 0) {
+                    Text(clarity.value.map { String(format: "%.0f", $0) } ?? "—")
+                        .font(.system(size: 26, weight: .black, design: .monospaced))
+                        .foregroundStyle(.bone)
+                    Text("CLARTÉ")
+                        .font(.metadata(size: 7))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                }
+            }
+            .frame(width: 96, height: 96)
+        }
+    }
 
-            HStack(alignment: .firstTextBaseline, spacing: 8) {
-                Text("\(completedSessions)")
-                    .font(.system(size: 34, weight: .black, design: .monospaced))
-                    .foregroundStyle(.bone)
-                    .contentTransition(.numericText())
-                Text("/ 90")
-                    .font(.metadata(size: 14))
+    private var programStrip: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack {
+                Text("PROGRAMME")
+                    .font(.metadata(size: 10))
+                    .tracking(2)
                     .foregroundStyle(.ash)
                 Spacer()
-                Text("PHASE \(String(format: "%02d", plan.phase)) — \(ProtocolCurriculum.phase(forPhase: plan.phase).title)")
-                    .font(.metadata(size: 10))
-                    .tracking(1.4)
-                    .foregroundStyle(accent)
-            }
-            .padding(.top, 16)
-
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    Rectangle()
-                        .fill(Color.line)
-                        .frame(height: 2)
-                    Rectangle()
-                        .fill(accent)
-                        .frame(width: max(0, geo.size.width * CGFloat(completedSessions) / 90.0), height: 2)
-                }
-            }
-            .frame(height: 2)
-            .padding(.top, 12)
-
-            Button {
-                showingProgram = true
-            } label: {
-                HStack {
-                    Text("VOIR LE PROGRAMME →")
-                        .font(.metadata(size: 11))
+                Button {
+                    showingProgram = true
+                } label: {
+                    Text("VOIR →")
+                        .font(.metadata(size: 10))
                         .tracking(1.6)
                         .foregroundStyle(.signalCyan)
-                    Spacer()
-                    Image(systemName: "list.bullet")
-                        .font(.system(size: 12, weight: .bold))
-                        .foregroundStyle(.signalCyan)
                 }
-                .padding(.vertical, 14)
-                .padding(.horizontal, 16)
-                .background(Color.graphite.opacity(0.5))
-                .overlay(
-                    RoundedRectangle(cornerRadius: RBRadius.sm)
-                        .stroke(Color.line.opacity(0.8), lineWidth: 1)
-                )
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.plain)
-            .padding(.top, 20)
+            VStack(spacing: 8) {
+                ForEach(ProtocolCurriculum.phases) { phase in
+                    RBPhaseBand(phase: phase.number, currentDay: dayNumber) {
+                        showingProgram = true
+                    }
+                }
+            }
+            .padding(.top, 12)
         }
     }
 
@@ -283,7 +304,7 @@ struct TodayView: View {
             ZStack(alignment: .topTrailing) {
                 ForEach(0..<noiseCount, id: \.self) { index in
                     Rectangle()
-                        .fill(Color.signalRed.opacity(0.28 - Double(index) * 0.05))
+                        .fill(Color.signalRed.opacity(0.22 - Double(index) * 0.05))
                         .frame(width: 2 + CGFloat(index % 3), height: 16 + CGFloat((index * 5) % 20))
                         .offset(
                             x: -20 - CGFloat((index * 27) % 80),
@@ -305,5 +326,24 @@ struct TodayView: View {
 
     private var accent: Color {
         Color.phaseAccent(plan.phase)
+    }
+
+    private var modeGlyph: RBModeGlyphKind {
+        switch plan.mode {
+        case .stay: return .stay
+        case .recall: return .recall
+        case .explain: return .explain
+        case .nothing: return .nothing
+        case .observe: return .observe
+        }
+    }
+
+    private var clarityColor: Color {
+        switch clarity.status {
+        case .established: return .signalCyan
+        case .provisional: return .acid
+        case .pendingAnalysis: return .ash
+        default: return .ash
+        }
     }
 }
