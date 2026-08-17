@@ -28,13 +28,15 @@ struct RootView: View {
         }
         .onAppear {
             ensureProgressExists()
-            PreferencesStore.shared.onboardingShownAtLeastOnce = true
             #if DEBUG
             if UITestDriver.isActive {
                 configureForUITest()
             }
             #endif
-            if !PreferencesStore.shared.onboardingCompleted {
+            let completed = PreferencesStore.shared.onboardingCompleted
+            let shownBefore = PreferencesStore.shared.onboardingShownAtLeastOnce
+            if !completed && !shownBefore {
+                PreferencesStore.shared.onboardingShownAtLeastOnce = true
                 #if DEBUG
                 onboardingPage = UITestDriver.isActive ? UITestDriver.initialOnboardingPage : 0
                 #endif
@@ -56,6 +58,13 @@ struct RootView: View {
                         AdaptiveRebootEngineDriver.generatePrescription(forDay: 1, context: modelContext)
                     }
                 }
+            }
+            .interactiveDismissDisabled(true)
+            .onDisappear {
+                // Safety: any dismissal path completes onboarding so the app
+                // never returns to the intro after a cover closes.
+                PreferencesStore.shared.onboardingCompleted = true
+                onboardingCompleted = true
             }
         }
         .fullScreenCover(item: $testSession) { request in
@@ -107,41 +116,18 @@ struct RootView: View {
     }
 
     #if DEBUG
+    private static var didConfigureUITest = false
+
     private func configureForUITest() {
+        guard !Self.didConfigureUITest else { return }
+        Self.didConfigureUITest = true
         DevState.mockEvaluation = UITestDriver.mockEval
         DevState.forceEvaluationOffline = UITestDriver.forceOffline
         #if DEBUG
         if UITestDriver.autoTour {
-            let profile = AdaptiveRebootEngineDriver.ensureProfile(context: modelContext)
-            let injected = AdaptiveDebug.profile(name: "A")
-            profile.goalsRaw = injected.goalsRaw
-            profile.primaryGoal = injected.primaryGoal
-            profile.primaryDistractor = injected.primaryDistractor
-            profile.checkMomentsRaw = injected.checkMomentsRaw
-            profile.capacityBucket = injected.capacityBucket
-            profile.returnDifficulty = injected.returnDifficulty
-            profile.readsTenPages = injected.readsTenPages
-            profile.switchingFrequency = injected.switchingFrequency
-            profile.existingFlowActivitiesRaw = injected.existingFlowActivitiesRaw
-            profile.flowDifferenceRaw = injected.flowDifferenceRaw
-            profile.phoneLocation = injected.phoneLocation
-            profile.notificationsLevel = injected.notificationsLevel
-            profile.openTabsBucket = injected.openTabsBucket
-            profile.usesScreenTimeLimits = injected.usesScreenTimeLimits
-            profile.bestWindow = injected.bestWindow
-            profile.typicalSleep = injected.typicalSleep
-            profile.currentEnergy = injected.currentEnergy
-            profile.caffeine = injected.caffeine
-            try? modelContext.save()
-            DevDataFactory.populate(
-                progress: progressList.first,
-                sessions: (try? modelContext.fetch(FetchDescriptor<TrainingSession>())) ?? [],
-                context: modelContext
-            )
-            if let progress = progressList.first {
-                DevDataFactory.setDay(10, progress: progress, context: modelContext)
-            }
-            AdaptiveRebootEngineDriver.generatePrescription(forDay: 10, context: modelContext)
+            // Profile injection happens at tour start (MainTabsView), so the
+            // recording shows the calibration flow first.
+            DevState.mockEvaluation = true
         }
         #endif
         if UITestDriver.resetOnboarding {
@@ -237,11 +223,17 @@ struct RootView: View {
 }
 
 struct MainTabsView: View {
+    @Query private var progressList: [RebootProgress]
     @State private var selection: AppTab
     @State private var showProgramSheet = false
     @State private var showFlowLabSheet = false
     @State private var showExperimentsSheet = false
-    @State private var showSession = false
+    @State private var showSettingsSheet = false
+    @State private var showCheckpoint = false
+    @State private var showPhaseIntro = false
+    @State private var tourMilestone: Milestone?
+    @State private var tourSession: SessionMode?
+    @State private var exploreMode: SessionMode?
     @Environment(\.modelContext) private var modelContext
 
     enum AppTab: Hashable {
@@ -299,14 +291,37 @@ struct MainTabsView: View {
         .fullScreenCover(isPresented: $showExperimentsSheet) {
             ExperimentsView()
         }
-        .fullScreenCover(isPresented: $showSession) {
+        .fullScreenCover(isPresented: $showSettingsSheet) {
+            NavigationStack {
+                SettingsView()
+            }
+        }
+        .sheet(item: $exploreMode) { mode in
+            ExploreLibraryView(mode: mode)
+        }
+        .fullScreenCover(item: $tourMilestone) { milestone in
+            MilestoneView(milestone: milestone) {
+                tourMilestone = nil
+            }
+        }
+        .fullScreenCover(isPresented: $showCheckpoint) {
+            CheckpointView(week: 1) {
+                showCheckpoint = false
+            }
+        }
+        .fullScreenCover(isPresented: $showPhaseIntro) {
+            PhaseIntroView(phase: 2) {
+                showPhaseIntro = false
+            }
+        }
+        .fullScreenCover(item: $tourSession) { mode in
             SessionFlowView(
                 request: SessionRequest(
-                    mode: .stay,
+                    mode: mode,
                     day: 10,
-                    duration: 10,
+                    duration: mode == .nothing ? 5 : 10,
                     title: ProtocolCurriculum.day(10).title,
-                    contentID: nil,
+                    contentID: ProtocolCurriculum.day(10).contentID,
                     skipSetup: true,
                     fastTimer: true
                 )
@@ -324,33 +339,107 @@ struct MainTabsView: View {
     #if DEBUG
     private func runTour() {
         Task {
-            // Today with adaptive prescription.
-            try? await Task.sleep(nanoseconds: 6_000_000_000)
-            // STAY session: active timer → completion → debrief.
-            showSession = true
+            // Inject adaptive profile A + populated data at tour start.
+            let profile = AdaptiveRebootEngineDriver.ensureProfile(context: modelContext)
+            let injected = AdaptiveDebug.profile(name: "A")
+            profile.goalsRaw = injected.goalsRaw
+            profile.primaryGoal = injected.primaryGoal
+            profile.primaryDistractor = injected.primaryDistractor
+            profile.checkMomentsRaw = injected.checkMomentsRaw
+            profile.capacityBucket = injected.capacityBucket
+            profile.returnDifficulty = injected.returnDifficulty
+            profile.readsTenPages = injected.readsTenPages
+            profile.switchingFrequency = injected.switchingFrequency
+            profile.existingFlowActivitiesRaw = injected.existingFlowActivitiesRaw
+            profile.flowDifferenceRaw = injected.flowDifferenceRaw
+            profile.phoneLocation = injected.phoneLocation
+            profile.notificationsLevel = injected.notificationsLevel
+            profile.openTabsBucket = injected.openTabsBucket
+            profile.usesScreenTimeLimits = injected.usesScreenTimeLimits
+            profile.bestWindow = injected.bestWindow
+            profile.typicalSleep = injected.typicalSleep
+            profile.currentEnergy = injected.currentEnergy
+            profile.caffeine = injected.caffeine
+            try? modelContext.save()
+            DevDataFactory.populate(
+                progress: progressList.first,
+                sessions: (try? modelContext.fetch(FetchDescriptor<TrainingSession>())) ?? [],
+                context: modelContext
+            )
+            if let progress = progressList.first {
+                DevDataFactory.setDay(10, progress: progress, context: modelContext)
+            }
+            AdaptiveRebootEngineDriver.generatePrescription(forDay: 10, context: modelContext)
+
+            // 1. Today with adaptive prescription + energy check-in.
+            try? await Task.sleep(nanoseconds: 7_000_000_000)
+            // 2. STAY session → debrief.
+            tourSession = .stay
+            try? await Task.sleep(nanoseconds: 14_000_000_000)
+            tourSession = nil
+            // 3. RECALL session → reconstruction → mock analysis → debrief.
+            tourSession = .recall
+            try? await Task.sleep(nanoseconds: 18_000_000_000)
+            tourSession = nil
+            // 4. EXPLAIN session.
+            tourSession = .explain
             try? await Task.sleep(nanoseconds: 16_000_000_000)
-            showSession = false
+            tourSession = nil
+            // 5. NOTHING session.
+            tourSession = .nothing
+            try? await Task.sleep(nanoseconds: 8_000_000_000)
+            tourSession = nil
+            // 6. OBSERVE session.
+            tourSession = .observe
+            try? await Task.sleep(nanoseconds: 8_000_000_000)
+            tourSession = nil
             // Train.
             withAnimation(RBMotion.tabTransition) { selection = .train }
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            // Explore libraries.
+            exploreMode = .recall
             try? await Task.sleep(nanoseconds: 4_000_000_000)
+            exploreMode = nil
+            exploreMode = .explain
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            exploreMode = nil
+            exploreMode = .observe
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            exploreMode = nil
             // Program.
             showProgramSheet = true
-            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            try? await Task.sleep(nanoseconds: 6_000_000_000)
             showProgramSheet = false
             // Trace.
             withAnimation(RBMotion.tabTransition) { selection = .trace }
-            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            try? await Task.sleep(nanoseconds: 6_000_000_000)
             // Profile.
             withAnimation(RBMotion.tabTransition) { selection = .profile }
-            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            // Settings.
+            showSettingsSheet = true
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            showSettingsSheet = false
             // Flow Lab.
             showFlowLabSheet = true
-            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            try? await Task.sleep(nanoseconds: 8_000_000_000)
             showFlowLabSheet = false
             // Experiments.
             showExperimentsSheet = true
-            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            try? await Task.sleep(nanoseconds: 8_000_000_000)
             showExperimentsSheet = false
+            // Milestones + checkpoint + phase intro.
+            tourMilestone = .day30
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            tourMilestone = .day90
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            tourMilestone = nil
+            showCheckpoint = true
+            try? await Task.sleep(nanoseconds: 6_000_000_000)
+            showCheckpoint = false
+            showPhaseIntro = true
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            showPhaseIntro = false
             // Back to Today.
             withAnimation(RBMotion.tabTransition) { selection = .today }
             try? await Task.sleep(nanoseconds: 3_000_000_000)

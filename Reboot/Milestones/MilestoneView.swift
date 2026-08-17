@@ -61,6 +61,16 @@ struct MilestoneView: View {
             }
         }
         .statusBarHidden()
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_500_000_000)
+                    onContinue()
+                }
+            }
+            #endif
+        }
     }
 
     private var milestoneTitle: String {

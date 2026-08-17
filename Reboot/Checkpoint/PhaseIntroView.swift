@@ -65,6 +65,14 @@ struct PhaseIntroView: View {
             withAnimation(.easeOut(duration: RBMotion.hero)) {
                 visible = true
             }
+            #if DEBUG
+            if UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    onContinue()
+                }
+            }
+            #endif
         }
     }
 }

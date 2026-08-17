@@ -30,6 +30,16 @@ struct ObserveSessionView: View {
         .onDisappear {
             timerTask?.cancel()
         }
+        .onChange(of: showingReflection) { _, isReflecting in
+            #if DEBUG
+            if isReflecting, UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 4_000_000_000)
+                    finish()
+                }
+            }
+            #endif
+        }
         .overlay(alignment: .bottomTrailing) {
             #if DEBUG
             if UITestDriver.isActive, !showingReflection {

@@ -14,6 +14,19 @@ enum ContentError: LocalizedError {
 /// Loads bundled educational content from JSON. All content is authored
 /// original material; nothing is fabricated or attributed to fake researchers.
 enum ContentStore {
+    private static let readingsCache: [ReadingExercise] = (try? load("readings", as: [ReadingExercise].self)) ?? []
+    private static let learningsCache: [LearningModule] = (try? load("learnings", as: [LearningModule].self)) ?? []
+    private static let missionsCache: [ObservationMission] = (try? load("missions", as: [ObservationMission].self)) ?? []
+    private static let voidsCache: [VoidPrompt] = (try? load("void_prompts", as: [VoidPrompt].self)) ?? []
+    private static let insightsCache: [MicroInsight] = (try? load("micro_insights", as: [MicroInsight].self)) ?? []
+    private static let checkpointsCache: [WeeklyCheckpointTemplate] = (try? load("checkpoints", as: [WeeklyCheckpointTemplate].self)) ?? []
+    private static let phaseIntrosCache: [PhaseIntro] = (try? load("phase_intros", as: [PhaseIntro].self)) ?? []
+    private static let interventionsCache: [EnvironmentIntervention] = (try? load("environment_interventions", as: [EnvironmentIntervention].self)) ?? []
+    private static let experimentsCache: [ExperimentTemplate] = (try? load("experiments", as: [ExperimentTemplate].self)) ?? []
+    private static let microLessonsCache: [MicroLesson] = (try? load("micro_lessons", as: [MicroLesson].self)) ?? []
+    private static let flowLessonsCache: [FlowLesson] = (try? load("flow_lessons", as: [FlowLesson].self)) ?? []
+    private static let fuelLessonsCache: [FuelLesson] = (try? load("fuel_lessons", as: [FuelLesson].self)) ?? []
+
     private static func load<T: Decodable>(_ name: String, as type: T.Type) throws -> T {
         guard let url = Bundle.main.url(forResource: name, withExtension: "json") else {
             throw ContentError.missing(name: name)
@@ -23,51 +36,51 @@ enum ContentStore {
     }
 
     static var readings: [ReadingExercise] {
-        (try? load("readings", as: [ReadingExercise].self)) ?? []
+        readingsCache
     }
 
     static var learningModules: [LearningModule] {
-        (try? load("learnings", as: [LearningModule].self)) ?? []
+        learningsCache
     }
 
     static var observationMissions: [ObservationMission] {
-        (try? load("missions", as: [ObservationMission].self)) ?? []
+        missionsCache
     }
 
     static var voidPrompts: [VoidPrompt] {
-        (try? load("void_prompts", as: [VoidPrompt].self)) ?? []
+        voidsCache
     }
 
     static var microInsights: [MicroInsight] {
-        (try? load("micro_insights", as: [MicroInsight].self)) ?? []
+        insightsCache
     }
 
     static var checkpoints: [WeeklyCheckpointTemplate] {
-        (try? load("checkpoints", as: [WeeklyCheckpointTemplate].self)) ?? []
+        checkpointsCache
     }
 
     static var phaseIntros: [PhaseIntro] {
-        (try? load("phase_intros", as: [PhaseIntro].self)) ?? []
+        phaseIntrosCache
     }
 
     static var environmentInterventions: [EnvironmentIntervention] {
-        (try? load("environment_interventions", as: [EnvironmentIntervention].self)) ?? []
+        interventionsCache
     }
 
     static var experimentTemplates: [ExperimentTemplate] {
-        (try? load("experiments", as: [ExperimentTemplate].self)) ?? []
+        experimentsCache
     }
 
     static var microLessons: [MicroLesson] {
-        (try? load("micro_lessons", as: [MicroLesson].self)) ?? []
+        microLessonsCache
     }
 
     static var flowLessons: [FlowLesson] {
-        (try? load("flow_lessons", as: [FlowLesson].self)) ?? []
+        flowLessonsCache
     }
 
     static var fuelLessons: [FuelLesson] {
-        (try? load("fuel_lessons", as: [FuelLesson].self)) ?? []
+        fuelLessonsCache
     }
 
     static func reading(id: Int) -> ReadingExercise? {

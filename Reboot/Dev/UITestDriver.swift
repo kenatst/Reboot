@@ -91,6 +91,10 @@ enum UITestDriver {
         arguments.contains("-AutoTour")
     }
 
+    static var diagnosisAutoAdvance: Bool {
+        arguments.contains("-DiagnosisAutoAdvance")
+    }
+
     static var profileName: String? {
         guard let index = arguments.firstIndex(of: "-Profile"), arguments.count > index + 1 else { return nil }
         return arguments[index + 1]

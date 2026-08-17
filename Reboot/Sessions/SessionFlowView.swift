@@ -69,6 +69,28 @@ struct SessionFlowView: View {
                 Color.void.ignoresSafeArea()
             }
             overlayLayer
+
+            if phase == .setup || phase == .locked || phase == .active {
+                VStack {
+                    HStack {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundStyle(.ash)
+                                .padding(10)
+                                .background(Color.deepCarbon.opacity(0.8))
+                                .clipShape(Circle())
+                        }
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal, RBSpacing.screen)
+                .padding(.top, 8)
+                .zIndex(15)
+            }
         }
         .animation(.easeInOut(duration: RBMotion.slow), value: phase == .locked)
         .onAppear {

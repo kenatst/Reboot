@@ -64,21 +64,65 @@ struct OnboardingDiagnosisView: View {
                 }
             }
         }
-        .interactiveDismissDisabled()
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.diagnosisAutoAdvance {
+                runAutoDiagnosis()
+            }
+            #endif
+        }
     }
 
     private var header: some View {
         HStack {
             RBStatusChip(text: "REBOOT / CALIBRATION", color: .signalCyan, pulse: true)
             Spacer()
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(.ash)
+            }
             Text(String(format: "%02d / 14", min(step + 1, 14)))
                 .font(.metadata(size: 10))
                 .tracking(1.6)
                 .foregroundStyle(.ash)
+                .padding(.leading, 14)
         }
         .padding(.horizontal, RBSpacing.screen)
         .padding(.top, 12)
     }
+
+    #if DEBUG
+    private func runAutoDiagnosis() {
+        goals = [goalOptions[0]]
+        win = "Travailler 60 minutes sans téléphone."
+        distractor = distractorOptions[0]
+        moments = [momentOptions[0]]
+        capacity = capacityOptions[2]
+        readsTenPages = "Parfois"
+        flowActivities = [flowOptions[0]]
+        flowDifference = [differenceOptions[0]]
+        phoneLocation = phoneOptions[1]
+        notifications = notificationOptions[1]
+        tabs = tabOptions[1]
+        screenLimits = "Non"
+        bestWindow = windowOptions[0]
+        sleep = sleepOptions[3]
+        energy = energyOptions[1]
+        caffeine = caffeineOptions[1]
+        Task {
+            for _ in 0..<14 {
+                try? await Task.sleep(nanoseconds: 1_100_000_000)
+                guard step < 14 else { break }
+                withAnimation { advance() }
+            }
+            try? await Task.sleep(nanoseconds: 2_000_000_000)
+            dismiss()
+        }
+    }
+    #endif
 
     @ViewBuilder
     private var stepView: some View {

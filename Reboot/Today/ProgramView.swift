@@ -63,6 +63,13 @@ struct ProgramView: View {
         .fullScreenCover(item: $activeRequest) { request in
             SessionFlowView(request: request)
         }
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour {
+                expandedPhases = [1, 2, 3, 4]
+            }
+            #endif
+        }
     }
 
     private var header: some View {

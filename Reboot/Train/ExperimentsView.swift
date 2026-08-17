@@ -81,6 +81,24 @@ struct ExperimentsView: View {
         .sheet(isPresented: $showTemplates) {
             TemplatesView()
         }
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    showTemplates = true
+                }
+                Task {
+                    try? await Task.sleep(nanoseconds: 8_000_000_000)
+                    if let first = experiments.first(where: { $0.status == "active" }) {
+                        first.status = "completed"
+                        first.result = "kept"
+                        try? modelContext.save()
+                    }
+                }
+            }
+            #endif
+        }
     }
 
     private func experimentCard(_ experiment: BehaviorExperiment) -> some View {
@@ -189,6 +207,19 @@ private struct TemplatesView: View {
                 }
                 .padding(.horizontal, RBSpacing.screen)
             }
+        }
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    if let first = ContentStore.experimentTemplates.first {
+                        AdaptiveRebootEngineDriver.startExperiment(template: first, context: modelContext)
+                    }
+                    dismiss()
+                }
+            }
+            #endif
         }
     }
 }

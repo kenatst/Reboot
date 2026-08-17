@@ -90,6 +90,22 @@ struct CheckpointView: View {
             .scrollDismissesKeyboard(.interactively)
         }
         .statusBarHidden()
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    if answers.count >= 3 {
+                        answers[0] = "Les notifications du travail."
+                        answers[1] = "Revenir après une pause."
+                        answers[2] = "La première heure du matin."
+                    }
+                    save()
+                    onContinue()
+                }
+            }
+            #endif
+        }
     }
 
     private var weekData: some View {

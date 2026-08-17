@@ -161,6 +161,24 @@ struct FlowLabView: View {
             }
             .presentationDetents([.medium, .large])
         }
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    let project: FlowProject
+                    if let first = projects.first {
+                        project = first
+                    } else {
+                        project = FlowProject(title: "Préparer la présentation client", definitionOfDone: "Slides 1–5 finalisées", feedbackType: "slides")
+                        modelContext.insert(project)
+                        try? modelContext.save()
+                    }
+                    activeProject = project
+                }
+            }
+            #endif
+        }
     }
 }
 
@@ -281,6 +299,17 @@ struct FlowSessionView: View {
             Color.void.ignoresSafeArea()
             if !finished {
                 VStack(spacing: 0) {
+                    HStack {
+                        Spacer()
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 13, weight: .bold))
+                                .foregroundStyle(.ash)
+                        }
+                    }
+                    .padding(.horizontal, 20)
                     RBSystemLabel(text: "FLOW / \(project.title.uppercased())", color: .signalCyan)
                         .padding(.top, 14)
                     Text("TERMINÉ : \(project.definitionOfDone)")
@@ -338,6 +367,17 @@ struct FlowSessionView: View {
             } else {
                 postSession
             }
+        }
+        .onChange(of: finished) { _, isFinished in
+            #if DEBUG
+            if isFinished, UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    saveSession()
+                    dismiss()
+                }
+            }
+            #endif
         }
     }
 

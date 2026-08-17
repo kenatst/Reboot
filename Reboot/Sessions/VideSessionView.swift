@@ -46,6 +46,16 @@ struct VideSessionView: View {
         .onDisappear {
             timerTask?.cancel()
         }
+        .onChange(of: finished) { _, isFinished in
+            #if DEBUG
+            if isFinished, UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    finish()
+                }
+            }
+            #endif
+        }
         .onChange(of: scenePhase) { _, newPhase in
             if newPhase == .active && !finished {
                 recalculateRemaining()

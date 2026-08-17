@@ -6,6 +6,7 @@ import Charts
 struct TraceView: View {
     @Query(sort: \TrainingSession.date, order: .reverse) private var sessions: [TrainingSession]
     @State private var selected: TrainingSession?
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         ZStack {
@@ -43,6 +44,18 @@ struct TraceView: View {
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
                 .presentationBackground(Color.void)
+        }
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour, selected == nil {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    if let first = sessions.first {
+                        selected = first
+                    }
+                }
+            }
+            #endif
         }
     }
 

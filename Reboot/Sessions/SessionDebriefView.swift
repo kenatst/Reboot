@@ -50,6 +50,14 @@ struct SessionDebriefView: View {
             if needsAnalysis && !session.analysisAttempted {
                 runAnalysis()
             }
+            #if DEBUG
+            if UITestDriver.autoTour {
+                Task {
+                    try? await Task.sleep(nanoseconds: 5_000_000_000)
+                    onFinish()
+                }
+            }
+            #endif
         }
         .statusBarHidden()
     }
