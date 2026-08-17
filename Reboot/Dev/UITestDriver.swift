@@ -100,6 +100,66 @@ enum UITestDriver {
         return arguments[index + 1]
     }
 
+    static var gap: Bool {
+        arguments.contains("-uitest-gap")
+    }
+
+    static var sessionsCount: Int? {
+        intValue("-uitest-sessions")
+    }
+
+    static var exploreMode: String? {
+        stringValue("-uitest-explore")
+    }
+
+    static var flowLab: Bool {
+        arguments.contains("-uitest-flowlab")
+    }
+
+    static var flowSession: Bool {
+        arguments.contains("-uitest-flow-session")
+    }
+
+    static var flowAutoFinish: Bool {
+        arguments.contains("-uitest-flow-autofinish")
+    }
+
+    static var observeAutoReflect: Bool {
+        arguments.contains("-uitest-observe-reflect")
+    }
+
+    static var programAll: Bool {
+        arguments.contains("-uitest-program-all")
+    }
+
+    static var traceDetail: Bool {
+        arguments.contains("-uitest-trace-detail")
+    }
+
+    static var flowBuilderAuto: Bool {
+        arguments.contains("-uitest-flow-builder")
+    }
+
+    static var experimentsDirect: Bool {
+        arguments.contains("-uitest-experiments")
+    }
+
+    static var experimentsAutoTemplates: Bool {
+        arguments.contains("-uitest-experiments-templates")
+    }
+
+    static var checkpointDirect: Bool {
+        arguments.contains("-uitest-checkpoint")
+    }
+
+    static var phaseIntroDirect: Bool {
+        arguments.contains("-uitest-phaseintro")
+    }
+
+    static var holdReconstruction: Bool {
+        arguments.contains("-uitest-hold-reconstruction")
+    }
+
     static var forceOffline: Bool {
         arguments.contains("-uitest-offline")
     }

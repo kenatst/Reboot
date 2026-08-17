@@ -43,9 +43,9 @@ struct ReadingSessionView: View {
             #if DEBUG
             if fastTimer {
                 Task {
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    try? await Task.sleep(nanoseconds: UITestDriver.holdReconstruction ? 6_000_000_000 : 2_000_000_000)
                     closeText()
-                    try? await Task.sleep(nanoseconds: 1_000_000_000)
+                    try? await Task.sleep(nanoseconds: UITestDriver.holdReconstruction ? 6_000_000_000 : 1_000_000_000)
                     response = "Je retiens l'idée centrale : l'attention se reconstruit par la répétition du retour. L'exemple du texte montre que rester sur une chose change la qualité de la compréhension. La leçon que j'en tire : fermer les concurrents avant de commencer."
                     finish()
                 }

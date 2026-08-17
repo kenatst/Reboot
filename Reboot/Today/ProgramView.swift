@@ -65,7 +65,7 @@ struct ProgramView: View {
         }
         .onAppear {
             #if DEBUG
-            if UITestDriver.autoTour {
+            if UITestDriver.autoTour || UITestDriver.programAll {
                 expandedPhases = [1, 2, 3, 4]
             }
             #endif

@@ -26,6 +26,17 @@ struct ObserveSessionView: View {
         }
         .onAppear {
             startClock()
+            #if DEBUG
+            if UITestDriver.observeAutoReflect {
+                Task {
+                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    timerTask?.cancel()
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        showingReflection = true
+                    }
+                }
+            }
+            #endif
         }
         .onDisappear {
             timerTask?.cancel()

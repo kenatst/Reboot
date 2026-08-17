@@ -47,7 +47,7 @@ struct TraceView: View {
         }
         .onAppear {
             #if DEBUG
-            if UITestDriver.autoTour, selected == nil {
+            if (UITestDriver.autoTour || UITestDriver.traceDetail), selected == nil {
                 Task {
                     try? await Task.sleep(nanoseconds: 3_000_000_000)
                     if let first = sessions.first {

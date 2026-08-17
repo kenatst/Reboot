@@ -163,6 +163,12 @@ struct FlowLabView: View {
         }
         .onAppear {
             #if DEBUG
+            if UITestDriver.autoTour || UITestDriver.flowBuilderAuto {
+                Task {
+                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    showBuilder = true
+                }
+            }
             if UITestDriver.autoTour {
                 Task {
                     try? await Task.sleep(nanoseconds: 2_000_000_000)
@@ -368,9 +374,19 @@ struct FlowSessionView: View {
                 postSession
             }
         }
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.flowAutoFinish {
+                Task {
+                    try? await Task.sleep(nanoseconds: 4_000_000_000)
+                    finish()
+                }
+            }
+            #endif
+        }
         .onChange(of: finished) { _, isFinished in
             #if DEBUG
-            if isFinished, UITestDriver.autoTour {
+            if isFinished, UITestDriver.autoTour || UITestDriver.flowAutoFinish {
                 Task {
                     try? await Task.sleep(nanoseconds: 3_000_000_000)
                     saveSession()

@@ -13,6 +13,12 @@ struct RootView: View {
     @State private var showSettings = false
     @State private var showProgram = false
     @State private var showDiagnosis = false
+    @State private var showExplore: SessionMode?
+    @State private var showFlowLabDirect = false
+    @State private var flowSessionProject: FlowProject?
+    @State private var showExperimentsDirect = false
+    @State private var showCheckpointDirect = false
+    @State private var showPhaseIntroDirect = false
 
     private var progress: RebootProgress? {
         progressList.first
@@ -47,6 +53,7 @@ struct RootView: View {
             OnboardingFlowView(initialPage: onboardingPage) { commit in
                 PreferencesStore.shared.onboardingCompleted = true
                 onboardingCompleted = true
+                showOnboarding = false
                 if commit {
                     RBHaptics.play(.lock)
                     let profile = AdaptiveRebootEngineDriver.ensureProfile(context: modelContext)
@@ -87,6 +94,28 @@ struct RootView: View {
         }
         .fullScreenCover(isPresented: $showDiagnosis) {
             OnboardingDiagnosisView()
+        }
+        .sheet(item: $showExplore) { mode in
+            ExploreLibraryView(mode: mode)
+        }
+        .fullScreenCover(isPresented: $showFlowLabDirect) {
+            FlowLabView()
+        }
+        .fullScreenCover(item: $flowSessionProject) { project in
+            FlowSessionView(project: project)
+        }
+        .fullScreenCover(isPresented: $showExperimentsDirect) {
+            ExperimentsView()
+        }
+        .fullScreenCover(isPresented: $showCheckpointDirect) {
+            CheckpointView(week: 1) {
+                showCheckpointDirect = false
+            }
+        }
+        .fullScreenCover(isPresented: $showPhaseIntroDirect) {
+            PhaseIntroView(phase: 2) {
+                showPhaseIntroDirect = false
+            }
         }
         .preferredColorScheme(preferredScheme)
         .tint(.signalCyan)
@@ -165,6 +194,38 @@ struct RootView: View {
         }
         if UITestDriver.program {
             showProgram = true
+        }
+        if let raw = UITestDriver.exploreMode, let mode = SessionMode(rawValue: raw) {
+            showExplore = mode
+        }
+        if UITestDriver.flowLab {
+            showFlowLabDirect = true
+        }
+        if UITestDriver.flowSession {
+            let project = FlowProject(title: "Préparer la présentation client", definitionOfDone: "Slides 1–5 finalisées", feedbackType: "slides")
+            modelContext.insert(project)
+            try? modelContext.save()
+            flowSessionProject = project
+        }
+        if UITestDriver.experimentsDirect {
+            showExperimentsDirect = true
+        }
+        if UITestDriver.checkpointDirect {
+            showCheckpointDirect = true
+        }
+        if UITestDriver.phaseIntroDirect {
+            showPhaseIntroDirect = true
+        }
+        if UITestDriver.gap, let progress = progressList.first {
+            progress.lastSessionDate = Date.now.addingTimeInterval(-3 * 86_400)
+            try? modelContext.save()
+        }
+        if let count = UITestDriver.sessionsCount {
+            DevDataFactory.seedSessionCount(
+                count,
+                progress: progressList.first,
+                context: modelContext
+            )
         }
         #if DEBUG
         if let name = UITestDriver.profileName {

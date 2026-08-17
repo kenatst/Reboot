@@ -41,9 +41,9 @@ struct LearningSessionView: View {
             #if DEBUG
             if fastTimer {
                 Task {
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    try? await Task.sleep(nanoseconds: UITestDriver.holdReconstruction ? 6_000_000_000 : 2_000_000_000)
                     closeLesson()
-                    try? await Task.sleep(nanoseconds: 1_000_000_000)
+                    try? await Task.sleep(nanoseconds: UITestDriver.holdReconstruction ? 6_000_000_000 : 1_000_000_000)
                     response = "Ce que j'enseigne : la mémoire de travail est une scène étroite, et tout ce qui entre en compétition la dégrade. L'exemple du téléphone montre que la distraction n'est pas une invasion mais une transaction. En pratique, je ferme les fenêtres avant de commencer, et je note les intrusions pour les voir."
                     finish()
                 }

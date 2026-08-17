@@ -83,7 +83,7 @@ struct ExperimentsView: View {
         }
         .onAppear {
             #if DEBUG
-            if UITestDriver.autoTour {
+            if UITestDriver.autoTour || UITestDriver.experimentsAutoTemplates {
                 Task {
                     try? await Task.sleep(nanoseconds: 2_000_000_000)
                     showTemplates = true

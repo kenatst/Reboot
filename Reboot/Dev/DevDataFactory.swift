@@ -78,5 +78,58 @@ enum DevDataFactory {
         progress.lastSessionDate = now
         try? context.save()
     }
+
+    /// Seeds exactly N sessions (with evaluations from the 3rd) so Clarity
+    /// calibration and profile states can be captured deterministically.
+    static func seedSessionCount(_ count: Int, progress: RebootProgress?, context: ModelContext) {
+        guard let progress else { return }
+        for session in (try? context.fetch(FetchDescriptor<TrainingSession>())) ?? [] {
+            context.delete(session)
+        }
+        let now = Date.now
+        for index in 0..<count {
+            let date = now.addingTimeInterval(TimeInterval(-(count - 1 - index) * 86_400))
+            let mode: SessionMode = index % 3 == 0 ? .stay : (index % 3 == 1 ? .recall : .explain)
+            let session = TrainingSession(
+                date: date,
+                protocolDay: index + 1,
+                phase: 1,
+                mode: mode,
+                title: "Session \(index + 1)",
+                intention: "Donnée de calibration.",
+                plannedDurationSeconds: 600,
+                userResponse: "Je retiens l'idée centrale de la session.",
+                completionOrdinal: index + 1
+            )
+            session.actualDurationSeconds = 600
+            if mode != .stay {
+                let evaluation = EvaluationResult(
+                    sessionID: session.id,
+                    overallScore: Double(5 + index % 5),
+                    dimensions: [
+                        EvaluationDimension(name: "CLARTÉ", score: Double(5 + index % 5), reason: "Idée centrale restituée."),
+                        EvaluationDimension(name: "STRUCTURE", score: Double(4 + index % 5), reason: "Étapes partiellement liées."),
+                        EvaluationDimension(name: "PRÉCISION", score: Double(6 + index % 4), reason: "Vocabulaire juste.")
+                    ],
+                    strength: "L'idée centrale est restituée.",
+                    mainGap: "Quelques étapes implicites.",
+                    correction: "Nomme l'étape intermédiaire.",
+                    nextChallenge: "Reconstruis sans termes du texte.",
+                    confidence: 0.6,
+                    insufficientEvidence: false,
+                    followUpQuestion: nil,
+                    provider: "mock"
+                )
+                context.insert(evaluation)
+                session.evaluation = evaluation
+                session.analysisAttempted = true
+            }
+            context.insert(session)
+        }
+        progress.completedSessions = count
+        progress.currentDay = min(90, count + 1)
+        progress.lastSessionDate = now
+        try? context.save()
+    }
 }
 #endif
