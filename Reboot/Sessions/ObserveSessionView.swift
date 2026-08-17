@@ -12,7 +12,11 @@ struct ObserveSessionView: View {
     @State private var timerTask: Task<Void, Never>?
 
     private var mission: ObservationMission? {
-        ContentStore.mission(id: ((session.protocolDay - 1) % 60) + 1)
+        if let id = session.contentID {
+            return ContentStore.mission(id: id)
+        }
+        let fallbackID = ContentSelector.select(context: ContentSelectionContext(mode: .observe, day: session.protocolDay)) ?? 1
+        return ContentStore.mission(id: fallbackID)
     }
 
     var body: some View {

@@ -44,11 +44,14 @@ struct TodayView: View {
     }
 
     private var prescription: DailyPrescription? {
-        prescriptions.first { $0.day == dayNumber }
+        prescriptions.activePrescription(forDay: dayNumber)
     }
 
     private var pendingAction: RequiredAction? {
-        requiredActions.first { $0.day == dayNumber && ($0.status == "pending" || $0.status == "failed") }
+        if let id = prescription?.requiredActionID, let match = requiredActions.first(where: { $0.id == id }) {
+            return match
+        }
+        return requiredActions.first { $0.day == dayNumber && ($0.status == "pending" || $0.status == "failed") }
     }
 
     var body: some View {
@@ -123,6 +126,7 @@ struct TodayView: View {
 
     private func checkInEnergy(_ level: String) {
         AdaptiveRebootEngineDriver.recordEnergyCheckIn(
+            day: dayNumber,
             energy: level,
             sleep: profile?.typicalSleep ?? "7–8",
             caffeine: profile?.caffeine ?? "Morning only",

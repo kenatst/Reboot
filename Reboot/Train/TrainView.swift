@@ -3,7 +3,9 @@ import SwiftData
 
 /// TRAIN — choose your signal. Editorial discipline system, curated not generated.
 struct TrainView: View {
+    @Environment(\.modelContext) private var modelContext
     @Query private var progressList: [RebootProgress]
+    @Query private var prescriptions: [DailyPrescription]
     @State private var activeRequest: SessionRequest?
     @State private var showingProgram = false
     @State private var exploreMode: SessionMode?
@@ -74,6 +76,10 @@ struct TrainView: View {
         }
     }
 
+    private var activePrescriptionForToday: DailyPrescription? {
+        prescriptions.activePrescription(forDay: dayNumber)
+    }
+
     private var header: some View {
         HStack {
             RBSystemLabel(text: "REBOOT / TRAIN", color: .ash)
@@ -85,7 +91,12 @@ struct TrainView: View {
     private var assignedToday: some View {
         RBSignalPlate(cut: 24, accent: Color.phaseAccent(plan.phase), fill: .deepCarbon) {
             Button {
-                activeRequest = SessionRequestFactory.today(day: dayNumber)
+                if let p = activePrescriptionForToday {
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: plan)
+                } else {
+                    let p = AdaptiveRebootEngineDriver.generatePrescription(forDay: dayNumber, context: modelContext)
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: plan)
+                }
             } label: {
                 HStack(spacing: 16) {
                     RBModeGlyph(kind: modeGlyph(plan.mode), size: 40)

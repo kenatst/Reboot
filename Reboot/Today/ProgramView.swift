@@ -3,9 +3,11 @@ import SwiftData
 
 /// 90 DAYS. ONE SYSTEM. The program as a vertical journey track.
 struct ProgramView: View {
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Query private var progressList: [RebootProgress]
     @Query private var completions: [ProtocolDayCompletion]
+    @Query private var prescriptions: [DailyPrescription]
     @State private var expandedPhases: Set<Int> = [1]
     @State private var activeRequest: SessionRequest?
 
@@ -191,7 +193,12 @@ struct ProgramView: View {
 
         Button {
             if !(day.dayNumber > currentDay) {
-                activeRequest = SessionRequestFactory.today(day: day.dayNumber)
+                if let p = prescriptions.activePrescription(forDay: day.dayNumber) {
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: day)
+                } else {
+                    let p = AdaptiveRebootEngineDriver.generatePrescription(forDay: day.dayNumber, context: modelContext)
+                    activeRequest = SessionRequestFactory.prescription(prescription: p, curriculum: day)
+                }
             }
         } label: {
             VStack(spacing: 5) {

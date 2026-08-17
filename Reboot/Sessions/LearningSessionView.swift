@@ -11,7 +11,11 @@ struct LearningSessionView: View {
     @State private var response = ""
 
     private var module: LearningModule? {
-        ContentStore.learning(id: ((session.protocolDay - 1) % 45) + 1)
+        if let id = session.contentID {
+            return ContentStore.learning(id: id)
+        }
+        let fallbackID = ContentSelector.select(context: ContentSelectionContext(mode: .explain, day: session.protocolDay)) ?? 1
+        return ContentStore.learning(id: fallbackID)
     }
 
     private var text: String {

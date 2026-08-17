@@ -35,6 +35,10 @@ struct RootView: View {
         .onAppear {
             ensureProgressExists()
             #if DEBUG
+            let results = EngineTests.run()
+            for r in results {
+                print("🧪 [ENGINE_TEST] \(r)")
+            }
             if UITestDriver.isActive {
                 configureForUITest()
             }

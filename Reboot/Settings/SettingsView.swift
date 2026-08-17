@@ -285,7 +285,23 @@ struct SettingsView: View {
             ProtocolDayCompletion.self,
             WeeklyCheckpoint.self,
             SelfEvaluation.self,
-            ClaritySnapshot.self
+            ClaritySnapshot.self,
+            RebootUserProfile.self,
+            AttentionDimensionState.self,
+            DailyPrescription.self,
+            RequiredAction.self,
+            CompletedIntervention.self,
+            BehaviorExperiment.self,
+            FlowProject.self,
+            FlowSession.self,
+            FlowTask.self,
+            DailyEnergyCheckIn.self,
+            SessionInterruption.self,
+            PersonalRule.self,
+            AdaptiveDecisionRecord.self,
+            AdaptationEvent.self,
+            AttentionEvidence.self,
+            ExperimentObservation.self
         ]
         for type in types {
             do {

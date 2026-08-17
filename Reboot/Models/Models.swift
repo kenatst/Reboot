@@ -98,6 +98,7 @@ final class TrainingSession {
     var restitution: Restitution?
     var experimentID: UUID?
     var experimentCondition: String?
+    var contentID: Int?
 
     init(
         id: UUID = UUID(),
@@ -112,7 +113,8 @@ final class TrainingSession {
         sourceContent: String = "",
         userResponse: String = "",
         switchedCount: Int = 0,
-        completionOrdinal: Int
+        completionOrdinal: Int,
+        contentID: Int? = nil
     ) {
         self.id = id
         self.date = date
@@ -130,6 +132,7 @@ final class TrainingSession {
         self.completionOrdinal = completionOrdinal
         self.analysisAttempted = false
         self.analysisOffline = false
+        self.contentID = contentID
     }
 
     var mode: SessionMode {
@@ -326,7 +329,14 @@ struct ReadingExercise: Codable, Identifiable, Hashable {
     let category: String
     let length: ReadingLength
     let text: String
-    let question: String
+    var question: String?
+    var reconstructionPrompt: String?
+    var transferPrompt: String?
+    var difficulty: Int?
+
+    var resolvedQuestion: String {
+        question ?? reconstructionPrompt ?? "Qu'est-ce qui est réellement resté ?"
+    }
 
     var readingMinutes: Int {
         let words = text.split(whereSeparator: \.isWhitespace).count

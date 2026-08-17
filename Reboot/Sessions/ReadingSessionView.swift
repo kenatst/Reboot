@@ -12,8 +12,11 @@ struct ReadingSessionView: View {
     @State private var scrollOffset: CGFloat = 0
 
     private var exercise: ReadingExercise? {
-        let id = ((session.protocolDay - 1) % 60) + 1
-        return session.task.isEmpty ? ContentStore.reading(id: id) : nil
+        if let id = session.contentID {
+            return ContentStore.reading(id: id)
+        }
+        let fallbackID = ContentSelector.select(context: ContentSelectionContext(mode: .recall, day: session.protocolDay)) ?? 1
+        return ContentStore.reading(id: fallbackID)
     }
 
     private var text: String {
@@ -21,7 +24,7 @@ struct ReadingSessionView: View {
     }
 
     private var question: String {
-        exercise?.question ?? "Qu'est-ce qui est réellement resté ?"
+        exercise?.resolvedQuestion ?? "Qu'est-ce qui est réellement resté ?"
     }
 
     var body: some View {

@@ -158,6 +158,7 @@ final class DailyPrescription {
     var evidenceFingerprint: String
     var status: String
     var adaptationNote: String
+    var requiredActionID: UUID?
 
     init(
         day: Int,
@@ -175,7 +176,8 @@ final class DailyPrescription {
         fallbackPlan: String,
         version: Int = 1,
         evidenceFingerprint: String = "",
-        adaptationNote: String = ""
+        adaptationNote: String = "",
+        requiredActionID: UUID? = nil
     ) {
         self.id = UUID()
         self.day = day
@@ -198,6 +200,21 @@ final class DailyPrescription {
         self.evidenceFingerprint = evidenceFingerprint
         self.status = "active"
         self.adaptationNote = adaptationNote
+        self.requiredActionID = requiredActionID
+    }
+}
+
+extension Collection where Element == DailyPrescription {
+    /// Canonical accessor: exactly one active prescription per day.
+    /// Picks status == "active", highest version, and newest generatedAt as tie-breaker.
+    func activePrescription(forDay day: Int) -> DailyPrescription? {
+        self.filter { $0.day == day && $0.status == "active" }
+            .max { a, b in
+                if a.version != b.version {
+                    return a.version < b.version
+                }
+                return a.generatedAt < b.generatedAt
+            }
     }
 }
 
@@ -269,16 +286,25 @@ final class FlowTask {
     var switchCount: Int
     var createdAt: Date
 
-    init(projectID: UUID, taskTitle: String, definitionOfDone: String) {
+    init(
+        projectID: UUID,
+        taskTitle: String,
+        definitionOfDone: String,
+        challengeRatingBefore: Int = 2,
+        skillRatingBefore: Int = 2,
+        feedbackMechanism: String = "étapes",
+        distractionContract: String = "hors de la pièce",
+        plannedDuration: Int = 25
+    ) {
         self.id = UUID()
         self.projectID = projectID
         self.taskTitle = taskTitle
         self.definitionOfDone = definitionOfDone
-        self.challengeRatingBefore = 2
-        self.skillRatingBefore = 2
-        self.feedbackMechanism = ""
-        self.distractionContract = ""
-        self.plannedDuration = 25
+        self.challengeRatingBefore = challengeRatingBefore
+        self.skillRatingBefore = skillRatingBefore
+        self.feedbackMechanism = feedbackMechanism
+        self.distractionContract = distractionContract
+        self.plannedDuration = plannedDuration
         self.actualDuration = 0
         self.completionFraction = 0
         self.switchCount = 0
@@ -345,7 +371,7 @@ final class BehaviorExperiment {
     var title: String
     var hypothesis: String
     var metric: String
-    var status: String
+    var status: String // PROPOSED, BASELINE, RUNNING, READY_TO_REVIEW, COMPLETED, ABANDONED
     var baselineNote: String
     var result: String
     var confidence: Double
@@ -359,13 +385,57 @@ final class BehaviorExperiment {
         self.title = title
         self.hypothesis = hypothesis
         self.metric = metric
-        self.status = "active"
+        self.status = "BASELINE"
         self.baselineNote = ""
         self.result = "inconclusive"
         self.confidence = 0
         self.recommendation = ""
         self.startedAt = .now
         self.observationsRaw = []
+    }
+}
+
+@Model
+final class ExperimentObservation {
+    var id: UUID
+    var experimentID: UUID
+    var sessionID: UUID
+    var condition: String // "BASELINE" or "TEST"
+    var mode: String
+    var plannedDuration: Int
+    var actualDuration: Int
+    var firstSwitchSeconds: Int?
+    var switchCount: Int
+    var energyContext: String
+    var taskCategory: String?
+    var timestamp: Date
+
+    init(
+        id: UUID = UUID(),
+        experimentID: UUID,
+        sessionID: UUID,
+        condition: String,
+        mode: String,
+        plannedDuration: Int,
+        actualDuration: Int,
+        firstSwitchSeconds: Int? = nil,
+        switchCount: Int = 0,
+        energyContext: String = "Normal",
+        taskCategory: String? = nil,
+        timestamp: Date = .now
+    ) {
+        self.id = id
+        self.experimentID = experimentID
+        self.sessionID = sessionID
+        self.condition = condition
+        self.mode = mode
+        self.plannedDuration = plannedDuration
+        self.actualDuration = actualDuration
+        self.firstSwitchSeconds = firstSwitchSeconds
+        self.switchCount = switchCount
+        self.energyContext = energyContext
+        self.taskCategory = taskCategory
+        self.timestamp = timestamp
     }
 }
 
@@ -412,8 +482,11 @@ final class FlowProject {
 final class FlowSession {
     var id: UUID
     var projectID: UUID
-    var durationSeconds: Int
+    var flowTaskID: UUID?
+    var plannedDurationSeconds: Int
+    var actualDurationSeconds: Int
     var challengeRating: Int
+    var skillRating: Int
     var knewNextStep: Int
     var lostTrackOfTime: String
     var wantedToContinue: String
@@ -421,11 +494,19 @@ final class FlowSession {
     var completed: Bool
     var createdAt: Date
 
-    init(projectID: UUID, durationSeconds: Int) {
+    var durationSeconds: Int {
+        get { actualDurationSeconds }
+        set { actualDurationSeconds = newValue }
+    }
+
+    init(projectID: UUID, flowTaskID: UUID? = nil, plannedDurationSeconds: Int = 25 * 60, actualDurationSeconds: Int = 0) {
         self.id = UUID()
         self.projectID = projectID
-        self.durationSeconds = durationSeconds
+        self.flowTaskID = flowTaskID
+        self.plannedDurationSeconds = plannedDurationSeconds
+        self.actualDurationSeconds = actualDurationSeconds
         self.challengeRating = 2
+        self.skillRating = 2
         self.knewNextStep = 0
         self.lostTrackOfTime = ""
         self.wantedToContinue = ""

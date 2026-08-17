@@ -6,6 +6,7 @@ struct FlowLabView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Query private var projects: [FlowProject]
+    @Query private var tasks: [FlowTask]
 
     @State private var showBuilder = false
     @State private var activeProject: FlowProject?
@@ -138,7 +139,9 @@ struct FlowLabView: View {
             FlowBuilderView()
         }
         .fullScreenCover(item: $activeProject) { project in
-            FlowSessionView(project: project)
+            let task = tasks.first(where: { $0.projectID == project.id && $0.actualDuration == 0 })
+                ?? tasks.first(where: { $0.projectID == project.id })
+            FlowSessionView(project: project, task: task)
         }
         .sheet(item: $selectedLesson) { lesson in
             ZStack {
@@ -178,6 +181,8 @@ struct FlowLabView: View {
                     } else {
                         project = FlowProject(title: "Préparer la présentation client", definitionOfDone: "Slides 1–5 finalisées", feedbackType: "slides")
                         modelContext.insert(project)
+                        let task = FlowTask(projectID: project.id, taskTitle: project.title, definitionOfDone: project.definitionOfDone)
+                        modelContext.insert(task)
                         try? modelContext.save()
                     }
                     activeProject = project
@@ -188,7 +193,7 @@ struct FlowLabView: View {
     }
 }
 
-/// Step 1 of the Flow builder: define the project.
+/// Step 1 of the Flow builder: define the project and create concrete FlowTask.
 struct FlowBuilderView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
@@ -197,6 +202,7 @@ struct FlowBuilderView: View {
     @State private var feedback = "étapes"
     @State private var goalClarity = 2
     @State private var challenge = 2
+    @State private var skill = 2
     @State private var duration = 25
     @State private var contract = "hors de la pièce"
 
@@ -242,27 +248,6 @@ struct FlowBuilderView: View {
                     }
                     .padding(.top, 10)
 
-                    Button {
-                        guard !title.isEmpty, !done.isEmpty else { return }
-                        let project = FlowProject(title: title, definitionOfDone: done, feedbackType: feedback, goalClarity: goalClarity)
-                        project.defaultSessionLength = duration
-                        project.defaultDistractionContract = contract
-                        project.skillEstimate = challenge
-                        modelContext.insert(project)
-                        try? modelContext.save()
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Text("CRÉER LE PROJET")
-                            Spacer()
-                            Image(systemName: "arrow.right")
-                        }
-                    }
-                    .buttonStyle(.rbSystem)
-                    .padding(.top, 30)
-                    .disabled(title.isEmpty || done.isEmpty)
-                    .opacity(title.isEmpty || done.isEmpty ? 0.4 : 1)
-
                     Text("LE DÉFI TE SEMBLE…")
                         .font(.metadata(size: 10))
                         .tracking(1.6)
@@ -287,7 +272,31 @@ struct FlowBuilderView: View {
                     }
                     .padding(.top, 8)
 
-                    Text("DURÉE DE LA FENÊTRE")
+                    Text("TON NIVEAU SUR CETTE TÂCHE…")
+                        .font(.metadata(size: 10))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                        .padding(.top, 18)
+                    HStack(spacing: 8) {
+                        ForEach(["DÉBUTANT", "À L'AISE", "EXPERT"], id: \.self) { option in
+                            let value = ["DÉBUTANT", "À L'AISE", "EXPERT"].firstIndex(of: option)! + 1
+                            Button {
+                                skill = value
+                            } label: {
+                                Text(option)
+                                    .font(.metadata(size: 9))
+                                    .foregroundStyle(skill == value ? .ink : .bone)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 11)
+                                    .background(skill == value ? Color.bonePlate : Color.deepCarbon)
+                                    .clipShape(RBChamferedShape(cut: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, 8)
+
+                    Text("DURÉE DE LA FENÊTRE (MIN)")
                         .font(.metadata(size: 10))
                         .tracking(1.6)
                         .foregroundStyle(.ash)
@@ -332,7 +341,40 @@ struct FlowBuilderView: View {
                         }
                     }
                     .padding(.top, 8)
+
+                    Button {
+                        guard !title.isEmpty, !done.isEmpty else { return }
+                        let project = FlowProject(title: title, definitionOfDone: done, feedbackType: feedback, goalClarity: goalClarity)
+                        project.defaultSessionLength = duration
+                        project.defaultDistractionContract = contract
+                        project.skillEstimate = skill
+                        modelContext.insert(project)
+
+                        let task = FlowTask(
+                            projectID: project.id,
+                            taskTitle: title,
+                            definitionOfDone: done,
+                            challengeRatingBefore: challenge,
+                            skillRatingBefore: skill,
+                            feedbackMechanism: feedback,
+                            distractionContract: contract,
+                            plannedDuration: duration
+                        )
+                        modelContext.insert(task)
+                        try? modelContext.save()
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Text("CRÉER LE PROJET")
+                            Spacer()
+                            Image(systemName: "arrow.right")
+                        }
+                    }
+                    .buttonStyle(.rbSystem)
+                    .padding(.top, 30)
                     .padding(.bottom, 40)
+                    .disabled(title.isEmpty || done.isEmpty)
+                    .opacity(title.isEmpty || done.isEmpty ? 0.4 : 1)
                 }
                 .padding(.horizontal, RBSpacing.screen)
             }
@@ -357,23 +399,31 @@ struct FlowBuilderView: View {
     }
 }
 
-/// A Flow session: timer with the project contract, then 4 post questions.
+/// A Flow session: timer with the project contract and concrete FlowTask, then post questions.
 struct FlowSessionView: View {
     let project: FlowProject
+    var task: FlowTask?
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
+    let plannedDurationSeconds: Int
     @State private var remaining: Int
     @State private var switches = 0
     @State private var finished = false
     @State private var knewNextStep = 3
-    @State private var challenge = 2
+    @State private var challenge: Int
+    @State private var skill: Int
     @State private var lostTrack = "Parfois"
     @State private var wantedContinue = "Oui"
 
-    init(project: FlowProject) {
+    init(project: FlowProject, task: FlowTask? = nil) {
         self.project = project
-        self._remaining = State(initialValue: max(10, project.defaultSessionLength) * 60)
+        self.task = task
+        let planned = max(10, task?.plannedDuration ?? project.defaultSessionLength) * 60
+        self.plannedDurationSeconds = planned
+        self._remaining = State(initialValue: planned)
+        self._challenge = State(initialValue: task?.challengeRatingBefore ?? 2)
+        self._skill = State(initialValue: task?.skillRatingBefore ?? 2)
     }
 
     var body: some View {
@@ -394,7 +444,7 @@ struct FlowSessionView: View {
                     .padding(.horizontal, 20)
                     RBSystemLabel(text: "FLOW / \(project.title.uppercased())", color: .signalCyan)
                         .padding(.top, 14)
-                    Text("TERMINÉ : \(project.definitionOfDone)")
+                    Text("TERMINÉ : \(task?.definitionOfDone.isEmpty == false ? (task?.definitionOfDone ?? "") : project.definitionOfDone)")
                         .font(.body(size: 13))
                         .foregroundStyle(.softBone)
                         .multilineTextAlignment(.center)
@@ -495,6 +545,7 @@ struct FlowSessionView: View {
 
                 rating("SAVAIS-TU QUOI FAIRE ENSUITE ?", value: $knewNextStep, low: "PAS DU TOUT", high: "TRÈS CLAIR")
                 challengeRow
+                skillRow
                 singleChoice("AS-TU PERDU LA NOTION DU TEMPS ?", options: ["Non", "Un peu", "Oui"], selection: $lostTrack)
                 singleChoice("AVAIS-TU ENVIE DE CONTINUER ?", options: ["Non", "Neutre", "Oui"], selection: $wantedContinue)
 
@@ -541,6 +592,33 @@ struct FlowSessionView: View {
             }
         }
         .padding(.top, 26)
+    }
+
+    private var skillRow: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("TON NIVEAU RESSENTI…")
+                .font(.metadata(size: 11))
+                .tracking(1.6)
+                .foregroundStyle(.ash)
+            HStack(spacing: 8) {
+                ForEach(["DÉBUTANT", "À L'AISE", "EXPERT"], id: \.self) { option in
+                    let value = ["DÉBUTANT", "À L'AISE", "EXPERT"].firstIndex(of: option)! + 1
+                    Button {
+                        skill = value
+                    } label: {
+                        Text(option)
+                            .font(.metadata(size: 9))
+                            .foregroundStyle(skill == value ? .ink : .bone)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(skill == value ? Color.bonePlate : Color.deepCarbon)
+                            .clipShape(RBChamferedShape(cut: 8))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+        .padding(.top, 20)
     }
 
     private func rating(_ title: String, value: Binding<Int>, low: String, high: String) -> some View {
@@ -590,15 +668,29 @@ struct FlowSessionView: View {
     }
 
     private func saveSession() {
-        let flowSession = FlowSession(projectID: project.id, durationSeconds: 25 * 60)
+        let actual = max(1, plannedDurationSeconds - remaining)
+        let flowSession = FlowSession(
+            projectID: project.id,
+            flowTaskID: task?.id,
+            plannedDurationSeconds: plannedDurationSeconds,
+            actualDurationSeconds: actual
+        )
         flowSession.challengeRating = challenge
+        flowSession.skillRating = skill
         flowSession.knewNextStep = knewNextStep
         flowSession.lostTrackOfTime = lostTrack
         flowSession.wantedToContinue = wantedContinue
         flowSession.switchCount = switches
         flowSession.completed = true
         modelContext.insert(flowSession)
+
+        if let task {
+            task.actualDuration = actual
+            task.switchCount = switches
+            task.completionFraction = min(1.0, Double(actual) / Double(plannedDurationSeconds))
+        }
         project.sessionsCompleted += 1
+        AdaptiveRebootEngineDriver.recordFlowEvidence(flowSession, context: modelContext)
         try? modelContext.save()
     }
 }

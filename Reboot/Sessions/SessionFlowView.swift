@@ -186,7 +186,8 @@ struct SessionFlowView: View {
             title: lockedRequest.title,
             intention: plan.intention,
             plannedDurationSeconds: lockedRequest.duration * 60,
-            completionOrdinal: (progress?.completedSessions ?? 0) + 1
+            completionOrdinal: (progress?.completedSessions ?? 0) + 1,
+            contentID: lockedRequest.contentID
         )
         session.experimentID = activeExperiment?.id
         session.experimentCondition = activeExperiment?.title

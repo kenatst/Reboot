@@ -29,7 +29,8 @@ struct RebootApp: App {
             PersonalRule.self,
             AdaptiveDecisionRecord.self,
             AdaptationEvent.self,
-            AttentionEvidence.self
+            AttentionEvidence.self,
+            ExperimentObservation.self
         ])
         if let resolved = Self.makeContainer(schema: schema) {
             container = resolved

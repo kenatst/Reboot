@@ -8,7 +8,7 @@ enum PrescriptionEngine {
     static func activePrescription(forDay day: Int, context: ModelContext) -> DailyPrescription? {
         let descriptor = FetchDescriptor<DailyPrescription>(
             predicate: #Predicate { $0.day == day && $0.status == "active" },
-            sortBy: [SortDescriptor(\.version, order: .reverse)]
+            sortBy: [SortDescriptor(\.version, order: .reverse), SortDescriptor(\.generatedAt, order: .reverse)]
         )
         return (try? context.fetch(descriptor))?.first
     }
@@ -68,7 +68,11 @@ enum PrescriptionEngine {
             return active
         }
 
-        let previous = activePrescription(forDay: day, context: context)
+        let existingActive = (try? context.fetch(FetchDescriptor<DailyPrescription>(
+            predicate: #Predicate { $0.day == day && $0.status == "active" }
+        ))) ?? []
+        let previous = existingActive.max { $0.version < $1.version }
+
         let interruptions = (try? context.fetch(FetchDescriptor<SessionInterruption>())) ?? []
         let flowSessions = (try? context.fetch(FetchDescriptor<FlowSession>())) ?? []
         let attention = AttentionProfileBuilder.build(
@@ -92,7 +96,24 @@ enum PrescriptionEngine {
         )
 
         let nextVersion = (previous?.version ?? 0) + 1
-        previous?.status = "superseded"
+        for old in existingActive {
+            old.status = "superseded"
+        }
+
+        // Link the canonical RequiredAction
+        let linkedAction: RequiredAction?
+        if !plan.realWorldAction.isEmpty {
+            if let existing = requiredActions.first(where: { $0.day == day && ($0.status == "pending" || $0.status == "failed") }) {
+                linkedAction = existing
+            } else {
+                let created = RequiredAction(day: day, kind: "environment", title: plan.realWorldAction)
+                context.insert(created)
+                linkedAction = created
+            }
+        } else {
+            linkedAction = nil
+        }
+
         let prescription = DailyPrescription(
             day: plan.day,
             phase: plan.phase,
@@ -109,13 +130,11 @@ enum PrescriptionEngine {
             fallbackPlan: plan.fallbackPlan,
             version: nextVersion,
             evidenceFingerprint: fingerprint,
-            adaptationNote: adaptationNote(previous: previous, plan: plan)
+            adaptationNote: adaptationNote(previous: previous, plan: plan),
+            requiredActionID: linkedAction?.id
         )
         context.insert(prescription)
 
-        if !plan.realWorldAction.isEmpty, requiredActions.first(where: { $0.day == day && ($0.status == "pending" || $0.status == "failed") }) == nil {
-            context.insert(RequiredAction(day: day, kind: "environment", title: plan.realWorldAction))
-        }
         context.insert(AdaptationEvent(
             day: day,
             kind: "ADAPTATION",

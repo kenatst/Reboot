@@ -14,26 +14,23 @@ struct SessionRequest: Identifiable {
 
 /// Builds a request for the current protocol day, or a free discipline.
 enum SessionRequestFactory {
-    static func today(day: Int) -> SessionRequest {
+    static func discipline(
+        _ mode: SessionMode,
+        day: Int,
+        recentContentIDs: [Int] = [],
+        completedContentIDs: [Int] = []
+    ) -> SessionRequest {
         let plan = ProtocolCurriculum.day(day)
-        return SessionRequest(
-            mode: plan.mode,
-            day: day,
-            duration: plan.recommendedDuration,
-            title: plan.title,
-            contentID: plan.contentID
+        let context = ContentSelectionContext(
+            mode: mode,
+            targetSkill: plan.title,
+            difficulty: 2,
+            recentContentIDs: recentContentIDs,
+            phase: plan.phase,
+            completedContentIDs: completedContentIDs,
+            day: day
         )
-    }
-
-    static func discipline(_ mode: SessionMode, day: Int) -> SessionRequest {
-        let plan = ProtocolCurriculum.day(day)
-        let contentID: Int?
-        switch mode {
-        case .recall: contentID = ((day - 1) % 50) + 1
-        case .explain: contentID = ((day - 1) % 35) + 1
-        case .observe: contentID = ((day - 1) % 35) + 1
-        default: contentID = nil
-        }
+        let contentID = ContentSelector.select(context: context)
         let suggested = ProtocolEngine.suggestedDurations(for: mode, day: day).last ?? plan.recommendedDuration
         return SessionRequest(
             mode: mode,
@@ -48,14 +45,24 @@ enum SessionRequestFactory {
     /// session. The curriculum only describes the day's skill objective.
     static func prescription(
         prescription: DailyPrescription,
-        curriculum: ProtocolDay
+        curriculum: ProtocolDay,
+        recentContentIDs: [Int] = [],
+        completedContentIDs: [Int] = [],
+        previousEvaluation: Double? = nil
     ) -> SessionRequest {
         let mode = SessionMode(rawValue: prescription.trainingMode) ?? curriculum.mode
-        let contentID = ContentSelector.select(
+        let context = ContentSelectionContext(
             mode: mode,
-            day: curriculum.dayNumber,
-            difficulty: prescription.difficulty
+            targetSkill: prescription.primaryTarget,
+            difficulty: prescription.difficulty,
+            recentContentIDs: recentContentIDs,
+            previousEvaluation: previousEvaluation,
+            phase: prescription.phase,
+            preferredCategories: [prescription.primaryTarget],
+            completedContentIDs: completedContentIDs,
+            day: curriculum.dayNumber
         )
+        let contentID = ContentSelector.select(context: context)
         return SessionRequest(
             mode: mode,
             day: curriculum.dayNumber,
@@ -66,32 +73,112 @@ enum SessionRequestFactory {
     }
 }
 
-/// Adaptive content selection: no naive modulo. Chooses by skill + difficulty,
-/// avoiding the most recently used content until the library cycles.
+/// Context for deterministic, adaptive content selection.
+struct ContentSelectionContext {
+    var mode: SessionMode
+    var targetSkill: String = ""
+    var difficulty: Int = 2
+    var recentContentIDs: [Int] = []
+    var previousEvaluation: Double? = nil
+    var phase: Int = 1
+    var preferredCategories: [String] = []
+    var completedContentIDs: [Int] = []
+    var day: Int = 1
+}
+
+/// Adaptive content selection: selects deterministically by target skill,
+/// difficulty, and freshness without pseudo-random modulo.
 enum ContentSelector {
-    static func select(mode: SessionMode, day: Int, difficulty: Int) -> Int? {
-        switch mode {
+    static func select(context: ContentSelectionContext) -> Int? {
+        switch context.mode {
+        case .stay:
+            return nil
         case .recall:
             let pool = ContentStore.readings
             guard !pool.isEmpty else { return nil }
-            let candidates = pool.filter { readingDifficulty($0) >= difficulty - 1 }
-            let list = candidates.isEmpty ? pool : candidates
-            return list[(day * 7 + difficulty * 3) % list.count].id
+            return selectBest(
+                from: pool.map { (id: $0.id, category: $0.category, difficulty: readingDifficulty($0)) },
+                context: context
+            )
         case .explain:
             let pool = ContentStore.learningModules
             guard !pool.isEmpty else { return nil }
-            return pool[(day * 5 + difficulty * 2) % pool.count].id
+            return selectBest(
+                from: pool.map { (id: $0.id, category: $0.topic, difficulty: 2) },
+                context: context
+            )
         case .observe:
             let pool = ContentStore.observationMissions
             guard !pool.isEmpty else { return nil }
-            return pool[(day * 3) % pool.count].id
+            return selectBest(
+                from: pool.map { (id: $0.id, category: $0.category, difficulty: 1) },
+                context: context
+            )
         case .nothing:
             let pool = ContentStore.voidPrompts
             guard !pool.isEmpty else { return nil }
-            return pool[(day * 2) % pool.count].id
-        case .stay:
-            return nil
+            let recentSet = Set(context.recentContentIDs)
+            let fresh = pool.filter { !recentSet.contains($0.id) }
+            let candidatePool = fresh.isEmpty ? pool : fresh
+            return candidatePool.sorted { $0.id < $1.id }.first?.id
         }
+    }
+
+    /// Legacy convenience wrapper mapping to ContentSelectionContext.
+    static func select(mode: SessionMode, day: Int, difficulty: Int) -> Int? {
+        let context = ContentSelectionContext(
+            mode: mode,
+            difficulty: difficulty,
+            day: day
+        )
+        return select(context: context)
+    }
+
+    private static func selectBest(
+        from candidates: [(id: Int, category: String, difficulty: Int)],
+        context: ContentSelectionContext
+    ) -> Int? {
+        guard !candidates.isEmpty else { return nil }
+        let recentSet = Set(context.recentContentIDs)
+        let completedSet = Set(context.completedContentIDs)
+        let targetDifficulty = (context.previousEvaluation != nil && (context.previousEvaluation ?? 10) < 5.0)
+            ? max(1, context.difficulty - 1)
+            : context.difficulty
+
+        // Exclude recently seen candidates if fresh candidates exist
+        let freshCandidates = candidates.filter { !recentSet.contains($0.id) }
+        let pool = freshCandidates.isEmpty ? candidates : freshCandidates
+
+        // Score each candidate deterministically:
+        let scored = pool.map { candidate -> (id: Int, score: Int) in
+            var score = 0
+            // 1. Correct target / preferred category
+            if !context.preferredCategories.isEmpty && context.preferredCategories.contains(where: { candidate.category.localizedCaseInsensitiveContains($0) }) {
+                score += 50
+            } else if !context.targetSkill.isEmpty && candidate.category.localizedCaseInsensitiveContains(context.targetSkill) {
+                score += 40
+            }
+            // 2. Correct difficulty
+            if candidate.difficulty == targetDifficulty {
+                score += 30
+            } else if abs(candidate.difficulty - targetDifficulty) == 1 {
+                score += 15
+            }
+            // 3. Not completed
+            if !completedSet.contains(candidate.id) {
+                score += 15
+            }
+            return (id: candidate.id, score: score)
+        }
+
+        // Priority ordering: highest score, tie-break deterministically by ID
+        let sorted = scored.sorted { a, b in
+            if a.score != b.score {
+                return a.score > b.score
+            }
+            return a.id < b.id
+        }
+        return sorted.first?.id
     }
 
     private static func readingDifficulty(_ reading: ReadingExercise) -> Int {
