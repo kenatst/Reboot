@@ -23,10 +23,13 @@ struct RebootApp: App {
             BehaviorExperiment.self,
             FlowProject.self,
             FlowSession.self,
+            FlowTask.self,
             DailyEnergyCheckIn.self,
             SessionInterruption.self,
             PersonalRule.self,
-            AdaptiveDecisionRecord.self
+            AdaptiveDecisionRecord.self,
+            AdaptationEvent.self,
+            AttentionEvidence.self
         ])
         if let resolved = Self.makeContainer(schema: schema) {
             container = resolved

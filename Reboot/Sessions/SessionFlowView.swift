@@ -23,6 +23,7 @@ struct SessionFlowView: View {
     @State private var overlay: SessionOverlay?
     @State private var showMilestone = false
     @State private var autoStarted = false
+    @State private var showAbortReasons = false
 
     enum SessionOverlay: Identifiable {
         case checkpoint(week: Int)
@@ -74,7 +75,7 @@ struct SessionFlowView: View {
                 VStack {
                     HStack {
                         Button {
-                            dismiss()
+                            showAbortReasons = true
                         } label: {
                             Image(systemName: "xmark")
                                 .font(.system(size: 14, weight: .bold))
@@ -91,7 +92,37 @@ struct SessionFlowView: View {
                 .padding(.top, 8)
                 .zIndex(15)
             }
+
+            if showAbortReasons {
+                Color.black.opacity(0.5)
+                    .ignoresSafeArea()
+                    .zIndex(25)
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("POURQUOI SORS-TU ?")
+                        .font(.system(size: 16, weight: .heavy, design: .default))
+                        .foregroundStyle(.bone)
+                        .padding(.bottom, 14)
+                    ForEach(abortReasons, id: \.self) { reason in
+                        Button {
+                            recordAbort(reason)
+                        } label: {
+                            Text(reason)
+                                .font(.body(size: 14))
+                                .foregroundStyle(.bone)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.vertical, 12)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(20)
+                .background(Color.graphiteSurface)
+                .clipShape(RBChamferedShape(cut: 18))
+                .padding(.horizontal, 30)
+                .zIndex(26)
+            }
         }
+        .animation(.easeOut(duration: 0.2), value: showAbortReasons)
         .animation(.easeInOut(duration: RBMotion.slow), value: phase == .locked)
         .onAppear {
             guard request.skipSetup, !autoStarted else { return }
@@ -147,6 +178,7 @@ struct SessionFlowView: View {
 
     private func begin(_ lockedRequest: SessionRequest) {
         let plan = ProtocolCurriculum.day(lockedRequest.day)
+        let activeExperiment = AdaptiveRebootEngineDriver.activeExperiments(context: modelContext).first
         let session = TrainingSession(
             protocolDay: lockedRequest.day,
             phase: plan.phase,
@@ -156,6 +188,8 @@ struct SessionFlowView: View {
             plannedDurationSeconds: lockedRequest.duration * 60,
             completionOrdinal: (progress?.completedSessions ?? 0) + 1
         )
+        session.experimentID = activeExperiment?.id
+        session.experimentCondition = activeExperiment?.title
         modelContext.insert(session)
         activeSession = session
         RBHaptics.play(.lock)
@@ -182,6 +216,12 @@ struct SessionFlowView: View {
         }
         session.date = .now
         try? modelContext.save()
+        AdaptiveRebootEngineDriver.recordSessionEvidence(session: session, context: modelContext)
+        if let experimentID = session.experimentID,
+           let experiment = (try? modelContext.fetch(FetchDescriptor<BehaviorExperiment>()))?
+            .first(where: { $0.id == experimentID }) {
+            AdaptiveRebootEngineDriver.recordExperimentObservation(experiment: experiment, session: session, context: modelContext)
+        }
         advanceProgress()
         withAnimation(.easeInOut(duration: 0.25)) {
             phase = .complete
@@ -192,6 +232,22 @@ struct SessionFlowView: View {
                 phase = .debrief
             }
         }
+    }
+
+    private let abortReasons = ["PHONE", "NOTIFICATION", "INTERRUPTION EXTERNE", "ENNUI", "TROP DUR", "TROP FATIGUÉ", "TERMINÉ TÔT", "AUTRE"]
+
+    private func recordAbort(_ reason: String) {
+        if let session = activeSession {
+            AdaptiveRebootEngineDriver.recordEvidence(
+                dimension: "STABILITY",
+                evidenceType: EvidenceType.interruption.rawValue,
+                categoricalValue: "aborted:\(reason)",
+                sourceID: session.id.uuidString,
+                context: modelContext
+            )
+        }
+        showAbortReasons = false
+        dismiss()
     }
 
     private func advanceProgress() {

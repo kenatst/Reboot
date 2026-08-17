@@ -250,6 +250,15 @@ struct RootView: View {
             profile.currentEnergy = injected.currentEnergy
             profile.caffeine = injected.caffeine
             try? modelContext.save()
+            if injected.currentEnergy == "Low" {
+                AdaptiveRebootEngineDriver.recordEnergyCheckIn(
+                    energy: "Low",
+                    sleep: injected.typicalSleep,
+                    caffeine: injected.caffeine,
+                    window: injected.bestWindow,
+                    context: modelContext
+                )
+            }
             AdaptiveRebootEngineDriver.generatePrescription(forDay: 10, context: modelContext)
         }
         if UITestDriver.engineTests {

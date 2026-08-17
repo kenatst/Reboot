@@ -73,9 +73,6 @@ struct TodayView: View {
                     v2PrescriptionBlock
                         .padding(.top, 24)
 
-                    todayProtocolPlate
-                        .padding(.top, 30)
-
                     whyToday
                         .padding(.top, 34)
 
@@ -107,13 +104,13 @@ struct TodayView: View {
             FlowLabView()
         }
         .onAppear {
-            generatePrescriptionIfNeeded()
+            refreshPrescription()
         }
     }
 
-    private func generatePrescriptionIfNeeded() {
-        guard let profile, profile.isCalibrated, prescription == nil else { return }
-        AdaptiveRebootEngineDriver.generatePrescription(forDay: dayNumber, context: modelContext)
+    private func refreshPrescription() {
+        guard let profile, profile.isCalibrated else { return }
+        PrescriptionEngine.refreshIfNeeded(forDay: dayNumber, context: modelContext)
     }
 
     private func markActionDone(_ action: RequiredAction) {
@@ -211,11 +208,56 @@ struct TodayView: View {
                 energyCheckIn
                     .padding(.top, 12)
 
+                if !prescription.adaptationNote.isEmpty {
+                    HStack(alignment: .top, spacing: 10) {
+                        Rectangle()
+                            .fill(Color.signalCyan)
+                            .frame(width: 3, height: 34)
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("REBOOT ADAPTED")
+                                .font(.metadata(size: 8))
+                                .tracking(1.6)
+                                .foregroundStyle(.signalCyan)
+                            Text(prescription.adaptationNote)
+                                .font(.body(size: 12))
+                                .foregroundStyle(.softBone)
+                                .lineSpacing(3)
+                        }
+                    }
+                    .padding(.top, 12)
+                }
+
+                Button {
+                    activeRequest = SessionRequestFactory.prescription(
+                        prescription: prescription,
+                        curriculum: plan
+                    )
+                } label: {
+                    HStack {
+                        Text("COMMENCER")
+                        Spacer()
+                        Text("\(prescription.trainingMode.uppercased()) \(prescription.trainingDuration) MIN")
+                            .font(.metadata(size: 10))
+                            .tracking(1.4)
+                            .foregroundStyle(.ink.opacity(0.7))
+                        Image(systemName: "arrow.right")
+                            .font(.system(size: 13, weight: .bold))
+                    }
+                }
+                .buttonStyle(.rbSystem)
+                .padding(.top, 14)
+
                 #if DEBUG
-                Text("WHY : \(prescription.adaptationReason)")
-                    .font(.metadata(size: 8))
-                    .foregroundStyle(.ash.opacity(0.7))
-                    .padding(.top, 10)
+                HStack {
+                    Text("V\(prescription.version)")
+                        .font(.metadata(size: 8))
+                        .foregroundStyle(.ash.opacity(0.7))
+                    Text("WHY : \(prescription.adaptationReason)")
+                        .font(.metadata(size: 8))
+                        .foregroundStyle(.ash.opacity(0.7))
+                        .lineLimit(2)
+                }
+                .padding(.top, 10)
                 #endif
             }
             .padding(16)
@@ -352,56 +394,6 @@ struct TodayView: View {
                     .lineSpacing(3)
             }
             Spacer(minLength: 0)
-        }
-    }
-
-    private var todayProtocolPlate: some View {
-        RBSignalPlate(cut: 20, accent: accent, fill: .deepCarbon) {
-            VStack(alignment: .leading, spacing: 0) {
-                HStack(alignment: .top) {
-                    RBModeGlyph(kind: modeGlyph, size: 34)
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text("AUJOURD'HUI")
-                            .font(.metadata(size: 10))
-                            .tracking(2)
-                            .foregroundStyle(.ash)
-                        Text(plan.mode.frenchLabel)
-                            .font(.heroBlack(size: 34))
-                            .tracking(-0.4)
-                            .foregroundStyle(.bone)
-                    }
-                    Spacer()
-                    Text("\(plan.recommendedDuration) MIN")
-                        .font(.system(size: 16, weight: .bold, design: .monospaced))
-                        .foregroundStyle(accent)
-                }
-
-                Text(plan.mode.tagline)
-                    .font(.system(size: 15, weight: .bold, design: .default))
-                    .foregroundStyle(.softBone)
-                    .lineSpacing(3)
-                    .padding(.top, 16)
-
-                Text(plan.title)
-                    .font(.body(size: 14))
-                    .foregroundStyle(.ash)
-                    .lineSpacing(3)
-                    .padding(.top, 12)
-
-                Button {
-                    activeRequest = SessionRequestFactory.today(day: dayNumber)
-                } label: {
-                    HStack {
-                        Text("COMMENCER")
-                        Spacer()
-                        Image(systemName: "arrow.right")
-                            .font(.system(size: 13, weight: .bold))
-                    }
-                }
-                .buttonStyle(.rbSystem)
-                .padding(.top, 20)
-            }
-            .padding(20)
         }
     }
 

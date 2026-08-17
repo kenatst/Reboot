@@ -196,6 +196,9 @@ struct FlowBuilderView: View {
     @State private var done = ""
     @State private var feedback = "étapes"
     @State private var goalClarity = 2
+    @State private var challenge = 2
+    @State private var duration = 25
+    @State private var contract = "hors de la pièce"
 
     private let feedbackOptions = ["pages", "questions", "slides", "code tests", "paragraphes", "problèmes résolus", "autre"]
 
@@ -242,6 +245,9 @@ struct FlowBuilderView: View {
                     Button {
                         guard !title.isEmpty, !done.isEmpty else { return }
                         let project = FlowProject(title: title, definitionOfDone: done, feedbackType: feedback, goalClarity: goalClarity)
+                        project.defaultSessionLength = duration
+                        project.defaultDistractionContract = contract
+                        project.skillEstimate = challenge
                         modelContext.insert(project)
                         try? modelContext.save()
                         dismiss()
@@ -256,6 +262,76 @@ struct FlowBuilderView: View {
                     .padding(.top, 30)
                     .disabled(title.isEmpty || done.isEmpty)
                     .opacity(title.isEmpty || done.isEmpty ? 0.4 : 1)
+
+                    Text("LE DÉFI TE SEMBLE…")
+                        .font(.metadata(size: 10))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                        .padding(.top, 22)
+                    HStack(spacing: 8) {
+                        ForEach(["TROP FACILE", "JUSTE", "TROP DUR"], id: \.self) { option in
+                            let value = ["TROP FACILE", "JUSTE", "TROP DUR"].firstIndex(of: option)! + 1
+                            Button {
+                                challenge = value
+                            } label: {
+                                Text(option)
+                                    .font(.metadata(size: 9))
+                                    .foregroundStyle(challenge == value ? .ink : .bone)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 11)
+                                    .background(challenge == value ? Color.bonePlate : Color.deepCarbon)
+                                    .clipShape(RBChamferedShape(cut: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, 8)
+
+                    Text("DURÉE DE LA FENÊTRE")
+                        .font(.metadata(size: 10))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                        .padding(.top, 18)
+                    HStack(spacing: 8) {
+                        ForEach([15, 25, 40, 60], id: \.self) { d in
+                            Button {
+                                duration = d
+                            } label: {
+                                Text("\(d)")
+                                    .font(.system(size: 13, weight: .bold, design: .monospaced))
+                                    .foregroundStyle(duration == d ? .ink : .bone)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 11)
+                                    .background(duration == d ? Color.bonePlate : Color.deepCarbon)
+                                    .clipShape(RBChamferedShape(cut: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, 8)
+
+                    Text("TÉLÉPHONE PENDANT LA SESSION")
+                        .font(.metadata(size: 10))
+                        .tracking(1.6)
+                        .foregroundStyle(.ash)
+                        .padding(.top, 18)
+                    HStack(spacing: 8) {
+                        ForEach(["hors de la pièce", "face cachée", "mode focus", "autorisé"], id: \.self) { option in
+                            Button {
+                                contract = option
+                            } label: {
+                                Text(option)
+                                    .font(.metadata(size: 9))
+                                    .foregroundStyle(contract == option ? .ink : .bone)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 11)
+                                    .background(contract == option ? Color.bonePlate : Color.deepCarbon)
+                                    .clipShape(RBChamferedShape(cut: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, 8)
                     .padding(.bottom, 40)
                 }
                 .padding(.horizontal, RBSpacing.screen)
@@ -297,7 +373,7 @@ struct FlowSessionView: View {
 
     init(project: FlowProject) {
         self.project = project
-        self._remaining = State(initialValue: 25 * 60)
+        self._remaining = State(initialValue: max(10, project.defaultSessionLength) * 60)
     }
 
     var body: some View {
@@ -327,11 +403,16 @@ struct FlowSessionView: View {
                         .padding(.top, 10)
                     Spacer()
                     RBTimerDisplay(seconds: remaining, size: 70)
-                    Text("CONTRAT : TÉLÉPHONE \(project.feedbackType.uppercased())")
+                    Text("FEEDBACK : \(project.feedbackType.uppercased())")
+                        .font(.metadata(size: 9))
+                        .tracking(1.4)
+                        .foregroundStyle(.signalCyan)
+                        .padding(.top, 10)
+                    Text("CONTRAT : TÉLÉPHONE \(project.defaultDistractionContract.isEmpty ? "HORS DE LA PIÈCE" : project.defaultDistractionContract.uppercased())")
                         .font(.metadata(size: 9))
                         .tracking(1.4)
                         .foregroundStyle(.ash)
-                        .padding(.top, 12)
+                        .padding(.top, 4)
                     Spacer()
                     HStack(spacing: 14) {
                         Button {

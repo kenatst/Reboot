@@ -153,6 +153,11 @@ final class DailyPrescription {
     var adaptationReason: String
     var fallbackPlan: String
     var createdAt: Date
+    var version: Int
+    var generatedAt: Date
+    var evidenceFingerprint: String
+    var status: String
+    var adaptationNote: String
 
     init(
         day: Int,
@@ -167,7 +172,10 @@ final class DailyPrescription {
         microInsight: String,
         difficulty: Int,
         adaptationReason: String,
-        fallbackPlan: String
+        fallbackPlan: String,
+        version: Int = 1,
+        evidenceFingerprint: String = "",
+        adaptationNote: String = ""
     ) {
         self.id = UUID()
         self.day = day
@@ -185,6 +193,96 @@ final class DailyPrescription {
         self.adaptationReason = adaptationReason
         self.fallbackPlan = fallbackPlan
         self.createdAt = .now
+        self.version = version
+        self.generatedAt = .now
+        self.evidenceFingerprint = evidenceFingerprint
+        self.status = "active"
+        self.adaptationNote = adaptationNote
+    }
+}
+
+@Model
+final class AdaptationEvent {
+    var id: UUID
+    var day: Int
+    var kind: String
+    var title: String
+    var detail: String
+    var createdAt: Date
+
+    init(day: Int, kind: String, title: String, detail: String) {
+        self.id = UUID()
+        self.day = day
+        self.kind = kind
+        self.title = title
+        self.detail = detail
+        self.createdAt = .now
+    }
+}
+
+@Model
+final class AttentionEvidence {
+    var id: UUID
+    var timestamp: Date
+    var dimension: String
+    var evidenceType: String
+    var numericValue: Double?
+    var categoricalValue: String?
+    var confidence: Double
+    var sourceID: String?
+    var metadata: String
+
+    init(
+        dimension: String,
+        evidenceType: String,
+        numericValue: Double? = nil,
+        categoricalValue: String? = nil,
+        confidence: Double = 0.6,
+        sourceID: String? = nil,
+        metadata: String = ""
+    ) {
+        self.id = UUID()
+        self.timestamp = .now
+        self.dimension = dimension
+        self.evidenceType = evidenceType
+        self.numericValue = numericValue
+        self.categoricalValue = categoricalValue
+        self.confidence = confidence
+        self.sourceID = sourceID
+        self.metadata = metadata
+    }
+}
+
+@Model
+final class FlowTask {
+    var id: UUID
+    var projectID: UUID
+    var taskTitle: String
+    var definitionOfDone: String
+    var challengeRatingBefore: Int
+    var skillRatingBefore: Int
+    var feedbackMechanism: String
+    var distractionContract: String
+    var plannedDuration: Int
+    var actualDuration: Int
+    var completionFraction: Double
+    var switchCount: Int
+    var createdAt: Date
+
+    init(projectID: UUID, taskTitle: String, definitionOfDone: String) {
+        self.id = UUID()
+        self.projectID = projectID
+        self.taskTitle = taskTitle
+        self.definitionOfDone = definitionOfDone
+        self.challengeRatingBefore = 2
+        self.skillRatingBefore = 2
+        self.feedbackMechanism = ""
+        self.distractionContract = ""
+        self.plannedDuration = 25
+        self.actualDuration = 0
+        self.completionFraction = 0
+        self.switchCount = 0
+        self.createdAt = .now
     }
 }
 
@@ -197,6 +295,11 @@ final class RequiredAction {
     var status: String
     var blockReason: String
     var createdAt: Date
+    var attemptCount: Int
+    var failureReason: String
+    var interventionID: Int?
+    var verificationStrategy: String
+    var requiredForProgress: Bool
 
     init(day: Int, kind: String, title: String) {
         self.id = UUID()
@@ -206,6 +309,11 @@ final class RequiredAction {
         self.status = "pending"
         self.blockReason = ""
         self.createdAt = .now
+        self.attemptCount = 0
+        self.failureReason = ""
+        self.interventionID = nil
+        self.verificationStrategy = "MANUAL_CONFIRMATION"
+        self.requiredForProgress = false
     }
 }
 
@@ -243,6 +351,7 @@ final class BehaviorExperiment {
     var confidence: Double
     var recommendation: String
     var startedAt: Date
+    var observationsRaw: [String]
 
     init(templateID: Int, title: String, hypothesis: String, metric: String) {
         self.id = UUID()
@@ -256,6 +365,7 @@ final class BehaviorExperiment {
         self.confidence = 0
         self.recommendation = ""
         self.startedAt = .now
+        self.observationsRaw = []
     }
 }
 
@@ -268,6 +378,15 @@ final class FlowProject {
     var goalClarity: Int
     var createdAt: Date
     var sessionsCompleted: Int
+    var category: String
+    var whyItMatters: String
+    var desiredOutcome: String
+    var deadline: Date?
+    var preferredWindow: String
+    var skillEstimate: Int
+    var defaultSessionLength: Int
+    var defaultDistractionContract: String
+    var active: Bool
 
     init(title: String, definitionOfDone: String, feedbackType: String, goalClarity: Int = 0) {
         self.id = UUID()
@@ -277,6 +396,15 @@ final class FlowProject {
         self.goalClarity = goalClarity
         self.createdAt = .now
         self.sessionsCompleted = 0
+        self.category = "other"
+        self.whyItMatters = ""
+        self.desiredOutcome = ""
+        self.deadline = nil
+        self.preferredWindow = ""
+        self.skillEstimate = 2
+        self.defaultSessionLength = 25
+        self.defaultDistractionContract = ""
+        self.active = true
     }
 }
 

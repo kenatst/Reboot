@@ -118,8 +118,8 @@ def main() -> int:
 
     # 5b. V2 libraries
     interventions = load("environment_interventions")
-    if len(interventions) < 60:
-        failures.append(f"environment_interventions: expected >= 60, got {len(interventions)}")
+    if len(interventions) < 80:
+        failures.append(f"environment_interventions: expected >= 80, got {len(interventions)}")
     intervention_ids = {i["id"] for i in interventions}
     if len(intervention_ids) != len(interventions):
         failures.append("environment_interventions: duplicate ids")
@@ -134,12 +134,25 @@ def main() -> int:
     if len({e["id"] for e in experiments}) != len(experiments):
         failures.append("experiments: duplicate ids")
 
-    for name, minimum in [("micro_lessons", 30), ("flow_lessons", 12), ("fuel_lessons", 8)]:
+    for name, minimum in [("micro_lessons", 80), ("flow_lessons", 24), ("fuel_lessons", 20)]:
         items = load(name)
         if len(items) < minimum:
             failures.append(f"{name}: expected >= {minimum}, got {len(items)}")
         if len({x["id"] for x in items}) != len(items):
             failures.append(f"{name}: duplicate ids")
+
+    # 11. Unsafe absolute-language flags
+    UNSAFE = [
+        "always", "never", "guaranteed", "dopamine reset", "dopamine detox",
+        "brain rewiring", "brain detox", "10% of brain", "the only",
+        "infallible", "the cortex is exhausted"
+    ]
+    for name in ["micro_insights", "micro_lessons", "flow_lessons", "fuel_lessons"]:
+        for item in load(name):
+            text = " ".join(str(v) for v in item.values()).lower()
+            for phrase in UNSAFE:
+                if phrase in text:
+                    warnings.append(f"{name} {item.get('id', '?')}: unsafe absolute language '{phrase}'")
 
     # 6. Readings
     readings = load("readings")

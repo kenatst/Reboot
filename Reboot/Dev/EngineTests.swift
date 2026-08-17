@@ -1,5 +1,6 @@
 #if DEBUG
 import Foundation
+import SwiftData
 
 /// Deterministic unit tests for the adaptive engine (DEBUG-only).
 enum EngineTests {
@@ -97,6 +98,84 @@ enum EngineTests {
             energyCheckIn: nil, flowProjects: [flowProject], curriculum: stayDay
         )
         check("too-hard flow lowers challenge", calibrated.trainingDuration < stayDay.recommendedDuration)
+
+        // 8. CRITICAL WIRING: prescription controls the actual SessionRequest.
+        let wiringPrescription = DailyPrescription(
+            day: 18, phase: 2, primaryTarget: "STABILITY", whyToday: "w",
+            realWorldAction: "a", trainingMode: "stay", trainingDuration: 12,
+            flowWindow: "", recoveryAction: "", microInsight: "i",
+            difficulty: 2, adaptationReason: "r", fallbackPlan: "f"
+        )
+        let wiringRequest = SessionRequestFactory.prescription(
+            prescription: wiringPrescription,
+            curriculum: ProtocolCurriculum.day(18)
+        )
+        check(
+            "prescription controls session request",
+            wiringRequest.mode == .stay && wiringRequest.duration == 12
+        )
+
+        // 9. Same program day → materially different prescriptions for A/B/C.
+        let day18 = ProtocolCurriculum.day(18)
+        let userA = profile(reflex: "HIGH", stability: "LOW", recall: "HIGH", environment: "WEAK")
+        let planA = AdaptiveRebootEngine.prescribe(
+            profile: userA, day: 18, sessions: [], interventions: [], experiments: [],
+            requiredActions: [], energyCheckIn: nil, flowProjects: [], curriculum: day18
+        )
+        let userB = profile(reflex: "LOW", stability: "HIGH", recall: "LOW", environment: "STRONG")
+        let planB = AdaptiveRebootEngine.prescribe(
+            profile: userB, day: 18, sessions: [], interventions: [], experiments: [],
+            requiredActions: [], energyCheckIn: nil, flowProjects: [], curriculum: day18
+        )
+        let userC = profile(reflex: "MEDIUM", stability: "MEDIUM", recall: "MEDIUM", environment: "MEDIUM")
+        let planC = AdaptiveRebootEngine.prescribe(
+            profile: userC, day: 18, sessions: [], interventions: [], experiments: [],
+            requiredActions: [], energyCheckIn: DailyEnergyCheckIn(energy: "Low", sleepHours: "<5", caffeine: "None", bestWindow: "evening"),
+            flowProjects: [], curriculum: day18
+        )
+        let distinct = Set([planA.primaryTarget, planB.primaryTarget, planC.primaryTarget])
+        check(
+            "users A/B/C receive materially different day-18 plans",
+            distinct.count >= 2 && planA.trainingMode != planB.trainingMode
+        )
+
+        // 10. Versioned refresh: energy change supersedes the active plan.
+        do {
+            let schema = Schema([
+                TrainingSession.self, EvaluationResult.self, Restitution.self,
+                RebootProgress.self, ProtocolDayCompletion.self, WeeklyCheckpoint.self,
+                SelfEvaluation.self, ClaritySnapshot.self, RebootUserProfile.self,
+                AttentionDimensionState.self, DailyPrescription.self, RequiredAction.self,
+                CompletedIntervention.self, BehaviorExperiment.self, FlowProject.self,
+                FlowSession.self, FlowTask.self, DailyEnergyCheckIn.self,
+                SessionInterruption.self, PersonalRule.self, AdaptiveDecisionRecord.self,
+                AdaptationEvent.self, AttentionEvidence.self
+            ])
+            let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: schema, configurations: [config])
+            let context = container.mainContext
+            let profile = AdaptiveRebootEngineDriver.ensureProfile(context: context)
+            profile.primaryGoal = "DEEP WORK"
+            profile.primaryDistractor = "TikTok"
+            profile.capacityBucket = "10–20"
+            profile.switchingFrequency = 5
+            profile.phoneLocation = "desk"
+            profile.notificationsLevel = "many"
+            try? context.save()
+
+            let v1 = PrescriptionEngine.refreshIfNeeded(forDay: 18, context: context)
+            let durationBefore = v1.trainingDuration
+            AdaptiveRebootEngineDriver.recordEnergyCheckIn(
+                energy: "Low", sleep: "<5", caffeine: "None", window: "evening", context: context
+            )
+            let v2 = PrescriptionEngine.refreshIfNeeded(forDay: 18, context: context)
+            check(
+                "energy change refreshes and supersedes prescription",
+                v2.version > v1.version && v2.status == "active" && v1.status == "superseded" && durationBefore >= v2.trainingDuration
+            )
+        } catch {
+            check("versioned refresh container setup", false)
+        }
 
         return results
     }

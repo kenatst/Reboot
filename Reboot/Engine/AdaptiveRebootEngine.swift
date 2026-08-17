@@ -40,16 +40,31 @@ struct AttentionProfile {
 /// behavioral evidence. Values are qualitative until evidence accumulates.
 /// No dimension is ever initialized with a fabricated numeric default.
 enum AttentionProfileBuilder {
-    static func build(profile: RebootUserProfile?, sessions: [TrainingSession], checkIns: [DailyEnergyCheckIn]) -> AttentionProfile {
-        // REFLEX: self-report switching + phone checking.
+    static func build(
+        profile: RebootUserProfile?,
+        sessions: [TrainingSession],
+        checkIns: [DailyEnergyCheckIn],
+        interruptions: [SessionInterruption] = [],
+        interventions: [CompletedIntervention] = [],
+        flowSessions: [FlowSession] = []
+    ) -> AttentionProfile {
+        // REFLEX: self-report switching + logged interruptions/urges.
         let switching = Double(profile?.switchingFrequency ?? 0)
-        let reflexValue: String = switching >= 4 ? "HIGH" : switching >= 2 ? "MEDIUM" : "LOW"
+        let urgeCount = interruptions.count
+        let reflexValue: String
+        if switching >= 4 || (switching >= 2 && urgeCount >= 2) {
+            reflexValue = "HIGH"
+        } else if switching >= 2 || urgeCount >= 3 {
+            reflexValue = "MEDIUM"
+        } else {
+            reflexValue = "LOW"
+        }
         let reflex = AttentionProfile.Dimension(
             name: "REFLEX",
             value: profile?.isCalibrated == true ? reflexValue : "CALIBRATING",
-            confidence: profile?.isCalibrated == true ? 0.5 : 0,
-            evidenceCount: profile?.isCalibrated == true ? 1 : 0,
-            sources: profile?.isCalibrated == true ? ["SELF-REPORT"] : []
+            confidence: min(0.9, 0.3 + Double(urgeCount) * 0.08 + (profile?.isCalibrated == true ? 0.2 : 0)),
+            evidenceCount: urgeCount + (profile?.isCalibrated == true ? 1 : 0),
+            sources: (profile?.isCalibrated == true ? ["SELF-REPORT"] : []) + (urgeCount > 0 ? ["INTERRUPTION"] : [])
         )
 
         // STABILITY: real session durations + self-reported capacity.
@@ -59,24 +74,41 @@ enum AttentionProfileBuilder {
         if let medianDuration {
             stabilityValue = medianDuration >= 25 ? "HIGH" : medianDuration >= 12 ? "MEDIUM" : "LOW"
         } else {
-            stabilityValue = profile?.isCalibrated == true ? "CALIBRATING" : "CALIBRATING"
+            // No behavioral data yet: use self-reported capacity as an estimate.
+            switch profile?.capacityBucket ?? "" {
+            case "60+", "45–60": stabilityValue = "HIGH"
+            case "30–45", "20–30": stabilityValue = "MEDIUM"
+            case "10–20", "5–10", "<5": stabilityValue = "LOW"
+            default: stabilityValue = "CALIBRATING"
+            }
         }
         let stability = AttentionProfile.Dimension(
             name: "STABILITY",
             value: stabilityValue,
-            confidence: staySessions.count >= 3 ? 0.7 : 0.35,
+            confidence: staySessions.count >= 3 ? 0.7 : min(0.5, Double(staySessions.count) * 0.15),
             evidenceCount: staySessions.count,
-            sources: staySessions.count >= 3 ? ["BEHAVIOR-DURATION"] : []
+            sources: staySessions.count >= 3 ? ["BEHAVIOR-DURATION"] : (profile?.isCalibrated == true ? ["SELF-REPORT"] : [])
         )
 
-        // RETURN: from interruption records.
-        let returnValue: String = "CALIBRATING"
+        // RETURN: first-switch behavior + completion. Only what the app can
+        // actually observe: user-reported switches and session completion.
+        let firstSwitches = interruptions
+            .filter { $0.kind == "firstSwitch" }
+            .map { Double($0.elapsedSeconds / 60) }
+        let returnValue: String
+        if let medianFirst = median(firstSwitches), !firstSwitches.isEmpty {
+            returnValue = medianFirst >= 15 ? "HIGH" : medianFirst >= 8 ? "MEDIUM" : "LOW"
+        } else if !interruptions.isEmpty {
+            returnValue = "MEDIUM"
+        } else {
+            returnValue = "CALIBRATING"
+        }
         let retur = AttentionProfile.Dimension(
             name: "RETURN",
             value: returnValue,
-            confidence: 0,
-            evidenceCount: 0,
-            sources: []
+            confidence: firstSwitches.count >= 3 ? 0.7 : min(0.5, Double(firstSwitches.count) * 0.15),
+            evidenceCount: firstSwitches.count,
+            sources: firstSwitches.isEmpty ? [] : ["INTERRUPTION"]
         )
 
         // RECALL: real evaluations from recall/explain sessions.
@@ -84,7 +116,12 @@ enum AttentionProfileBuilder {
             .compactMap { $0.evaluation }
         let recallValue: String
         if evaluated.isEmpty {
-            recallValue = profile?.isCalibrated == true ? "CALIBRATING" : "CALIBRATING"
+            switch profile?.readsTenPages ?? "" {
+            case "Oui": recallValue = "MEDIUM"
+            case "Parfois": recallValue = "LOW"
+            case "Non": recallValue = "LOW"
+            default: recallValue = "CALIBRATING"
+            }
         } else {
             let avg = evaluated.map(\.overallScore).reduce(0, +) / Double(evaluated.count)
             recallValue = avg >= 7 ? "HIGH" : avg >= 5 ? "MEDIUM" : "LOW"
@@ -94,39 +131,47 @@ enum AttentionProfileBuilder {
             value: recallValue,
             confidence: evaluated.count >= 3 ? 0.7 : 0.3,
             evidenceCount: evaluated.count,
-            sources: evaluated.isEmpty ? [] : ["EVALUATION"]
+            sources: evaluated.isEmpty ? (profile?.isCalibrated == true ? ["SELF-REPORT"] : []) : ["EVALUATION"]
         )
 
-        // DEPTH: longest session + challenge of deep sessions.
-        let maxDuration = sessions.map { $0.actualDurationSeconds / 60 }.max()
+        // DEPTH: sustained, low-switch completed sessions — not just duration.
+        let deepCandidates = sessions.filter {
+            $0.actualDurationSeconds / 60 >= 25 && $0.switchedCount <= 2
+        }
         let depthValue: String
-        if let maxDuration {
-            depthValue = maxDuration >= 40 ? "HIGH" : maxDuration >= 20 ? "MEDIUM" : "LOW"
+        if !deepCandidates.isEmpty {
+            let maxDuration = deepCandidates.map { $0.actualDurationSeconds / 60 }.max() ?? 0
+            depthValue = maxDuration >= 45 ? "HIGH" : maxDuration >= 30 ? "MEDIUM" : "LOW"
         } else {
             depthValue = "CALIBRATING"
         }
         let depth = AttentionProfile.Dimension(
             name: "DEPTH",
             value: depthValue,
-            confidence: sessions.count >= 3 ? 0.6 : 0.3,
-            evidenceCount: sessions.count,
-            sources: sessions.isEmpty ? [] : ["BEHAVIOR-DURATION"]
+            confidence: deepCandidates.count >= 3 ? 0.6 : min(0.4, Double(deepCandidates.count) * 0.15),
+            evidenceCount: deepCandidates.count,
+            sources: deepCandidates.isEmpty ? [] : ["BEHAVIOR-DURATION"]
         )
 
-        // ENVIRONMENT: self-report only.
+        // ENVIRONMENT: self-report + completed interventions.
+        let environmentEvidence = interventions.count
         let envValue: String
-        switch profile?.phoneLocation ?? "" {
-        case "in-hand", "desk": envValue = "WEAK"
-        case "pocket", "nearby": envValue = "MEDIUM"
-        case "another-room": envValue = "STRONG"
-        default: envValue = "CALIBRATING"
+        if environmentEvidence >= 3 {
+            envValue = "MEDIUM"
+        } else {
+            switch profile?.phoneLocation ?? "" {
+            case "in-hand", "desk": envValue = "WEAK"
+            case "pocket", "nearby": envValue = "MEDIUM"
+            case "another-room": envValue = "STRONG"
+            default: envValue = "CALIBRATING"
+            }
         }
         let environment = AttentionProfile.Dimension(
             name: "ENVIRONMENT",
             value: envValue,
-            confidence: profile?.isCalibrated == true ? 0.5 : 0,
-            evidenceCount: profile?.isCalibrated == true ? 1 : 0,
-            sources: profile?.isCalibrated == true ? ["SELF-REPORT"] : []
+            confidence: min(0.8, 0.3 + Double(environmentEvidence) * 0.15 + (profile?.isCalibrated == true ? 0.2 : 0)),
+            evidenceCount: environmentEvidence + (profile?.isCalibrated == true ? 1 : 0),
+            sources: (profile?.isCalibrated == true ? ["SELF-REPORT"] : []) + (environmentEvidence > 0 ? ["ENVIRONMENT_ACTION"] : [])
         )
 
         // ENERGY: latest self-report.
@@ -139,14 +184,15 @@ enum AttentionProfileBuilder {
             sources: latest != nil ? ["SELF-REPORT"] : []
         )
 
-        // FLOW readiness: existing flow activities + flow sessions.
+        // FLOW CONDITIONS: known absorption contexts + observed conditions.
         let hasFlowActivities = !(profile?.existingFlowActivitiesRaw ?? []).isEmpty
+        let flowObservations = flowSessions.count
         let flow = AttentionProfile.Dimension(
             name: "FLOW",
-            value: hasFlowActivities ? "STRONG IN CHOSEN ACTIVITIES" : "CALIBRATING",
-            confidence: hasFlowActivities ? 0.5 : 0,
-            evidenceCount: (profile?.existingFlowActivitiesRaw ?? []).count,
-            sources: hasFlowActivities ? ["SELF-REPORT"] : []
+            value: flowObservations >= 3 ? "MEDIUM" : (hasFlowActivities ? "KNOWN CONTEXTS" : "CALIBRATING"),
+            confidence: min(0.8, Double(flowObservations) * 0.2 + (hasFlowActivities ? 0.2 : 0)),
+            evidenceCount: flowObservations + (profile?.existingFlowActivitiesRaw ?? []).count,
+            sources: (hasFlowActivities ? ["SELF-REPORT"] : []) + (flowObservations > 0 ? ["FLOW_SESSION"] : [])
         )
 
         return AttentionProfile(
@@ -236,7 +282,16 @@ enum AdaptiveRebootEngine {
         // 3. Reflex + weak environment → environment intervention + STAY.
         if profile.reflex.value == "HIGH", profile.environment.value == "WEAK" {
             targets.append("ENVIRONMENT")
-            realWorldAction = realWorldAction.isEmpty ? "Intervention environnement : éloigne le téléphone de la table." : realWorldAction
+            let selected = Self.selectIntervention(profile: profile, interventions: interventions)
+            if let selected {
+                realWorldAction = selected.title
+                fallback = selected.fallbackActionID.map { id in
+                    ContentStore.environmentIntervention(id: id)?.title ?? selected.instructions.first ?? selected.title
+                } ?? selected.instructions.first ?? selected.title
+                reasons.append("intervention=\(selected.id):\(selected.category)")
+            } else {
+                realWorldAction = realWorldAction.isEmpty ? "Intervention environnement : éloigne le téléphone de la table." : realWorldAction
+            }
             trainingMode = "stay"
             trainingDuration = min(trainingDuration, 12)
             reasons.append("reflex=HIGH environment=WEAK")
@@ -254,8 +309,9 @@ enum AdaptiveRebootEngine {
             reasons.append("stability=HIGH recall=\(profile.recall.value)")
         }
 
-        // 5. Strong hobby flow but weak work → flow conditions target.
-        if profile.flowReadiness.value.hasPrefix("STRONG"), profile.stability.value == "LOW" || profile.stability.value == "MEDIUM" {
+        // 5. Known absorption contexts but weak work → flow conditions target.
+        let hasKnownFlow = profile.flowReadiness.value.contains("KNOWN") || profile.flowReadiness.value == "MEDIUM"
+        if hasKnownFlow, profile.stability.value == "LOW" || profile.stability.value == "MEDIUM" {
             targets.append("FLOW CONDITIONS")
             let project = flowProjects.first
             if let project {
@@ -283,10 +339,11 @@ enum AdaptiveRebootEngine {
             }
         }
 
-        // 7. Experiment recommendation.
+        // 7. Experiment recommendation (one major active experiment at a time).
         let activeExperiments = experiments.filter { $0.status == "active" }
         if activeExperiments.isEmpty, profile.environment.value == "WEAK" || profile.reflex.value == "HIGH" {
-            realWorldAction = realWorldAction + " Expérience suggérée : PHONE OUTSIDE ROOM pendant 3 sessions comparables."
+            let template = ContentStore.experimentTemplates.first { $0.id == 1 }
+            realWorldAction = realWorldAction + (template.map { " Expérience suggérée : \($0.title)." } ?? " Expérience suggérée : PHONE OUTSIDE ROOM.")
             reasons.append("experiment=phoneOutsideRoom suggested")
         }
 
@@ -315,6 +372,22 @@ enum AdaptiveRebootEngine {
             adaptationReason: adaptationReason,
             fallbackPlan: fallback
         )
+    }
+
+    /// Intervention ladder: pick the next structural change from the library,
+    /// never jumping to extreme restriction, never repeating a completed one.
+    private static func selectIntervention(
+        profile: AttentionProfile,
+        interventions: [CompletedIntervention]
+    ) -> EnvironmentIntervention? {
+        let done = Set(interventions.map { $0.interventionID })
+        let pool = ContentStore.environmentInterventions
+        // Preferred families by primary distractor.
+        let preferred = pool.filter { $0.category == "PHONE" || $0.category == "SOCIAL MEDIA" || $0.category == "NOTIFICATIONS" }
+        let candidates = preferred.filter { !done.contains($0.id) }.sorted { $0.difficulty < $1.difficulty }
+        let selected = candidates.first
+            ?? pool.filter { !done.contains($0.id) }.sorted { $0.difficulty < $1.difficulty }.first
+        return selected
     }
 }
 
@@ -425,6 +498,57 @@ enum AdaptiveDebug {
             p.typicalSleep = "7–8"
             p.currentEnergy = "High"
             p.caffeine = "Morning only"
+        case "F":
+            p.goalsRaw = ["lire plus longtemps"]
+            p.primaryGoal = "LECTURE"
+            p.primaryDistractor = "Messages"
+            p.capacityBucket = "30–45"
+            p.returnDifficulty = 2
+            p.readsTenPages = "Oui"
+            p.switchingFrequency = 2
+            p.existingFlowActivitiesRaw = ["reading"]
+            p.phoneLocation = "desk"
+            p.notificationsLevel = "many"
+            p.openTabsBucket = "5"
+            p.usesScreenTimeLimits = "Non"
+            p.bestWindow = "morning"
+            p.typicalSleep = "7–8"
+            p.currentEnergy = "Normal"
+            p.caffeine = "Morning only"
+        case "G":
+            p.goalsRaw = ["mieux travailler"]
+            p.primaryGoal = "DEEP WORK"
+            p.primaryDistractor = "Work notifications"
+            p.capacityBucket = "20–30"
+            p.returnDifficulty = 3
+            p.readsTenPages = "Parfois"
+            p.switchingFrequency = 4
+            p.existingFlowActivitiesRaw = ["coding"]
+            p.phoneLocation = "desk"
+            p.notificationsLevel = "many"
+            p.openTabsBucket = "10–20"
+            p.usesScreenTimeLimits = "Non"
+            p.bestWindow = "afternoon"
+            p.typicalSleep = "7–8"
+            p.currentEnergy = "Normal"
+            p.caffeine = "Morning + afternoon"
+        case "H":
+            p.goalsRaw = ["retrouver de la concentration"]
+            p.primaryGoal = "CONCENTRATION"
+            p.primaryDistractor = "YouTube"
+            p.capacityBucket = "10–20"
+            p.returnDifficulty = 4
+            p.readsTenPages = "Non"
+            p.switchingFrequency = 4
+            p.existingFlowActivitiesRaw = ["music"]
+            p.phoneLocation = "pocket"
+            p.notificationsLevel = "many"
+            p.openTabsBucket = "10"
+            p.usesScreenTimeLimits = "Non"
+            p.bestWindow = "evening"
+            p.typicalSleep = "<5"
+            p.currentEnergy = "Low"
+            p.caffeine = "Morning + afternoon"
         default:
             break
         }

@@ -96,6 +96,8 @@ final class TrainingSession {
     var analysisOffline: Bool
     var evaluation: EvaluationResult?
     var restitution: Restitution?
+    var experimentID: UUID?
+    var experimentCondition: String?
 
     init(
         id: UUID = UUID(),
