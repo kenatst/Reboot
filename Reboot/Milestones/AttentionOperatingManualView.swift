@@ -132,6 +132,14 @@ struct AttentionOperatingManualView: View {
                     .font(.system(size: 14, weight: .bold, design: .default))
                     .foregroundStyle(.bone)
                 Spacer()
+                Text(section.basis.rawValue)
+                    .font(.metadata(size: 8))
+                    .tracking(1.0)
+                    .foregroundStyle(.ash)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 3)
+                    .background(Color.ash.opacity(0.12))
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
                 confidenceBadge(section.confidence)
             }
 

@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "MISSION 001 — LES TROIS OBJETS IMMOBILES",
-    "category": "CONCRETE_DETAILS",
+    "title": "TROIS OBJETS IMMOBILES",
+    "category": "OBJECTS",
     "mission": "Repère trois objets dans ton champ de vision qui n'ont pas bougé depuis au moins un an.",
     "cues": [
       "Matériau",
@@ -11,1745 +11,1112 @@
     ],
     "reflection": "Pourquoi cet objet est-il resté là ?",
     "difficulty": 1,
-    "recommendedContext": "Intérieur / Bureau"
+    "recommendedContext": "Intérieur"
   },
   {
     "id": 2,
-    "title": "MISSION 002 — LES OMBRES PORTÉES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Observe la direction exacte et la netteté des ombres dans la pièce.",
+    "title": "LES MAINS DES GENS",
+    "category": "PEOPLE",
+    "mission": "Regarde les mains de trois personnes dans la journée, sans les dévisager.",
     "cues": [
-      "Source de lumière",
-      "Bord franc ou flou",
-      "Contraste"
+      "Geste",
+      "Rythme",
+      "Objet tenu"
     ],
-    "reflection": "Comment la lumière change-t-elle l'ambiance de travail ?",
+    "reflection": "Que racontent les mains de la personne ?",
     "difficulty": 1,
-    "recommendedContext": "Bureau / Pièce"
+    "recommendedContext": "Transports / Bureau"
   },
   {
     "id": 3,
-    "title": "MISSION 003 — LES TEXTURES DE SURFACE",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Identifie cinq textures différentes au toucher sans regarder d'écran.",
+    "title": "CINQ SONS DE LA RUE",
+    "category": "SOUNDS",
+    "mission": "Identifie cinq sons distincts dans la rue, du plus proche au plus lointain.",
     "cues": [
-      "Bois",
-      "Métal",
-      "Tissu"
+      "Distance",
+      "Origine",
+      "Régularité"
     ],
-    "reflection": "Quel matériau favorise le plus ton calme tactile ?",
-    "difficulty": 1,
-    "recommendedContext": "Intérieur"
-  },
-  {
-    "id": 4,
-    "title": "MISSION 004 — LES SIGNAUX DE DIRECTION",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Compte combien de flèches ou d'indications visuelles sont présentes autour de toi.",
-    "cues": [
-      "Flèches",
-      "Panneaux",
-      "Marquages"
-    ],
-    "reflection": "L'environnement te dicte-t-il ton trajet ?",
-    "difficulty": 1,
-    "recommendedContext": "Rue / Transport"
-  },
-  {
-    "id": 5,
-    "title": "MISSION 005 — LES REFLETS DANS LES VITRES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Regarde à travers une vitre et focalise alternativement sur le reflet et sur l'extérieur.",
-    "cues": [
-      "Plan focal 1",
-      "Plan focal 2",
-      "Superposition"
-    ],
-    "reflection": "Ton attention visuelle bascule-t-elle facilement ?",
-    "difficulty": 1,
-    "recommendedContext": "Extérieur / Café"
-  },
-  {
-    "id": 6,
-    "title": "MISSION 006 — LA PALETTE CHROMATIQUE",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Isole les trois couleurs dominantes de l'espace où tu te trouves.",
-    "cues": [
-      "Teinte principale",
-      "Accents",
-      "Surfaces neutres"
-    ],
-    "reflection": "L'espace est-il visuellement agressif ou apaisant ?",
-    "difficulty": 1,
-    "recommendedContext": "Espace public"
-  },
-  {
-    "id": 7,
-    "title": "MISSION 007 — LES MICRO-MOUVEMENTS DE L'AIR",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Observe ce qui bouge imperceptiblement autour de toi : feuilles, rideaux, poussières.",
-    "cues": [
-      "Fréquence",
-      "Amplitude",
-      "Cause du courant"
-    ],
-    "reflection": "Le silence physique t'aide-t-il à décanter ?",
-    "difficulty": 1,
-    "recommendedContext": "Intérieur"
-  },
-  {
-    "id": 8,
-    "title": "MISSION 008 — LES POINTS DE CONTACT PHYSIQUES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Prends conscience des zones de contact exactes entre ton corps et ton siège ou le sol.",
-    "cues": [
-      "Pression des pieds",
-      "Appui lombaire",
-      "Poids des bras"
-    ],
-    "reflection": "Comment ta posture influence-t-elle ta vigilance ?",
-    "difficulty": 1,
-    "recommendedContext": "Bureau / Assise"
-  },
-  {
-    "id": 9,
-    "title": "MISSION 009 — LES BRUITS DE FOND MÉCANIQUES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Isole trois sons mécaniques constants que ton cerveau avait filtrés.",
-    "cues": [
-      "Ventilation",
-      "Moteur lointain",
-      "Transfo électrique"
-    ],
-    "reflection": "Quelle énergie ton cerveau dépense-t-il à filtrer ce bruit ?",
-    "difficulty": 1,
-    "recommendedContext": "Bureau / Ville"
-  },
-  {
-    "id": 10,
-    "title": "MISSION 010 — L'ÉTAT DES SOLS",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Observe l'usure, les traces de pas et les matériaux du sol sous tes pieds.",
-    "cues": [
-      "Lignes de passage",
-      "Fissures",
-      "Changements de revêtement"
-    ],
-    "reflection": "Où les gens marchent-ils le plus souvent ?",
-    "difficulty": 1,
-    "recommendedContext": "Hall / Gare"
-  },
-  {
-    "id": 11,
-    "title": "MISSION 011 — LES FENÊTRES ET OUVERTURES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Compte combien d'ouvertures vers l'extérieur sont visibles depuis ton poste.",
-    "cues": [
-      "Hauteur",
-      "Lumière incidente",
-      "Vue dégagée"
-    ],
-    "reflection": "Ton regard peut-il s'échapper à plus de 20 mètres ?",
-    "difficulty": 1,
-    "recommendedContext": "Poste de travail"
-  },
-  {
-    "id": 12,
-    "title": "MISSION 012 — LES OBJETS ABANDONNÉS",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Cherche un objet manifestement oublié ou laissé de côté dans l'espace public.",
-    "cues": [
-      "Nature de l'objet",
-      "Emplacement",
-      "Temps probable"
-    ],
-    "reflection": "Qu'est-ce qui rend un objet invisible ?",
-    "difficulty": 1,
-    "recommendedContext": "Rue / Parc"
-  },
-  {
-    "id": 13,
-    "title": "MISSION 013 — LES ÉTIQUETTES ET TYPOGRAPHIES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Examine la police de caractères utilisée sur trois emballages ou panneaux proches.",
-    "cues": [
-      "Sérif ou sans-sérif",
-      "Graisse",
-      "Lisibilité à distance"
-    ],
-    "reflection": "Quelle intention commerciale ou pratique transparaît ?",
-    "difficulty": 1,
-    "recommendedContext": "Magasin / Bureau"
-  },
-  {
-    "id": 14,
-    "title": "MISSION 014 — LES CÂBLES ET CONNEXIONS",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Remarque le réseau de fils et de branchements sous ou derrière les tables.",
-    "cues": [
-      "Organisation",
-      "Visibilité",
-      "Sécurité"
-    ],
-    "reflection": "Le désordre technique reflète-t-il une charge mentale ?",
-    "difficulty": 1,
-    "recommendedContext": "Espace de travail"
-  },
-  {
-    "id": 15,
-    "title": "MISSION 015 — LES REFLETS D'EAU OU DE PLUIE",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Observe comment une flaque ou une surface humide déforme la lumière urbaine.",
-    "cues": [
-      "Ondulations",
-      "Symétrie déformée",
-      "Couleurs réfléchies"
-    ],
-    "reflection": "La beauté du réel dépasse-t-elle les simulations ?",
+    "reflection": "Quel son n'entendais-tu plus à force d'habitude ?",
     "difficulty": 1,
     "recommendedContext": "Extérieur"
   },
   {
-    "id": 16,
-    "title": "MISSION 016 — LES MATÉRIAUX DE CONSTRUCTION",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Distingue la pierre, le béton, le plâtre et le bois dans la structure d'un bâtiment.",
+    "id": 4,
+    "title": "LA COULEUR DOMINANTE",
+    "category": "SENSES",
+    "mission": "Dans chaque pièce où tu passes, isole la teinte qui domine les murs et les sols.",
     "cues": [
-      "Jointures",
-      "Âge des matériaux",
-      "Qualité de finition"
+      "Murs",
+      "Sols",
+      "Lumière"
     ],
-    "reflection": "Ce lieu a-t-il été construit pour durer ou pour aller vite ?",
-    "difficulty": 1,
-    "recommendedContext": "Rue / Bâtiment"
-  },
-  {
-    "id": 17,
-    "title": "MISSION 017 — LES SOURCES DE CHALEUR",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Identifie d'où provient la chaleur ou la fraîcheur dans l'espace.",
-    "cues": [
-      "Radiateur",
-      "Soleil direct",
-      "Courant d'air"
-    ],
-    "reflection": "La température de ton espace favorise-t-elle l'endormissement ?",
+    "reflection": "Quelle pièce a une couleur que tu n'avais jamais remarquée ?",
     "difficulty": 1,
     "recommendedContext": "Intérieur"
   },
   {
-    "id": 18,
-    "title": "MISSION 018 — LES SEUILS ET PORTES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Observe la manière dont les portes sont conçues : poignées, battants, vitrages.",
+    "id": 5,
+    "title": "LES VÉRIFICATIONS DU JOUR",
+    "category": "NUMBERS",
+    "mission": "Compte les fois où tu prends le téléphone aujourd'hui, sans les juger.",
     "cues": [
-      "Ergonomie d'ouverture",
-      "Isolation phonique",
-      "Hauteur de passage"
+      "Heure",
+      "Contexte",
+      "Durée"
     ],
-    "reflection": "Le seuil marque-t-il une transition mentale ?",
+    "reflection": "Quel contexte déclenche le plus de vérifications ?",
     "difficulty": 1,
-    "recommendedContext": "Entrée de lieu"
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 6,
+    "title": "LES ESCALIERS",
+    "category": "OBJECTS",
+    "mission": "Observe un escalier en détail : marches, rampe, usure, matériau.",
+    "cues": [
+      "Nombre de marches",
+      "Usure inégale",
+      "Son des pas"
+    ],
+    "reflection": "Qui l'emprunte le plus, et comment le voit-on ?",
+    "difficulty": 1,
+    "recommendedContext": "Bâtiment"
+  },
+  {
+    "id": 7,
+    "title": "LES HABITUDES DES AUTRES",
+    "category": "PEOPLE",
+    "mission": "Observe un geste répétitif chez trois personnes (sans les déranger).",
+    "cues": [
+      "Geste",
+      "Fréquence",
+      "Déclencheur"
+    ],
+    "reflection": "Ce geste est-il une habitude ou une décision ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau / Transports"
+  },
+  {
+    "id": 8,
+    "title": "LA LUMIÈRE QUI CHANGE",
+    "category": "SENSES",
+    "mission": "Note comment la lumière change dans ta pièce entre 9h et 18h.",
+    "cues": [
+      "Direction",
+      "Intensité",
+      "Couleur"
+    ],
+    "reflection": "À quelle heure ta pièce est-elle la plus agréable ?",
+    "difficulty": 1,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 9,
+    "title": "LES PORTES",
+    "category": "OBJECTS",
+    "mission": "Observe les portes que tu franchis : comment s'ouvrent-elles, quelle main utilises-tu ?",
+    "cues": [
+      "Pousser / Tirer",
+      "Poignée",
+      "Sens d'ouverture"
+    ],
+    "reflection": "Quelle porte était mal conçue, et pourquoi ?",
+    "difficulty": 1,
+    "recommendedContext": "Bâtiment"
+  },
+  {
+    "id": 10,
+    "title": "LES ATTENTES",
+    "category": "PATTERNS",
+    "mission": "Note chaque moment d'attente de ta journée et ce que tu y fais.",
+    "cues": [
+      "Durée",
+      "Contexte",
+      "Geste réflexe"
+    ],
+    "reflection": "Que ferais-tu de ces attentes sans écran ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 11,
+    "title": "LES TRANSITIONS NUMÉRIQUES",
+    "category": "TRANSITIONS",
+    "mission": "Compte tes changements d'application ou d'onglet pendant une heure de travail.",
+    "cues": [
+      "Fréquence",
+      "Raison",
+      "Utilité"
+    ],
+    "reflection": "Combien de changements étaient réellement nécessaires ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 12,
+    "title": "LES OBJETS INVITANTS",
+    "category": "OBJECTS",
+    "mission": "Sur ton bureau, liste les objets qui t'invitent à un geste.",
+    "cues": [
+      "Objet",
+      "Geste invité",
+      "Urgence"
+    ],
+    "reflection": "Quel objet déplacerais-tu en premier ?",
+    "difficulty": 1,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 13,
+    "title": "LES TEMPS MORTS",
+    "category": "PATTERNS",
+    "mission": "Repère les trois plus longs temps morts de ta journée.",
+    "cues": [
+      "Moment",
+      "Durée",
+      "Occupation"
+    ],
+    "reflection": "Quel temps mort pourrait devenir un moment choisi ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 14,
+    "title": "LES COULEURS DU CIEL",
+    "category": "SENSES",
+    "mission": "Observe le ciel trois fois aujourd'hui : matin, midi, soir.",
+    "cues": [
+      "Couleur",
+      "Nuages",
+      "Lumière"
+    ],
+    "reflection": "Qu'est-ce qui change le plus entre les trois observations ?",
+    "difficulty": 1,
+    "recommendedContext": "Extérieur"
+  },
+  {
+    "id": 15,
+    "title": "LES DISCUSSIONS COUPÉES",
+    "category": "PEOPLE",
+    "mission": "Observe combien de fois une conversation est interrompue par un écran.",
+    "cues": [
+      "Qui",
+      "Écran",
+      "Reprise"
+    ],
+    "reflection": "Que se passe-t-il dans la conversation après l'interruption ?",
+    "difficulty": 2,
+    "recommendedContext": "Social"
+  },
+  {
+    "id": 16,
+    "title": "LES ÉTIQUETTES",
+    "category": "OBJECTS",
+    "mission": "Lis trois étiquettes que tu n'as jamais lues (produit, emballage, panneau).",
+    "cues": [
+      "Information",
+      "Design",
+      "Lisibilité"
+    ],
+    "reflection": "Quelle information inutile ces étiquettes contiennent-elles ?",
+    "difficulty": 1,
+    "recommendedContext": "Magasin / Cuisine"
+  },
+  {
+    "id": 17,
+    "title": "LES HORAIRES DES AUTRES",
+    "category": "PEOPLE",
+    "mission": "Observe à quelle heure les gens autour de toi semblent le plus actifs.",
+    "cues": [
+      "Heure",
+      "Activité",
+      "Énergie"
+    ],
+    "reflection": "Ton rythme correspond-il au rythme des autres ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 18,
+    "title": "LES BOUTONS",
+    "category": "OBJECTS",
+    "mission": "Observe les boutons que tu presses aujourd'hui : ascenseur, machine, clavier.",
+    "cues": [
+      "Pression",
+      "Retour",
+      "Usure"
+    ],
+    "reflection": "Quel bouton donne un retour satisfaisant, et pourquoi ?",
+    "difficulty": 1,
+    "recommendedContext": "Bâtiment"
   },
   {
     "id": 19,
-    "title": "MISSION 019 — LES REFLETS SUR LES ÉCRANS ÉTEINTS",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Regarde un écran noir et observe ce qu'il reflète dans la pièce.",
+    "title": "LES ROUTINES DU MATIN",
+    "category": "PATTERNS",
+    "mission": "Note la séquence exacte de tes 20 premières minutes de la journée.",
     "cues": [
-      "Lumière d'arrière-plan",
-      "Traces de doigts",
-      "Positionnement"
+      "Ordre",
+      "Écran",
+      "Automatisme"
     ],
-    "reflection": "L'écran vide est-il un miroir de ton espace ?",
-    "difficulty": 1,
-    "recommendedContext": "Bureau"
+    "reflection": "Quelle étape de la séquence pourrait changer le reste ?",
+    "difficulty": 2,
+    "recommendedContext": "Matin"
   },
   {
     "id": 20,
-    "title": "MISSION 020 — LES LIVRES ET TRANCHES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Observe l'alignement, l'épaisseur et la couleur des tranches sur une étagère.",
+    "title": "LES PANIFICAUX",
+    "category": "OBJECTS",
+    "mission": "Observe un panneau publicitaire ou directionnel en détail.",
     "cues": [
-      "Ordre de rangement",
-      "Usure des dos",
-      "Hauteur des volumes"
+      "Hiérarchie",
+      "Couleur",
+      "Message"
     ],
-    "reflection": "Quelle impression de densité émane d'une bibliothèque ?",
+    "reflection": "Qu'est-ce qui attire l'œil en premier, et pourquoi ?",
     "difficulty": 1,
-    "recommendedContext": "Bibliothèque / Salon"
+    "recommendedContext": "Extérieur"
   },
   {
     "id": 21,
-    "title": "MISSION 021 — LES PLANTES ET FEUILLES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Examine la géométrie précise des nervures d'une plante d'intérieur.",
+    "title": "LES SILENCES",
+    "category": "SOUNDS",
+    "mission": "Repère trois moments de silence dans ta journée.",
     "cues": [
-      "Symétrie",
-      "Épaisseur",
-      "Orientation vers la lumière"
+      "Durée",
+      "Lieu",
+      "Qualité"
     ],
-    "reflection": "La nature suit-elle des règles mathématiques strictes ?",
+    "reflection": "Que ressens-tu dans ces silences ?",
     "difficulty": 1,
-    "recommendedContext": "Intérieur / Jardin"
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 22,
-    "title": "MISSION 022 — LES FIXATIONS MURALES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Regarde comment les tableaux, étagères ou panneaux sont accrochés au mur.",
+    "title": "LES VITRINES",
+    "category": "OBJECTS",
+    "mission": "Observe une vitrine de magasin comme un designer : qu'est-ce qui est mis en avant ?",
     "cues": [
-      "Vis",
-      "Chevilles",
-      "Clous visibles"
+      "Premier regard",
+      "Éclairage",
+      "Parcours"
     ],
-    "reflection": "Ce qui tient l'espace est-il discret ou grossier ?",
+    "reflection": "Quel produit est le héros de la vitrine, et comment le sait-on ?",
     "difficulty": 1,
-    "recommendedContext": "Pièce à vivre"
+    "recommendedContext": "Extérieur"
   },
   {
     "id": 23,
-    "title": "MISSION 023 — LES VARIATIONS DE GRIS",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Compte combien de nuances de gris ou de blanc se côtoient sur un même mur.",
+    "title": "LES FIN DE TÂCHES",
+    "category": "TRANSITIONS",
+    "mission": "Observe comment tu termines une tâche : arrêt net, clôture, ou fuite.",
     "cues": [
-      "Ombres douces",
-      "Reflets de lumière",
-      "Textures de peinture"
+      "Fin",
+      "Transition",
+      "Prochaine action"
     ],
-    "reflection": "Ton regard peut-il se poser sans s'agiter ?",
-    "difficulty": 1,
-    "recommendedContext": "Espace épuré"
+    "reflection": "Tes fins de tâches sont-elles propres ou brutales ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 24,
-    "title": "MISSION 024 — LES OBJETS DOUBLES",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Trouve deux objets identiques dans la pièce et compare leur usure respective.",
+    "title": "LES SONS DE LA CUISINE",
+    "category": "SOUNDS",
+    "mission": "Pendant un repas, identifie les sons de la préparation et de la table.",
     "cues": [
-      "Objet utilisé",
-      "Objet de réserve",
-      "Différences microscopiques"
+      "Cuisine",
+      "Mastication",
+      "Ustensiles"
     ],
-    "reflection": "L'usage marque-t-il la matière ?",
+    "reflection": "Quel son de la cuisine est le plus familier ?",
     "difficulty": 1,
-    "recommendedContext": "Cuisine / Atelier"
+    "recommendedContext": "Cuisine"
   },
   {
     "id": 25,
-    "title": "MISSION 025 — LA DISTANCE AU PREMIER OBSTACLE",
-    "category": "CONCRETE_DETAILS",
-    "mission": "Estime la distance exacte entre tes yeux et le premier obstacle visuel direct.",
+    "title": "LES PENSÉES RÉCURRENTES",
+    "category": "PATTERNS",
+    "mission": "Note les trois pensées qui reviennent le plus souvent aujourd'hui.",
     "cues": [
-      "Champ proche",
-      "Champ moyen",
-      "Horizon"
+      "Contenu",
+      "Fréquence",
+      "Moment"
     ],
-    "reflection": "Tes yeux sont-ils enfermés dans un rayon de 2 mètres ?",
+    "reflection": "Ces pensées sont-elles des tâches ouvertes ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 26,
+    "title": "LES AFFICHAGES",
+    "category": "OBJECTS",
+    "mission": "Observe trois écrans d'information (métro, gare, bâtiment) et leur hiérarchie.",
+    "cues": [
+      "Première info",
+      "Taille",
+      "Couleur"
+    ],
+    "reflection": "Quelle information est la plus urgente à lire, et est-elle la plus visible ?",
+    "difficulty": 2,
+    "recommendedContext": "Transports"
+  },
+  {
+    "id": 27,
+    "title": "LES FENÊTRES",
+    "category": "SENSES",
+    "mission": "Regarde par la fenêtre à trois moments différents et note ce qui bouge.",
+    "cues": [
+      "Mouvement",
+      "Lumière",
+      "Personnes"
+    ],
+    "reflection": "Qu'est-ce qui a changé entre tes trois observations ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
+  },
+  {
+    "id": 28,
+    "title": "LES LISTES",
+    "category": "PATTERNS",
+    "mission": "Recense toutes les listes que tu consultes ou écris aujourd'hui.",
+    "cues": [
+      "Support",
+      "Utilité",
+      "Suivi"
+    ],
+    "reflection": "Quelle liste est réellement suivie, laquelle est décorative ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 29,
+    "title": "LES ODEURS",
+    "category": "SENSES",
+    "mission": "Remarque trois odeurs distinctes au fil de la journée.",
+    "cues": [
+      "Lieu",
+      "Intensité",
+      "Souvenir"
+    ],
+    "reflection": "Quelle odeur a déclenché un souvenir ?",
+    "difficulty": 1,
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 30,
+    "title": "LES PAUSES",
+    "category": "PATTERNS",
+    "mission": "Note chaque pause de ta journée : moment, durée, contenu.",
+    "cues": [
+      "Durée",
+      "Écran",
+      "Récupération"
+    ],
+    "reflection": "Combien de tes pauses étaient de vraies récupérations ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 31,
+    "title": "LES CHAISES",
+    "category": "OBJECTS",
+    "mission": "Observe les chaises où tu t'assieds aujourd'hui : forme, confort, usage.",
+    "cues": [
+      "Matériau",
+      "Posture",
+      "Durée"
+    ],
+    "reflection": "Quelle chaise t'a le mieux soutenu, et pourquoi ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
+  },
+  {
+    "id": 32,
+    "title": "LES RÉPÉTITIONS",
+    "category": "PATTERNS",
+    "mission": "Isole trois gestes que tu refais aujourd'hui sans y penser.",
+    "cues": [
+      "Action",
+      "Déclencheur",
+      "Automaticité"
+    ],
+    "reflection": "Laquelle aimerais-tu rendre consciente ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 33,
+    "title": "LES VOIX",
+    "category": "SOUNDS",
+    "mission": "Écoute les voix autour de toi : ton, rythme, volume.",
+    "cues": [
+      "Ton",
+      "Émotion",
+      "Volume"
+    ],
+    "reflection": "Que dit la voix que les mots ne disent pas ?",
+    "difficulty": 2,
+    "recommendedContext": "Transports / Réunion"
+  },
+  {
+    "id": 34,
+    "title": "LES HEURES DE POINTE",
+    "category": "PATTERNS",
+    "mission": "Repère à quelle heure tu as le plus d'énergie et à quelle heure le moins.",
+    "cues": [
+      "Heure",
+      "Énergie",
+      "Activité"
+    ],
+    "reflection": "Comment ton emploi du temps respecte-t-il tes heures de pointe ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 35,
+    "title": "LES OBJETS USÉS",
+    "category": "OBJECTS",
+    "mission": "Trouve trois objets usés par l'usage autour de toi.",
+    "cues": [
+      "Objet",
+      "Zone usée",
+      "Fréquence d'usage"
+    ],
+    "reflection": "Que dit l'usure de l'usage réel ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
+  },
+  {
+    "id": 36,
+    "title": "LES PREMIÈRES PHRASES",
+    "category": "PATTERNS",
+    "mission": "Note les premières phrases que tu dis ou écris à chaque interaction.",
+    "cues": [
+      "Formule",
+      "Ton",
+      "Automatisme"
+    ],
+    "reflection": "Quelle formule aimerais-tu remplacer ?",
+    "difficulty": 2,
+    "recommendedContext": "Social"
+  },
+  {
+    "id": 37,
+    "title": "LES RÉUNIONS",
+    "category": "PATTERNS",
+    "mission": "Dans chaque réunion, note quand l'attention du groupe se disperse.",
+    "cues": [
+      "Moment",
+      "Déclencheur",
+      "Reprise"
+    ],
+    "reflection": "Quel format aurait évité ces dispersions ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 38,
+    "title": "LES TEXTURES",
+    "category": "SENSES",
+    "mission": "Touche cinq textures différentes aujourd'hui et nomme-les précisément.",
+    "cues": [
+      "Matériau",
+      "Rugosité",
+      "Température"
+    ],
+    "reflection": "Quelle texture as-tu sous-estimée ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
+  },
+  {
+    "id": 39,
+    "title": "LES FILS ET CÂBLES",
+    "category": "OBJECTS",
+    "mission": "Suis visuellement un câble de ton bureau jusqu'à sa destination.",
+    "cues": [
+      "Parcours",
+      "Nœuds",
+      "Destination"
+    ],
+    "reflection": "Combien de câbles de ton bureau sont réellement utiles ?",
     "difficulty": 1,
     "recommendedContext": "Bureau"
   },
   {
-    "id": 26,
-    "title": "MISSION 026 — LE RYTHME DES FEUX DE SIGNALISATION",
-    "category": "PATTERNS",
-    "mission": "Chronomètre mentalement le cycle complet d'un feu tricolore.",
-    "cues": [
-      "Durée du rouge",
-      "Durée du vert",
-      "Temps de réaction des piétons"
-    ],
-    "reflection": "Comment la synchronisation urbaine régule-t-elle les foules ?",
-    "difficulty": 2,
-    "recommendedContext": "Carrefour urbain"
-  },
-  {
-    "id": 27,
-    "title": "MISSION 027 — LA FILE D'ATTENTE NATURELLE",
-    "category": "PATTERNS",
-    "mission": "Observe comment les gens se positionnent spontanément dans une queue.",
-    "cues": [
-      "Distance interindividuelle",
-      "Orientation des épaules",
-      "Consultation du téléphone"
-    ],
-    "reflection": "Quelle règle implicite gouverne l'espace personnel ?",
-    "difficulty": 2,
-    "recommendedContext": "Gare / Boulangerie"
-  },
-  {
-    "id": 28,
-    "title": "MISSION 028 — LES CHEMINS DE DÉSIR",
-    "category": "PATTERNS",
-    "mission": "Repère une trace d'herbe piétinée coupant un chemin goudronné officiel.",
-    "cues": [
-      "Angle de raccourci",
-      "Fréquentation visible",
-      "Largeur de la trace"
-    ],
-    "reflection": "L'humain choisit-il toujours la moindre résistance ?",
-    "difficulty": 2,
-    "recommendedContext": "Parc / Campus"
-  },
-  {
-    "id": 29,
-    "title": "MISSION 029 — LA DISTRIBUTION DES PLACES ASSISES",
-    "category": "PATTERNS",
-    "mission": "Observe quelles chaises ou banquettes sont occupées en premier dans un café.",
-    "cues": [
-      "Places adossées au mur",
-      "Places près des fenêtres",
-      "Places centrales"
-    ],
-    "reflection": "La recherche de sécurité guide-t-elle notre confort ?",
-    "difficulty": 2,
-    "recommendedContext": "Café / Restaurant"
-  },
-  {
-    "id": 30,
-    "title": "MISSION 030 — LA VITESSE DE MARCHE DES PASSANTS",
-    "category": "PATTERNS",
-    "mission": "Distingue les piétons qui ont un objectif net de ceux qui flânent.",
-    "cues": [
-      "Longueur de foulée",
-      "Regard porté au loin",
-      "Rythme de balancement des bras"
-    ],
-    "reflection": "La précipitation modifie-t-elle la perception du paysage ?",
-    "difficulty": 2,
-    "recommendedContext": "Rue piétonne"
-  },
-  {
-    "id": 31,
-    "title": "MISSION 031 — LES CYCLES DE RESPIRATION COLLECTIVE",
-    "category": "PATTERNS",
-    "mission": "Dans un espace silencieux, écoute le rythme des respirations ou des mouvements.",
-    "cues": [
-      "Synchronisation",
-      "Bruits de papier",
-      "Toux d'ajustement"
-    ],
-    "reflection": "Un groupe silencieux adopte-t-il un tempo commun ?",
-    "difficulty": 2,
-    "recommendedContext": "Salle d'étude"
-  },
-  {
-    "id": 32,
-    "title": "MISSION 032 — L'ORIENTATION DES REGARDS DANS LES TRANSPORTS",
-    "category": "PATTERNS",
-    "mission": "Observe vers où se dirigent les yeux des passagers dans une rame.",
-    "cues": [
-      "Écrans individuels",
-      "Publicités au plafond",
-      "Regard dans le vide"
-    ],
-    "reflection": "Quel pourcentage de personnes évite tout contact visuel ?",
-    "difficulty": 2,
-    "recommendedContext": "Métro / Train"
-  },
-  {
-    "id": 33,
-    "title": "MISSION 033 — LE SCHÉMA DE CONSULTATION DES MENUS",
-    "category": "PATTERNS",
-    "mission": "Regarde comment les clients parcourent la carte d'un restaurant.",
-    "cues": [
-      "Haut à droite d'abord",
-      "Lecture diagonale",
-      "Temps d'hésitation"
-    ],
-    "reflection": "L'architecture du menu influence-t-elle le choix ?",
-    "difficulty": 2,
-    "recommendedContext": "Restaurant"
-  },
-  {
-    "id": 34,
-    "title": "MISSION 034 — LES GRAPPES DE CONVERSATION",
-    "category": "PATTERNS",
-    "mission": "Observe la taille des sous-groupes qui se forment spontanément dans une réunion.",
-    "cues": [
-      "Duos",
-      "Trios",
-      "Petits cercles de 4"
-    ],
-    "reflection": "Au-delà de combien de personnes le groupe se scinde-t-il ?",
-    "difficulty": 2,
-    "recommendedContext": "Événement / Pause café"
-  },
-  {
-    "id": 35,
-    "title": "MISSION 035 — L'ALTERNANCE PAROLE / SILENCE",
-    "category": "PATTERNS",
-    "mission": "Chronomètre la durée moyenne d'une prise de parole dans une discussion proche.",
-    "cues": [
-      "Monologue dominant",
-      "Échange rapide",
-      "Micro-pauses de réflexion"
-    ],
-    "reflection": "Qui occupe l'espace sonore et qui écoute ?",
-    "difficulty": 2,
-    "recommendedContext": "Lieu partagé"
-  },
-  {
-    "id": 36,
-    "title": "MISSION 036 — LES MICRO-AJUSTEMENTS DE POSTURE",
-    "category": "PATTERNS",
-    "mission": "Compte combien de fois une personne assise réajuste sa position en 5 minutes.",
-    "cues": [
-      "Croisement de jambes",
-      "Appui du menton",
-      "Redressement du dos"
-    ],
-    "reflection": "L'agitation corporelle trahit-elle une fatigue mentale ?",
-    "difficulty": 2,
-    "recommendedContext": "Bureau / Salle de cours"
-  },
-  {
-    "id": 37,
-    "title": "MISSION 037 — L'EFFET D'ENTRAÎNEMENT DES GESTES",
-    "category": "PATTERNS",
-    "mission": "Observe si le geste d'une personne (boire, sortir son téléphone) en déclenche un autre.",
-    "cues": [
-      "Bâillement",
-      "Consultation d'écran",
-      "Regard vers la porte"
-    ],
-    "reflection": "Sommes-nous des imitateurs automatiques ?",
-    "difficulty": 2,
-    "recommendedContext": "Terrasse / Salle d'attente"
-  },
-  {
-    "id": 38,
-    "title": "MISSION 038 — LES VAGUES D'ARRIVÉE ET DE DÉPART",
-    "category": "PATTERNS",
-    "mission": "Repère la périodicité avec laquelle un groupe entre ou quitte un lieu public.",
-    "cues": [
-      "Pulsations liées aux feux",
-      "Horaires de train",
-      "Moments de flottement"
-    ],
-    "reflection": "Comment le temps institutionnel sculpte les flux ?",
-    "difficulty": 2,
-    "recommendedContext": "Hall de gare"
-  },
-  {
-    "id": 39,
-    "title": "MISSION 039 — LA TYPOLOGIE DES SACS ET BAGAGES",
-    "category": "PATTERNS",
-    "mission": "Catégorise les sacs portés par les passants : sac à dos, valise, sac à main, rien.",
-    "cues": [
-      "Volume transporté",
-      "Matériau",
-      "Degré d'encombrement"
-    ],
-    "reflection": "Ce que l'on transporte reflète-t-il notre rayon d'action ?",
-    "difficulty": 2,
-    "recommendedContext": "Quartier d'affaires"
-  },
-  {
     "id": 40,
-    "title": "MISSION 040 — LA DISPOSITION DES COUVERTS ET VERRES",
+    "title": "LES HABITUDES DE MESSAGERIE",
     "category": "PATTERNS",
-    "mission": "Remarque comment les tables sont dressées avant et après le repas.",
+    "mission": "Observe quand et comment tu consultes tes messages aujourd'hui.",
     "cues": [
-      "Symétrie initiale",
-      "Désordre fonctionnel",
-      "Position des serviettes"
+      "Moment",
+      "Déclencheur",
+      "Durée"
     ],
-    "reflection": "Le désordre suit-il une logique d'utilisation ?",
-    "difficulty": 2,
-    "recommendedContext": "Cafétéria"
-  },
-  {
-    "id": 41,
-    "title": "MISSION 041 — LE RYTHME DE FRAPPE AU CLAVIER",
-    "category": "PATTERNS",
-    "mission": "Écoute la musique du tapotement de touches autour de toi.",
-    "cues": [
-      "Rafales rapides",
-      "Pauses d'hésitation",
-      "Frappe lente et lourde"
-    ],
-    "reflection": "Le tempo de frappe reflète-t-il la clarté de la pensée ?",
-    "difficulty": 2,
-    "recommendedContext": "Open space / Bibliothèque"
-  },
-  {
-    "id": 42,
-    "title": "MISSION 042 — LES MOTIFS ARCHITECTURAUX RÉPÉTÉS",
-    "category": "PATTERNS",
-    "mission": "Trouve une série de 10 éléments architecturaux strictement identiques.",
-    "cues": [
-      "Barreaux",
-      "Fenêtres",
-      "Piliers",
-      "Dalles"
-    ],
-    "reflection": "La répétition géométrique apaise-t-elle le regard ?",
-    "difficulty": 2,
-    "recommendedContext": "Façade d'immeuble"
-  },
-  {
-    "id": 43,
-    "title": "MISSION 043 — L'ALTERNANCE OMBRE / LUMIÈRE DANS UNE ALLÉE",
-    "category": "PATTERNS",
-    "mission": "Marche sous des arbres et observe le damier lumineux au sol.",
-    "cues": [
-      "Taches solaires",
-      "Vent dans les branches",
-      "Changement de contraste"
-    ],
-    "reflection": "La lumière naturelle dynamique stimule-t-elle l'éveil ?",
-    "difficulty": 2,
-    "recommendedContext": "Parc / Allée"
-  },
-  {
-    "id": 44,
-    "title": "MISSION 044 — LES HORAIRES D'AFFLUENCE DES MAGASINS",
-    "category": "PATTERNS",
-    "mission": "Observe la densité de clients à 10 minutes d'intervalle.",
-    "cues": [
-      "Entrées par minute",
-      "Files en caisse",
-      "Taux de remplissage"
-    ],
-    "reflection": "Quelle est la fenêtre la plus calme pour faire une course ?",
-    "difficulty": 2,
-    "recommendedContext": "Supermarché"
-  },
-  {
-    "id": 45,
-    "title": "MISSION 045 — LA DISTRIBUTION DES ÂGES DANS UN QUARTIER",
-    "category": "PATTERNS",
-    "mission": "Estime la tranche d'âge des 20 premiers passants croisés.",
-    "cues": [
-      "Enfants",
-      "Étudiants",
-      "Actifs",
-      "Seniors"
-    ],
-    "reflection": "L'espace urbain ségrègue-t-il les générations ?",
-    "difficulty": 2,
-    "recommendedContext": "Place publique"
-  },
-  {
-    "id": 46,
-    "title": "MISSION 046 — LES RITUELS D'INSTALLATION AU TRAVAIL",
-    "category": "PATTERNS",
-    "mission": "Observe la séquence exacte de gestes d'un collègue arrivant à son bureau.",
-    "cues": [
-      "Pose du sac",
-      "Allumage écran",
-      "Remplissage gourde"
-    ],
-    "reflection": "Le rituel sert-il d'amorçage à la concentration ?",
+    "reflection": "Quel moment de consultation est purement réflexe ?",
     "difficulty": 2,
     "recommendedContext": "Bureau"
   },
   {
-    "id": 47,
-    "title": "MISSION 047 — LES BRUITS DE PAS SELON LA CHAUSSURE",
+    "id": 41,
+    "title": "LES PRÉTEXTES D'OUVERTURE",
     "category": "PATTERNS",
-    "mission": "Distingue à l'oreille le son des talons, des baskets et des chaussures de cuir.",
+    "mission": "Note le prétexte de chaque ouverture d'application aujourd'hui.",
     "cues": [
-      "Impact sec",
-      "Frottement étouffé",
-      "Cadence"
+      "Application",
+      "Prétexte",
+      "Besoin réel"
     ],
-    "reflection": "Peut-on identifier l'intention d'un passant sans le voir ?",
+    "reflection": "Combien d'ouvertures avaient un besoin réel ?",
     "difficulty": 2,
-    "recommendedContext": "Couloir / Rue"
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 42,
+    "title": "LES OMBRES",
+    "category": "SENSES",
+    "mission": "Observe les ombres à trois heures différentes de la journée.",
+    "cues": [
+      "Direction",
+      "Longueur",
+      "Netteté"
+    ],
+    "reflection": "Que révèlent les ombres sur la position du soleil ?",
+    "difficulty": 1,
+    "recommendedContext": "Extérieur"
+  },
+  {
+    "id": 43,
+    "title": "LES FILES D'ATTENTE",
+    "category": "PATTERNS",
+    "mission": "Observe une file d'attente : ordre, patience, comportements.",
+    "cues": [
+      "Ordre",
+      "Patience",
+      "Téléphones"
+    ],
+    "reflection": "Que font les gens dans la file, et que ferais-tu ?",
+    "difficulty": 1,
+    "recommendedContext": "Commerce / Transports"
+  },
+  {
+    "id": 44,
+    "title": "LES MOTS-CLÉS",
+    "category": "PATTERNS",
+    "mission": "Relève les mots que tu emploies le plus dans une conversation.",
+    "cues": [
+      "Mot",
+      "Fréquence",
+      "Contexte"
+    ],
+    "reflection": "Que dit ce mot de ta préoccupation du moment ?",
+    "difficulty": 2,
+    "recommendedContext": "Social"
+  },
+  {
+    "id": 45,
+    "title": "LES DOCUMENTS OUVerts",
+    "category": "OBJECTS",
+    "mission": "Liste les documents ouverts sur tes appareils en fin de journée.",
+    "cues": [
+      "Document",
+      "Utilité",
+      "Date d'ouverture"
+    ],
+    "reflection": "Combien de documents ouverts sont réellement en cours ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
+  },
+  {
+    "id": 46,
+    "title": "LES OCCASIONS DE MARCHER",
+    "category": "PATTERNS",
+    "mission": "Compte les occasions de marcher que tu as laissées passer aujourd'hui.",
+    "cues": [
+      "Occasion",
+      "Distance",
+      "Choix"
+    ],
+    "reflection": "Quelle occasion reviendra demain ?",
+    "difficulty": 1,
+    "recommendedContext": "Journée entière"
+  },
+  {
+    "id": 47,
+    "title": "LES PENSÉES PARASITES",
+    "category": "PATTERNS",
+    "mission": "Pendant une session, fais une croix à chaque pensée parasite.",
+    "cues": [
+      "Type",
+      "Fréquence",
+      "Moment"
+    ],
+    "reflection": "Quel type de pensée parasite domine ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 48,
-    "title": "MISSION 048 — LES TRANSITIONS FEU VERT / DÉMARRAGE",
-    "category": "PATTERNS",
-    "mission": "Mesure le temps de latence entre le passage au vert et le premier démarrage de voiture.",
+    "title": "LES AFFICHES",
+    "category": "OBJECTS",
+    "mission": "Décompose une affiche de rue : ce qui est grand, ce qui est petit, ce qui attire l'œil.",
     "cues": [
-      "Attention du premier conducteur",
-      "Klaxon de rappel",
-      "Temps de réaction moyen"
+      "Hiérarchie",
+      "Typographie",
+      "Espace"
     ],
-    "reflection": "Quelle part de conducteurs consulte son téléphone au feu ?",
-    "difficulty": 2,
-    "recommendedContext": "Carrefour"
+    "reflection": "Quel message voulait-on que tu retiennes ?",
+    "difficulty": 1,
+    "recommendedContext": "Extérieur"
   },
   {
     "id": 49,
-    "title": "MISSION 049 — L'ORGANISATION DES RAYONS DE LIBRAIRIE",
+    "title": "LES RÉVEILS",
     "category": "PATTERNS",
-    "mission": "Regarde comment les couvertures sont présentées : de face ou de tranche.",
+    "mission": "Note comment tu te réveilles : son, geste, premier regard.",
     "cues": [
-      "Mise en avant visuelle",
-      "Densité de rangement",
-      "Hauteur des yeux"
+      "Réveil",
+      "Premier geste",
+      "Écran"
     ],
-    "reflection": "Ce qui est au niveau du regard se vend-il mieux ?",
+    "reflection": "Quel serait ton premier geste idéal ?",
     "difficulty": 2,
-    "recommendedContext": "Librairie"
+    "recommendedContext": "Matin"
   },
   {
     "id": 50,
-    "title": "MISSION 050 — LA GÉOMÉTRIE DES OMBRES PORTÉES DU SOIR",
-    "category": "PATTERNS",
-    "mission": "Observe comment les ombres s'allongent dramatiquement avant le coucher du soleil.",
+    "title": "LES MENUS",
+    "category": "OBJECTS",
+    "mission": "Observe un menu de restaurant comme une interface de décision.",
     "cues": [
-      "Angles rasants",
-      "Distorsion des silhouettes",
-      "Teinte dorée"
+      "Premier plat regardé",
+      "Encadrés",
+      "Prix"
     ],
-    "reflection": "Le changement de spectre lumineux invite-t-il au calme ?",
-    "difficulty": 2,
-    "recommendedContext": "Fin d'après-midi"
+    "reflection": "Quel plat le menu poussait-il à choisir ?",
+    "difficulty": 1,
+    "recommendedContext": "Restaurant"
   },
   {
     "id": 51,
-    "title": "MISSION 051 — LE RÉFLEXE DU FEU ROUGE PIÉTON",
-    "category": "BEHAVIOR",
-    "mission": "Observe combien de piétons attendent sagement et combien traversent au rouge.",
+    "title": "LES NOTES",
+    "category": "PATTERNS",
+    "mission": "Inventorie chaque prise de note de la journée, du pense-bête au document.",
     "cues": [
-      "Présence de voitures",
-      "Effet de foule",
-      "Consultation de téléphone en marchant"
+      "Support",
+      "Contenu",
+      "Relecture"
     ],
-    "reflection": "Quand une personne traverse, les autres la suivent-elles ?",
-    "difficulty": 3,
-    "recommendedContext": "Passage piéton"
+    "reflection": "Combien de notes seront relues dans une semaine ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 52,
-    "title": "MISSION 052 — LA POSTURE D'ÉVITEMENT SOCIAL",
-    "category": "BEHAVIOR",
-    "mission": "Repère les signaux corporels indiquant qu'une personne ne veut pas être abordée.",
+    "title": "LES OUTILS DÉCLENCHEURS",
+    "category": "PATTERNS",
+    "mission": "Note quel outil déclenche chacune de tes bascules aujourd'hui.",
     "cues": [
-      "Écouteurs visibles",
-      "Regard baissé",
-      "Bras croisés"
+      "Outil",
+      "Bascule",
+      "Utilité"
     ],
-    "reflection": "Le téléphone sert-il de bouclier social protecteur ?",
-    "difficulty": 3,
-    "recommendedContext": "Transport / Espace public"
+    "reflection": "Quel outil est le plus souvent une porte de sortie ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 53,
-    "title": "MISSION 053 — LE GESTE DE VÉRIFICATION FANTÔME",
-    "category": "BEHAVIOR",
-    "mission": "Observe quelqu'un qui tapote sa poche pour vérifier la présence de son appareil.",
+    "title": "LES BRUITS DE FOND",
+    "category": "SOUNDS",
+    "mission": "Identifie le bruit de fond de chaque pièce où tu passes.",
     "cues": [
-      "Fréquence du geste",
-      "Instant déclencheur",
-      "Soulagement visible"
+      "Source",
+      "Constance",
+      "Niveau"
     ],
-    "reflection": "L'angoisse de la perte est-elle devenue un tic moteur ?",
-    "difficulty": 3,
-    "recommendedContext": "Rue / Quai"
+    "reflection": "Quel bruit de fond avais-tu cessé d'entendre ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
   },
   {
     "id": 54,
-    "title": "MISSION 054 — LA NÉGOCIATION D'ESPACE DANS UNE PORTE",
-    "category": "BEHAVIOR",
-    "mission": "Regarde la danse silencieuse de deux personnes arrivant ensemble devant un passage étroit.",
+    "title": "LES HEURES D'ÉCRAN",
+    "category": "NUMBERS",
+    "mission": "Note ton temps d'écran par application à la fin de la journée.",
     "cues": [
-      "Ralentissement",
-      "Contact visuel",
-      "Geste de la main 'après vous'"
+      "Application",
+      "Durée",
+      "Nécessité"
     ],
-    "reflection": "Comment la politesse régule-t-elle les micro-conflits d'espace ?",
-    "difficulty": 3,
-    "recommendedContext": "Entrée de magasin"
+    "reflection": "Quelle application a consommé du temps sans rien produire ?",
+    "difficulty": 1,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 55,
-    "title": "MISSION 055 — L'ATTENTION PARTAGÉE PARENT-ENFANT",
-    "category": "BEHAVIOR",
-    "mission": "Observe un échange entre un adulte et un enfant dans un parc.",
+    "title": "LES POSITIONS DU CORPS",
+    "category": "SENSES",
+    "mission": "Fais le point sur ta posture à trois heures différentes.",
     "cues": [
-      "Regard direct",
-      "Interruption par écran",
-      "Niveau d'écoute réel"
+      "Posture",
+      "Tension",
+      "Mouvement"
     ],
-    "reflection": "La présence physique suffit-elle sans présence attentionnelle ?",
-    "difficulty": 3,
-    "recommendedContext": "Parc / Aire de jeux"
+    "reflection": "Où tiens-tu tes tensions ?",
+    "difficulty": 1,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 56,
-    "title": "MISSION 056 — LA RÉACTION À UNE NOTIFICATION SONORE",
-    "category": "BEHAVIOR",
-    "mission": "Dans un silence, écoute une sonnerie et observe les têtes qui se lèvent simultanément.",
+    "title": "LES SYMÉTRIES",
+    "category": "PATTERNS",
+    "mission": "Trouve trois symétries et trois asymétries dans ton environnement.",
     "cues": [
-      "Tressaillement involontaire",
-      "Vérification réflexe",
-      "Perte de fil"
+      "Objet",
+      "Symétrie",
+      "Raison"
     ],
-    "reflection": "Combien de personnes ont vérifié leur propre téléphone par erreur ?",
-    "difficulty": 3,
-    "recommendedContext": "Salle d'attente / Bureau"
+    "reflection": "Pourquoi certaines choses sont-elles asymétriques ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
   },
   {
     "id": 57,
-    "title": "MISSION 057 — LE RITUEL DE PAIEMENT EN CAISSE",
-    "category": "BEHAVIOR",
-    "mission": "Observe la fluidité de préparation du moyen de paiement.",
+    "title": "LES PREMIÈRES MINUTES",
+    "category": "PATTERNS",
+    "mission": "Observe les premières minutes de ta prochaine session de travail.",
     "cues": [
-      "Téléphone prêt",
-      "Carte sortie à l'avance",
-      "Recherche paniquée dans le sac"
+      "Amorçage",
+      "Friction",
+      "Décisions"
     ],
-    "reflection": "L'anticipation mentale varie-t-elle selon le niveau de stress ?",
-    "difficulty": 3,
-    "recommendedContext": "Caisse"
+    "reflection": "Quelle friction rend les premières minutes difficiles ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 58,
-    "title": "MISSION 058 — LE REGARD DES GENS QUI ATTENDENT SEULS",
-    "category": "BEHAVIOR",
-    "mission": "Regarde où se posent les yeux des personnes sans écran pendant 2 minutes.",
+    "title": "LES DÉLAIS DE DÉMARRAGE",
+    "category": "NUMBERS",
+    "mission": "Mesure le temps entre l'intention de commencer et le premier geste, trois fois.",
     "cues": [
-      "Sol",
-      "Passants",
-      "Mains",
-      "Plafond"
+      "Tâche",
+      "Délai",
+      "Interstice"
     ],
-    "reflection": "L'absence d'écran crée-t-elle un inconfort visible ?",
-    "difficulty": 3,
-    "recommendedContext": "Quai de gare"
+    "reflection": "Que fais-tu pendant ce délai ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 59,
-    "title": "MISSION 059 — L'ÉCOUTE DANS UNE CONVERSATION TÉLÉPHONIQUE",
-    "category": "BEHAVIOR",
-    "mission": "Observe une personne qui parle au téléphone en marchant : ses gestes, son regard.",
+    "title": "LES INCONNUS",
+    "category": "PEOPLE",
+    "mission": "Observe trois inconnus sans les déranger : vêtements, allure, gestes.",
     "cues": [
-      "Regard vide dans le lointain",
-      "Gesticulation inutile",
-      "Baisse de vitesse"
+      "Allure",
+      "Rythme",
+      "Objet"
     ],
-    "reflection": "Le cerveau est-il téléporté dans l'espace de l'interlocuteur ?",
-    "difficulty": 3,
-    "recommendedContext": "Rue"
+    "reflection": "Quelle histoire inventerais-tu sur eux ?",
+    "difficulty": 1,
+    "recommendedContext": "Transports"
   },
   {
     "id": 60,
-    "title": "MISSION 060 — LA DYNAMIQUE D'APPROBATION DANS UN GROUPE",
-    "category": "BEHAVIOR",
-    "mission": "Dans une réunion, observe qui hoche la tête quand le leader parle.",
+    "title": "LES ESPACES VIDES",
+    "category": "OBJECTS",
+    "mission": "Repère les espaces vides de ton environnement et leur fonction.",
     "cues": [
-      "Sourires d'acquiescement",
-      "Prise de notes mimétique",
-      "Regard vers les autres"
+      "Espace",
+      "Usage",
+      "Poids"
     ],
-    "reflection": "L'accord est-il sincère ou conformiste ?",
-    "difficulty": 3,
-    "recommendedContext": "Réunion / Conférence"
+    "reflection": "Quel espace vide a une fonction essentielle ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
   },
   {
     "id": 61,
-    "title": "MISSION 061 — LE CHOIX DE LA TABLE ISOLÉE",
-    "category": "BEHAVIOR",
-    "mission": "Observe quelqu'un qui entre seul dans un café et choisit sa place.",
+    "title": "LES RETOURS",
+    "category": "PATTERNS",
+    "mission": "Note comment tu reviens à une tâche après chaque interruption.",
     "cues": [
-      "Tour d'horizon visuel",
-      "Recherche de prise électrique",
-      "Orientation dos aux gens"
+      "Délai",
+      "Stratégie",
+      "Perte"
     ],
-    "reflection": "Quelles sont les priorités d'un travailleur nomade ?",
-    "difficulty": 3,
-    "recommendedContext": "Café"
+    "reflection": "Quel retour a été le plus rapide, et pourquoi ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 62,
-    "title": "MISSION 062 — LA GESTION D'UN MICRO-ÉCHEC EN PUBLIC",
-    "category": "BEHAVIOR",
-    "mission": "Regarde comment réagit une personne qui trébuche ou fait tomber un objet.",
+    "title": "LES NUAGES",
+    "category": "SENSES",
+    "mission": "Observe les nuages une minute et décris leur mouvement.",
     "cues": [
-      "Regard rapide autour",
-      "Rire de façade",
-      "Précipitation à ramasser"
+      "Forme",
+      "Direction",
+      "Vitesse"
     ],
-    "reflection": "La peur du jugement guide-t-elle la récupération ?",
-    "difficulty": 3,
-    "recommendedContext": "Espace public"
+    "reflection": "Quand as-tu regardé les nuages pour la dernière fois ?",
+    "difficulty": 1,
+    "recommendedContext": "Extérieur"
   },
   {
     "id": 63,
-    "title": "MISSION 063 — LA MANIÈRE DE TENIR UNE TASSE CHAUDE",
-    "category": "BEHAVIOR",
-    "mission": "Observe les deux mains qui entourent une boisson chaude.",
+    "title": "LES INTERRUPTIONS",
+    "category": "NUMBERS",
+    "mission": "Compte les interruptions externes de ta journée et leur durée.",
     "cues": [
-      "Recherche de réconfort tactile",
-      "Pauses lentes",
-      "Ralentissement global"
+      "Source",
+      "Durée",
+      "Délai de retour"
     ],
-    "reflection": "Le geste physique peut-il induire un état de calme ?",
-    "difficulty": 3,
-    "recommendedContext": "Café / Domicile"
+    "reflection": "Combien de temps total les interruptions t'ont-elles coûté ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 64,
-    "title": "MISSION 064 — L'ENTRÉE DANS UN ASCENSEUR PLEIN",
-    "category": "BEHAVIOR",
-    "mission": "Regarde la redistribution spatiale instantanée de 4 personnes qui entrent.",
+    "title": "LES GESTES DE L'ÉCRAN",
+    "category": "PATTERNS",
+    "mission": "Observe tes gestes sur le téléphone : pouce, doigt, direction.",
     "cues": [
-      "Face à la porte obligatoire",
-      "Regard fixé sur l'indicateur d'étage",
-      "Silence strict"
+      "Geste",
+      "Application",
+      "Automaticité"
     ],
-    "reflection": "Pourquoi l'ascenseur suspend-il toute sociabilité ?",
-    "difficulty": 3,
-    "recommendedContext": "Immeuble de bureaux"
+    "reflection": "Quel geste est devenu si automatique que tu ne le vois plus ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 65,
-    "title": "MISSION 065 — LE FEUILLETAGE D'UN MAGAZINE EN SALLE D'ATTENTE",
-    "category": "BEHAVIOR",
-    "mission": "Observe la vitesse à laquelle les pages sont tournées.",
+    "title": "LES PLAFONDS",
+    "category": "OBJECTS",
+    "mission": "Lève les yeux vers les plafonds des lieux que tu traverses.",
     "cues": [
-      "Survol distrait",
-      "Arrêt sur une image forte",
-      "Temps de lecture réel"
+      "Hauteur",
+      "Texture",
+      "Détails"
     ],
-    "reflection": "Consomme-t-on le papier comme un flux numérique ?",
-    "difficulty": 3,
-    "recommendedContext": "Cabinet médical"
+    "reflection": "Quel plafond n'avais-tu jamais regardé ?",
+    "difficulty": 1,
+    "recommendedContext": "Intérieur"
   },
   {
     "id": 66,
-    "title": "MISSION 066 — LA CONSULTATION D'HORAIRES SUR PANNEAU",
-    "category": "BEHAVIOR",
-    "mission": "Regarde l'expression faciale des passagers devant le grand panneau d'affichage.",
+    "title": "LES SEMAINES DE DONNÉES",
+    "category": "PATTERNS",
+    "mission": "Relis tes sessions des 3 dernières semaines et cherche un pattern.",
     "cues": [
-      "Tension du sourcil",
-      "Soulagement à la vue du quai",
-      "Reprise de marche"
+      "Heure",
+      "Durée",
+      "Bascule"
     ],
-    "reflection": "L'information réduit-elle l'anxiété motrice ?",
-    "difficulty": 3,
-    "recommendedContext": "Hall de gare"
+    "reflection": "Quel pattern n'avais-tu pas vu à chaud ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 67,
-    "title": "MISSION 067 — LA DÉGUSTATION DE LA PREMIÈRE GORGÉE",
-    "category": "BEHAVIOR",
-    "mission": "Observe le visage de quelqu'un qui boit sa première gorgée de café du matin.",
+    "title": "LES ÉCHANGES DE REGARDS",
+    "category": "PEOPLE",
+    "mission": "Observe les échanges de regards dans une conversation de groupe.",
     "cues": [
-      "Fermeture des yeux",
-      "Expiration de détente",
-      "Pause avant le premier mot"
+      "Qui regarde qui",
+      "Durée",
+      "Pause"
     ],
-    "reflection": "Le rituel gustatif sert-il d'ancrage de transition ?",
-    "difficulty": 3,
-    "recommendedContext": "Comptoir"
+    "reflection": "Que dit le regard sur l'attention du groupe ?",
+    "difficulty": 2,
+    "recommendedContext": "Réunion"
   },
   {
     "id": 68,
-    "title": "MISSION 068 — LA MARCHE SYNCHRONISÉE D'UN COUPLE",
-    "category": "BEHAVIOR",
-    "mission": "Regarde le pas de deux personnes marchant côte à côte.",
+    "title": "LES COULEURS DES VÊTEMENTS",
+    "category": "PATTERNS",
+    "mission": "Repère la teinte la plus portée par les gens autour de toi.",
     "cues": [
-      "Pied gauche / pied droit synchrone",
-      "Ajustement automatique du rythme",
-      "Distance d'épaule"
+      "Couleur",
+      "Fréquence",
+      "Contexte"
     ],
-    "reflection": "La complicité se traduit-elle par un mimétisme moteur ?",
-    "difficulty": 3,
-    "recommendedContext": "Rue"
+    "reflection": "Pourquoi cette couleur domine-t-elle ?",
+    "difficulty": 1,
+    "recommendedContext": "Transports"
   },
   {
     "id": 69,
-    "title": "MISSION 069 — L'INTERRUPTION PAR UN APPEL URGENT",
-    "category": "BEHAVIOR",
-    "mission": "Observe la rupture d'attitude d'une personne dont le téléphone sonne.",
+    "title": "LES ERREURS",
+    "category": "PATTERNS",
+    "mission": "Note trois petites erreurs que tu fais aujourd'hui (frappe, oubli, détour).",
     "cues": [
-      "Arrêt net de la marche",
-      "Isolement physique contre un mur",
-      "Changement de ton"
+      "Erreur",
+      "Moment",
+      "Coût"
     ],
-    "reflection": "L'appel extérieur déchire-t-il la bulle locale ?",
-    "difficulty": 3,
-    "recommendedContext": "Trottoir"
+    "reflection": "Quelle erreur revient régulièrement ?",
+    "difficulty": 1,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 70,
-    "title": "MISSION 070 — LE REGARD VERS SA MONTRE",
-    "category": "BEHAVIOR",
-    "mission": "Regarde quelqu'un consulter l'heure et demande-toi s'il sait vraiment l'heure 5 secondes après.",
+    "title": "LES DÉTOURS",
+    "category": "TRANSITIONS",
+    "mission": "Repère les détours que tu fais dans ta journée, physiques ou numériques.",
     "cues": [
-      "Regard fugace",
-      "Absence d'encodage",
-      "Geste machinal"
+      "Détour",
+      "Raison",
+      "Coût"
     ],
-    "reflection": "Combien de gestes faisons-nous sans en retenir l'information ?",
-    "difficulty": 3,
-    "recommendedContext": "Espace public"
+    "reflection": "Quel détour pourrais-tu supprimer ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 71,
-    "title": "MISSION 071 — LA RECHERCHE DE CLÉS DANS UN SAC",
-    "category": "BEHAVIOR",
-    "mission": "Observe la patience ou la panique de quelqu'un devant sa porte fermée.",
+    "title": "L'ÉNERGIE PAR HEURE",
+    "category": "NUMBERS",
+    "mission": "Note ton énergie sur 5 à quatre heures fixes de la journée.",
     "cues": [
-      "Fouille méthodique",
-      "Secouement du sac",
-      "Frustration croissante"
+      "Heure",
+      "Énergie",
+      "Contexte"
     ],
-    "reflection": "La friction matérielle teste-t-elle le calme émotionnel ?",
-    "difficulty": 3,
-    "recommendedContext": "Palier"
+    "reflection": "Quelle heure est ton point bas, et que l'as-tu planifié ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 72,
-    "title": "MISSION 072 — L'EFFACEMENT D'UN TABLEAU BLANC",
-    "category": "BEHAVIOR",
-    "mission": "Regarde le geste régulier d'effacement de haut en bas.",
+    "title": "LES SIGNES DE FATIGUE",
+    "category": "SENSES",
+    "mission": "Repère tes signes personnels de fatigue : bâillements, yeux, irritabilité.",
     "cues": [
-      "Disparition des traces",
-      "Blanc retrouvé",
-      "Prêt pour la suite"
+      "Signe",
+      "Heure",
+      "Précédent"
     ],
-    "reflection": "La clôture visuelle apaise-t-elle l'esprit ?",
-    "difficulty": 3,
-    "recommendedContext": "Salle de travail"
+    "reflection": "Quel signe précède tes erreurs ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 73,
-    "title": "MISSION 073 — LA RÉACTION À UN RIRE SPONTANÉ",
-    "category": "BEHAVIOR",
-    "mission": "Dans un lieu public, écoute un éclat de rire et observe l'effet sur les voisins.",
+    "title": "LES OBJECTIFS DES AUTRES",
+    "category": "PEOPLE",
+    "mission": "Dans une réunion, note l'objectif implicite de chaque participant.",
     "cues": [
-      "Sourires contagieux",
-      "Regard agacé",
-      "Indifférence"
+      "Participant",
+      "Objectif",
+      "Indice"
     ],
-    "reflection": "L'émotion positive se propage-t-elle plus vite que le bruit ?",
+    "reflection": "Comment les objectifs implicites influencent-ils la discussion ?",
     "difficulty": 3,
-    "recommendedContext": "Terrasse"
+    "recommendedContext": "Réunion"
   },
   {
     "id": 74,
-    "title": "MISSION 074 — LA VÉRIFICATION DE SON REFLET DANS UNE VITRINE",
-    "category": "BEHAVIOR",
-    "mission": "Observe le coup d'œil discret mais systématique des passants.",
+    "title": "LES RÈGLES APPLIQUÉES",
+    "category": "PATTERNS",
+    "mission": "Recense les règles que tu as réellement appliquées ces dernières semaines.",
     "cues": [
-      "Ajustement de veste",
-      "Regard furtif",
-      "Vérification d'allure"
+      "Règle",
+      "Fréquence",
+      "Facilité"
     ],
-    "reflection": "L'image de soi est-elle une vigilance constante ?",
-    "difficulty": 3,
-    "recommendedContext": "Rue commerçante"
+    "reflection": "Quelle règle tiens-tu sans effort, et laquelle te coûte ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 75,
-    "title": "MISSION 075 — LA CONCENTRATION D'UN ARTISAN OU CUISINIER",
-    "category": "BEHAVIOR",
-    "mission": "Observe les mains expertes qui découpent ou assemblent sans hésiter.",
+    "title": "LES VERTUS DU BANAL",
+    "category": "PATTERNS",
+    "mission": "Trouve trois objets ou gestes banals sans lesquels ta journée serait pire.",
     "cues": [
-      "Économie de geste",
-      "Regard posé 2 secondes en avance",
-      "Fluidité continue"
+      "Objet",
+      "Rôle",
+      "Alternative"
     ],
-    "reflection": "L'expertise se reconnaît-elle à l'absence de mouvements parasites ?",
-    "difficulty": 3,
-    "recommendedContext": "Marché / Atelier"
+    "reflection": "Quand as-tu remarqué leur absence pour la dernière fois ?",
+    "difficulty": 1,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 76,
-    "title": "MISSION 076 — L'ARCHITECTURE D'UN SUPERMARCHÉ",
-    "category": "SYSTEMS",
-    "mission": "Repère comment l'entrée t'oblige à parcourir les rayons frais avant les produits de base.",
+    "title": "LES PHRASES RÉPÉTÉES",
+    "category": "PATTERNS",
+    "mission": "Note les phrases que tu répètes dans une journée de travail.",
     "cues": [
-      "Produits d'appel au fond",
-      "Têtes de gondole promotionnelles",
-      "Bons plans au niveau des yeux"
+      "Phrase",
+      "Contexte",
+      "Fonction"
     ],
-    "reflection": "Comment l'espace physique maximise-t-il la dépense ?",
-    "difficulty": 4,
-    "recommendedContext": "Supermarché"
+    "reflection": "Quelle phrase pourrait devenir un raccourci ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 77,
-    "title": "MISSION 077 — LES PIÈGES DE FRICTION DES AÉROPORTS",
-    "category": "SYSTEMS",
-    "mission": "Observe le circuit sinueux imposé à travers la boutique duty-free avant d'atteindre les portes.",
+    "title": "LES MOMENTS DE CHOIX",
+    "category": "DECISION_MAKING",
+    "mission": "Repère tes moments de choix de la journée : quoi faire, dans quel ordre.",
     "cues": [
-      "Passage obligé",
-      "Lumière valorisante",
-      "Ralentissement forcé du pas"
+      "Moment",
+      "Options",
+      "Décision"
     ],
-    "reflection": "Le design aéroportuaire transforme-t-il le voyageur en consommateur captif ?",
-    "difficulty": 4,
-    "recommendedContext": "Terminal d'aéroport"
+    "reflection": "Quel choix revient plusieurs fois par jour ?",
+    "difficulty": 2,
+    "recommendedContext": "Journée entière"
   },
   {
     "id": 78,
-    "title": "MISSION 078 — LA HIÉRARCHIE DES SIÈGES DANS UN TRAIN",
-    "category": "SYSTEMS",
-    "mission": "Compare l'espace, les prises, l'orientation et la lumière entre première et seconde classe.",
+    "title": "LES INTERVENTIONS GARDÉES",
+    "category": "PATTERNS",
+    "mission": "Classe tes interventions testées : garder, modifier, abandonner.",
     "cues": [
-      "Largeur d'assise",
-      "Isolement visuel",
-      "Accès au silence"
+      "Intervention",
+      "Effet",
+      "Décision"
     ],
-    "reflection": "Le confort attentionnel est-il devenu un produit tarifé ?",
-    "difficulty": 4,
-    "recommendedContext": "Gare / Train"
+    "reflection": "Quelle intervention a eu l'effet le plus net ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   },
   {
     "id": 79,
-    "title": "MISSION 079 — LE SYSTÈME DE TRI DES DÉCHETS URBAINS",
-    "category": "SYSTEMS",
-    "mission": "Observe la forme des ouvertures des poubelles de tri (fente pour papier, trou pour verre).",
+    "title": "LES DÉBUTS DE CONVERSATION",
+    "category": "PEOPLE",
+    "mission": "Observe comment les conversations commencent autour de toi.",
     "cues": [
-      "Ergonomie contraignante",
-      "Couleur normalisée",
-      "Taux d'erreur visible"
+      "Ouverture",
+      "Sujet",
+      "Écran"
     ],
-    "reflection": "Le design physique peut-il forcer le bon geste sans police ?",
-    "difficulty": 4,
-    "recommendedContext": "Espace urbain"
+    "reflection": "Combien de conversations commencent par un écran ?",
+    "difficulty": 1,
+    "recommendedContext": "Social"
   },
   {
     "id": 80,
-    "title": "MISSION 080 — L'AMÉNAGEMENT D'UNE BIBLIOTHÈQUE UNIVERSITAIRE",
-    "category": "SYSTEMS",
-    "mission": "Analyse la séparation entre zones silencieuses, travail en groupe et détente.",
+    "title": "LE BILAN DES 90 JOURS",
+    "category": "PATTERNS",
+    "mission": "Écris le bilan de tes 90 jours : ce qui a changé, ce qui reste à mesurer.",
     "cues": [
-      "Règles affichées",
-      "Matériaux insonorisants",
-      "Disposition des tables"
+      "Changement",
+      "Donnée",
+      "Prochaine mesure"
     ],
-    "reflection": "Comment l'institution protège-t-elle la ressource attentionnelle ?",
-    "difficulty": 4,
-    "recommendedContext": "Bibliothèque"
-  },
-  {
-    "id": 81,
-    "title": "MISSION 081 — LES BOUCLES DE CIRCULATION DANS UN MUSÉE",
-    "category": "SYSTEMS",
-    "mission": "Observe si les visiteurs suivent le sens officiel ou créent leur propre parcours.",
-    "cues": [
-      "Fléchage au sol",
-      "Attraction des œuvres majeures",
-      "Saturation des petites salles"
-    ],
-    "reflection": "La muséographie guide-t-elle la durée d'attention portée à chaque tableau ?",
-    "difficulty": 4,
-    "recommendedContext": "Musée"
-  },
-  {
-    "id": 82,
-    "title": "MISSION 082 — LA SIGNALÉTIQUE DES URGENCES MÉDICALES",
-    "category": "SYSTEMS",
-    "mission": "Regarde comment les couleurs guident les patients selon la gravité.",
-    "cues": [
-      "Rouge / Orange / Vert",
-      "Lignes tracées au sol",
-      "Lisibilité en état de panique"
-    ],
-    "reflection": "L'urgence exige-t-elle une clarté cognitive absolue ?",
-    "difficulty": 4,
-    "recommendedContext": "Hôpital"
-  },
-  {
-    "id": 83,
-    "title": "MISSION 083 — L'ORGANISATION D'UN OPEN SPACE D'ENTREPRISE",
-    "category": "SYSTEMS",
-    "mission": "Observe la disposition des bureaux par rapport aux couloirs de passage et à la lumière.",
-    "cues": [
-      "Dos au couloir",
-      "Face aux fenêtres",
-      "Bureaux partagés sans barrière"
-    ],
-    "reflection": "L'open space favorise-t-il la communication ou la surveillance mutuelle ?",
-    "difficulty": 4,
-    "recommendedContext": "Entreprise"
-  },
-  {
-    "id": 84,
-    "title": "MISSION 084 — LE DESIGN DES DISTRIBUTEURS AUTOMATIQUES",
-    "category": "SYSTEMS",
-    "mission": "Regarde la hauteur des boutons, la vitre éclairée et le bruit de chute du produit.",
-    "cues": [
-      "Visibilité des confiseries",
-      "Facilité du paiement sans contact",
-      "Récompense mécanique immédiate"
-    ],
-    "reflection": "La machine est-elle conçue pour exploiter une pulsion instantanée ?",
-    "difficulty": 4,
-    "recommendedContext": "Station de métro"
-  },
-  {
-    "id": 85,
-    "title": "MISSION 085 — LA DISPOSITION DES GUICHETS DE BANQUE",
-    "category": "SYSTEMS",
-    "mission": "Observe comment la confidentialité est matérialisée dans l'espace.",
-    "cues": [
-      "Ligne de courtoisie au sol",
-      "Verre dépoli",
-      "Distance d'écoute"
-    ],
-    "reflection": "L'intimité financière exige-t-elle des barrières physiques strictes ?",
-    "difficulty": 4,
-    "recommendedContext": "Banque / Poste"
-  },
-  {
-    "id": 86,
-    "title": "MISSION 086 — L'ARCHITECTURE D'UN PARC PUBLIC",
-    "category": "SYSTEMS",
-    "mission": "Analyse les transitions entre les allées larges, les pelouses ouvertes et les recoins boisés.",
-    "cues": [
-      "Visibilité générale",
-      "Bancs isolés",
-      "Points d'eau comme attracteurs"
-    ],
-    "reflection": "Le parc offre-t-il un gradient de stimulation sensorielle ?",
-    "difficulty": 4,
-    "recommendedContext": "Parc"
-  },
-  {
-    "id": 87,
-    "title": "MISSION 087 — LA CIRCULATION DANS UNE GARE CENTRALE",
-    "category": "SYSTEMS",
-    "mission": "Observe le croisement entre les flux pressés des banlieusards et les flux lents des voyageurs longue distance.",
-    "cues": [
-      "Vitesse différentielle",
-      "Obstacles au milieu du hall",
-      "Panneaux visibles de partout"
-    ],
-    "reflection": "Comment un même espace gère-t-il deux rapports au temps opposés ?",
-    "difficulty": 4,
-    "recommendedContext": "Gare"
-  },
-  {
-    "id": 88,
-    "title": "MISSION 088 — LA SIGNALISATION DES SORTIES DE SECOURS",
-    "category": "SYSTEMS",
-    "mission": "Repère les blocs lumineux verts de secours depuis n'importe quel point de la pièce.",
-    "cues": [
-      "Alimentation autonome",
-      "Symbole universel du bonhomme qui court",
-      "Visibilité dans l'obscurité"
-    ],
-    "reflection": "Le système de sécurité est-il gravé dans la mémoire spatiale du bâtiment ?",
-    "difficulty": 4,
-    "recommendedContext": "Bâtiment public"
-  },
-  {
-    "id": 89,
-    "title": "MISSION 089 — L'ORGANISATION D'UN ATELIER DE MÉCANIQUE OU DE MENUISERIE",
-    "category": "SYSTEMS",
-    "mission": "Observe le tableau d'outils avec les silhouettes dessinées à l'emplacement de chaque clé.",
-    "cues": [
-      "Place unique pour chaque outil",
-      "Visibilité immédiate du manque",
-      "Zéro temps de recherche"
-    ],
-    "reflection": "L'ordre spatial élimine-t-il la fatigue de décision ?",
-    "difficulty": 4,
-    "recommendedContext": "Atelier"
-  },
-  {
-    "id": 90,
-    "title": "MISSION 090 — LE SYSTÈME DE RÉSERVATION DE VÉLOS EN LIBRE-SERVICE",
-    "category": "SYSTEMS",
-    "mission": "Regarde la borne, le cadenas électronique et l'application mobile.",
-    "cues": [
-      "Friction de déverrouillage",
-      "Disponibilité affichée",
-      "Feedback sonore à l'accrochage"
-    ],
-    "reflection": "La simplicité du système encourage-t-elle le report modal ?",
-    "difficulty": 4,
-    "recommendedContext": "Station de vélos"
-  },
-  {
-    "id": 91,
-    "title": "MISSION 091 — LA DISPOSITION DES TABLES DANS UNE TERRASSE DE CAFÉ",
-    "category": "SYSTEMS",
-    "mission": "Observe comment le gérant optimise le nombre de chaises tout en préservant le passage des serveurs.",
-    "cues": [
-      "Alignement serré",
-      "Allée centrale dégagée",
-      "Orientation vers le soleil"
-    ],
-    "reflection": "Le compromis économique contraint-il l'intimité des conversations ?",
-    "difficulty": 4,
-    "recommendedContext": "Terrasse"
-  },
-  {
-    "id": 92,
-    "title": "MISSION 092 — L'AMÉNAGEMENT D'UNE PHARMACIE",
-    "category": "SYSTEMS",
-    "mission": "Distingue la zone en libre-service (parapharmacie) du comptoir sur ordonnance.",
-    "cues": [
-      "Éclairage clinique blanc",
-      "Produits de confort à portée de main",
-      "Médicaments derrière le comptoir"
-    ],
-    "reflection": "La confiance médicale se construit-elle par la séparation spatiale ?",
-    "difficulty": 4,
-    "recommendedContext": "Pharmacie"
-  },
-  {
-    "id": 93,
-    "title": "MISSION 093 — LA RÉGULATION D'UN ROND-POINT ROUTIER",
-    "category": "SYSTEMS",
-    "mission": "Observe comment la priorité à gauche et la trajectoire circulaire éliminent le besoin de feux.",
-    "cues": [
-      "Auto-régulation par le flux",
-      "Ralentissement géométrique forcé",
-      "Fluidité continue"
-    ],
-    "reflection": "La contrainte de forme est-elle plus efficace que l'interdiction par signal ?",
-    "difficulty": 4,
-    "recommendedContext": "Carrefour giratoire"
-  },
-  {
-    "id": 94,
-    "title": "MISSION 094 — L'ARCHITECTURE D'UNE COUR D'ÉCOLE",
-    "category": "SYSTEMS",
-    "mission": "Observe comment l'espace est partagé entre terrain de foot central et zones calmes périphériques.",
-    "cues": [
-      "Monopolisation par les jeux de ballon",
-      "Bancs en retrait",
-      "Surveillance visuelle globale"
-    ],
-    "reflection": "La géométrie de la cour prédétermine-t-elle les dynamiques de groupe ?",
-    "difficulty": 4,
-    "recommendedContext": "École"
-  },
-  {
-    "id": 95,
-    "title": "MISSION 095 — LA DISTRIBUTION DES PRISES ÉLECTRIQUES DANS UN ESPACE DE COWORKING",
-    "category": "SYSTEMS",
-    "mission": "Compte le nombre de prises disponibles par rapport au nombre de sièges.",
-    "cues": [
-      "Prises au sol",
-      "Multiprises intégrées aux tables",
-      "Guerre silencieuse pour le branchement"
-    ],
-    "reflection": "L'énergie est-elle devenue la ressource vitale qui dicte l'installation ?",
-    "difficulty": 4,
-    "recommendedContext": "Coworking"
-  },
-  {
-    "id": 96,
-    "title": "MISSION 096 — LE SYSTÈME D'AFFICHAGE DYNAMIQUE DES ABRIBUS",
-    "category": "SYSTEMS",
-    "mission": "Regarde comment le temps d'attente est projeté en direct (minutes restantes).",
-    "cues": [
-      "Réduction de l'incertitude",
-      "Mise à jour en temps réel",
-      "Écran rétro-éclairé"
-    ],
-    "reflection": "Savoir exactement combien de temps on attend rend-il l'attente plus tolérable ?",
-    "difficulty": 4,
-    "recommendedContext": "Arrêt de bus"
-  },
-  {
-    "id": 97,
-    "title": "MISSION 097 — LA DISPOSITION DES PRODUITS DANS UNE BOULANGERIE",
-    "category": "SYSTEMS",
-    "mission": "Observe l'ordre d'apparition : pains de base, viennoiseries dorées, pâtisseries éclairées.",
-    "cues": [
-      "Attrait visuel des gâteaux",
-      "Odeur de cuisson canalisée",
-      "Rapidité du service baguette"
-    ],
-    "reflection": "Le parcours client est-il une progression du besoin vers la tentation ?",
-    "difficulty": 4,
-    "recommendedContext": "Boulangerie"
-  },
-  {
-    "id": 98,
-    "title": "MISSION 098 — LA GESTION DES FILES UNIQUES EN CAISSE",
-    "category": "SYSTEMS",
-    "mission": "Compare la file unique avec appel automatique à la caisse libre aux files multiples.",
-    "cues": [
-      "Sentiment de justice temporelle",
-      "Baisse de l'anxiété de choisir la mauvaise file",
-      "Fluidité globale"
-    ],
-    "reflection": "Le design du temps d'attente modifie-t-il la perception de justice ?",
-    "difficulty": 4,
-    "recommendedContext": "Grand magasin"
-  },
-  {
-    "id": 99,
-    "title": "MISSION 099 — L'ORGANISATION D'UN LABORATOIRE DE RECHERCHE",
-    "category": "SYSTEMS",
-    "mission": "Observe la stricte séparation entre paillasses humides, microscopes et bureaux informatiques.",
-    "cues": [
-      "Protocoles de propreté",
-      "Zonage des risques",
-      "Cheminements courts"
-    ],
-    "reflection": "La rigueur scientifique commence-t-elle par le cloisonnement spatial ?",
-    "difficulty": 4,
-    "recommendedContext": "Laboratoire"
-  },
-  {
-    "id": 100,
-    "title": "MISSION 100 — LA STRUCTURE D'UN TRIBUNAL OU D'UNE SALLE D'AUDIENCE",
-    "category": "SYSTEMS",
-    "mission": "Analyse la surélévation des magistrats, la position du prévenu et l'espace du public.",
-    "cues": [
-      "Mise en scène de l'autorité",
-      "Acoustique imposante",
-      "Séparation physique stricte"
-    ],
-    "reflection": "L'architecture juridique sert-elle à matérialiser la solennité de la loi ?",
-    "difficulty": 4,
-    "recommendedContext": "Palais de justice"
-  },
-  {
-    "id": 101,
-    "title": "MISSION 101 — L'INTENTION DERRIÈRE L'ÉCLAIRAGE TAMISÉ D'UN RESTAURANT",
-    "category": "HYPOTHESES",
-    "mission": "Formule une hypothèse sur pourquoi les tables sont éclairées par une seule bougie ou lampe basse.",
-    "cues": [
-      "Intimité visuelle",
-      "Ralentissement de la consommation",
-      "Masquage des détails de salle"
-    ],
-    "reflection": "La pénombre invite-t-elle à prolonger le séjour et augmenter l'addition ?",
-    "difficulty": 5,
-    "recommendedContext": "Restaurant gastronomique"
-  },
-  {
-    "id": 102,
-    "title": "MISSION 102 — LA RAISON DE L'ABSENCE D'HORLOGES DANS LES CASINOS ET CENTRES COMMERCIAUX",
-    "category": "HYPOTHESES",
-    "mission": "Déduis pourquoi aucune heure n'est affichée sur les murs de ces espaces.",
-    "cues": [
-      "Perte de repère temporel",
-      "Immersion continue",
-      "Suppression de la culpabilité"
-    ],
-    "reflection": "L'abolition du temps est-elle le premier outil de captation attentionnelle ?",
-    "difficulty": 5,
-    "recommendedContext": "Centre commercial / Casino"
-  },
-  {
-    "id": 103,
-    "title": "MISSION 103 — L'INTENTION DE L'INTERFACE D'UN DISTRIBUTEUR DE BILLETS",
-    "category": "HYPOTHESES",
-    "mission": "Analyse pourquoi la machine te rend ta carte bancaire AVANT de distribuer les billets.",
-    "cues": [
-      "Élimination de l'oubli de carte",
-      "Priorité de sécurité",
-      "Séquençage ergonomique"
-    ],
-    "reflection": "Comment l'ingénieur protège-t-il l'utilisateur distrait contre lui-même ?",
-    "difficulty": 5,
-    "recommendedContext": "Distributeur bancaire"
-  },
-  {
-    "id": 104,
-    "title": "MISSION 104 — L'HYPOTHÈSE DES BANCS PUBLICS ANTI-SDF",
-    "category": "HYPOTHESES",
-    "mission": "Observe la présence d'accoudoirs intermédiaires ou d'inclinaisons sur les bancs urbains.",
-    "cues": [
-      "Empêcher la position allongée",
-      "Contrôle social invisible",
-      "Design hostile"
-    ],
-    "reflection": "L'aménagement urbain peut-il exclure certaines populations sans texte de loi ?",
-    "difficulty": 5,
-    "recommendedContext": "Rue / Square"
-  },
-  {
-    "id": 105,
-    "title": "MISSION 105 — LA LOGIQUE DES PRIX EN 0,99 €",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi un prix se termine-t-il par 99 centimes plutôt qu'un chiffre rond ?",
-    "cues": [
-      "Biais du chiffre de gauche",
-      "Impression de précision comptable",
-      "Contrainte de rendre la monnaie"
-    ],
-    "reflection": "Notre cerveau traite-t-il les nombres de manière asymétrique ?",
-    "difficulty": 5,
-    "recommendedContext": "Commerce"
-  },
-  {
-    "id": 106,
-    "title": "MISSION 106 — L'INTENTION DU SILENCE DANS LES MUSÉES D'ART SACRÉ",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi le silence se fait-il naturellement sans qu'aucun gardien n'intervienne ?",
-    "cues": [
-      "Hauteur sous plafond",
-      "Écho monumental",
-      "Pression normative implicite"
-    ],
-    "reflection": "Le volume architectural peut-il imposer une discipline auditive spontanée ?",
-    "difficulty": 5,
-    "recommendedContext": "Église / Temple"
-  },
-  {
-    "id": 107,
-    "title": "MISSION 107 — L'HYPOTHÈSE DU PACKAGING ÉPURÉ DES PRODUITS HAUT DE GAMME",
-    "category": "HYPOTHESES",
-    "mission": "Compare une boîte de smartphone premium à un jouet bon marché surchargé d'inscriptions.",
-    "cues": [
-      "Minimalisme = Confiance",
-      "Rareté = Valeur",
-      "Silence visuel"
-    ],
-    "reflection": "Le luxe se définit-il par la soustraction de bruit publicitaire ?",
-    "difficulty": 5,
-    "recommendedContext": "Boutique de design"
-  },
-  {
-    "id": 108,
-    "title": "MISSION 108 — LA STRATÉGIE DE LA MUSIQUE D'AMBIANCE À TEMPO LENT",
-    "category": "HYPOTHESES",
-    "mission": "Observe le type de musique diffusée dans un magasin de vêtements chic.",
-    "cues": [
-      "60 battements par minute",
-      "Pas de paroles agressives",
-      "Baisse du rythme cardiaque"
-    ],
-    "reflection": "La musique sert-elle à ralentir la cadence de marche des clients ?",
-    "difficulty": 5,
-    "recommendedContext": "Magasin"
-  },
-  {
-    "id": 109,
-    "title": "MISSION 109 — L'INTENTION DERRIÈRE LES MIROIRS DANS LES ASCENSEURS",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi installe-t-on systématiquement des miroirs dans les cabines d'ascenseur ?",
-    "cues": [
-      "Sensation d'espace agrandi",
-      "Occupation de l'attention par son propre reflet",
-      "Baisse perçue du temps de trajet"
-    ],
-    "reflection": "Le miroir est-il un anesthésiant de l'impatience ?",
-    "difficulty": 5,
-    "recommendedContext": "Ascenseur"
-  },
-  {
-    "id": 110,
-    "title": "MISSION 110 — LA LOGIQUE D'AGENCEMENT DES APPLICATIONS SUR UN SMARTPHONE NEUF",
-    "category": "HYPOTHESES",
-    "mission": "Regarde quelles applications sont pré-installées sur la page d'accueil d'usine.",
-    "cues": [
-      "Services payants du fabricant",
-      "Réseaux partenaires",
-      "Applications à forte rétention"
-    ],
-    "reflection": "L'écran d'accueil par défaut est-il le mètre carré le plus cher du monde ?",
-    "difficulty": 5,
-    "recommendedContext": "Téléphone"
-  },
-  {
-    "id": 111,
-    "title": "MISSION 111 — L'HYPOTHÈSE DES ZONES PIÉTONNES PAVÉES PLUTÔT QUE GOUDRONNÉES",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi pose-t-on des pavés irréguliers dans les centres-villes historiques ?",
-    "cues": [
-      "Ralentissement des véhicules",
-      "Sensibilité tactile sous la semelle",
-      "Caractère patrimonial"
-    ],
-    "reflection": "La texture du sol change-t-elle notre façon d'habiter la ville ?",
-    "difficulty": 5,
-    "recommendedContext": "Centre historique"
-  },
-  {
-    "id": 112,
-    "title": "MISSION 112 — L'INTENTION DU BIP SONORE AUX BARRIÈRES DE PÉAGE OU MÉTRO",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi le signal sonore est-il distinctement aigu et court ?",
-    "cues": [
-      "Confirmation sans regarder l'écran",
-      "Libération du flux",
-      "Clôture de la transaction"
-    ],
-    "reflection": "Le feedback sonore remplace-t-il la vérification visuelle ?",
-    "difficulty": 5,
-    "recommendedContext": "Péage / Portillon"
-  },
-  {
-    "id": 113,
-    "title": "MISSION 113 — LA LOGIQUE DES ESCALIERS MONUMENTAUX DEVANT LES PALAIS DE JUSTICE",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi doit-on gravir vingt marches pour entrer dans un bâtiment institutionnel ?",
-    "cues": [
-      "Élévation symbolique",
-      "Effort physique requis",
-      "Impression de petitesse"
-    ],
-    "reflection": "L'escalier prépare-t-il psychologiquement à la soumission à l'institution ?",
-    "difficulty": 5,
-    "recommendedContext": "Tribunal / Mairie"
-  },
-  {
-    "id": 114,
-    "title": "MISSION 114 — L'HYPOTHÈSE DE LA LUMIÈRE JAUNE CHAUDE DANS LES CAFÉS",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi les cafés évitent-ils les néons blancs froids des bureaux ?",
-    "cues": [
-      "Simulation du feu de camp",
-      "Sécrétion de mélatonine",
-      "Sentiment de cocon protecteur"
-    ],
-    "reflection": "La température de couleur commande-t-elle notre sentiment de sécurité ?",
-    "difficulty": 5,
-    "recommendedContext": "Café"
-  },
-  {
-    "id": 115,
-    "title": "MISSION 115 — L'INTENTION DES ODEURS DIFFUSÉES DANS LES HÔTELS DE LUXE",
-    "category": "HYPOTHESES",
-    "mission": "Remarque le parfum d'ambiance discret à la réception d'un grand hôtel.",
-    "cues": [
-      "Signature olfactive unique",
-      "Mémoire émotionnelle immédiate",
-      "Sensation de propreté absolue"
-    ],
-    "reflection": "L'odorat est-il le sens le plus direct pour ancrer un souvenir ?",
-    "difficulty": 5,
-    "recommendedContext": "Hôtel"
-  },
-  {
-    "id": 116,
-    "title": "MISSION 116 — LA LOGIQUE DES NOTIFICATIONS PUSH 'X A AIMÉ VOTRE PUBLICATION'",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi la plateforme t'avertit-elle d'un like plutôt que d'attendre que tu viennes voir ?",
-    "cues": [
-      "Déclencheur externe",
-      "Validation sociale instantanée",
-      "Réactivation du réflexe"
-    ],
-    "reflection": "La notification est-elle une invitation ou un hameçon cognitif ?",
-    "difficulty": 5,
-    "recommendedContext": "Réseau social"
-  },
-  {
-    "id": 117,
-    "title": "MISSION 117 — L'HYPOTHÈSE DES BUREAUX ASSIS-DEBOUT DANS LES ENTREPRISES MODERNES",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi remplace-t-on les chaises ergonomiques par des postes modulables ?",
-    "cues": [
-      "Changement postural = vigilance accrue",
-      "Baisse de la sédentarité",
-      "Image d'agilité"
-    ],
-    "reflection": "Le mouvement physique est-il le carburant sous-estimé de l'attention ?",
-    "difficulty": 5,
-    "recommendedContext": "Poste de travail"
-  },
-  {
-    "id": 118,
-    "title": "MISSION 118 — L'INTENTION DERRIÈRE LES FORMATS COURTS (REELS, TIKTOK)",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi la vidéo fait-elle 15 secondes plutôt que 5 minutes ?",
-    "cues": [
-      "Élimination de la friction d'engagement",
-      "Récompense variable accélérée",
-      "Baisse de l'effort attentionnel"
-    ],
-    "reflection": "Le format court est-il optimisé pour la capture sans réflexion ?",
-    "difficulty": 5,
-    "recommendedContext": "Application"
-  },
-  {
-    "id": 119,
-    "title": "MISSION 119 — LA LOGIQUE DES SIÈGES INCLINÉS ET DURS DANS LES FAST-FOODS",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi les chaises de restauration rapide sont-elles moins confortables que celles des brasseries ?",
-    "cues": [
-      "Rotation rapide des tables",
-      "Consommation express",
-      "Éviter que les gens s'attardent"
-    ],
-    "reflection": "Le mobilier peut-il être programmé pour écourter la présence ?",
-    "difficulty": 5,
-    "recommendedContext": "Fast-food"
-  },
-  {
-    "id": 120,
-    "title": "MISSION 120 — L'HYPOTHÈSE DES COURS DE RÉCRÉATION AVEC ZONES DE CALME VÉGÉTALISÉES",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi remplace-t-on l'asphalte noir par des copeaux de bois et des bosquets ?",
-    "cues": [
-      "Baisse des conflits et cris",
-      "Apaisement sensoriel",
-      "Diversification des jeux"
-    ],
-    "reflection": "L'environnement naturel pacifie-t-il les interactions spontanées ?",
-    "difficulty": 5,
-    "recommendedContext": "Espace scolaire"
-  },
-  {
-    "id": 121,
-    "title": "MISSION 121 — L'INTENTION DES PASTILLES ROUGES DE NOTIFICATION",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi le rouge a-t-il été choisi pour les badges plutôt que le bleu ou le vert ?",
-    "cues": [
-      "Couleur du danger et de l'urgence",
-      "Capture attentionnelle involontaire",
-      "Biais de complétion à effacer"
-    ],
-    "reflection": "Le rouge est-il une alarme biologique détournée pour le profit ?",
-    "difficulty": 5,
-    "recommendedContext": "Interface"
-  },
-  {
-    "id": 122,
-    "title": "MISSION 122 — LA LOGIQUE DES CHARIOTS DE SUPERMARCHÉ SURDIMENSIONNÉS",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi les caddies modernes sont-ils deux fois plus grands qu'il y a quarante ans ?",
-    "cues": [
-      "Effet de vide perçu",
-      "Tendance à remplir l'espace disponible",
-      "Baisse de la conscience de volume"
-    ],
-    "reflection": "Le contenant dicte-t-il la taille du contenu ?",
-    "difficulty": 5,
-    "recommendedContext": "Magasin"
-  },
-  {
-    "id": 123,
-    "title": "MISSION 123 — L'HYPOTHÈSE DE L'ISOLATION PHONIQUE DANS LES VOITURES MODERNES",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi les constructeurs éliminent-ils tout bruit de moteur dans l'habitacle ?",
-    "cues": [
-      "Création d'un salon roulant",
-      "Baisse de la sensation de vitesse",
-      "Augmentation du sentiment de toute-puissance"
-    ],
-    "reflection": "Le silence mécanique déconnecte-t-il le conducteur de la réalité physique ?",
-    "difficulty": 5,
-    "recommendedContext": "Voiture"
-  },
-  {
-    "id": 124,
-    "title": "MISSION 124 — L'INTENTION DES BOUTONS 'COMMANDER EN 1 CLIC'",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi supprime-t-on l'étape du panier et de la récapitulation ?",
-    "cues": [
-      "Élimination du remords de l'acheteur",
-      "Zéro temps de réflexion",
-      "Impulsion pure"
-    ],
-    "reflection": "La friction d'achat est-elle la seule gardienne de notre budget ?",
-    "difficulty": 5,
-    "recommendedContext": "Site e-commerce"
-  },
-  {
-    "id": 125,
-    "title": "MISSION 125 — LA LOGIQUE DES BIBLIOTHÈQUES OUVERTES 24H/24",
-    "category": "HYPOTHESES",
-    "mission": "Pourquoi l'accès nocturne est-il plébiscité par certains profils d'étudiants ?",
-    "cues": [
-      "Absence totale de sollicitations extérieures",
-      "Sanctuaire de silence absolu",
-      "Solidarité de l'effort nocturne"
-    ],
-    "reflection": "La nuit offre-t-elle la dernière forteresse contre la dispersion moderne ?",
-    "difficulty": 5,
-    "recommendedContext": "Campus universitaire"
+    "reflection": "Quelle donnée veux-tu continuer à suivre ?",
+    "difficulty": 2,
+    "recommendedContext": "Bureau"
   }
 ]

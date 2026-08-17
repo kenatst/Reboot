@@ -299,47 +299,53 @@ def run_simulation():
             "The REBOOT V3 Content Intelligence Suite provides a comprehensive, scientifically rigorous, and personalized 90-day Attention Operating System in French.\n\n"
         )
         f.write("## Library Counts & Conformance\n\n")
+        counts = {name: len(load_json(name)) for name in [
+            "daily_protocol", "micro_insights", "micro_lessons", "flow_lessons",
+            "fuel_lessons", "environment_interventions", "experiments", "missions",
+            "void_prompts", "readings", "learnings", "checkpoints", "coaching_messages",
+            "ContentEvidence",
+        ]}
         f.write(
-            "- **Daily Protocol Days**: 90 sequential days with individual identities and 6 emotional arcs.\n"
+            f"- **Daily Protocol Days**: {counts['daily_protocol']} sequential days, each with unique setup, challenge, reflection and completion copy.\n"
         )
         f.write(
-            "- **Micro Insights**: 90 unique sharp 2-4 sentence insights (no modulo loops).\n"
+            f"- **Micro Insights**: {counts['micro_insights']} unique daily insights (no modulo loops).\n"
         )
         f.write(
-            "- **Micro Lessons**: 125 lessons (200-350w) across 7 domains.\n"
+            f"- **Micro Lessons**: {counts['micro_lessons']} unique lessons (hook, explanation, example, action).\n"
         )
         f.write(
-            "- **Flow Lessons**: 32 lessons (450-750w) across 6 structured modules.\n"
+            f"- **Flow Lessons**: {counts['flow_lessons']} concept-specific lessons (no shared template).\n"
         )
         f.write(
-            "- **Fuel Lessons**: 26 recovery & biology lessons (340-550w) across 9 domains.\n"
+            f"- **Fuel Lessons**: {counts['fuel_lessons']} cautious, non-medical energy lessons.\n"
         )
         f.write(
-            "- **Environment Interventions**: 105 interventions organized in difficulty ladders.\n"
+            f"- **Environment Interventions**: {counts['environment_interventions']} interventions organized in difficulty ladders.\n"
         )
         f.write(
-            "- **Behavior Experiments**: 65 templates across 15 categories with explicit hypotheses and metrics.\n"
+            f"- **Behavior Experiments**: {counts['experiments']} templates with explicit hypotheses and metrics.\n"
         )
         f.write(
-            "- **Observation Missions**: 125 missions across Levels 1 to 5.\n"
+            f"- **Observation Missions**: {counts['missions']} distinct observation missions.\n"
         )
         f.write(
-            "- **Void / Nothing Prompts**: 80 contextual exercises across Levels 1 to 8.\n"
+            f"- **Void / Nothing Prompts**: {counts['void_prompts']} contextual exercises.\n"
         )
         f.write(
-            "- **Readings**: 125 original readings (36 Short 500w, 52 Medium 880w, 37 Deep 1450w) across 12 disciplines.\n"
+            f"- **Readings**: {counts['readings']} standalone original readings across 8 disciplines (no forced attention morals).\n"
         )
         f.write(
-            "- **Learning Modules**: 85 modules (950w) with structured teach-back prompts.\n"
+            f"- **Learning Modules**: {counts['learnings']} subject-specific modules with teach-back prompts.\n"
         )
         f.write(
-            "- **Weekly Checkpoints**: 13 structured reviews with priority adjustment.\n"
+            f"- **Weekly Checkpoints**: {counts['checkpoints']} structured weekly reviews.\n"
         )
         f.write(
-            "- **Coaching Messages**: 216 contextual sharp phrases across 12 operational categories.\n"
+            f"- **Coaching Messages**: {counts['coaching_messages']} contextual coaching phrases across 12 operational categories.\n"
         )
         f.write(
-            "- **Content Evidence**: 160 verified scientific records and citations.\n\n"
+            f"- **Content Evidence**: {counts['ContentEvidence']} canonical verified records (one source = one record, real DOIs only).\n\n"
         )
         f.write("## Persona Simulation Results\n\n")
         f.write(
@@ -347,88 +353,60 @@ def run_simulation():
         )
 
     # 3. WRITE QA/ContentSamples/ (Day 1, 7, 18A, 18B, 40, 61, 75, Day 90 manual)
+    # 3. WRITE QA/ContentSamples/ from the actual authored content (no hardcoded prose).
+    protocol = {d["day"]: d for d in load_json("daily_protocol")}
+    insights = {i["day"]: i["text"] for i in load_json("micro_insights")}
+
+    def day_sample(day):
+        d = protocol[day]
+        instr = "\n".join(f"{i+1}. {step}" for i, step in enumerate(d["instructions"]))
+        return (
+            f"# {d['title']}\n\n"
+            f"## Identité\n"
+            f"- Phase: {d['phase']} — Mode: {d['mode'].upper()} ({d['duration']} minutes)\n"
+            f"- Intention: {d['intention']}\n\n"
+            f"## Pourquoi aujourd'hui\n"
+            f"{d['whyToday']}\n\n"
+            f"## Setup\n"
+            f"{d['setup']}\n\n"
+            f"## Instructions\n"
+            f"{instr}\n\n"
+            f"## Défi\n{d['challenge']}\n\n"
+            f"## Réflexion\n{d['reflection']}\n\n"
+            f"## Micro Insight du Jour\n> {insights.get(day, '')}\n"
+        )
+
     samples = {
-        "Day_01_Sample.md": (
-            "# DAY 01 — LIGNE DE BASE\n\n"
-            "## Identité\n"
-            "- Phase: 01 (Calibrage)\n"
-            "- Mode: STAY (15 minutes)\n"
-            "- Intention: Mesurer ta durée naturelle sans forcer.\n\n"
-            "## Setup\n"
-            "Bureau propre, téléphone en vue mais non touché.\n\n"
-            "## Instructions\n"
-            "1. Élimine toute distraction potentielle de ton champ visuel et auditif.\n"
-            "2. Pose l'intention exacte de la session avant de lancer le minuteur.\n"
-            "3. En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche.\n\n"
-            "## Micro Insight du Jour\n"
-            "> L'attention n'est pas une réserve d'énergie magique, c'est un mécanisme de filtrage. Ce que tu ne laisses pas entrer n'a pas besoin d'être combattu.\n"
-        ),
-        "Day_07_Sample.md": (
-            "# DAY 07 — CARTE INITIALE\n\n"
-            "## Identité\n"
-            "- Phase: 01 (Calibrage)\n"
-            "- Mode: STAY (20 minutes)\n"
-            "- Intention: Clôture de la semaine de calibrage : test de maintien.\n\n"
-            "## Synthèse de Calibration\n"
-            "Pas de faux score. REBOOT cartographie ton attention réelle : point de rupture médian, distracteur principal et tolérance au calme.\n"
-        ),
-        "Day_18A_Scroll_Sample.md": (
-            "# DAY 18A — LE MUR DES 10 MINUTES (Branche Scroll)\n\n"
-            "## Prescription Adaptée\n"
-            "- Mode: STAY (25 minutes)\n"
-            "- Règle d'environnement: Téléphone dans le tiroir fermé.\n"
-            "- Focus: Traverser la tension d'impulsion à la 10e minute sans déverrouiller l'écran.\n"
-        ),
-        "Day_18B_Study_Sample.md": (
-            "# DAY 18B — LE MUR DES 10 MINUTES (Branche Études)\n\n"
-            "## Prescription Adaptée\n"
-            "- Mode: RECALL (25 minutes)\n"
-            "- Règle d'environnement: Zéro onglet de recherche pendant la rédaction.\n"
-            "- Focus: Reconstruire le cours sans consulter les notes avant d'avoir posé 3 points cardinaux.\n"
-        ),
-        "Day_40_Sample.md": (
-            "# DAY 40 — LE MI-PARCOURS\n\n"
-            "## Identité\n"
-            "- Phase: 02 (Stabilisation)\n"
-            "- Mode: STAY (35 minutes)\n"
-            "- Intention: Valider la stabilité : 35 min sans la moindre bascule.\n"
-        ),
-        "Day_61_Sample.md": (
-            "# DAY 61 — CONDITIONS DE FLOW\n\n"
-            "## Identité\n"
-            "- Phase: 03 (Flow Lab)\n"
-            "- Mode: STAY / FLOW (45 minutes)\n"
-            "- Intention: Lancer un bloc Flow Lab avec tâche découpée et fin claire.\n"
-        ),
-        "Day_75_Sample.md": (
-            "# DAY 75 — LES CONDITIONS VALIDÉES\n\n"
-            "## Identité\n"
-            "- Phase: 03 (Clôture Flow)\n"
-            "- Mode: STAY (45 minutes)\n"
-            "- Intention: Toutes les conditions réunies : silence, fin, feedback.\n"
-        ),
+        "Day_01_Sample.md": day_sample(1),
+        "Day_07_Sample.md": day_sample(7),
+        "Day_18A_Scroll_Sample.md": day_sample(18),
+        "Day_18B_Study_Sample.md": day_sample(22),
+        "Day_40_Sample.md": day_sample(40),
+        "Day_61_Sample.md": day_sample(61),
+        "Day_75_Sample.md": day_sample(75),
         "Day_90_Operating_Manual_Sample.md": (
             "# DAY 90 — MANUEL OPÉRATOIRE D'ATTENTION PERSONNEL\n\n"
-            "## Seize Dimensions Mesurées\n"
-            "1. Ce qui casse ton attention [SIGNAL FORT]\n"
-            "2. Tes signaux d'alerte précoces [SIGNAL FORT]\n"
-            "3. Ta plage de focus optimale [SIGNAL FORT : 35-45 min]\n"
-            "4. Ton modèle du premier décrochage [SIGNAL FORT : 14 min]\n"
-            "5. Ton modèle de retour après distraction [SIGNAL FORT : <60s]\n"
-            "6. Tes meilleurs environnements [SIGNAL FORT : Bureau épuré]\n"
-            "7. Tes règles téléphone [SIGNAL FORT]\n"
-            "8. Tes règles numériques [SIGNAL PRÉCOCE]\n"
-            "9. Tes conditions de flow [SIGNAL FORT]\n"
-            "10. Ta zone de défi optimale [SIGNAL FORT]\n"
-            "11. Comment tu apprends le mieux [SIGNAL FORT : LIS · FERME · RECONSTRUIS]\n"
-            "12. Tes cycles d'énergie [SIGNAL FORT : Matin 08h-11h]\n"
-            "13. Ce qui a fonctionné pour toi [SIGNAL FORT]\n"
-            "14. Ce qui n'a pas marché [SIGNAL PRÉCOCE]\n"
-            "15. Ce qui reste encore à mesurer [DONNÉES INSUFFISANTES]\n"
-            "16. Ton mode de croisière post-jour 90 [CORE MODE VALIDÉ]\n"
+            "## Seize Dimensions (sections générées par AttentionOperatingManualEngine)\n"
+            "Chaque section distingue : MESURÉ / PRÉFÉRENCE DÉCLARÉE / RECOMMANDATION GÉNÉRALE / DONNÉES INSUFFISANTES.\n"
+            "Aucun chiffre personnel n'est affiché sans calcul à partir des sessions réelles.\n\n"
+            "1. Ce qui casse ton attention — mesuré si des bascules existent, sinon DONNÉES INSUFFISANTES\n"
+            "2. Tes signaux d'alerte précoces — médiane des latences uniquement\n"
+            "3. Ta plage de focus optimale — calculée sur les sessions STAY (>= 3), sinon UNKNOWN\n"
+            "4. Ton modèle du premier décrochage — calculé sur les latences (>= 2), sinon UNKNOWN\n"
+            "5. Ton modèle de retour — calculé sur les retours observés, sinon UNKNOWN\n"
+            "6. Tes meilleurs environnements — interventions vérifiées + préférence déclarée\n"
+            "7. Tes règles téléphone — règles actives enregistrées, aucune comparaison « 3× »\n"
+            "8. Tes règles numériques — auto-déclaré, aucune mesure directe\n"
+            "9. Tes conditions de flow — nombre de sessions Flow Lab, sinon UNKNOWN\n"
+            "10. Ta zone de défi optimale — évaluations de difficulté (>= 5), sinon UNKNOWN\n"
+            "11. Comment tu apprends le mieux — sessions de restitution + évaluations\n"
+            "12. Tes cycles d'énergie — check-ins d'énergie + préférence déclarée\n"
+            "13. Ce qui a fonctionné — expériences terminées avec résultat positif\n"
+            "14. Ce qui n'a pas marché — expériences abandonnées ou négatives\n"
+            "15. Ce qui reste à mesurer — zones d'incertitude explicites\n"
+            "16. Ton mode de croisière — choix de design, pas un verdict sur ta santé\n"
         ),
     }
-
     for fname, content in samples.items():
         with open(os.path.join(SAMPLES, fname), "w", encoding="utf-8") as f:
             f.write(content)

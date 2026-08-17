@@ -1,17 +1,25 @@
-# DAY 01 — LIGNE DE BASE
+# JOUR 001 — LIGNE DE BASE
 
 ## Identité
-- Phase: 01 (Calibrage)
-- Mode: STAY (15 minutes)
-- Intention: Mesurer ta durée naturelle sans forcer.
+- Phase: 1 — Mode: STAY (15 minutes)
+- Intention: Tenir 15 minutes sur une seule tâche sans bascule.
+
+## Pourquoi aujourd'hui
+Première mesure : ta durée naturelle de maintien.
 
 ## Setup
-Bureau propre, téléphone en vue mais non touché.
+Bureau épuré, téléphone dans une autre pièce, minuteur prêt.
 
 ## Instructions
-1. Élimine toute distraction potentielle de ton champ visuel et auditif.
-2. Pose l'intention exacte de la session avant de lancer le minuteur.
-3. En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche.
+1. Choisis une tâche unique et définis sa fin en une phrase.
+2. Lance le minuteur et commence immédiatement.
+3. En cas d'envie de basculer, note-la mentalement sans agir.
+
+## Défi
+Terminer les 15 minutes sans aucune bascule, même brève.
+
+## Réflexion
+À quelle minute la première tension est-elle apparue ?
 
 ## Micro Insight du Jour
-> L'attention n'est pas une réserve d'énergie magique, c'est un mécanisme de filtrage. Ce que tu ne laisses pas entrer n'a pas besoin d'être combattu.
+> La ligne de base se mesure, elle ne se juge pas : aujourd'hui, tout est information.

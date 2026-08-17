@@ -227,21 +227,21 @@ struct OnboardingDiagnosisView: View {
         case "scroll_moments": return state.triggerContext
         case "work_type": return state.workType
         case "work_breaker": return state.workBreaker
-        case "work_capacity": return state.capacityBucket
+        case "work_capacity": return state.capacityBucket ?? ""
         case "study_purpose": return state.studyPurpose
         case "study_bottleneck": return state.studyBottleneck
         case "study_explain": return state.canExplainCourse
-        case "study_capacity": return state.capacityBucket
+        case "study_capacity": return state.capacityBucket ?? ""
         case "reading_target": return state.readingTarget
         case "reading_mode": return state.readingFailureMode
-        case "reading_ten_pages": return state.readsTenPages
+        case "reading_ten_pages": return state.readsTenPages ?? ""
         case "focus_breaker": return state.primaryDistractor
-        case "focus_capacity": return state.capacityBucket
-        case "env_phone": return state.phoneLocation
-        case "env_notifs": return state.notifications
-        case "env_tabs": return state.tabs
-        case "energy_window": return state.bestWindow
-        case "energy_sleep": return state.sleep
+        case "focus_capacity": return state.capacityBucket ?? ""
+        case "env_phone": return state.phoneLocation ?? ""
+        case "env_notifs": return state.notifications ?? ""
+        case "env_tabs": return state.tabs ?? ""
+        case "energy_window": return state.bestWindow ?? ""
+        case "energy_sleep": return state.sleep ?? ""
         default: return ""
         }
     }
@@ -329,7 +329,7 @@ struct OnboardingDiagnosisView: View {
 
     private func getSliderSelection(_ id: String) -> Int {
         switch id {
-        case "return_diff": return state.returnDifficulty
+        case "return_diff": return state.returnDifficulty ?? 0
         default: return 3
         }
     }
@@ -346,7 +346,7 @@ struct OnboardingDiagnosisView: View {
         profile.goalsRaw = state.selectedGoals
         profile.primaryGoal = state.primaryGoal.isEmpty ? (state.selectedGoals.first ?? "RETROUVER DE LA CONCENTRATION") : state.primaryGoal
         profile.goalBranch = DiagnosisQuestionEngine.determineBranch(primaryGoal: profile.primaryGoal)
-        profile.primaryDistractor = !state.primaryDistractor.isEmpty ? state.primaryDistractor : (state.workBreaker.isEmpty ? "Téléphone" : state.workBreaker)
+        profile.primaryDistractor = state.primaryDistractor.isEmpty ? state.workBreaker : state.primaryDistractor
         profile.distractorTriggerContext = state.triggerContext
         profile.desiredOutcome = state.desiredOutcome
         profile.workType = state.workType
@@ -369,13 +369,7 @@ struct OnboardingDiagnosisView: View {
         profile.openTabsBucket = state.tabs
         profile.bestWindow = state.bestWindow
         profile.typicalSleep = state.sleep
-        profile.currentEnergy = state.energy
-        profile.caffeine = state.caffeine
         try? modelContext.save()
-
-        AdaptiveRebootEngineDriver.recordEnergyCheckIn(
-            energy: state.energy, sleep: state.sleep, caffeine: state.caffeine, window: state.bestWindow, context: modelContext
-        )
     }
 
     // Starting Map Output
@@ -399,11 +393,14 @@ struct OnboardingDiagnosisView: View {
 
                 VStack(spacing: 12) {
                     summaryRow("OBJECTIF PRINCIPAL", state.primaryGoal.isEmpty ? (state.selectedGoals.first ?? "CONCENTRATION") : state.primaryGoal)
-                    summaryRow("BRISURE PRINCIPALE", !state.primaryDistractor.isEmpty ? state.primaryDistractor : (!state.workBreaker.isEmpty ? state.workBreaker : "TÉLÉPHONE"))
-                    summaryRow("FENÊTRE ACTUELLE", "\(state.capacityBucket) MIN")
+                    summaryRow("BRISURE PRINCIPALE", !state.primaryDistractor.isEmpty ? state.primaryDistractor : (!state.workBreaker.isEmpty ? state.workBreaker : "—"))
+                    summaryRow("FENÊTRE ACTUELLE", state.capacityBucket.map { "\($0) MIN" } ?? "—")
                     summaryRow("OBSTACLE LIKELY", determineBottleneck())
-                    summaryRow("ABSORPTION CONNUE", state.flowActivities.first ?? "EN COURS")
-                    summaryRow("ENVIRONNEMENT", "\(state.phoneLocation.uppercased()) · \(state.notifications.uppercased())")
+                    summaryRow("ABSORPTION CONNUE", state.flowActivities.first ?? "À MESURER")
+                    summaryRow("ENVIRONNEMENT", {
+                        let value = [state.phoneLocation, state.notifications].compactMap { $0 }.joined(separator: " · ").uppercased()
+                        return value.isEmpty ? "—" : value
+                    }())
                     summaryRow("STATUT", "CALIBRATION (JOURS 01–07)")
                 }
                 .padding(18)
@@ -452,10 +449,10 @@ struct OnboardingDiagnosisView: View {
             return "RÉFLEXE DE VÉRIFICATION"
         }
         if state.goalBranch == "work" {
-            return state.workBreaker.isEmpty ? "DISPERSION NUMÉRIQUE" : state.workBreaker.uppercased()
+            return state.workBreaker.isEmpty ? "À MESURER" : state.workBreaker.uppercased()
         }
         if state.goalBranch == "reading" {
-            return state.readingFailureMode.isEmpty ? "VAGABONDAGE" : state.readingFailureMode.uppercased()
+            return state.readingFailureMode.isEmpty ? "À MESURER" : state.readingFailureMode.uppercased()
         }
         return "MAINTIEN ATTENTIONNEL"
     }

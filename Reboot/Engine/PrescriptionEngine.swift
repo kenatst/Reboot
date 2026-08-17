@@ -51,7 +51,7 @@ enum PrescriptionEngine {
         parts.append("p=\(profile?.isCalibrated == true ? 1 : 0)")
         if let profile {
             parts.append("dist=\(profile.primaryDistractor)")
-            parts.append("cap=\(profile.capacityBucket)")
+            parts.append("cap=\(profile.capacityBucket ?? "UNKNOWN")")
         }
         let recent = sessions.prefix(6)
         parts.append("s=\(recent.map { "\($0.modeRaw):\($0.actualDurationSeconds/60):\($0.switchedCount):\($0.evaluation?.overallScore ?? -1)" }.joined(separator: "|"))")

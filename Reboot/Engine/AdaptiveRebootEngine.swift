@@ -50,14 +50,22 @@ enum AttentionProfileBuilder {
         // REFLEX: self-report switching + logged interruptions/urges.
         let reflexEv = byDim["REFLEX"] ?? []
         let urgeCount = reflexEv.filter { $0.evidenceType == "interruption" || $0.evidenceType == "REFLEX_EVENT" }.count
-        let switching = Double(profile?.switchingFrequency ?? 0)
+        let switching = profile?.switchingFrequency.map(Double.init)
         let reflexValue: String
-        if switching >= 4 || (switching >= 2 && urgeCount >= 2) {
+        if let switching {
+            if switching >= 4 || (switching >= 2 && urgeCount >= 2) {
+                reflexValue = "HIGH"
+            } else if switching >= 2 || urgeCount >= 3 {
+                reflexValue = "MEDIUM"
+            } else {
+                reflexValue = "LOW"
+            }
+        } else if urgeCount >= 3 {
             reflexValue = "HIGH"
-        } else if switching >= 2 || urgeCount >= 3 {
+        } else if urgeCount >= 1 {
             reflexValue = "MEDIUM"
         } else {
-            reflexValue = "LOW"
+            reflexValue = "CALIBRATING"
         }
         let reflex = AttentionProfile.Dimension(
             name: "REFLEX",

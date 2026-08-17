@@ -37,19 +37,17 @@ enum DiagnosisQuestionEngine {
         var readingFailureMode: String = ""
 
         // Common answers
-        var capacityBucket: String = "10–20"
-        var returnDifficulty: Int = 3
-        var readsTenPages: String = "Parfois"
-        var switchingFrequency: Int = 3
+        var capacityBucket: String? = nil
+        var returnDifficulty: Int? = nil
+        var readsTenPages: String? = nil
+        var switchingFrequency: Int? = nil
         var flowActivities: [String] = []
         var flowDifferences: [String] = []
-        var phoneLocation: String = "desk"
-        var notifications: String = "many"
-        var tabs: String = "4–10"
-        var bestWindow: String = "morning"
-        var sleep: String = "7–8"
-        var energy: String = "Normal"
-        var caffeine: String = "Morning only"
+        var phoneLocation: String? = nil
+        var notifications: String? = nil
+        var tabs: String? = nil
+        var bestWindow: String? = nil
+        var sleep: String? = nil
     }
 
     // Step 0 options

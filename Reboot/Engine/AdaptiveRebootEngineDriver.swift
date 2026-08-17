@@ -166,7 +166,7 @@ enum AdaptiveRebootEngineDriver {
         PrescriptionEngine.refreshIfNeeded(forDay: action.day, context: context)
     }
 
-    static func recordEnergyCheckIn(day: Int = 1, energy: String, sleep: String, caffeine: String, window: String, context: ModelContext) {
+    static func recordEnergyCheckIn(day: Int = 1, energy: String, sleep: String?, caffeine: String?, window: String?, context: ModelContext) {
         let checkIn = DailyEnergyCheckIn(energy: energy, sleepHours: sleep, caffeine: caffeine, bestWindow: window)
         context.insert(checkIn)
         recordEnergyEvidence(checkIn: checkIn, context: context)
@@ -246,7 +246,7 @@ enum AdaptiveRebootEngineDriver {
             actualDuration: session.actualDurationSeconds / 60,
             firstSwitchSeconds: firstSwitch,
             switchCount: session.switchedCount,
-            energyContext: session.energy.map { "\($0)" } ?? "Normal",
+            energyContext: session.energy.map { "\($0)" } ?? "UNKNOWN",
             taskCategory: session.title
         )
         context.insert(observation)

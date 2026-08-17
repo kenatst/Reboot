@@ -142,9 +142,9 @@ struct TodayView: View {
         AdaptiveRebootEngineDriver.recordEnergyCheckIn(
             day: dayNumber,
             energy: level,
-            sleep: profile?.typicalSleep ?? "7–8",
-            caffeine: profile?.caffeine ?? "Morning only",
-            window: profile?.bestWindow ?? "morning",
+            sleep: profile?.typicalSleep,
+            caffeine: profile?.caffeine,
+            window: profile?.bestWindow,
             context: modelContext
         )
     }

@@ -26,7 +26,7 @@
   {
     "id": 5,
     "category": "return",
-    "text": "Chaque retour rapide réécrit le circuit du réflexe. Reviens maintenant.",
+    "text": "Chaque retour rapide rend le geste suivant un peu plus automatique. Reviens maintenant.",
     "contextCondition": "condition_return"
   },
   {
@@ -224,7 +224,7 @@
   {
     "id": 38,
     "category": "low_energy",
-    "text": "La fatigue n'est pas un manque de volonté. Protège ton cerveau avec un bloc court.",
+    "text": "La fatigue n'est pas un manque de volonté. Ajuste la charge avec un bloc court.",
     "contextCondition": "condition_low_energy"
   },
   {
@@ -260,7 +260,7 @@
   {
     "id": 44,
     "category": "low_energy",
-    "text": "Ne compense pas la fatigue par du café tardif. Respecte le rythme biologique.",
+    "text": "Ne compense pas la fatigue par du café tardif : il peut retarder ton sommeil.",
     "contextCondition": "condition_low_energy"
   },
   {
@@ -578,7 +578,7 @@
   {
     "id": 97,
     "category": "overwhelm",
-    "text": "Écris les trois premières étapes sur papier. Ton cerveau retrouvera son calme.",
+    "text": "Écris les trois premières étapes sur papier. Ton esprit s'apaise en voyant le chemin.",
     "contextCondition": "condition_overwhelm"
   },
   {
@@ -650,7 +650,7 @@
   {
     "id": 109,
     "category": "boredom",
-    "text": "L'ennui arrive ? C'est le signal que ton cerveau cherche sa dose facile. Reste.",
+    "text": "L'ennui arrive ? C'est le signal qu'une stimulation facile se propose. Reste.",
     "contextCondition": "condition_boredom"
   },
   {
@@ -692,7 +692,7 @@
   {
     "id": 116,
     "category": "boredom",
-    "text": "Dans l'ennui prolongé, ton cerveau commence enfin à relier ses propres idées.",
+    "text": "Dans l'ennui prolongé, des idées que tu ne voyais pas commencent à se relier.",
     "contextCondition": "condition_boredom"
   },
   {
@@ -830,13 +830,13 @@
   {
     "id": 139,
     "category": "recall",
-    "text": "Ne consulte pas la réponse trop vite. Laisse ton cerveau chercher pendant trente secondes.",
+    "text": "Ne consulte pas la réponse trop vite. Laisse la recherche durer trente secondes.",
     "contextCondition": "condition_recall"
   },
   {
     "id": 140,
     "category": "recall",
-    "text": "L'effet de génération : formuler toi-même la réponse ancre le souvenir 3× plus fort.",
+    "text": "L'effet de génération : formuler toi-même la réponse ancre le souvenir mieux que la relecture.",
     "contextCondition": "condition_recall"
   },
   {
@@ -1280,7 +1280,7 @@
   {
     "id": 214,
     "category": "flow",
-    "text": "Le flow est le mode de fonctionnement le plus économique pour le cerveau.",
+    "text": "Le flow survient quand les conditions de la tâche sont réglées : objectif, feedback, défi.",
     "contextCondition": "condition_flow"
   },
   {

@@ -72,14 +72,19 @@ struct CoachingMessage: Codable, Identifiable, Hashable {
 
 struct ContentEvidenceRecord: Codable, Identifiable, Hashable {
     let id: String
-    let topic: String
-    let claim: String
+    let canonicalClaim: String
     let sourceType: String
-    let citation: String
-    let url: String?
+    let authors: String
+    let title: String
+    let journalOrPublisher: String
     let year: Int?
     let confidence: String
-    let notes: String?
+    let doiOrURL: String
+    let limitations: String
+    let supportedWording: [String]
+    let unsupportedWording: [String]
+    var topic: String?
+    var notes: String?
 }
 
 // MARK: - V2 SwiftData models
@@ -109,10 +114,10 @@ final class RebootUserProfile {
 
     // Distraction & Capacity
     var checkMomentsRaw: [String]
-    var capacityBucket: String
-    var returnDifficulty: Int
-    var readsTenPages: String
-    var switchingFrequency: Int
+    var capacityBucket: String?
+    var returnDifficulty: Int?
+    var readsTenPages: String?
+    var switchingFrequency: Int?
 
     // Flow & Absorption
     var existingFlowActivitiesRaw: [String]
@@ -121,16 +126,16 @@ final class RebootUserProfile {
     var flowConditionHypothesesRaw: [String]
 
     // Environment
-    var phoneLocation: String
-    var notificationsLevel: String
-    var openTabsBucket: String
+    var phoneLocation: String?
+    var notificationsLevel: String?
+    var openTabsBucket: String?
     var usesScreenTimeLimits: String
 
     // Energy & Preferences
-    var bestWindow: String
-    var typicalSleep: String
-    var currentEnergy: String
-    var caffeine: String
+    var bestWindow: String?
+    var typicalSleep: String?
+    var currentEnergy: String?
+    var caffeine: String?
     var includeFuel: Bool
     var includeFlowLab: Bool
     var includeDigitalInterventions: Bool
@@ -153,22 +158,22 @@ final class RebootUserProfile {
         self.readingTarget = ""
         self.readingFailureMode = ""
         self.checkMomentsRaw = []
-        self.capacityBucket = "10–20"
-        self.returnDifficulty = 3
-        self.readsTenPages = ""
-        self.switchingFrequency = 3
+        self.capacityBucket = nil
+        self.returnDifficulty = nil
+        self.readsTenPages = nil
+        self.switchingFrequency = nil
         self.existingFlowActivitiesRaw = []
         self.flowDifferenceRaw = []
         self.knownAbsorptionContext = ""
         self.flowConditionHypothesesRaw = []
-        self.phoneLocation = "desk"
-        self.notificationsLevel = "many"
-        self.openTabsBucket = "4–10"
+        self.phoneLocation = nil
+        self.notificationsLevel = nil
+        self.openTabsBucket = nil
         self.usesScreenTimeLimits = "Non"
-        self.bestWindow = "morning"
-        self.typicalSleep = "7–8"
-        self.currentEnergy = "Normal"
-        self.caffeine = "Morning only"
+        self.bestWindow = nil
+        self.typicalSleep = nil
+        self.currentEnergy = nil
+        self.caffeine = nil
         self.includeFuel = true
         self.includeFlowLab = true
         self.includeDigitalInterventions = true
@@ -628,11 +633,11 @@ final class DailyEnergyCheckIn {
     var id: UUID
     var date: Date
     var energy: String
-    var sleepHours: String
-    var caffeine: String
-    var bestWindow: String
+    var sleepHours: String?
+    var caffeine: String?
+    var bestWindow: String?
 
-    init(energy: String, sleepHours: String, caffeine: String, bestWindow: String) {
+    init(energy: String, sleepHours: String?, caffeine: String?, bestWindow: String?) {
         self.id = UUID()
         self.date = .now
         self.energy = energy

@@ -1,2072 +1,1532 @@
 [
   {
-    "day": 1,
-    "phase": 1,
-    "week": 1,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
+    "day": 1, "phase": 1, "week": 1, "mode": "stay", "skill": "ATTENTION_STAY",
     "title": "JOUR 001 — LIGNE DE BASE",
-    "intention": "Maintenir une présence totale pendant 15 minutes sur l'exercice du jour.",
-    "whyToday": "Mesurer ta durée naturelle sans forcer.",
-    "duration": 15,
-    "difficulty": 1,
-    "setup": "Bureau propre, téléphone en vue mais non touché.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 001 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 2,
-    "phase": 1,
-    "week": 1,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 002 — AUDIT D'ENVIRONNEMENT",
-    "intention": "Maintenir une présence totale pendant 15 minutes sur l'exercice du jour.",
-    "whyToday": "Repérer les trois objets qui attirent ton regard.",
-    "duration": 15,
-    "difficulty": 1,
-    "setup": "Prends 10 minutes d'observation attentive autour de toi.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 1,
-    "completionMessage": "Jour 002 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 3,
-    "phase": 1,
-    "week": 1,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 003 — RESTITUTION INITIALE",
-    "intention": "Maintenir une présence totale pendant 15 minutes sur l'exercice du jour.",
-    "whyToday": "Lire un texte court, fermer le support et résumer.",
-    "duration": 15,
-    "difficulty": 1,
-    "setup": "Lecture attentive d'un texte court sans pause.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 1,
-    "completionMessage": "Jour 003 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 4,
-    "phase": 1,
-    "week": 1,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 004 — TOLÉRANCE AU CALME",
-    "intention": "Maintenir une présence totale pendant 5 minutes sur l'exercice du jour.",
-    "whyToday": "Rester assis 3 minutes sans aucun stimulus.",
-    "duration": 5,
-    "difficulty": 1,
-    "setup": "Assieds-toi confortablement, mains sur les cuisses.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 1,
-    "completionMessage": "Jour 004 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 5,
-    "phase": 1,
-    "week": 1,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 005 — FENÊTRE RÉELLE",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Travailler 20 minutes sur une seule tâche de fond.",
-    "duration": 20,
-    "difficulty": 1,
-    "setup": "Document unique ouvert, téléphone retourné.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 005 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 6,
-    "phase": 1,
-    "week": 1,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 006 — PREMIER LEVIER",
-    "intention": "Maintenir une présence totale pendant 15 minutes sur l'exercice du jour.",
-    "whyToday": "Observer la circulation et le flux des passants.",
-    "duration": 15,
-    "difficulty": 1,
-    "setup": "Poste d'observation extérieur sans écouteurs.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 2,
-    "completionMessage": "Jour 006 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 7,
-    "phase": 1,
-    "week": 1,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 007 — CARTE INITIALE",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Clôture de la semaine de calibrage : test de maintien.",
-    "duration": 20,
-    "difficulty": 1,
-    "setup": "Bilan de tes 7 premiers jours et revue des mesures.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 007 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 8,
-    "phase": 1,
-    "week": 2,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 008 — LE BADGE",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Couper les pastilles rouges et mesurer l'apaisement.",
-    "duration": 20,
-    "difficulty": 1,
-    "setup": "Téléphone configuré sans aucun badge de notification.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 008 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 9,
-    "phase": 1,
-    "week": 2,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 009 — LE FILTRE DE LECTURE",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Extraire la thèse sans relire le texte une deuxième fois.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Lis le texte une seule fois à vitesse constante.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 2,
-    "completionMessage": "Jour 009 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 10,
-    "phase": 1,
-    "week": 2,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 010 — L'ATTENTE DU MATIN",
-    "intention": "Maintenir une présence totale pendant 5 minutes sur l'exercice du jour.",
-    "whyToday": "Passer la première transition de la journée sans écran.",
-    "duration": 5,
-    "difficulty": 1,
-    "setup": "Attente active sans sollicitation.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 2,
-    "completionMessage": "Jour 010 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 11,
-    "phase": 1,
-    "week": 2,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 011 — ENSEIGNER LE PREMIER MODÈLE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Comprendre un concept et l'expliquer en trois étapes.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Étudie le module puis formule l'explication à voix haute.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 1,
-    "completionMessage": "Jour 011 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 12,
-    "phase": 1,
-    "week": 2,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 012 — TÉLÉPHONE HORS DE LA PIÈCE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Expérimenter la distance physique pendant un bloc de 25 min.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Déposer l'appareil dans une autre pièce fermée.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 012 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 13,
-    "phase": 1,
-    "week": 2,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 013 — LES CHEMINS DE DÉSIR",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Observer les traces d'usure et les raccourcis urbains.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Marche exploratoire de 15 minutes.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 3,
-    "completionMessage": "Jour 013 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 14,
-    "phase": 1,
-    "week": 2,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 014 — ARCHITECTURE D'IDÉES",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Cartographier les arguments secondaires d'un essai.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Reconstruis le plan détaillé de mémoire.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 3,
-    "completionMessage": "Jour 014 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 15,
-    "phase": 1,
-    "week": 3,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 015 — L'OBJECTIF CLAIR",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Poser par écrit le résultat exact attendu avant de démarrer.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Une fiche avec une seule phrase de fin de bloc.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 015 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 16,
-    "phase": 1,
-    "week": 3,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 016 — LE CAFÉ EN SILENCE",
-    "intention": "Maintenir une présence totale pendant 10 minutes sur l'exercice du jour.",
-    "whyToday": "Boire une boisson chaude sans aucun écran ni audio.",
-    "duration": 10,
-    "difficulty": 1,
-    "setup": "Dégustation consciente sans média.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 3,
-    "completionMessage": "Jour 016 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 17,
-    "phase": 1,
-    "week": 3,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 017 — LA STRUCTURE CAUSALE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Expliquer comment A produit B dans un modèle économique.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Isole la chaîne de cause à effet avant d'enseigner.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 2,
-    "completionMessage": "Jour 017 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 18,
-    "phase": 1,
-    "week": 3,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 018 — LE MUR DES 10 MINUTES",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Reconnaître l'impulsion de décrochage et la traverser.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Surveille le seuil critique entre 8 et 12 minutes.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 018 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 19,
-    "phase": 1,
-    "week": 3,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 019 — LE PREMIER SWITCH",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Observer les gestes réflexes des usagers dans les transports.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Prends note des postures corporelles d'évitement.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 4,
-    "completionMessage": "Jour 019 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 20,
-    "phase": 1,
-    "week": 3,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 020 — RÉCUPÉRATION IMMÉDIATE",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Rédiger la synthèse dans les 60 secondes après lecture.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Pas de délai : écris dès la fermeture du texte.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 4,
-    "completionMessage": "Jour 020 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 21,
-    "phase": 1,
-    "week": 3,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 021 — CONTRÔLE DU SIGNAL",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Valider la fin de la Phase 01 : 25 min de focus pur.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Environnement épuré, zéro notification.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 021 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 22,
-    "phase": 2,
-    "week": 4,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 022 — TENIR LA LIGNE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Allonger la fenêtre de maintien à 30 minutes.",
-    "duration": 30,
-    "difficulty": 2,
-    "setup": "Tâche unitaire de fond, minuteur lancé.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 022 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 23,
-    "phase": 2,
-    "week": 4,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 023 — LA MÉTHODE FEYNMAN",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Vulgariser un principe sans aucun mot de jargon.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Fais comme si tu t'adressais à un adolescent de 14 ans.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 3,
-    "completionMessage": "Jour 023 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 24,
-    "phase": 2,
-    "week": 4,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 024 — LA TRANSITION PROPRE",
-    "intention": "Maintenir une présence totale pendant 5 minutes sur l'exercice du jour.",
-    "whyToday": "Faire 5 minutes de vide complet entre deux réunions ou cours.",
-    "duration": 5,
-    "difficulty": 2,
-    "setup": "Ferme les yeux et laisse décanter l'information.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 4,
-    "completionMessage": "Jour 024 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 25,
-    "phase": 2,
-    "week": 4,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 025 — CONTRE-ARGUMENTS",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Trouver la faille ou la limite du texte étudié.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Isole la principale objection logique à la thèse.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 5,
-    "completionMessage": "Jour 025 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 26,
-    "phase": 2,
-    "week": 4,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 026 — LES FLUX DE FOULE",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Analyser comment l'espace guide les déplacements piétons.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Poste d'observation dans un carrefour dense.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 5,
-    "completionMessage": "Jour 026 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 27,
-    "phase": 2,
-    "week": 4,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 027 — LE RETOUR EN 60 SECONDES",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Pratiquer le ré-engagement instantané après une micro-interruption.",
-    "duration": 30,
-    "difficulty": 2,
-    "setup": "Si tu es coupé, reprends la dernière ligne sans attendre.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 027 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 28,
-    "phase": 2,
-    "week": 4,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 028 — LA DETTE ATTENTIONNELLE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Comprendre le coût des tâches inachevées et l'enseigner.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Formule les conséquences du multitâche chronique.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 4,
-    "completionMessage": "Jour 028 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 29,
-    "phase": 2,
-    "week": 5,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 029 — UNE SEULE FENÊTRE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Travailler sur un document unique en plein écran.",
-    "duration": 30,
-    "difficulty": 2,
-    "setup": "Dock masqué, navigateur fermé.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 029 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 30,
-    "phase": 2,
-    "week": 5,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 030 — LA MARCHE SANS AUDIO",
-    "intention": "Maintenir une présence totale pendant 15 minutes sur l'exercice du jour.",
-    "whyToday": "Marcher 15 minutes dans la ville sans écouteurs.",
-    "duration": 15,
-    "difficulty": 2,
-    "setup": "Écoute attentivement les sons de l'environnement.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 5,
-    "completionMessage": "Jour 030 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 31,
-    "phase": 2,
-    "week": 5,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 031 — LECTURE ET SYNTHÈSE DENSE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Résumer un texte de 800 mots en exactement 3 points cardinaux.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Densité maximale : élimine tout mot inutile.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 6,
-    "completionMessage": "Jour 031 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 32,
-    "phase": 2,
-    "week": 5,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 032 — LE CAP DES 35 MINUTES",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Repousser la frontière de ton attention soutenue.",
-    "duration": 35,
-    "difficulty": 2,
-    "setup": "Bloc exigeant sur un livrable stratégique.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 032 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 33,
-    "phase": 2,
-    "week": 5,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 033 — LES RITUELS DE TRAVAIL",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Observer comment s'installent les gens dans un café.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Repère les objets posés en premier sur la table.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 6,
-    "completionMessage": "Jour 033 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 34,
-    "phase": 2,
-    "week": 5,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 034 — LIS · FERME · RECONSTRUIS",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Perfectionner la séquence reine de l'apprentissage actif.",
-    "duration": 25,
-    "difficulty": 2,
-    "setup": "Ferme le support avant de poser le premier mot.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 7,
-    "completionMessage": "Jour 034 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 35,
-    "phase": 2,
-    "week": 5,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 035 — LE BIAIS DE DISPONIBILITÉ",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner comment les souvenirs récents faussent le jugement.",
-    "duration": 30,
-    "difficulty": 2,
-    "setup": "Donne deux exemples concrets issus du quotidien.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 5,
-    "completionMessage": "Jour 035 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 36,
-    "phase": 2,
-    "week": 6,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 036 — LE SILENCE DU MATIN",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Placer un bloc de 35 min dans la première heure de travail.",
-    "duration": 35,
-    "difficulty": 2,
-    "setup": "Zéro e-mail consulté avant la fin de ce bloc.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 036 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 37,
-    "phase": 2,
-    "week": 6,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 037 — L'ATTENTE EN FILE",
-    "intention": "Maintenir une présence totale pendant 10 minutes sur l'exercice du jour.",
-    "whyToday": "Faire la queue dans un commerce sans sortir son téléphone.",
-    "duration": 10,
-    "difficulty": 2,
-    "setup": "Garde les mains immobiles et observe l'espace.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 6,
-    "completionMessage": "Jour 037 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 38,
-    "phase": 2,
-    "week": 6,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 038 — L'ARCHITECTURE DU CHOIX",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Analyser la disposition des produits dans un magasin.",
-    "duration": 20,
-    "difficulty": 2,
-    "setup": "Repère ce qui est placé au niveau des yeux.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 7,
-    "completionMessage": "Jour 038 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 39,
-    "phase": 2,
-    "week": 6,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 039 — TRANSFERT DE MODÈLE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Appliquer un concept lu à un problème personnel actuel.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Écris le lien direct entre la théorie et ta pratique.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 8,
-    "completionMessage": "Jour 039 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 40,
-    "phase": 2,
-    "week": 6,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 040 — LE MI-PARCOURS",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Valider la stabilité : 35 min sans la moindre bascule.",
-    "duration": 35,
-    "difficulty": 2,
-    "setup": "Bilan de mi-parcours et mesure de la clarté.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 040 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 41,
-    "phase": 3,
-    "week": 6,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 041 — UNE LIGNE D'ARRIVÉE NETTE",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Définir le critère d'arrêt avant de poser les mains.",
-    "duration": 35,
-    "difficulty": 3,
-    "setup": "Écris la condition de succès sur une fiche bristol.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 041 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 42,
-    "phase": 3,
-    "week": 6,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 042 — LA MÉMOIRE DE TRAVAIL",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner la limite des 4 items de la boucle phonologique.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Explique pourquoi le multitâche sature le système.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 6,
-    "completionMessage": "Jour 042 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 43,
-    "phase": 3,
-    "week": 7,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 043 — TEXTE LONG ET DENSE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Restituer un texte de 1400 mots avec précision causale.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Lecture lente d'un grand essai historique ou scientifique.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 9,
-    "completionMessage": "Jour 043 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 44,
-    "phase": 3,
-    "week": 7,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 044 — LE TEMPS SUSPENDU",
-    "intention": "Maintenir une présence totale pendant 15 minutes sur l'exercice du jour.",
-    "whyToday": "Rester 15 minutes dans le calme sans aucun support.",
-    "duration": 15,
-    "difficulty": 3,
-    "setup": "Poste assis confortable, yeux ouverts ou fermés.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 7,
-    "completionMessage": "Jour 044 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 45,
-    "phase": 3,
-    "week": 7,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 045 — L'ISOLATION COMPLÈTE",
-    "intention": "Maintenir une présence totale pendant 40 minutes sur l'exercice du jour.",
-    "whyToday": "Bloquer toute communication extérieure pendant 40 min.",
-    "duration": 40,
-    "difficulty": 3,
-    "setup": "Mode avion activé, porte fermée, casque antibruit.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 045 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 46,
-    "phase": 3,
-    "week": 7,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 046 — LES SIGNAUX INVISIBLES",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Repérer les micro-hésitations et postures dans un débat.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Observation d'une interaction complexe.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 8,
-    "completionMessage": "Jour 046 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 47,
-    "phase": 3,
-    "week": 7,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 047 — L'EFFET ZEIGARNIK",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner pourquoi les tâches inachevées hantent l'esprit.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Démontre le mécanisme de la boucle ouverte.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 7,
-    "completionMessage": "Jour 047 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 48,
-    "phase": 3,
-    "week": 7,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 048 — RÉPÉTITION ESPACÉE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Réactiver un texte lu la semaine dernière sans le relire.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Interrogation de mémoire sur un sujet ancien.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 10,
-    "completionMessage": "Jour 048 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 49,
-    "phase": 3,
-    "week": 7,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 049 — DURÉE ET DIFFICULTÉ",
-    "intention": "Maintenir une présence totale pendant 40 minutes sur l'exercice du jour.",
-    "whyToday": "Traiter le problème le plus intimidant de ta semaine.",
-    "duration": 40,
-    "difficulty": 3,
-    "setup": "Attaque frontale de la tâche que tu repousses.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 049 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 50,
-    "phase": 3,
-    "week": 8,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 050 — LA PAUSE EXTÉRIEURE",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Marcher 20 minutes dehors sans musique ni téléphone.",
-    "duration": 20,
-    "difficulty": 3,
-    "setup": "Rythme de marche soutenu, regard libre.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 8,
-    "completionMessage": "Jour 050 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 51,
-    "phase": 3,
-    "week": 8,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 051 — LES SYSTÈMES COMPLEXES",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner la notion de boucle de rétroaction et d'émergence.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Illustre la théorie avec un exemple urbain.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 8,
-    "completionMessage": "Jour 051 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 52,
-    "phase": 3,
-    "week": 8,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 052 — LA PARTIE DIFFICILE",
-    "intention": "Maintenir une présence totale pendant 40 minutes sur l'exercice du jour.",
-    "whyToday": "Maintenir l'effort quand la solution ne vient pas immédiatement.",
-    "duration": 40,
-    "difficulty": 3,
-    "setup": "Tolère l'incertitude pendant 40 minutes.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 052 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 53,
-    "phase": 3,
-    "week": 8,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 053 — EXTRACTION DU CADRE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Distinguer les faits réels des interprétations de l'auteur.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Analyse critique d'un texte d'opinion.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 11,
-    "completionMessage": "Jour 053 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 54,
-    "phase": 3,
-    "week": 8,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 054 — L'USAGE DE L'ESPACE PUBLIC",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Analyser où les gens s'assoient et pourquoi.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Cartographie des zones d'attraction dans un parc.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 9,
-    "completionMessage": "Jour 054 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 55,
-    "phase": 3,
-    "week": 8,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 055 — LE SHUTDOWN PROPRE",
-    "intention": "Maintenir une présence totale pendant 40 minutes sur l'exercice du jour.",
-    "whyToday": "Terminer une session par un rangement complet et le plan de demain.",
-    "duration": 40,
-    "difficulty": 3,
-    "setup": "Clôture nette sans laisser de dossier ouvert.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 055 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 56,
-    "phase": 3,
-    "week": 8,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 056 — LE CALME DU SOIR",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "Passer 20 minutes avant le coucher sans lumière bleue.",
-    "duration": 20,
-    "difficulty": 3,
-    "setup": "Ambiance tamisée, zéro écran dans la pièce.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 9,
-    "completionMessage": "Jour 056 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 57,
-    "phase": 3,
-    "week": 9,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 057 — LE PRINCIPE DE PARETO",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner la loi des 80/20 appliquée à l'efficacité personnelle.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Identifie les 20% d'actions qui produisent 80% du focus.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 9,
-    "completionMessage": "Jour 057 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 58,
-    "phase": 3,
-    "week": 9,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 058 — SYNTHÈSE MULTI-SOURCES",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Croiser deux concepts lus récemment dans un seul résumé.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Mise en relation de deux modèles mentaux.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 12,
-    "completionMessage": "Jour 058 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 59,
-    "phase": 3,
-    "week": 9,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 059 — LE STANDARD DES 45 MINUTES",
-    "intention": "Maintenir une présence totale pendant 45 minutes sur l'exercice du jour.",
-    "whyToday": "Franchir le palier des 45 minutes de travail ininterrompu.",
-    "duration": 45,
-    "difficulty": 3,
-    "setup": "Grand bloc de production intellectuelle.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 059 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 60,
-    "phase": 3,
-    "week": 9,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 060 — LES MÉCANISMES D'INCITATION",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Observer comment une gare incite à la consommation.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Repère les pièges visuels et sonores.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 10,
-    "completionMessage": "Jour 060 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 61,
-    "phase": 4,
-    "week": 9,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 061 — CONDITIONS DE FLOW",
-    "intention": "Maintenir une présence totale pendant 45 minutes sur l'exercice du jour.",
-    "whyToday": "Lancer un bloc Flow Lab avec tâche découpée et fin claire.",
-    "duration": 45,
-    "difficulty": 3,
-    "setup": "Contrat de flow défini dans le Flow Lab.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 061 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 62,
-    "phase": 4,
-    "week": 9,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 062 — DÉFI VERSUS COMPÉTENCE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner le modèle du canal de flow de Csikszentmihalyi.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Explique comment naviguer entre ennui et anxiété.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 10,
-    "completionMessage": "Jour 062 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 63,
-    "phase": 4,
-    "week": 9,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 063 — RESTITUTION STRUCTURÉE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Reconstruire une démonstration logique étape par étape.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Vérifie que chaque déduction découle de la précédente.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 13,
-    "completionMessage": "Jour 063 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 64,
-    "phase": 4,
-    "week": 10,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 064 — LE SILENCE TOTAL",
-    "intention": "Maintenir une présence totale pendant 20 minutes sur l'exercice du jour.",
-    "whyToday": "20 minutes de repos sensoriel complet sans aucune entrée.",
-    "duration": 20,
-    "difficulty": 3,
-    "setup": "Régénération profonde du cortex préfrontal.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 10,
-    "completionMessage": "Jour 064 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 65,
-    "phase": 4,
-    "week": 10,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 065 — LE FEEDBACK VISUEL",
-    "intention": "Maintenir une présence totale pendant 45 minutes sur l'exercice du jour.",
-    "whyToday": "Travailler avec un indicateur d'avancement tangible en direct.",
-    "duration": 45,
-    "difficulty": 3,
-    "setup": "Compteur de mots ou étapes cochées à vue.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 065 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 66,
-    "phase": 4,
-    "week": 10,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 066 — LA SYNCHRONISATION SOCIALE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Observer le mimétisme postural dans un groupe de travail.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Repère les signaux de cohésion non verbaux.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 11,
-    "completionMessage": "Jour 066 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 67,
-    "phase": 4,
-    "week": 10,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 067 — LA RÉFUTABILITÉ DE POPPER",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner pourquoi une hypothèse doit pouvoir être testée.",
-    "duration": 35,
-    "difficulty": 3,
-    "setup": "Distingue la science de la croyance dogmatique.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 11,
-    "completionMessage": "Jour 067 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 68,
-    "phase": 4,
-    "week": 10,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 068 — TROP FACILE / TROP DUR",
-    "intention": "Maintenir une présence totale pendant 45 minutes sur l'exercice du jour.",
-    "whyToday": "Ajuster la difficulté en direct pour rester dans la zone de flow.",
-    "duration": 45,
-    "difficulty": 3,
-    "setup": "Montez ou baissez la contrainte selon ton état.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 068 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 69,
-    "phase": 4,
-    "week": 10,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 069 — LECTURE CRITIQUE DENSE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Résumer un grand texte philosophique sans simplification abusive.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Respecte la nuance et les ambiguïtés du propos.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 14,
-    "completionMessage": "Jour 069 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 70,
-    "phase": 4,
-    "week": 10,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 070 — L'ATTENTE LIBRE",
-    "intention": "Maintenir une présence totale pendant 15 minutes sur l'exercice du jour.",
-    "whyToday": "Traverser un imprévu de planning sans ouvrir ton téléphone.",
-    "duration": 15,
-    "difficulty": 3,
-    "setup": "Garde le calme face au retard ou au contretemps.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 11,
-    "completionMessage": "Jour 070 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 71,
-    "phase": 4,
-    "week": 11,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 071 — LE TRANSFERT DE PASSION",
-    "intention": "Maintenir une présence totale pendant 45 minutes sur l'exercice du jour.",
-    "whyToday": "Importer les conditions de ton jeu ou sport dans ton travail.",
-    "duration": 45,
-    "difficulty": 3,
-    "setup": "Applique le feedback court à ton dossier actuel.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 071 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 72,
-    "phase": 4,
-    "week": 11,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 072 — L'INTERLEAVING",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner pourquoi l'alternance bat le bachotage massif.",
-    "duration": 35,
-    "difficulty": 3,
-    "setup": "Démontre l'effet sur la mémoire à long terme.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 12,
-    "completionMessage": "Jour 072 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 73,
-    "phase": 4,
-    "week": 11,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 073 — L'ERGONOMIE INVISIBLE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Observer les objets dont le design parfait les rend transparents.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Isole trois outils remarquablement conçus.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 12,
-    "completionMessage": "Jour 073 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 74,
-    "phase": 4,
-    "week": 11,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 074 — ENSEIGNER À UN PROFANE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Expliquer un sujet ardu avec des analogies quotidiennes.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Fais tester ta clarté auprès d'un tiers.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 15,
-    "completionMessage": "Jour 074 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 75,
-    "phase": 4,
-    "week": 11,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 075 — LES CONDITIONS VALIDÉES",
-    "intention": "Maintenir une présence totale pendant 45 minutes sur l'exercice du jour.",
-    "whyToday": "Clôture de la phase Flow : bloc de 45 min en immersion totale.",
-    "duration": 45,
-    "difficulty": 3,
-    "setup": "Toutes les conditions réunies : silence, fin, feedback.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 075 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 76,
-    "phase": 4,
-    "week": 11,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 076 — TES RÈGLES PERSONNELLES",
-    "intention": "Maintenir une présence totale pendant 45 minutes sur l'exercice du jour.",
-    "whyToday": "Formaliser tes 5 règles attentionnelles testées et validées.",
-    "duration": 45,
-    "difficulty": 3,
-    "setup": "Rédige ton manifeste d'environnement personnel.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 076 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 77,
-    "phase": 4,
-    "week": 11,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 077 — LA SOUVERAINETÉ ATTENTIONNELLE",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner pourquoi l'attention est le capital ultime du XXIe siècle.",
-    "duration": 35,
-    "difficulty": 3,
-    "setup": "Synthèse des 11 semaines d'apprentissage.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 13,
-    "completionMessage": "Jour 077 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 78,
-    "phase": 4,
-    "week": 12,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 078 — RECONSTRUCTION HISTORIQUE",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Restituer une chaîne d'événements historiques complexes.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Régularité des dates, causes et conséquences.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 16,
-    "completionMessage": "Jour 078 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 79,
-    "phase": 4,
-    "week": 12,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 079 — LE REPOS DU MAÎTRE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "25 minutes de vide complet sans aucune sollicitation.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Immersion dans le calme sans attente.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 12,
-    "completionMessage": "Jour 079 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 80,
-    "phase": 4,
-    "week": 12,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 080 — LE BLOC DE HAUTE VALEUR",
-    "intention": "Maintenir une présence totale pendant 50 minutes sur l'exercice du jour.",
-    "whyToday": "Réaliser 50 minutes de travail sur ton grand projet de vie.",
-    "duration": 50,
-    "difficulty": 3,
-    "setup": "Concentration totale sur l'essentiel.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 080 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 81,
-    "phase": 4,
-    "week": 12,
-    "mode": "observe",
-    "skill": "ATTENTION_OBSERVE",
-    "title": "JOUR 081 — LE MONDE NUMÉRISÉ",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "Observer la capture attentionnelle généralisée dans la rue.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Regarde le contraste entre les passants et ta présence.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "mission",
-    "contentID": 13,
-    "completionMessage": "Jour 081 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 82,
-    "phase": 4,
-    "week": 12,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 082 — LA DETTE COGNITIVE",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Enseigner la gestion de l'énergie et la prévention de l'épuisement.",
-    "duration": 35,
-    "difficulty": 3,
-    "setup": "Démontre l'impact des micro-pauses sans écran.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 14,
-    "completionMessage": "Jour 082 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 83,
-    "phase": 4,
-    "week": 12,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 083 — LE TEST DE SYNTHÈSE",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Résumer l'ensemble des 5 modèles mentaux les plus marquants.",
-    "duration": 35,
-    "difficulty": 3,
-    "setup": "Création d'une grille de lecture transversale.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 17,
-    "completionMessage": "Jour 083 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 84,
-    "phase": 4,
-    "week": 12,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 084 — LA MAÎTRISE DU TEMPS",
-    "intention": "Maintenir une présence totale pendant 50 minutes sur l'exercice du jour.",
-    "whyToday": "Gérer une session de 50 min avec transition propre à la fin.",
-    "duration": 50,
-    "difficulty": 3,
-    "setup": "Arrêt net à la sonnerie avec livrable prêt.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 084 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 85,
-    "phase": 4,
-    "week": 13,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 085 — CONÇOIS TON PROTOCOLE",
-    "intention": "Maintenir une présence totale pendant 50 minutes sur l'exercice du jour.",
-    "whyToday": "Définir tes propres exercices pour les 5 derniers jours.",
-    "duration": 50,
-    "difficulty": 3,
-    "setup": "Autonomie complète : choisis ta discipline.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 085 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 86,
-    "phase": 4,
-    "week": 13,
-    "mode": "nothing",
-    "skill": "ATTENTION_NOTHING",
-    "title": "JOUR 086 — LA DERNIÈRE PAUSE",
-    "intention": "Maintenir une présence totale pendant 25 minutes sur l'exercice du jour.",
-    "whyToday": "25 minutes de contemplation sans aucun objectif utilitaire.",
-    "duration": 25,
-    "difficulty": 3,
-    "setup": "Habite l'espace sans rien chercher à produire.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "void",
-    "contentID": 13,
-    "completionMessage": "Jour 086 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 87,
-    "phase": 4,
-    "week": 13,
-    "mode": "recall",
-    "skill": "ATTENTION_RECALL",
-    "title": "JOUR 087 — LE BILAN DE RÉTENTION",
-    "intention": "Maintenir une présence totale pendant 30 minutes sur l'exercice du jour.",
-    "whyToday": "Interrogation sur les concepts clés du début de protocole.",
-    "duration": 30,
-    "difficulty": 3,
-    "setup": "Constat de la solidité des traces mnésiques.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "reading",
-    "contentID": 18,
-    "completionMessage": "Jour 087 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 88,
-    "phase": 4,
-    "week": 13,
-    "mode": "explain",
-    "skill": "ATTENTION_EXPLAIN",
-    "title": "JOUR 088 — TRANSMETTRE LA MÉTHODE",
-    "intention": "Maintenir une présence totale pendant 35 minutes sur l'exercice du jour.",
-    "whyToday": "Expliquer l'architecture de REBOOT à quelqu'un qui veut démarrer.",
-    "duration": 35,
-    "difficulty": 3,
-    "setup": "Expose les trois piliers : filtre, maintien, rappel.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "lesson",
-    "contentID": 15,
-    "completionMessage": "Jour 088 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 89,
-    "phase": 4,
-    "week": 13,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 089 — L'AVANT-DERNIER BLOC",
-    "intention": "Maintenir une présence totale pendant 50 minutes sur l'exercice du jour.",
-    "whyToday": "50 minutes de focus souverain sur ta création principale.",
-    "duration": 50,
-    "difficulty": 3,
-    "setup": "Démonstration finale de stabilité attentionnelle.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 089 complété. Ton attention s'ancre dans la durée."
-  },
-  {
-    "day": 90,
-    "phase": 4,
-    "week": 13,
-    "mode": "stay",
-    "skill": "ATTENTION_STAY",
-    "title": "JOUR 090 — OWN IT.",
-    "intention": "Maintenir une présence totale pendant 50 minutes sur l'exercice du jour.",
-    "whyToday": "Jour 90. Clôture officielle et génération de ton Manuel Opératoire.",
-    "duration": 50,
-    "difficulty": 3,
-    "setup": "Consulte ton Attention Operating Manual et entre en Core Mode.",
-    "instructions": [
-      "Élimine toute distraction potentielle de ton champ visuel et auditif.",
-      "Pose l'intention exacte de la session avant de lancer le minuteur.",
-      "En cas d'impulsion de décrochage, prends acte du signal sans agir et reviens à la tâche."
-    ],
-    "challenge": "Garder les yeux fixés sur la tâche active jusqu'à la sonnerie finale sans un seul switch.",
-    "reflection": "Quelle a été la principale tension ressentie et comment l'as-tu traversée ?",
-    "contentType": "stay",
-    "contentID": null,
-    "completionMessage": "Jour 090 complété. Ton attention s'ancre dans la durée."
+    "intention": "Tenir 15 minutes sur une seule tâche sans bascule.",
+    "whyToday": "Première mesure : ta durée naturelle de maintien.",
+    "duration": 15, "difficulty": 1,
+    "setup": "Bureau épuré, téléphone dans une autre pièce, minuteur prêt.",
+    "instructions": [
+      "Choisis une tâche unique et définis sa fin en une phrase.",
+      "Lance le minuteur et commence immédiatement.",
+      "En cas d'envie de basculer, note-la mentalement sans agir."
+    ],
+    "challenge": "Terminer les 15 minutes sans aucune bascule, même brève.",
+    "reflection": "À quelle minute la première tension est-elle apparue ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 001 — LIGNE DE BASE ENREGISTRÉE."
+  },
+  {
+    "day": 2, "phase": 1, "week": 1, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 002 — LE DÉCLENCHEUR",
+    "intention": "Repérer ce qui précède la première envie de basculer.",
+    "whyToday": "Une donnée vaut mieux qu'une impression : identifier ton déclencheur.",
+    "duration": 15, "difficulty": 1,
+    "setup": "Une feuille blanche à côté du clavier pour noter les envies.",
+    "instructions": [
+      "Reprends la même tâche qu'hier ou une tâche similaire.",
+      "À chaque envie de basculer, note sur la feuille : l'envie, pas le geste.",
+      "Continue la tâche après chaque note."
+    ],
+    "challenge": "Noter chaque envie sans jamais y céder pendant 15 minutes.",
+    "reflection": "Quel était le déclencheur le plus fréquent : pensée, objet, son ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 002 — DÉCLENCHEURS NOTÉS."
+  },
+  {
+    "day": 3, "phase": 1, "week": 1, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 003 — LA RÈGLE DE REPRISE",
+    "intention": "Installer le réflexe de revenir dans les 60 secondes.",
+    "whyToday": "Le retour rapide est la compétence que le protocole va construire.",
+    "duration": 15, "difficulty": 1,
+    "setup": "Téléphone éteint hors de vue, un seul document ouvert.",
+    "instructions": [
+      "Travaille sur ta tâche unique.",
+      "Si tu décroches, reviens à la tâche en moins de 60 secondes.",
+      "Relis la dernière phrase ou le dernier geste pour repartir."
+    ],
+    "challenge": "Chaque décrochage suivi d'un retour en moins de 60 secondes.",
+    "reflection": "Combien de temps s'est écoulé entre tes décrochages et tes retours ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 003 — RÈGLE DE REPRISE ACTIVÉE."
+  },
+  {
+    "day": 4, "phase": 1, "week": 1, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 004 — RECENSER SANS JUGER",
+    "intention": "Observer tes vérifications de téléphone dans une journée normale.",
+    "whyToday": "Avant de changer, il faut compter : la ligne de base du réflexe.",
+    "duration": 10, "difficulty": 1,
+    "setup": "Carnet ou notes de téléphone à portée, sans application de réseaux ouverte.",
+    "instructions": [
+      "Aujourd'hui, ne change rien à tes habitudes.",
+      "Chaque fois que tu vérifies le téléphone, note l'heure et le contexte.",
+      "À la fin de la journée, compte le total sans le juger."
+    ],
+    "challenge": "Noter chaque vérification sans en omettre une, même brève.",
+    "reflection": "Quel contexte revient le plus souvent : ennui, attente, transition ?",
+    "contentType": "mission", "contentID": 5,
+    "completionMessage": "JOUR 004 — RÉFLEXE RECENSÉ."
+  },
+  {
+    "day": 5, "phase": 1, "week": 1, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 005 — LES OBJETS QUI T'ENTOURENT",
+    "intention": "Observer ton espace de travail comme un ensemble de signaux.",
+    "whyToday": "Les objets visibles déclenchent des gestes : les cartographier.",
+    "duration": 10, "difficulty": 1,
+    "setup": "Assieds-toi à ton poste, sans rien déplacer pour l'instant.",
+    "instructions": [
+      "Regarde ton bureau pendant 2 minutes sans rien toucher.",
+      "Liste les objets dans ton champ de vision, du plus proche au plus lointain.",
+      "Pour chaque objet, note le geste qu'il t'invite à faire."
+    ],
+    "challenge": "Trouver au moins 3 objets qui invitent à un geste que tu veux réduire.",
+    "reflection": "Quel objet aimerais-tu déplacer en premier, et où ?",
+    "contentType": "mission", "contentID": 12,
+    "completionMessage": "JOUR 005 — CARTE DES SIGNAUX DRESSÉE."
+  },
+  {
+    "day": 6, "phase": 1, "week": 1, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 006 — SANS DÉCLENCHEUR VISIBLE",
+    "intention": "Tester une session avec les déclencheurs identifiés retirés.",
+    "whyToday": "L'environnement change le comportement : le vérifier sur 15 minutes.",
+    "duration": 15, "difficulty": 2,
+    "setup": "Applique le déplacement choisi au jour 005 avant de lancer.",
+    "instructions": [
+      "Retire de la vue les objets qui invitent à décrocher.",
+      "Lance 15 minutes sur ta tâche unique.",
+      "Compare le nombre d'envies avec les jours précédents."
+    ],
+    "challenge": "15 minutes avec les déclencheurs identifiés hors de la vue.",
+    "reflection": "Le retrait des déclencheurs a-t-il changé le nombre d'envies ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 006 — ENVIRONNEMENT RÉGLÉ."
+  },
+  {
+    "day": 7, "phase": 1, "week": 1, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 007 — LE VIDE DE 3 MINUTES",
+    "intention": "Rester 3 minutes sans aucune stimulation volontaire.",
+    "whyToday": "Premier contact avec l'ennui : la tolérance au vide s'entraîne.",
+    "duration": 5, "difficulty": 2,
+    "setup": "Un endroit calme, téléphone éteint hors de portée, assis ou debout.",
+    "instructions": [
+      "Lance un minuteur de 3 minutes.",
+      "Ne lis rien, n'écoute rien, ne regarde aucun écran.",
+      "Observe ce qui se passe en toi sans agir."
+    ],
+    "challenge": "Tenir les 3 minutes complètes sans chercher aucune stimulation.",
+    "reflection": "Qu'est-ce qui est apparu dès que le vide a commencé ?",
+    "contentType": "void", "contentID": 2,
+    "completionMessage": "JOUR 007 — VIDE TENU."
+  },
+  {
+    "day": 8, "phase": 1, "week": 2, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 008 — LA TÂCHE QUI N'AVANCE PAS",
+    "intention": "Travailler 15 minutes sur une tâche que tu repousses.",
+    "whyToday": "L'aversion pour la tâche est un déclencheur majeur : la mesurer.",
+    "duration": 15, "difficulty": 2,
+    "setup": "La tâche reportée, découpée en une première étape de 2 minutes.",
+    "instructions": [
+      "Choisis la tâche que tu évites le plus.",
+      "Découpe-la en une étape de 2 minutes et fais-la.",
+      "Puis continue 15 minutes sur la même tâche."
+    ],
+    "challenge": "Démarrer la tâche évitée sans négociation interne.",
+    "reflection": "L'aversion a-t-elle diminué après les 2 premières minutes ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 008 — TÂCHE ÉVITÉE ATTAQUÉE."
+  },
+  {
+    "day": 9, "phase": 1, "week": 2, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 009 — PREMIÈRE LECTURE, PREMIÈRE RECONSTRUCTION",
+    "intention": "Lire un texte puis le reconstruire de mémoire.",
+    "whyToday": "La récupération active est la base du module lecture.",
+    "duration": 25, "difficulty": 1,
+    "setup": "La lecture 01 du jour, un papier, un stylo, pas d'écran.",
+    "instructions": [
+      "Lis la lecture en entier, sans prendre de notes.",
+      "Ferme le support.",
+      "Écris de mémoire la thèse et 3 idées clés."
+    ],
+    "challenge": "Produire la reconstruction sans rouvrir le texte.",
+    "reflection": "Quelle partie du texte as-tu eu du mal à reconstruire ?",
+    "contentType": "reading", "contentID": 1,
+    "completionMessage": "JOUR 009 — LECTURE RECONSTRUITE."
+  },
+  {
+    "day": 10, "phase": 1, "week": 2, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 010 — LE TEST DES 20 MINUTES",
+    "intention": "Passer de 15 à 20 minutes de maintien.",
+    "whyToday": "Le premier palier d'allongement : mesurer, pas forcer.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Même configuration que le jour 006 : déclencheurs retirés.",
+    "instructions": [
+      "Répète ta séquence de préparation habituelle.",
+      "Lance 20 minutes sur une tâche unique.",
+      "À la fin, note ta sensation globale sans la juger."
+    ],
+    "challenge": "Tenir 20 minutes avec au plus une bascule, suivie d'un retour rapide.",
+    "reflection": "Où se situe ta limite aujourd'hui : au début, au milieu, à la fin ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 010 — PALIER DE 20 MINUTES."
+  },
+  {
+    "day": 11, "phase": 1, "week": 2, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 011 — LES TRANSITIONS",
+    "intention": "Observer ce que tu fais entre deux activités.",
+    "whyToday": "Les transitions sont le lieu principal des vérifications réflexes.",
+    "duration": 10, "difficulty": 1,
+    "setup": "Aujourd'hui, note tes transitions : fin d'une tâche, début de la suivante.",
+    "instructions": [
+      "À chaque changement d'activité, marque une pause de 3 secondes.",
+      "Note ce que ta main fait pendant cette pause.",
+      "Ne change rien d'autre à ta journée."
+    ],
+    "challenge": "Observer 5 transitions et noter le geste réflexe de chacune.",
+    "reflection": "Quelle transition déclenche le geste le plus automatique ?",
+    "contentType": "mission", "contentID": 23,
+    "completionMessage": "JOUR 011 — TRANSITIONS OBSERVÉES."
+  },
+  {
+    "day": 12, "phase": 1, "week": 2, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 012 — L'ATTENTE SANS ÉCRAN",
+    "intention": "Vivre une attente réelle (caisse, transport, file) sans écran.",
+    "whyToday": "L'attente est un temps mort où le réflexe est le plus fort.",
+    "duration": 5, "difficulty": 2,
+    "setup": "Aucune préparation : il suffit de ne pas sortir le téléphone.",
+    "instructions": [
+      "Choisis la prochaine attente de ta journée.",
+      "Ne sors pas le téléphone, quelle que soit sa durée.",
+      "Observe l'environnement, les sons, les personnes."
+    ],
+    "challenge": "Rester sans écran pendant toute l'attente, même si elle dure.",
+    "reflection": "L'envie de sortir le téléphone a-t-elle disparu ou est-elle restée ?",
+    "contentType": "void", "contentID": 5,
+    "completionMessage": "JOUR 012 — ATTENTE VÉCUE SANS ÉCRAN."
+  },
+  {
+    "day": 13, "phase": 1, "week": 2, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 013 — LA MARCHE SANS MUSIQUE",
+    "intention": "Marcher 10 minutes sans écouteurs ni téléphone.",
+    "whyToday": "Le son continu est une stimulation invisible : tester sa présence.",
+    "duration": 10, "difficulty": 2,
+    "setup": "Chaussures, téléphone laissé à la maison ou dans le sac fermé.",
+    "instructions": [
+      "Sors marcher sans écouteurs et sans téléphone en main.",
+      "Garde un rythme normal, sans destination précise.",
+      "Laisse les pensées aller et venir sans les suivre."
+    ],
+    "challenge": "La marche complète sans aucune source de son volontaire.",
+    "reflection": "Qu'as-tu remarqué que tu n'aurais pas remarqué avec un podcast ?",
+    "contentType": "void", "contentID": 9,
+    "completionMessage": "JOUR 013 — MARCHE SANS FLUX AUDIO."
+  },
+  {
+    "day": 14, "phase": 1, "week": 2, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 014 — RECONSTRUCTION AVEC QUESTIONS",
+    "intention": "Lire puis répondre à des questions de mémoire, pas relire.",
+    "whyToday": "La question structure la récupération : elle cible la thèse et les mécanismes.",
+    "duration": 25, "difficulty": 2,
+    "setup": "La lecture 02 du jour, un papier, un stylo.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support et réponds de mémoire : quelle est la thèse, quels sont les 3 mécanismes ?",
+      "Rouvre ensuite pour vérifier et note l'écart."
+    ],
+    "challenge": "Répondre aux questions avant toute vérification.",
+    "reflection": "Quel écart entre ta reconstruction et le texte t'a surpris ?",
+    "contentType": "reading", "contentID": 2,
+    "completionMessage": "JOUR 014 — QUESTIONS RECONSTRUITES."
+  },
+  {
+    "day": 15, "phase": 2, "week": 3, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 015 — PHASE 2, PALIER 22",
+    "intention": "Ouvrir la phase de stabilisation avec 22 minutes de maintien.",
+    "whyToday": "La phase 02 commence : allonger et stabiliser ce que la phase 01 a mesuré.",
+    "duration": 22, "difficulty": 2,
+    "setup": "Configuration de session complète : déclencheurs retirés, objectif écrit.",
+    "instructions": [
+      "Écris l'objectif unique de la session en une phrase.",
+      "Lance 22 minutes, sans bascule planifiée.",
+      "En cas de décrochage, note l'heure et reviens."
+    ],
+    "challenge": "22 minutes avec un seul objectif écrit et aucun signal entrant.",
+    "reflection": "Le passage à 22 minutes a-t-il changé la qualité de ta session ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 015 — PHASE 02 OUVERTE."
+  },
+  {
+    "day": 16, "phase": 2, "week": 3, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 016 — LA THÈSE EN UNE PHRASE",
+    "intention": "Extraire la thèse d'un texte et la reformuler sans la copier.",
+    "whyToday": "La thèse est le squelette de la reconstruction : la formuler d'abord.",
+    "duration": 20, "difficulty": 2,
+    "setup": "La lecture 03 du jour, un papier.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support.",
+      "Écris la thèse en une phrase de tes propres mots, puis 3 arguments."
+    ],
+    "challenge": "Une thèse en une phrase qui tient sans le vocabulaire du texte.",
+    "reflection": "Qu'est-ce qui a été difficile : trouver la thèse ou la reformuler ?",
+    "contentType": "reading", "contentID": 3,
+    "completionMessage": "JOUR 016 — THÈSE FORMULÉE."
+  },
+  {
+    "day": 17, "phase": 2, "week": 3, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 017 — EXPLIQUER LE RÉSIDU ATTENTIONNEL",
+    "intention": "Enseigner le concept du jour à voix haute, sans notes.",
+    "whyToday": "Expliquer révèle les trous de compréhension mieux que toute relecture.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 01 du jour, un minuteur, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module en entier.",
+      "Ferme le support.",
+      "Explique le concept à voix haute en 3 minutes : ce que c'est, pourquoi, comment s'en servir."
+    ],
+    "challenge": "Une explication de 3 minutes sans notes et sans « euh » de blocage.",
+    "reflection": "À quel moment ton explication s'est-elle arrêtée ?",
+    "contentType": "lesson", "contentID": 9,
+    "completionMessage": "JOUR 017 — RÉSIDU ATTENTIONNEL EXPLIQUÉ."
+  },
+  {
+    "day": 18, "phase": 2, "week": 3, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 018 — LA SESSION SANS RÉPONSE",
+    "intention": "Travailler 25 minutes sans répondre à aucun signal entrant.",
+    "whyToday": "La non-réponse choisie se construit avant de se mesurer.",
+    "duration": 25, "difficulty": 2,
+    "setup": "Notifications coupées, messagerie fermée, une note « je reviens à 11h30 » si besoin.",
+    "instructions": [
+      "Ferme toutes les applications de messagerie.",
+      "Lance 25 minutes de tâche unique.",
+      "Si une pensée de réponse surgit, note-la sur la feuille parasite."
+    ],
+    "challenge": "25 minutes sans ouvrir aucune application de messagerie.",
+    "reflection": "Les pensées « il faut que je réponde » ont-elles diminué en cours de session ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 018 — SESSION SANS RÉPONSE."
+  },
+  {
+    "day": 19, "phase": 2, "week": 3, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 019 — LES HEURES DE RÉFLEXE",
+    "intention": "Repérer les heures où tes vérifications sont les plus fréquentes.",
+    "whyToday": "Le réflexe a des heures de pointe : les connaître permet de les protéger.",
+    "duration": 10, "difficulty": 1,
+    "setup": "Notes de téléphone ou papier, journée normale.",
+    "instructions": [
+      "Note chaque vérification avec son heure exacte.",
+      "Ce soir, regroupe-les par tranches de 2 heures.",
+      "Identifie la tranche la plus chargée."
+    ],
+    "challenge": "Noter l'heure de chaque vérification pendant toute la journée.",
+    "reflection": "Que se passe-t-il pendant ta tranche de pointe : ennui, transition, pause ?",
+    "contentType": "mission", "contentID": 34,
+    "completionMessage": "JOUR 019 — HEURES DE POINTE IDENTIFIÉES."
+  },
+  {
+    "day": 20, "phase": 2, "week": 3, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 020 — UN SEUL DOCUMENT",
+    "intention": "Travailler 25 minutes avec un seul document ouvert.",
+    "whyToday": "Les onglets sont des promesses d'attention : tester le plein écran.",
+    "duration": 25, "difficulty": 2,
+    "setup": "Un seul document ouvert, plein écran, barre des signets masquée.",
+    "instructions": [
+      "Ferme tous les onglets sauf un.",
+      "Passe l'application en plein écran.",
+      "Pendant la session, ne rouvre aucun autre onglet."
+    ],
+    "challenge": "25 minutes sans ouvrir un second onglet.",
+    "reflection": "Combien de fois as-tu failli ouvrir un onglet, et pour quoi ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 020 — ONGLET UNIQUE TENU."
+  },
+  {
+    "day": 21, "phase": 2, "week": 3, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 021 — LE POINT FIXE",
+    "intention": "Regarder un point fixe pendant 5 minutes sans rien d'autre.",
+    "whyToday": "L'attention sans objet mouvant est un entraînement rare : le tester.",
+    "duration": 5, "difficulty": 3,
+    "setup": "Assis, un mur ou un point neutre devant toi, téléphone éteint.",
+    "instructions": [
+      "Fixe un point immobile devant toi.",
+      "Laisse les pensées venir sans les suivre.",
+      "À chaque fois que tu remarques que tu es parti, reviens au point."
+    ],
+    "challenge": "5 minutes à revenir au point sans jamais regarder ailleurs.",
+    "reflection": "Combien de fois es-tu parti et revenu en 5 minutes ?",
+    "contentType": "void", "contentID": 12,
+    "completionMessage": "JOUR 021 — POINT FIXE TENU."
+  },
+  {
+    "day": 22, "phase": 2, "week": 4, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 022 — LA RECONSTRUCTION À 24 HEURES",
+    "intention": "Reconstruire une lecture faite hier, sans la relire.",
+    "whyToday": "La rétention à 24 heures est le test réel de la récupération.",
+    "duration": 15, "difficulty": 2,
+    "setup": "La lecture 04 du jour (lue il y a 24h), un papier.",
+    "instructions": [
+      "Prends la lecture 04 sans la rouvrir.",
+      "Écris de mémoire : la thèse, 3 idées, un exemple.",
+      "Ouvre le texte seulement après l'écrit, pour vérifier."
+    ],
+    "challenge": "Produire la reconstruction complète avant d'ouvrir le texte.",
+    "reflection": "Quelle partie a survécu 24 heures, quelle partie s'est effacée ?",
+    "contentType": "reading", "contentID": 4,
+    "completionMessage": "JOUR 022 — RÉTENTION 24H MESURÉE."
+  },
+  {
+    "day": 23, "phase": 2, "week": 4, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 023 — L'OBJECTIF EN UNE LIGNE",
+    "intention": "Écrire l'objectif de session en une ligne avant de lancer.",
+    "whyToday": "L'objectif écrit transforme une session vague en cible mesurable.",
+    "duration": 28, "difficulty": 2,
+    "setup": "Papier, stylo, configuration de session habituelle.",
+    "instructions": [
+      "Écris l'objectif de session en une phrase avec un critère de fin.",
+      "Lance 28 minutes.",
+      "À la fin, coche : critère atteint oui ou non."
+    ],
+    "challenge": "28 minutes avec un critère de fin écrit et atteint.",
+    "reflection": "Le critère écrit a-t-il changé la façon dont tu as traversé la session ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 023 — CRITÈRE ATTEINT."
+  },
+  {
+    "day": 24, "phase": 2, "week": 4, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 024 — EXPLIQUER LE COÛT DE LA BASCULE",
+    "intention": "Expliquer les coûts du changement de tâche avec un exemple personnel.",
+    "whyToday": "Relier le concept à ta propre expérience le rend utilisable.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 10 du jour, un auditeur réel ou imaginaire.",
+    "instructions": [
+      "Étudie le module sur les coûts de bascule.",
+      "Trouve un exemple de ta semaine où tu as payé ce coût.",
+      "Explique le concept en utilisant ton exemple."
+    ],
+    "challenge": "Une explication où le concept et ton exemple forment une seule histoire.",
+    "reflection": "Où paies-tu le coût de bascule le plus souvent ?",
+    "contentType": "lesson", "contentID": 10,
+    "completionMessage": "JOUR 024 — COÛT DE BASCULE EXPLIQUÉ."
+  },
+  {
+    "day": 25, "phase": 2, "week": 4, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 025 — LA SESSION DU MATIN",
+    "intention": "Placer la session dans ta fenêtre perçue la plus claire.",
+    "whyToday": "Le moment de la session est une variable : la tester explicitement.",
+    "duration": 28, "difficulty": 2,
+    "setup": "Session planifiée dans ta fenêtre « la plus claire », avant toute réunion.",
+    "instructions": [
+      "Place la session au moment où tu te sens le plus clair.",
+      "Ne fais rien d'autre avant elle, si possible.",
+      "Lance 28 minutes sur ta tâche la plus importante."
+    ],
+    "challenge": "Protéger la fenêtre matinale pour la session complète.",
+    "reflection": "Comment la session du matin se compare-t-elle à tes sessions habituelles ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 025 — FENÊTRE PROTÉGÉE."
+  },
+  {
+    "day": 26, "phase": 2, "week": 4, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 026 — LE GESTE D'OUVERTURE",
+    "intention": "Observer ce qui précède l'ouverture de tes applications.",
+    "whyToday": "Chaque ouverture d'application a un prétexte : les nommer.",
+    "duration": 10, "difficulty": 1,
+    "setup": "Notes à portée, journée normale.",
+    "instructions": [
+      "À chaque ouverture d'une application de divertissement, note le prétexte.",
+      "Prétexte possible : ennui, attente, transition, émotion, habitude.",
+      "Ce soir, compte les prétextes par catégorie."
+    ],
+    "challenge": "Noter le prétexte de chaque ouverture sans en manquer une.",
+    "reflection": "Quel prétexte revient le plus souvent ?",
+    "contentType": "mission", "contentID": 41,
+    "completionMessage": "JOUR 026 — PRÉTEXTES RECENSÉS."
+  },
+  {
+    "day": 27, "phase": 2, "week": 4, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 027 — L'ASYMÉTRIE DES PAUSES",
+    "intention": "Comparer une pause écran et une pause vide, une fois chacune.",
+    "whyToday": "Le contenu de la pause change la reprise : le vérifier sur ta journée.",
+    "duration": 10, "difficulty": 2,
+    "setup": "Deux blocs de travail identifiés dans la journée, un minuteur.",
+    "instructions": [
+      "Après le premier bloc, prends 5 minutes de pause écran (scrolling).",
+      "Après le second bloc, prends 5 minutes de pause vide sans écran.",
+      "Note la clarté de la reprise après chacune."
+    ],
+    "challenge": "Faire les deux pauses sans tricher sur leur contenu.",
+    "reflection": "Laquelle des deux pauses a produit la reprise la plus nette ?",
+    "contentType": "void", "contentID": 17,
+    "completionMessage": "JOUR 027 — CONTRASTE DE PAUSES MESURÉ."
+  },
+  {
+    "day": 28, "phase": 2, "week": 4, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 028 — RECONSTRUCTION SANS OUVRIR",
+    "intention": "Reconstruire la lecture 05 du jour sans jamais l'ouvrir une seconde fois.",
+    "whyToday": "La reconstruction totale, sans vérification immédiate, teste la confiance.",
+    "duration": 25, "difficulty": 3,
+    "setup": "La lecture 05 du jour, un papier, un stylo.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support et pose le papier sur le texte.",
+      "Écris la reconstruction complète, puis range-la sans vérifier."
+    ],
+    "challenge": "Écrire la reconstruction sans aucune vérification pendant l'écrit.",
+    "reflection": "Comment te sens-tu en sachant que tu ne vérifieras que demain ?",
+    "contentType": "reading", "contentID": 5,
+    "completionMessage": "JOUR 028 — RECONSTRUCTION SANS OUVERTURE."
+  },
+  {
+    "day": 29, "phase": 2, "week": 5, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 029 — VÉRIFIER LA RECONSTRUCTION D'HIER",
+    "intention": "Comparer la reconstruction d'hier au texte, trou par trou.",
+    "whyToday": "La vérification différée est l'étape qui transforme l'erreur en apprentissage.",
+    "duration": 15, "difficulty": 2,
+    "setup": "Ta reconstruction d'hier, la lecture 05, un stylo d'une autre couleur.",
+    "instructions": [
+      "Rouvre ta reconstruction d'hier.",
+      "Lis la lecture et note en couleur ce qui manquait ou était faux.",
+      "Résume l'écart en 3 lignes."
+    ],
+    "challenge": "Identifier précisément 3 écarts, pas un sentiment général.",
+    "reflection": "Les écarts sont-ils concentrés sur un type d'information ?",
+    "contentType": "reading", "contentID": 5,
+    "completionMessage": "JOUR 029 — ÉCARTS IDENTIFIÉS."
+  },
+  {
+    "day": 30, "phase": 2, "week": 5, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 030 — EXPLIQUER SANS VOCABULAIRE",
+    "intention": "Expliquer un concept en utilisant uniquement des mots simples.",
+    "whyToday": "Sans vocabulaire technique, l'explication révèle la compréhension réelle.",
+    "duration": 20, "difficulty": 3,
+    "setup": "Le module 06 du jour, un auditeur imaginaire de 12 ans.",
+    "instructions": [
+      "Étudie le module sur la charge cognitive.",
+      "Explique-le comme à un enfant : phrases courtes, zéro jargon.",
+      "Si tu utilises un mot technique, définis-le immédiatement."
+    ],
+    "challenge": "Une explication compréhensible sans aucun mot du module.",
+    "reflection": "Quel mot technique as-tu eu du mal à traduire ?",
+    "contentType": "lesson", "contentID": 6,
+    "completionMessage": "JOUR 030 — CONCEPT TRADUIT EN SIMPLE."
+  },
+  {
+    "day": 31, "phase": 3, "week": 5, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 031 — PHASE 3, 30 MINUTES",
+    "intention": "Ouvrir la phase d'approfondissement avec 30 minutes de maintien.",
+    "whyToday": "La phase 03 allonge les blocs : 30 minutes est le nouveau palier.",
+    "duration": 30, "difficulty": 3,
+    "setup": "Session planifiée à l'avance, objectif écrit, environnement réglé.",
+    "instructions": [
+      "Relis ton objectif écrit de la session.",
+      "Lance 30 minutes sans aucune bascule planifiée.",
+      "Traite les envies par la note sur papier, jamais par l'action."
+    ],
+    "challenge": "30 minutes complètes avec zéro bascule réelle.",
+    "reflection": "La 25e minute est-elle plus dure que la 5e ? Où est la vraie frontière ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 031 — PHASE 03 OUVERTE, 30 MIN."
+  },
+  {
+    "day": 32, "phase": 3, "week": 5, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 032 — EXPLIQUER LE SOMMEIL ET LA MÉMOIRE",
+    "intention": "Expliquer pourquoi la nuit consolide l'apprentissage.",
+    "whyToday": "La science du sommeil s'explique, et l'explication la rend utilisable.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 17 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur le sommeil et la mémoire.",
+      "Explique-le en 3 minutes : ce que la nuit fait, ce qu'elle ne fait pas.",
+      "Termine par une application concrète pour toi."
+    ],
+    "challenge": "Une explication qui distingue « consolider » de « créer ».",
+    "reflection": "Quelle application concrète pour ta prochaine période d'apprentissage ?",
+    "contentType": "lesson", "contentID": 17,
+    "completionMessage": "JOUR 032 — SOMMEIL-MÉMOIRE EXPLIQUÉ."
+  },
+  {
+    "day": 33, "phase": 3, "week": 5, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 033 — LE BLOC SANS CHECK-IN",
+    "intention": "Travailler 32 minutes sans vérifier l'heure ni rien d'autre.",
+    "whyToday": "La vérification de l'heure est une bascule déguisée : la mesurer.",
+    "duration": 32, "difficulty": 3,
+    "setup": "Horloge masquée, minuteur en fin de bloc uniquement, téléphone hors de vue.",
+    "instructions": [
+      "Cache l'heure (écran verrouillé, montre hors du champ).",
+      "Lance le minuteur de 32 minutes sans le regarder.",
+      "Ne vérifie ni l'heure ni la progression avant la sonnerie."
+    ],
+    "challenge": "32 minutes sans aucun regard sur l'heure.",
+    "reflection": "Combien de fois as-tu eu envie de vérifier l'heure, et qu'est-ce que ça disait ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 033 — BLOC SANS HORLOGE."
+  },
+  {
+    "day": 34, "phase": 3, "week": 5, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 034 — LA CARTE DES IDÉES",
+    "intention": "Reconstruire la structure d'un texte : thèse, arguments, exemples.",
+    "whyToday": "La structure est ce qui survit le mieux : l'entraîner explicitement.",
+    "duration": 25, "difficulty": 2,
+    "setup": "La lecture 06 du jour, un papier.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support.",
+      "Dessine la structure : une thèse, 3 arguments, un exemple par argument."
+    ],
+    "challenge": "Une structure complète sans rouvrir le texte.",
+    "reflection": "Quel argument n'as-tu pas pu replacer dans la structure ?",
+    "contentType": "reading", "contentID": 6,
+    "completionMessage": "JOUR 034 — STRUCTURE RECONSTRUITE."
+  },
+  {
+    "day": 35, "phase": 3, "week": 5, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 035 — LA TÂCHE LA PLUS DIFFICILE D'ABORD",
+    "intention": "Commencer la session par la tâche que tu évites le plus.",
+    "whyToday": "L'ordre des tâches est un réglage : le difficile d'abord change la journée.",
+    "duration": 32, "difficulty": 3,
+    "setup": "La tâche la plus évitée identifiée la veille, découpée en étapes.",
+    "instructions": [
+      "Ouvre la tâche la plus difficile en premier.",
+      "Fais la première étape de 2 minutes sans rien d'autre.",
+      "Continue 32 minutes sur cette tâche."
+    ],
+    "challenge": "32 minutes sur la tâche la plus difficile, sans la fuir.",
+    "reflection": "La difficulté était-elle dans la tâche ou dans le démarrage ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 035 — DIFFICILE D'ABORD."
+  },
+  {
+    "day": 36, "phase": 3, "week": 6, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 036 — LES PENSÉES PARASITES",
+    "intention": "Observer tes pensées parasites pendant une session réelle.",
+    "whyToday": "Les pensées parasites sont la bascule interne : les quantifier.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Une session réelle de travail, une feuille à côté.",
+    "instructions": [
+      "Travaille normalement pendant 20 minutes.",
+      "À chaque pensée parasite (autre tâche, envie, souci), fais une croix.",
+      "À la fin, compte les croix et classe-les par type."
+    ],
+    "challenge": "Observer les pensées sans les suivre : croix, pas action.",
+    "reflection": "Quel type de pensée parasite revient le plus ?",
+    "contentType": "mission", "contentID": 47,
+    "completionMessage": "JOUR 036 — PARASITES QUANTIFIÉS."
+  },
+  {
+    "day": 37, "phase": 3, "week": 6, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 037 — LA RESPIRATION COMPTÉE",
+    "intention": "5 minutes de respiration comptée, sans autre objet.",
+    "whyToday": "Le comptage donne au vide un point d'appui : le tester.",
+    "duration": 5, "difficulty": 2,
+    "setup": "Assis confortablement, dos droit, téléphone éteint.",
+    "instructions": [
+      "Ferme les yeux ou baisse le regard.",
+      "Compte chaque expiration de 1 à 10, puis recommence.",
+      "Quand tu te perds, reprends à 1 sans te juger."
+    ],
+    "challenge": "5 minutes de comptage, en reprenant à chaque égarement.",
+    "reflection": "Combien de cycles de 10 as-tu réussi à tenir ?",
+    "contentType": "void", "contentID": 20,
+    "completionMessage": "JOUR 037 — RESPIRATION COMPTÉE."
+  },
+  {
+    "day": 38, "phase": 3, "week": 6, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 038 — LE PALIER DE 35 MINUTES",
+    "intention": "Passer à 35 minutes de maintien continu.",
+    "whyToday": "Le palier des 35 minutes franchit la durée d'un bloc de travail réel.",
+    "duration": 35, "difficulty": 3,
+    "setup": "Configuration complète, objectif écrit, pause planifiée après.",
+    "instructions": [
+      "Écris l'objectif et le critère de fin.",
+      "Lance 35 minutes sans bascule.",
+      "À la sonnerie, note ta sensation sans l'analyser."
+    ],
+    "challenge": "35 minutes avec zéro bascule et un critère atteint.",
+    "reflection": "Quelle minute a été la plus dure, et comment l'as-tu traversée ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 038 — PALIER DE 35 MINUTES."
+  },
+  {
+    "day": 39, "phase": 3, "week": 6, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 039 — EXPLIQUER LA CAFÉINE SANS DOGMATISME",
+    "intention": "Expliquer ce que la recherche dit de la caféine, et ce qu'elle ne dit pas.",
+    "whyToday": "L'honnêteté scientifique s'entraîne aussi dans l'explication.",
+    "duration": 20, "difficulty": 3,
+    "setup": "Le module 19 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur la caféine et le sommeil.",
+      "Explique en 3 minutes : ce qui est soutenu, ce qui ne l'est pas.",
+      "Termine par la méthode individuelle que le module propose."
+    ],
+    "challenge": "Une explication qui refuse les règles universelles sans tomber dans le « tout se vaut ».",
+    "reflection": "Quelle croyance sur la caféine avais-tu avant ce module ?",
+    "contentType": "lesson", "contentID": 19,
+    "completionMessage": "JOUR 039 — CAFÉINE EXPLIQUÉE SANS MYTHE."
+  },
+  {
+    "day": 40, "phase": 3, "week": 6, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 040 — L'EXEMPLE PERSONNEL",
+    "intention": "Reconstruire une lecture en y ajoutant un exemple de ta vie.",
+    "whyToday": "L'exemple personnel est le test de transfert : le concept devient utilisable.",
+    "duration": 25, "difficulty": 2,
+    "setup": "La lecture 07 du jour, un papier.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support.",
+      "Reconstruis la thèse et les idées, puis ajoute un exemple de ton propre travail."
+    ],
+    "challenge": "Un exemple personnel qui illustre réellement la thèse, pas un exemple plaqué.",
+    "reflection": "Où dans ta vie ce concept s'applique-t-il concrètement ?",
+    "contentType": "reading", "contentID": 7,
+    "completionMessage": "JOUR 040 — LECTURE TRANSFÉRÉE."
+  },
+  {
+    "day": 41, "phase": 3, "week": 6, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 041 — LA SESSION APRÈS UNE PAUSE VERTE",
+    "intention": "Tester une pause en extérieur juste avant la session.",
+    "whyToday": "La pause naturelle est une variable de récupération : la mesurer sur ta session.",
+    "duration": 35, "difficulty": 2,
+    "setup": "5 minutes dehors avant la session, puis configuration habituelle.",
+    "instructions": [
+      "Passe 5 minutes dehors, sans téléphone.",
+      "Installe-toi et écris l'objectif de session.",
+      "Lance 35 minutes et note la qualité de démarrage."
+    ],
+    "challenge": "35 minutes avec la pause verte comme seule variable changée.",
+    "reflection": "Le démarrage après la pause verte diffère-t-il de d'habitude ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 041 — PAUSE VERTE TESTÉE."
+  },
+  {
+    "day": 42, "phase": 3, "week": 6, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 042 — LES OUTILS DÉCLENCHEURS",
+    "intention": "Observer quels outils (apps, onglets, notes) déclenchent des bascules.",
+    "whyToday": "Les outils ne sont pas neutres : certains sont des portes vers la dispersion.",
+    "duration": 10, "difficulty": 1,
+    "setup": "Journée normale, note des bascules à côté de toi.",
+    "instructions": [
+      "Note chaque bascule avec l'outil qui l'a déclenchée.",
+      "Classe les outils : ceux qui servent la tâche, ceux qui l'ouvrent.",
+      "Ce soir, compte les ouvertures par outil."
+    ],
+    "challenge": "Identifier les 3 outils qui déclenchent le plus de bascules.",
+    "reflection": "Lequel de ces outils pourrais-tu déplacer ou masquer ?",
+    "contentType": "mission", "contentID": 52,
+    "completionMessage": "JOUR 042 — OUTILS DÉCLENCHEURS IDENTIFIÉS."
+  },
+  {
+    "day": 43, "phase": 3, "week": 7, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 043 — L'ÉCOUTE SANS RÉPONSE",
+    "intention": "Écouter un son ou une ambiance sans aucun autre objet.",
+    "whyToday": "L'écoute pure est une forme de vide sensoriel : la pratiquer.",
+    "duration": 5, "difficulty": 2,
+    "setup": "Un endroit avec un son d'ambiance (fenêtre, rue, pièce), yeux fermés.",
+    "instructions": [
+      "Ferme les yeux.",
+      "Écoute les sons sans les identifier ni les juger.",
+      "Quand tu pars dans une pensée, reviens au son."
+    ],
+    "challenge": "5 minutes d'écoute sans ouvrir les yeux ni chercher le téléphone.",
+    "reflection": "Quels sons n'entendais-tu plus à force de les ignorer ?",
+    "contentType": "void", "contentID": 24,
+    "completionMessage": "JOUR 043 — ÉCOUTE TENUE."
+  },
+  {
+    "day": 44, "phase": 3, "week": 7, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 044 — LA RECONSTRUCTION À 48 HEURES",
+    "intention": "Reconstruire la lecture 08 du jour, lue il y a deux jours.",
+    "whyToday": "L'oubli entre 24 et 48 heures est un test plus exigeant de la rétention.",
+    "duration": 20, "difficulty": 3,
+    "setup": "La lecture 08 (lue il y a 48h), un papier.",
+    "instructions": [
+      "Sans rouvrir la lecture, écris la thèse et 3 idées.",
+      "Note ton niveau de confiance avant la vérification.",
+      "Ouvre le texte et compare confiance et exactitude."
+    ],
+    "challenge": "Reconstruire avant de vérifier, confiance notée.",
+    "reflection": "Ta confiance prédisait-elle ton exactitude ?",
+    "contentType": "reading", "contentID": 8,
+    "completionMessage": "JOUR 044 — RÉTENTION 48H MESURÉE."
+  },
+  {
+    "day": 45, "phase": 3, "week": 7, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 045 — EXPLIQUER L'EFFET NATURE",
+    "intention": "Expliquer ce que la recherche montre sur la nature et l'attention.",
+    "whyToday": "Un effet modeste s'explique sans être exagéré : entraîne-toi.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 21 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur la nature et l'attention.",
+      "Explique-le en 3 minutes, en distinguant ce qui est mesuré de ce qui est promis.",
+      "Propose une application concrète et mesurable."
+    ],
+    "challenge": "Une explication qui reste honnête sur la taille de l'effet.",
+    "reflection": "Comment as-tu formulé la limite de l'effet sans la noyer ?",
+    "contentType": "lesson", "contentID": 21,
+    "completionMessage": "JOUR 045 — EFFET NATURE EXPLIQUÉ."
+  },
+  {
+    "day": 46, "phase": 3, "week": 7, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 046 — LES MÉCANISMES CAUSAUX",
+    "intention": "Reconstruire une lecture en reliant les mécanismes, pas les faits.",
+    "whyToday": "Les chaînes causales sont ce qu'on réutilise : les entraîner.",
+    "duration": 25, "difficulty": 3,
+    "setup": "La lecture 09 du jour, un papier.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support.",
+      "Écris 2 chaînes causales : « A fait que B, qui fait que C »."
+    ],
+    "challenge": "Deux chaînes causales complètes, sans relire.",
+    "reflection": "Quelle étape de tes chaînes causales était la plus fragile ?",
+    "contentType": "reading", "contentID": 9,
+    "completionMessage": "JOUR 046 — CHAÎNES CAUSALES ÉCRITES."
+  },
+  {
+    "day": 47, "phase": 3, "week": 7, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 047 — LA SESSION AVEC FEEDBACK VISIBLE",
+    "intention": "Ajouter un indicateur de progression visible à la session.",
+    "whyToday": "Le feedback visible soutient l'engagement : le tester sur 38 minutes.",
+    "duration": 38, "difficulty": 2,
+    "setup": "Un indicateur choisi : cases, compteur, journal, graphique.",
+    "instructions": [
+      "Définis l'indicateur qui mesure le fond de ta tâche.",
+      "Lance 38 minutes en mettant l'indicateur à jour à chaque étape.",
+      "À la fin, regarde la trajectoire de l'indicateur."
+    ],
+    "challenge": "Un indicateur mis à jour au fil de la session, pas seulement à la fin.",
+    "reflection": "L'indicateur a-t-il changé ta sensation d'avancement ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 047 — PROGRESSION RENDUE VISIBLE."
+  },
+  {
+    "day": 48, "phase": 3, "week": 7, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 048 — LE POIDS DU DÉMARRAGE",
+    "intention": "Mesurer le temps entre l'intention de commencer et le premier geste.",
+    "whyToday": "Le délai de démarrage est une donnée : le mesurer sans le juger.",
+    "duration": 10, "difficulty": 1,
+    "setup": "Une tâche choisie, un minuteur, rien d'autre.",
+    "instructions": [
+      "Choisis une tâche à démarrer aujourd'hui.",
+      "Note l'heure où tu décides de la commencer.",
+      "Note l'heure où tu fais réellement le premier geste."
+    ],
+    "challenge": "Mesurer le délai de démarrage de 3 tâches dans la journée.",
+    "reflection": "Quel est ton délai moyen de démarrage, et que fais-tu pendant ce temps ?",
+    "contentType": "mission", "contentID": 58,
+    "completionMessage": "JOUR 048 — DÉLAIS DE DÉMARRAGE MESURÉS."
+  },
+  {
+    "day": 49, "phase": 3, "week": 7, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 049 — LA MARCHE LENTE",
+    "intention": "Marcher 10 minutes au rythme le plus lent possible.",
+    "whyToday": "Ralentir est une forme de résistance à l'urgence : la pratiquer.",
+    "duration": 10, "difficulty": 2,
+    "setup": "Un parcours sans but, téléphone à la maison.",
+    "instructions": [
+      "Marche au rythme le plus lent qui reste naturel.",
+      "Ne regarde ni l'heure ni le chemin restant.",
+      "Observe ce que le ralentissement change dans ta sensation."
+    ],
+    "challenge": "10 minutes au rythme lent, sans accélérer.",
+    "reflection": "Qu'est-ce qui t'a poussé à vouloir accélérer ?",
+    "contentType": "void", "contentID": 27,
+    "completionMessage": "JOUR 049 — MARCHE LENTE TENUE."
+  },
+  {
+    "day": 50, "phase": 3, "week": 8, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 050 — LE PALIER DES 40 MINUTES",
+    "intention": "Franchir 40 minutes de maintien continu.",
+    "whyToday": "40 minutes est la durée d'un vrai bloc de travail : la rendre tenable.",
+    "duration": 40, "difficulty": 3,
+    "setup": "Tout le protocole de session : objectif, environnement, indicateur.",
+    "instructions": [
+      "Relis ton rituel de préparation complet.",
+      "Lance 40 minutes sans bascule.",
+      "Résiste à la tentation de regarder la progression avant la fin."
+    ],
+    "challenge": "40 minutes complètes, objectif atteint, sans regarder l'heure.",
+    "reflection": "Comment les 40 minutes se sont-elles découpées : montées, plateaux, descentes ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 050 — PALIER DE 40 MINUTES."
+  },
+  {
+    "day": 51, "phase": 3, "week": 8, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 051 — EXPLIQUER LA PLEINE CONSCIENCE",
+    "intention": "Expliquer ce que les études montrent sur la pleine conscience, sans exagérer.",
+    "whyToday": "Les effets modestes s'expliquent avec précision : c'est un exercice d'honnêteté.",
+    "duration": 20, "difficulty": 3,
+    "setup": "Le module 22 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur la pleine conscience et l'attention.",
+      "Explique-le en 3 minutes : ce qui est mesuré, à quelles conditions.",
+      "Ajoute la limite : les réplications sont limitées."
+    ],
+    "challenge": "Une explication qui ne promet ni miracle ni échec.",
+    "reflection": "Quelle formulation as-tu dû corriger pour rester honnête ?",
+    "contentType": "lesson", "contentID": 22,
+    "completionMessage": "JOUR 051 — PLEINE CONSCIENCE EXPLIQUÉE."
+  },
+  {
+    "day": 52, "phase": 3, "week": 8, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 052 — LE DÉFI DE LA CONTRE-ARGUMENTATION",
+    "intention": "Reconstruire une lecture puis formuler une objection sérieuse.",
+    "whyToday": "Trouver la limite d'un texte est le niveau le plus profond de compréhension.",
+    "duration": 25, "difficulty": 3,
+    "setup": "La lecture 10 du jour, un papier.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support et reconstruis la thèse.",
+      "Écris la meilleure objection que tu peux formuler contre elle."
+    ],
+    "challenge": "Une objection réelle, pas un désaccord de façade.",
+    "reflection": "Quelle condition devrait changer pour que ton objection devienne la vérité ?",
+    "contentType": "reading", "contentID": 10,
+    "completionMessage": "JOUR 052 — OBJECTION FORMULÉE."
+  },
+  {
+    "day": 53, "phase": 3, "week": 8, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 053 — DEUX BLOCS DANS LA JOURNÉE",
+    "intention": "Réaliser deux blocs de 40 minutes dans la même journée.",
+    "whyToday": "La journée de travail réelle contient plusieurs blocs : les enchaîner.",
+    "duration": 40, "difficulty": 3,
+    "setup": "Deux créneaux planifiés à l'avance, séparés par une vraie pause.",
+    "instructions": [
+      "Fais le premier bloc de 40 minutes le matin.",
+      "Prends une pause réelle (sans écran) entre les deux.",
+      "Fais le second bloc de 40 minutes l'après-midi."
+    ],
+    "challenge": "Deux blocs complets, avec une pause qui n'est pas un écran.",
+    "reflection": "Lequel des deux blocs a été le plus difficile, et pourquoi ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 053 — DOUBLE BLOC TENU."
+  },
+  {
+    "day": 54, "phase": 3, "week": 8, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 054 — LE COÛT DES INTERRUPTIONS",
+    "intention": "Mesurer le temps de retour après chaque interruption réelle.",
+    "whyToday": "Le coût d'une interruption inclut le retour : le mesurer.",
+    "duration": 15, "difficulty": 2,
+    "setup": "Une session réelle de travail, une montre ou un minuteur.",
+    "instructions": [
+      "Travaille normalement pendant 15 minutes.",
+      "À chaque interruption, note l'heure du début et celle du retour à la tâche.",
+      "Calcule le délai de retour pour chaque interruption."
+    ],
+    "challenge": "Mesurer précisément 3 délais de retour.",
+    "reflection": "Ton retour est-il rapide (moins d'une minute) ou long (plus de deux) ?",
+    "contentType": "mission", "contentID": 63,
+    "completionMessage": "JOUR 054 — RETOURS MESURÉS."
+  },
+  {
+    "day": 55, "phase": 3, "week": 8, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 055 — LE VIDE APRÈS L'EFFORT",
+    "intention": "Prendre 5 minutes de vide immédiatement après un bloc exigeant.",
+    "whyToday": "La récupération commence dès la fin du bloc : tester le vide immédiat.",
+    "duration": 5, "difficulty": 2,
+    "setup": "À la fin d'un bloc de travail, rester assis, sans écran.",
+    "instructions": [
+      "Termine ton bloc normalement.",
+      "Reste assis 5 minutes sans rien faire, sans téléphone.",
+      "Laisse la transition se faire sans la remplir."
+    ],
+    "challenge": "5 minutes de vide immédiat après l'effort, sans rien ouvrir.",
+    "reflection": "Qu'est-ce qui t'a poussé à vouloir remplir ce vide ?",
+    "contentType": "void", "contentID": 30,
+    "completionMessage": "JOUR 055 — VIDE POST-EFFORT TENU."
+  },
+  {
+    "day": 56, "phase": 3, "week": 9, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 056 — LE PALIER DES 42 MINUTES",
+    "intention": "Pousser le maintien à 42 minutes.",
+    "whyToday": "La fin de phase 03 vise des blocs longs : 42 minutes est le test.",
+    "duration": 42, "difficulty": 3,
+    "setup": "Protocole complet, objectif écrit, eau à portée.",
+    "instructions": [
+      "Écris l'objectif et le critère de fin.",
+      "Lance 42 minutes sans bascule.",
+      "Utilise la feuille parasite pour les pensées, jamais l'action."
+    ],
+    "challenge": "42 minutes avec zéro bascule et le critère atteint.",
+    "reflection": "Le passage de 40 à 42 minutes a-t-il changé quelque chose ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 056 — PALIER DE 42 MINUTES."
+  },
+  {
+    "day": 57, "phase": 3, "week": 9, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 057 — EXPLIQUER LES HABITUDES ET LE CONTEXTE",
+    "intention": "Expliquer pourquoi les habitudes vivent dans l'environnement.",
+    "whyToday": "La théorie du contexte est directement applicable : l'expliquer la fixe.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 12 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur les habitudes et le contexte.",
+      "Explique-le en 3 minutes avec un exemple de ta vie.",
+      "Termine par le réglage d'environnement que tu vas tester."
+    ],
+    "challenge": "Une explication avec un exemple personnel et une application précise.",
+    "reflection": "Quel contexte de ta vie déclenche une habitude que tu veux changer ?",
+    "contentType": "lesson", "contentID": 12,
+    "completionMessage": "JOUR 057 — CONTEXTE DES HABITUDES EXPLIQUÉ."
+  },
+  {
+    "day": 58, "phase": 3, "week": 9, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 058 — LA SYNTHÈSE DE DEUX LECTURES",
+    "intention": "Reconstruire deux lectures et les relier entre elles.",
+    "whyToday": "La synthèse croisée est le niveau de reconstruction le plus exigeant.",
+    "duration": 30, "difficulty": 3,
+    "setup": "Les lectures 11 et 12 du jour, un papier.",
+    "instructions": [
+      "Relis rapidement les deux lectures (déjà lues).",
+      "Ferme les supports.",
+      "Écris une page qui relie les deux thèses : en quoi se répondent-elles ?"
+    ],
+    "challenge": "Une synthèse d'une page qui n'est la copie d'aucune des deux lectures.",
+    "reflection": "Quel point de rencontre entre les deux lectures as-tu trouvé ?",
+    "contentType": "reading", "contentID": 11,
+    "completionMessage": "JOUR 058 — SYNTHÈSE CROISÉE ÉCRITE."
+  },
+  {
+    "day": 59, "phase": 3, "week": 9, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 059 — LA SESSION AVEC CONTRAINTE DE TEMPS",
+    "intention": "Travailler 42 minutes avec une contrainte de fin serrée.",
+    "whyToday": "La contrainte de temps est un réglage de défi : la tester sur un bloc long.",
+    "duration": 42, "difficulty": 3,
+    "setup": "Objectif écrit avec un délai interne : « cette partie avant la sonnerie ».",
+    "instructions": [
+      "Écris l'objectif avec un sous-délai ambitieux.",
+      "Lance 42 minutes en tenant le sous-délai comme règle du jeu.",
+      "À la fin, compare ce que la contrainte a changé."
+    ],
+    "challenge": "42 minutes avec la contrainte interne tenue.",
+    "reflection": "La contrainte a-t-elle augmenté l'engagement ou la pression ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 059 — BLOC SOUS CONTRAINTE."
+  },
+  {
+    "day": 60, "phase": 3, "week": 9, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 060 — EXPLIQUER LES OBJECTIFS EFFICACES",
+    "intention": "Expliquer pourquoi « fais de ton mieux » ne fonctionne pas.",
+    "whyToday": "La clôture de la phase 03 : synthétiser un outil de travail utilisable.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 15 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur les objectifs.",
+      "Explique-le en 3 minutes avec un objectif vague et un objectif précis.",
+      "Termine en formulant ton prochain objectif selon les règles du module."
+    ],
+    "challenge": "Une explication qui se termine par un objectif correctement formulé.",
+    "reflection": "Quel objectif de ta vie professionnelle est encore « fais de ton mieux » ?",
+    "contentType": "lesson", "contentID": 15,
+    "completionMessage": "JOUR 060 — PHASE 03 CLÔTURÉE."
+  },
+  {
+    "day": 61, "phase": 4, "week": 9, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 061 — PHASE 4, LE BLOC DE 45 MINUTES",
+    "intention": "Atteindre le bloc maximal du protocole : 45 minutes.",
+    "whyToday": "La phase 04 transfère le protocole dans la vie : le bloc de 45 minutes en est l'outil.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Session planifiée comme un rendez-vous, objectif écrit, environnement réglé.",
+    "instructions": [
+      "Traite la session comme un rendez-vous fixe avec toi-même.",
+      "Lance 45 minutes sans bascule.",
+      "À la fin, fais ta clôture écrite habituelle."
+    ],
+    "challenge": "45 minutes complètes, critère atteint, clôture écrite.",
+    "reflection": "Comment te sens-tu en sachant que tu as tenu le bloc maximal du protocole ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 061 — PHASE 04 OUVERTE, 45 MIN."
+  },
+  {
+    "day": 62, "phase": 4, "week": 9, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 062 — LECTURE AUTONOME",
+    "intention": "Choisir une lecture du jour et la reconstruire sans consigne détaillée.",
+    "whyToday": "L'autonomie commence par choisir son propre protocole de récupération.",
+    "duration": 30, "difficulty": 2,
+    "setup": "La lecture 12 du jour, un papier, ton propre protocole.",
+    "instructions": [
+      "Choisis la méthode de reconstruction que tu maîtrises le mieux.",
+      "Lis la lecture puis applique ta méthode.",
+      "Note ce que ta méthode a laissé passer."
+    ],
+    "challenge": "Appliquer ta méthode complète sans regarder le protocole.",
+    "reflection": "Quelle étape de ta méthode ajouterais-tu après cette session ?",
+    "contentType": "reading", "contentID": 12,
+    "completionMessage": "JOUR 062 — LECTURE AUTONOME."
+  },
+  {
+    "day": 63, "phase": 4, "week": 9, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 063 — EXPLIQUER LE RÉGLAGE DÉFI-COMPÉTENCE",
+    "intention": "Expliquer comment régler le défi d'une tâche, pas le subir.",
+    "whyToday": "L'auto-réglage est une compétence de phase 04 : l'expliquer la consolide.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 24 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur défi et compétence.",
+      "Explique-le en 3 minutes avec un exemple d'ennui et un exemple de submersion.",
+      "Termine par la question : « défi et compétence sur 5, quel est ton écart actuel ? »."
+    ],
+    "challenge": "Une explication qui se termine par ton propre réglage à faire.",
+    "reflection": "Quel écart défi-compétence as-tu mesuré dans ta semaine ?",
+    "contentType": "lesson", "contentID": 24,
+    "completionMessage": "JOUR 063 — RÉGLAGE DÉFI EXPLIQUÉ."
+  },
+  {
+    "day": 64, "phase": 4, "week": 10, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 064 — LES SEMAINES DE RECUL",
+    "intention": "Regarder tes données des 3 dernières semaines et y trouver un pattern.",
+    "whyToday": "Le recul sur les données est la compétence de la phase finale.",
+    "duration": 15, "difficulty": 2,
+    "setup": "Tes sessions des 3 dernières semaines, un papier.",
+    "instructions": [
+      "Liste tes sessions par jour avec durée et bascules.",
+      "Cherche un pattern : heure, mode, énergie, environnement.",
+      "Écris une phrase qui résume le pattern le plus net."
+    ],
+    "challenge": "Trouver un pattern que tu n'avais pas remarqué à chaud.",
+    "reflection": "Quel réglage ce pattern suggère-t-il pour les semaines à venir ?",
+    "contentType": "mission", "contentID": 66,
+    "completionMessage": "JOUR 064 — PATTERN DE 3 SEMAINES IDENTIFIÉ."
+  },
+  {
+    "day": 65, "phase": 4, "week": 10, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 065 — LE BLOC EN CONDITION RÉELLE",
+    "intention": "Faire un bloc de 45 minutes dans des conditions imparfaites.",
+    "whyToday": "La vie réelle n'est pas un laboratoire : s'entraîner à l'imparfait.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Un créneau réel de ta journée, sans aménagement parfait.",
+    "instructions": [
+      "Accepte les imperfections d'environnement sans les laisser tout annuler.",
+      "Lance 45 minutes sur une tâche réelle.",
+      "Traite les imprévus par la note, pas par l'action."
+    ],
+    "challenge": "45 minutes tenues malgré un environnement non idéal.",
+    "reflection": "Quelle imperfection a coûté le plus, et laquelle n'a finalement rien coûté ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 065 — BLOC EN CONDITIONS RÉELLES."
+  },
+  {
+    "day": 66, "phase": 4, "week": 10, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 066 — LE VIDE SANS MINUTEUR",
+    "intention": "Rester dans le vide sans savoir quand cela s'arrêtera.",
+    "whyToday": "Sans minuteur, le vide est une décision continue : la tester.",
+    "duration": 5, "difficulty": 3,
+    "setup": "Un endroit calme, aucun minuteur, téléphone éteint.",
+    "instructions": [
+      "Installe-toi sans lancer aucun minuteur.",
+      "Décide simplement de rester jusqu'à ce que tu choisisses de partir.",
+      "Observe le moment où l'envie de partir arrive."
+    ],
+    "challenge": "Rester au moins 5 minutes sans minuteur, en décidant consciemment de rester.",
+    "reflection": "Sans minuteur, quand l'envie de fuir le vide est-elle apparue ?",
+    "contentType": "void", "contentID": 33,
+    "completionMessage": "JOUR 066 — VIDE SANS MINUTEUR."
+  },
+  {
+    "day": 67, "phase": 4, "week": 10, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 067 — RECONSTRUCTION POUR UN AUTRE",
+    "intention": "Préparer un résumé d'une lecture pour quelqu'un qui ne l'a pas lue.",
+    "whyToday": "Reconstruire pour autrui exige une clarté que reconstruire pour soi n'exige pas.",
+    "duration": 25, "difficulty": 3,
+    "setup": "La lecture 13 du jour, un papier, un destinataire précis en tête.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support.",
+      "Écris un résumé que ce destinataire précis comprendrait sans lire le texte."
+    ],
+    "challenge": "Un résumé autonome : le destinataire n'a besoin de rien d'autre.",
+    "reflection": "Qu'as-tu dû expliciter que tu n'aurais pas explicité pour toi ?",
+    "contentType": "reading", "contentID": 13,
+    "completionMessage": "JOUR 067 — RÉSUMÉ POUR AUTRUI."
+  },
+  {
+    "day": 68, "phase": 4, "week": 10, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 068 — EXPLIQUER LE CONSTRUIT DE FLOW",
+    "intention": "Expliquer ce que le flow est et ce qu'il n'est pas.",
+    "whyToday": "La précision conceptuelle est un outil de phase 04 : distinguer, pas confondre.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 23 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur le construit de flow.",
+      "Explique-le en 3 minutes : dimensions, conditions, confusions.",
+      "Donne un exemple de confusion (hyperfocus, divertissement) et corrige-la."
+    ],
+    "challenge": "Une explication qui corrige explicitement une confusion courante.",
+    "reflection": "Quel état de ta semaine avais-tu appelé « flow » sans l'être vraiment ?",
+    "contentType": "lesson", "contentID": 23,
+    "completionMessage": "JOUR 068 — FLOW DISTINGUÉ DE SES VOISINS."
+  },
+  {
+    "day": 69, "phase": 4, "week": 10, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 069 — LE BLOC SANS CLÔTURE EXTERNE",
+    "intention": "Tenir 45 minutes sans aucune contrainte extérieure de fin.",
+    "whyToday": "La fin auto-décidée est le test de la discipline intériorisée.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Un bloc libre dans la journée, sans réunion ni échéance après.",
+    "instructions": [
+      "Décide seul de la durée et de la fin.",
+      "Lance la session et tiens-la sans référence externe.",
+      "À la fin choisie, écris ta clôture."
+    ],
+    "challenge": "45 minutes tenues uniquement par ta propre décision.",
+    "reflection": "Qu'est-ce qui t'a fait tenir : la règle ou la tâche ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 069 — BLOC AUTO-DÉCIDÉ."
+  },
+  {
+    "day": 70, "phase": 4, "week": 10, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 070 — L'ÉNERGIE SUR LA SEMAINE",
+    "intention": "Relire tes check-ins d'énergie de la semaine et les croiser avec tes sessions.",
+    "whyToday": "L'énergie déclarée et la performance réelle se lisent ensemble.",
+    "duration": 15, "difficulty": 2,
+    "setup": "Tes check-ins d'énergie et tes sessions de la semaine.",
+    "instructions": [
+      "Liste tes énergies déclarées jour par jour.",
+      "Liste tes sessions avec durée et bascules.",
+      "Cherche la correspondance : l'énergie prédisait-elle la session ?"
+    ],
+    "challenge": "Trouver une correspondance ou une absence de correspondance claire.",
+    "reflection": "L'énergie perçue est-elle un prédicteur utile pour toi ?",
+    "contentType": "mission", "contentID": 71,
+    "completionMessage": "JOUR 070 — ÉNERGIE CROISÉE AVEC SESSIONS."
+  },
+  {
+    "day": 71, "phase": 4, "week": 11, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 071 — LE BLOC DE MAINTIEN",
+    "intention": "Maintenir 45 minutes sur une tâche de routine, sans la rendre excitante.",
+    "whyToday": "La routine sans stimulation est le vrai test du maintien : le passer.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Une tâche de routine réelle (administratif, mise à jour, tri).",
+    "instructions": [
+      "Choisis une tâche de routine, pas une tâche passionnante.",
+      "Lance 45 minutes sans chercher à la rendre intéressante.",
+      "Observe où l'ennui apparaît et comment tu le traverses."
+    ],
+    "challenge": "45 minutes sur une tâche plate, sans aucune échappatoire.",
+    "reflection": "Qu'est-ce qui t'a maintenu pendant les minutes plates ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 071 — MAINTIEN SUR ROUTINE."
+  },
+  {
+    "day": 72, "phase": 4, "week": 11, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 072 — LA RECONSTRUCTION ORALE",
+    "intention": "Reconstruire une lecture à voix haute, enregistrée ou non.",
+    "whyToday": "La reconstruction orale diffère de l'écrite : la tester.",
+    "duration": 20, "difficulty": 2,
+    "setup": "La lecture 14 du jour, un minuteur.",
+    "instructions": [
+      "Lis la lecture en entier.",
+      "Ferme le support.",
+      "Raconte-la à voix haute en 3 minutes, comme si tu la résumais à quelqu'un."
+    ],
+    "challenge": "3 minutes de reconstruction orale sans bafouiller sur les trous.",
+    "reflection": "Où l'oral a-t-il révélé des trous que l'écrit masquait ?",
+    "contentType": "reading", "contentID": 14,
+    "completionMessage": "JOUR 072 — RECONSTRUCTION ORALE."
+  },
+  {
+    "day": 73, "phase": 4, "week": 11, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 073 — EXPLIQUER LES NOTIFICATIONS",
+    "intention": "Expliquer pourquoi un signal ignoré coûte déjà de l'attention.",
+    "whyToday": "Le mécanisme des notifications s'explique, et l'explication justifie les réglages.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 40 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur les notifications.",
+      "Explique-le en 3 minutes : le mécanisme, la nuance, le réglage.",
+      "Termine par le réglage que tu vas appliquer cette semaine."
+    ],
+    "challenge": "Une explication qui se termine par un réglage concret.",
+    "reflection": "Quel signal entrant gardes-tu encore « au cas où » ?",
+    "contentType": "lesson", "contentID": 40,
+    "completionMessage": "JOUR 073 — NOTIFICATIONS EXPLIQUÉES."
+  },
+  {
+    "day": 74, "phase": 4, "week": 11, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 074 — LA FLÂNERIE DIRIGÉE",
+    "intention": "Marcher 10 minutes sans destination, en laissant l'attention errer librement.",
+    "whyToday": "L'errance contrôlée est une compétence : ni flux, ni discipline.",
+    "duration": 10, "difficulty": 2,
+    "setup": "Dehors, sans téléphone, sans écouteurs.",
+    "instructions": [
+      "Sors sans destination ni itinéraire.",
+      "Laisse ton attention se poser où elle veut : objets, sons, pensées.",
+      "Ne la ramène à rien : c'est une flânerie, pas un exercice."
+    ],
+    "challenge": "10 minutes sans destination et sans aucune obligation d'attention.",
+    "reflection": "Où ton attention s'est-elle posée d'elle-même ?",
+    "contentType": "void", "contentID": 36,
+    "completionMessage": "JOUR 074 — FLÂNERIE TENUE."
+  },
+  {
+    "day": 75, "phase": 4, "week": 11, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 075 — LE BLOC DU MILIEU DE JOURNÉE",
+    "intention": "Tenir 45 minutes à un créneau que tu évites d'habitude.",
+    "whyToday": "La phase 04 couvre les créneaux difficiles : les affronter.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Un créneau habituellement faible (après déjeuner, fin d'après-midi).",
+    "instructions": [
+      "Choisis le créneau que tu évites le plus.",
+      "Aménage-le avec ton protocole complet.",
+      "Lance 45 minutes et note ce que ce créneau change."
+    ],
+    "challenge": "45 minutes tenues dans le créneau le plus difficile de ta journée.",
+    "reflection": "Le créneau était-il réellement mauvais, ou simplement non aménagé ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 075 — CRÉNEAU DIFFICILE TENU."
+  },
+  {
+    "day": 76, "phase": 4, "week": 11, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 076 — LE BILAN DES RÈGLES",
+    "intention": "Recenser les règles que tu as réellement appliquées depuis le début.",
+    "whyToday": "La phase finale consiste à consolider : d'abord, savoir ce qui existe.",
+    "duration": 15, "difficulty": 2,
+    "setup": "Tes 90 jours de sessions et d'interventions, un papier.",
+    "instructions": [
+      "Liste les règles ou réglages que tu as appliqués plus de 5 fois.",
+      "Note pour chacun : facile, difficile, ou abandonné.",
+      "Surligne les 3 que tu veux garder pour toujours."
+    ],
+    "challenge": "Une liste honnête, sans idéaliser ce que tu n'as pas tenu.",
+    "reflection": "Quelle règle abandonnée mériterait une seconde chance avec un réglage différent ?",
+    "contentType": "mission", "contentID": 74,
+    "completionMessage": "JOUR 076 — RÈGLES CONSOLIDÉES."
+  },
+  {
+    "day": 77, "phase": 4, "week": 11, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 077 — LA LECTURE QUI TE RESSEMBLE",
+    "intention": "Choisir une lecture libre, la lire, et la reconstruire avec un avis.",
+    "whyToday": "La lecture autonome avec avis est l'usage final du module lecture.",
+    "duration": 30, "difficulty": 2,
+    "setup": "La lecture 15 du jour (au choix), un papier.",
+    "instructions": [
+      "Lis la lecture choisie.",
+      "Ferme le support et reconstruis la thèse.",
+      "Ajoute ton avis : avec quoi es-tu d'accord, en désaccord, et pourquoi ?"
+    ],
+    "challenge": "Une reconstruction suivie d'un avis argumenté, pas d'une réaction.",
+    "reflection": "Quelle idée de la lecture vas-tu garder dans ton travail ?",
+    "contentType": "reading", "contentID": 15,
+    "completionMessage": "JOUR 077 — LECTURE CHOISIE, AVIS ARGUMENTÉ."
+  },
+  {
+    "day": 78, "phase": 4, "week": 12, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 078 — EXPLIQUER LE FEEDBACK",
+    "intention": "Expliquer pourquoi le feedback centré sur la tâche aide et celui sur la personne nuit.",
+    "whyToday": "La compétence de feedback s'utilise envers soi et envers les autres.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 16 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur le feedback.",
+      "Explique-le en 3 minutes avec un exemple de tâche et un exemple de personne.",
+      "Termine en reformulant un feedback récent que tu as donné ou reçu."
+    ],
+    "challenge": "Une reformulation qui passe du jugement à l'information actionnable.",
+    "reflection": "Quel feedback récent aurais-tu pu formuler autrement ?",
+    "contentType": "lesson", "contentID": 16,
+    "completionMessage": "JOUR 078 — FEEDBACK EXPLIQUÉ ET REFORMULÉ."
+  },
+  {
+    "day": 79, "phase": 4, "week": 12, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 079 — LE BLOC SANS AUCUN OUTIL NUMÉRIQUE",
+    "intention": "Tenir 45 minutes avec uniquement du papier.",
+    "whyToday": "Le papier supprime les outils-déclencheurs : tester le bloc minimal.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Papier, stylo, tâche réalisable sans écran (rédaction, plan, calcul, dessin).",
+    "instructions": [
+      "Choisis une tâche faisable entièrement sur papier.",
+      "Éteins tout écran et éloigne-le.",
+      "Lance 45 minutes avec le papier comme seul outil."
+    ],
+    "challenge": "45 minutes sans toucher un seul appareil.",
+    "reflection": "Qu'est-ce que le papier a changé dans ton rapport à la tâche ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 079 — BLOC PAPIER TENU."
+  },
+  {
+    "day": 80, "phase": 4, "week": 12, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 080 — LE SILENCE COMPLET",
+    "intention": "Passer 10 minutes dans le silence le plus complet possible.",
+    "whyToday": "Le silence est la forme la plus pure du vide : la pratiquer délibérément.",
+    "duration": 10, "difficulty": 3,
+    "setup": "Un endroit silencieux, fenêtres fermées, téléphone éteint.",
+    "instructions": [
+      "Élimine toutes les sources de son que tu contrôles.",
+      "Reste 10 minutes sans parler, sans lire, sans écouter.",
+      "Accepte les sons restants sans les juger."
+    ],
+    "challenge": "10 minutes de silence volontaire, sans chercher à le remplir.",
+    "reflection": "Qu'est-ce qui a été le plus difficile : le silence ou ton rapport à lui ?",
+    "contentType": "void", "contentID": 39,
+    "completionMessage": "JOUR 080 — SILENCE TENU."
+  },
+  {
+    "day": 81, "phase": 4, "week": 12, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 081 — LE BLOC DE SYNTHÈSE",
+    "intention": "Consacrer 45 minutes à produire une synthèse de ton mois.",
+    "whyToday": "La synthèse est un travail profond réel : l'utiliser comme bloc.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Tes données du mois, un document vide, un objectif de synthèse écrit.",
+    "instructions": [
+      "Écris l'objectif : quelle synthèse, pour qui, pour quoi.",
+      "Lance 45 minutes de production.",
+      "Traite les envies de vérifier par la feuille parasite."
+    ],
+    "challenge": "45 minutes de synthèse avec un document produit à la fin.",
+    "reflection": "Le travail de synthèse t'a-t-il absorbé plus que les tâches de routine ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 081 — SYNTHÈSE PRODUITE."
+  },
+  {
+    "day": 82, "phase": 4, "week": 12, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 082 — LA RECONSTRUCTION COMPLÈTE DU PROTOCOLE",
+    "intention": "Reconstruire de mémoire les 3 idées principales des 4 phases.",
+    "whyToday": "La rétention du protocole lui-même est le test de fin de parcours.",
+    "duration": 25, "difficulty": 3,
+    "setup": "Un papier, ton souvenir du protocole, aucun support.",
+    "instructions": [
+      "Écris de mémoire : les 4 phases et leur but.",
+      "Pour chaque phase, note l'idée principale que tu en retiens.",
+      "Compare avec le programme réel et note les écarts."
+    ],
+    "challenge": "Une reconstruction complète des 4 phases sans aucun support.",
+    "reflection": "Quelle phase t'a le plus marqué, et pourquoi cette phase-là ?",
+    "contentType": "reading", "contentID": 16,
+    "completionMessage": "JOUR 082 — PROTOCOLE RECONSTRUIT."
+  },
+  {
+    "day": 83, "phase": 4, "week": 12, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 083 — EXPLIQUER LE BIAIS DE CONFIRMATION",
+    "intention": "Expliquer comment le biais de confirmation fausse les décisions.",
+    "whyToday": "La vigilance contre les biais s'installe en les nommant.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 27 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur le biais de confirmation.",
+      "Explique-le en 3 minutes : les trois étages, le contrepoids.",
+      "Termine par une décision récente où tu as cherché la confirmation."
+    ],
+    "challenge": "Une explication qui identifie un cas personnel, pas un cas générique.",
+    "reflection": "Quelle procédure de réfutation pourrais-tu ajouter à tes décisions ?",
+    "contentType": "lesson", "contentID": 27,
+    "completionMessage": "JOUR 083 — BIAIS DE CONFIRMATION EXPLIQUÉ."
+  },
+  {
+    "day": 84, "phase": 4, "week": 12, "mode": "observe", "skill": "ATTENTION_OBSERVE",
+    "title": "JOUR 084 — LE BILAN DES INTERVENTIONS",
+    "intention": "Évaluer les interventions d'environnement que tu as testées.",
+    "whyToday": "La phase finale trie : garder ce qui marche, jeter ce qui ne marche pas.",
+    "duration": 15, "difficulty": 2,
+    "setup": "La liste de tes interventions testées, un papier.",
+    "instructions": [
+      "Liste chaque intervention d'environnement testée.",
+      "Note son effet : net, modeste, nul, ou négatif.",
+      "Décide : garder, modifier, ou abandonner chacune."
+    ],
+    "challenge": "Une décision explicite pour chaque intervention, sans « on verra ».",
+    "reflection": "Quelle intervention a eu l'effet le plus net sur tes sessions ?",
+    "contentType": "mission", "contentID": 78,
+    "completionMessage": "JOUR 084 — INTERVENTIONS TRIÉES."
+  },
+  {
+    "day": 85, "phase": 4, "week": 13, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 085 — LE BLOC SANS CONTRÔLE D'HEURE",
+    "intention": "Travailler jusqu'à la fin naturelle de la tâche, sans minuteur.",
+    "whyToday": "La fin naturelle remplace la sonnerie : le test de l'autonomie.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Une tâche avec une fin naturelle claire, pas de minuteur.",
+    "instructions": [
+      "Définis la fin naturelle de la tâche (critère, pas durée).",
+      "Travaille sans minuteur jusqu'à ce critère.",
+      "Note l'heure de départ et l'heure d'arrivée, sans la regarder pendant."
+    ],
+    "challenge": "Atteindre le critère sans jamais consulter l'heure.",
+    "reflection": "Ta durée réelle est-elle proche de ce que tu aurais estimé ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 085 — FIN NATURELLE ATTEINTE."
+  },
+  {
+    "day": 86, "phase": 4, "week": 13, "mode": "recall", "skill": "ATTENTION_RECALL",
+    "title": "JOUR 086 — LA RÉTENTION À 7 JOURS",
+    "intention": "Reconstruire une lecture lue il y a une semaine.",
+    "whyToday": "La rétention à 7 jours est le test final du module lecture.",
+    "duration": 20, "difficulty": 3,
+    "setup": "Une lecture lue il y a 7 jours (au choix), un papier.",
+    "instructions": [
+      "Sans rouvrir le texte, écris la thèse et 3 idées.",
+      "Note ta confiance avant vérification.",
+      "Ouvre le texte et mesure l'écart réel."
+    ],
+    "challenge": "Reconstruire à 7 jours avec un écart que tu peux nommer précisément.",
+    "reflection": "Qu'est-ce qui a survécu 7 jours : la thèse, les exemples, les mécanismes ?",
+    "contentType": "reading", "contentID": 17,
+    "completionMessage": "JOUR 086 — RÉTENTION 7 JOURS MESURÉE."
+  },
+  {
+    "day": 87, "phase": 4, "week": 13, "mode": "explain", "skill": "ATTENTION_EXPLAIN",
+    "title": "JOUR 087 — EXPLIQUER L'ANCRAGE",
+    "intention": "Expliquer comment le premier chiffre influence les estimations.",
+    "whyToday": "La connaissance des biais d'estimation protège les décisions de travail.",
+    "duration": 20, "difficulty": 2,
+    "setup": "Le module 29 du jour, un auditeur imaginaire.",
+    "instructions": [
+      "Étudie le module sur l'ancrage.",
+      "Explique-le en 3 minutes avec l'expérience de la roue.",
+      "Termine par une estimation de ta semaine où l'ancrage a pu jouer."
+    ],
+    "challenge": "Une explication qui relie l'expérience classique à un cas réel.",
+    "reflection": "Quelle ancre indépendante aurais-tu pu chercher pour ta dernière estimation ?",
+    "contentType": "lesson", "contentID": 29,
+    "completionMessage": "JOUR 087 — ANCRAGE EXPLIQUÉ."
+  },
+  {
+    "day": 88, "phase": 4, "week": 13, "mode": "nothing", "skill": "ATTENTION_NOTHING",
+    "title": "JOUR 088 — LE VIDE RÉCAPITULATIF",
+    "intention": "10 minutes de vide en repensant librement aux 12 dernières semaines.",
+    "whyToday": "Le vide est aussi un espace de bilan : laisser les 90 jours défiler.",
+    "duration": 10, "difficulty": 2,
+    "setup": "Un endroit calme, sans écran, sans papier.",
+    "instructions": [
+      "Installe-toi dans le silence.",
+      "Laisse remonter ce que tu veux des 12 dernières semaines, sans forcer.",
+      "Ne note rien : le bilan écrit viendra demain."
+    ],
+    "challenge": "10 minutes de vide sans chercher à « travailler » le bilan.",
+    "reflection": "Quel moment du protocole est remonté le premier ?",
+    "contentType": "void", "contentID": 42,
+    "completionMessage": "JOUR 088 — VIDE DE BILAN TENU."
+  },
+  {
+    "day": 89, "phase": 4, "week": 13, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 089 — LE BLOC COMPLET AUTONOME",
+    "intention": "Mener un bloc de 45 minutes entièrement par toi-même, du réglage à la clôture.",
+    "whyToday": "La répétition générale avant le jour 90 : tout le protocole, sans consigne.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Choisis toi-même : tâche, créneau, environnement, indicateur, clôture.",
+    "instructions": [
+      "Applique de mémoire tout ton protocole de session.",
+      "Ne consulte aucune consigne pendant le bloc.",
+      "À la fin, écris ta clôture complète : fait, reste, prochaine action."
+    ],
+    "challenge": "Un bloc complet sans aucune référence au protocole pendant la session.",
+    "reflection": "Quelle étape du protocole as-tu oubliée ou transformée ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 089 — PROTOCOLE AUTONOME RÉUSSI."
+  },
+  {
+    "day": 90, "phase": 4, "week": 13, "mode": "stay", "skill": "ATTENTION_STAY",
+    "title": "JOUR 090 — LE DERNIER BLOC",
+    "intention": "Fermer les 90 jours avec un bloc de 45 minutes et le bilan.",
+    "whyToday": "Le jour 90 n'est pas une fin : c'est la première journée du mode maintenance.",
+    "duration": 45, "difficulty": 3,
+    "setup": "Ton meilleur créneau, ta meilleure configuration, ta tâche la plus importante.",
+    "instructions": [
+      "Mène le bloc avec tout ce que tu as construit.",
+      "À la fin, écris le bilan : ce qui a changé, ce qui reste à mesurer.",
+      "Ouvre le Manuel Opératoire pour lire la synthèse de tes données."
+    ],
+    "challenge": "45 minutes, puis un bilan écrit de 10 lignes, puis la lecture du manuel.",
+    "reflection": "Quelle donnée de tes 90 jours veux-tu continuer à suivre en mode maintenance ?",
+    "contentType": "stay", "contentID": null,
+    "completionMessage": "JOUR 090 — 90 JOURS FERMÉS. MAINTENANCE OUVERTE."
   }
 ]

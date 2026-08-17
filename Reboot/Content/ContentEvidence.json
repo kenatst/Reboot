@@ -1,1762 +1,815 @@
 [
   {
-    "id": "EV_001",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 01)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.001",
+    "id": "EV_ATTENTION_RESIDUE_001",
+    "canonicalClaim": "Après un changement de tâche, une partie de l'attention reste orientée vers la tâche précédente : la performance sur la tâche suivante est plus faible lorsque la tâche abandonnée n'était pas terminée.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Sophie Leroy",
+    "title": "Why is it so hard to do my work? The challenge of attention residue when switching between work tasks",
+    "journalOrPublisher": "Organizational Behavior and Human Decision Processes",
     "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_002",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 02)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.002",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_003",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 03)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.003",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_004",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 04)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.004",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_005",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 05)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.005",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_006",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 06)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.006",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_007",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 07)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.007",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_008",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 08)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.008",
-    "year": 2001,
+    "doiOrURL": "https://doi.org/10.1016/j.obhdp.2009.04.002",
     "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "limitations": "Étude en environnement de travail simulé, échantillon de professionnels, effets mesurés en laboratoire.",
+    "supportedWording": [
+      "Clore une tâche de façon visible avant d'en commencer une autre réduit le résidu attentionnel.",
+      "Laisser une tâche incomplète peut dégrader la performance sur la tâche suivante."
+    ],
+    "unsupportedWording": [
+      "Le cerveau « reste branché » sur la tâche précédente pendant 20 minutes.",
+      "Changer de tâche détruit définitivement la concentration."
+    ],
+    "topic": "ATTENTION",
+    "notes": "Source canonique du concept de résidu attentionnel. Une seule entrée pour toutes les leçons liées."
   },
   {
-    "id": "EV_009",
+    "id": "EV_RETRIEVAL_PRACTICE_001",
+    "canonicalClaim": "La pratique de récupération (se tester) produit une rétention à long terme nettement supérieure à la relecture répétée, dans des conditions contrôlées.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Henry L. Roediger III & Jeffrey D. Karpicke",
+    "title": "Test-enhanced learning: Taking memory tests improves long-term retention",
+    "journalOrPublisher": "Psychological Science",
+    "year": 2006,
+    "doiOrURL": "https://doi.org/10.1111/j.1467-9280.2006.01693.x",
+    "confidence": "HIGH",
+    "limitations": "Matériel de laboratoire (textes), échéances de test courtes à 1 semaine ; ne dit rien des conditions de transfert.",
+    "supportedWording": [
+      "Se rappeler un contenu de mémoire renforce sa rétention à long terme.",
+      "Lire et relire donne une impression de maîtrise qui ne prédit pas la rétention."
+    ],
+    "unsupportedWording": [
+      "Le testing fonctionne pour n'importe quelle matière et n'importe qui.",
+      "Tout apprentissage doit se faire par des quiz."
+    ],
+    "topic": "LEARNING",
+    "notes": "Une entrée pour l'effet de testing ; EV_RETRIEVAL_VS_MAPPING_001 couvre la comparaison avec les cartes conceptuelles."
+  },
+  {
+    "id": "EV_RETRIEVAL_VS_MAPPING_001",
+    "canonicalClaim": "La récupération active produit de meilleurs apprentissages qu'une étude élaborative avec cartes conceptuelles sur du matériel scientifique.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Jeffrey D. Karpicke & Janell R. Blunt",
+    "title": "Retrieval practice produces more learning than elaborative studying with concept mapping",
+    "journalOrPublisher": "Science",
+    "year": 2011,
+    "doiOrURL": "https://doi.org/10.1126/science.1199327",
+    "confidence": "HIGH",
+    "limitations": "Étudiants, matériel textuel scientifique, mesure à une semaine ; les conditions « élaboratives » étaient spécifiques.",
+    "supportedWording": [
+      "Se tester après une lecture bat une relecture ou une carte conceptuelle, sur ce type de matériel."
+    ],
+    "unsupportedWording": [
+      "Les cartes conceptuelles sont inutiles.",
+      "La récupération remplace toute autre méthode d'étude."
+    ],
+    "topic": "LEARNING",
+    "notes": "Complète EV_RETRIEVAL_PRACTICE_001."
+  },
+  {
+    "id": "EV_LEARNING_TECHNIQUES_001",
+    "canonicalClaim": "Une revue des techniques d'étude conclut que le testing et la pratique espacée ont des utilités élevées, tandis que des techniques populaires (relire, surligner) ont une utilité faible.",
+    "sourceType": "SYSTEMATIC_REVIEW",
+    "authors": "John Dunlosky, Katherine A. Rawson, Elizabeth J. Marsh, Mitchell J. Nathan & Daniel T. Willingham",
+    "title": "Improving students' learning with effective learning techniques: Promising directions from cognitive and educational psychology",
+    "journalOrPublisher": "Psychological Science in the Public Interest",
+    "year": 2013,
+    "doiOrURL": "https://doi.org/10.1177/1529100612453266",
+    "confidence": "HIGH",
+    "limitations": "Revue de conditions de laboratoire et de classes ; les tailles d'effet varient selon les contextes.",
+    "supportedWording": [
+      "Le testing et l'espacement sont parmi les techniques les mieux soutenues.",
+      "Relire et surligner sont des techniques faibles."
+    ],
+    "unsupportedWording": [
+      "Il existe une technique miracle d'apprentissage.",
+      "Surligner ne sert à rien dans tous les cas."
+    ],
+    "topic": "LEARNING",
+    "notes": "Une seule entrée de revue, pas d'aliases."
+  },
+  {
+    "id": "EV_SPACING_001",
+    "canonicalClaim": "La pratique espacée (répartir les répétitions dans le temps) améliore la rétention à long terme par rapport à une pratique massée.",
+    "sourceType": "META_ANALYSIS",
+    "authors": "Nicholas J. Cepeda, Harold Pashler, Edward Vul, John T. Wixted & Doug Rohrer",
+    "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+    "journalOrPublisher": "Psychological Bulletin",
+    "year": 2006,
+    "doiOrURL": "https://doi.org/10.1037/0033-2909.132.3.354",
+    "confidence": "HIGH",
+    "limitations": "Tâches de rappel verbal majoritairement ; l'effet dépend de l'intervalle et de l'échéance.",
+    "supportedWording": [
+      "Répartir les sessions d'étude améliore la rétention à long terme.",
+      "Un intervalle trop court ou trop long réduit l'effet."
+    ],
+    "unsupportedWording": [
+      "Il existe un intervalle parfait de 24 heures.",
+      "Espacer rend l'apprentissage plus facile à chaque session."
+    ],
+    "topic": "LEARNING",
+    "notes": "Source canonique de l'espacement."
+  },
+  {
+    "id": "EV_IMPLEMENTATION_INTENTIONS_001",
+    "canonicalClaim": "Former des intentions d'implémentation (si-alors : « si situation X, alors je fais Y ») améliore la probabilité d'accomplir l'action visée, sur la base d'une méta-analyse.",
+    "sourceType": "META_ANALYSIS",
+    "authors": "Peter M. Gollwitzer & Paschal Sheeran",
+    "title": "Implementation intentions and goal achievement: A meta‐analysis of effects and processes",
+    "journalOrPublisher": "Advances in Experimental Social Psychology",
+    "year": 2006,
+    "doiOrURL": "https://doi.org/10.1016/S0065-2601(06)38002-1",
+    "confidence": "HIGH",
+    "limitations": "Méta-analyse sur des actions souvent simples ; effet moindre pour les comportements complexes ou bloqués par l'environnement.",
+    "supportedWording": [
+      "Décider à l'avance « si X, alors je fais Y » augmente la probabilité d'agir.",
+      "Les intentions si-alors aident surtout pour des actions précises et opportunes."
+    ],
+    "unsupportedWording": [
+      "Les intentions d'implémentation remplacent la motivation.",
+      "Formuler un plan suffit à vaincre n'importe quelle habitude."
+    ],
+    "topic": "SELF_REGULATION",
+    "notes": "Une entrée canonique."
+  },
+  {
+    "id": "EV_NOTIFICATIONS_001",
+    "canonicalClaim": "Une notification de téléphone perçue (même sans consultation) suffit à dégrader la performance sur une tâche d'attention soutenue.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Cary Stothart, Daniel Mitchum & Courtney Yehnert",
+    "title": "The attentional cost of receiving a notification on a smartphone",
+    "journalOrPublisher": "Journal of Experimental Psychology: Human Perception and Performance",
+    "year": 2015,
+    "doiOrURL": "https://doi.org/10.1037/xhp0000100",
+    "confidence": "MODERATE",
+    "limitations": "Tâche de laboratoire, notifications de type SMS/alerte ; taille d'effet modérée, généralisation au quotidien limitée.",
+    "supportedWording": [
+      "Recevoir une notification dégrade la performance, même quand on n'y répond pas.",
+      "Réduire les notifications entrants protège l'attention soutenue."
+    ],
+    "unsupportedWording": [
+      "Une notification « détruit » 23 minutes de concentration.",
+      "Toutes les notifications ont un effet identique."
+    ],
+    "topic": "DIGITAL_REFLEX",
+    "notes": "Source unique pour l'effet des notifications."
+  },
+  {
+    "id": "EV_SLEEP_RESTRICTION_001",
+    "canonicalClaim": "Une restriction de sommeil, même sur une seule nuit, est associée à une moins bonne attention soutenue.",
+    "sourceType": "SYSTEMATIC_REVIEW",
+    "authors": "Larissa Wüst et al.",
+    "title": "Effects of one night of sleep restriction on sustained attention in healthy young adults: A systematic review and meta-analysis",
+    "journalOrPublisher": "Sleep Medicine Reviews",
+    "year": 2024,
+    "doiOrURL": "https://doi.org/10.1016/j.smrv.2024.101940",
+    "confidence": "HIGH",
+    "limitations": "Populations jeunes et en bonne santé ; effets moyens, variance individuelle importante.",
+    "supportedWording": [
+      "Une nuit de sommeil réduit est associée à une moins bonne attention soutenue.",
+      "Protéger le sommeil est pertinent avant des blocs exigeants."
+    ],
+    "unsupportedWording": [
+      "Le manque de sommeil « détruit le cortex préfrontal en premier ».",
+      "Résister au téléphone demande deux fois plus d'énergie quand on a mal dormi."
+    ],
     "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 09)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.009",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "notes": "Source canonique sommeil-attention."
   },
   {
-    "id": "EV_010",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 10)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.010",
+    "id": "EV_CAFFEINE_SLEEP_001",
+    "canonicalClaim": "La caféine consommée en fin de journée peut retarder et dégrader le sommeil ; la réponse individuelle à la caféine varie fortement.",
+    "sourceType": "SYSTEMATIC_REVIEW",
+    "authors": "Catherine Gardiner, Jonathon Weakley, Louise M. Burke, Gregory D. Roach, Charli Sargent, Manya Dodwell & Shona L. Halson",
+    "title": "The effect of caffeine on subsequent sleep: A systematic review and meta-analysis",
+    "journalOrPublisher": "Sleep Medicine Reviews",
+    "year": 2023,
+    "doiOrURL": "https://doi.org/10.1016/j.smrv.2023.101764",
+    "confidence": "MODERATE",
+    "limitations": "Effet dépend de la dose, de l'heure, de la tolérance et du métabolisme individuel.",
+    "supportedWording": [
+      "La caféine proche du coucher peut retarder l'endormissement.",
+      "La sensibilité à la caféine est individuelle : à observer pour soi-même."
+    ],
+    "unsupportedWording": [
+      "Il faut attendre 60 à 90 minutes après le réveil avant de boire un café.",
+      "La caféine est toujours nocive ou toujours bénéfique."
+    ],
+    "topic": "ENERGY",
+    "notes": "Remplace toute recommandation pseudo-précise sur le timing du matin."
+  },
+  {
+    "id": "EV_ACUTE_EXERCISE_001",
+    "canonicalClaim": "L'exercice aigu (une session de mouvement) est associé à des effets cognitifs généralement modestes et hétérogènes.",
+    "sourceType": "META_ANALYSIS",
+    "authors": "Sebastian Ludyga, Markus Gerber, Serge Brand, Edith Holsboer-Trachsler & Uwe Pühse",
+    "title": "Acute effects of moderate aerobic exercise on specific aspects of executive function in different age and fitness groups: A meta-analysis",
+    "journalOrPublisher": "Psychophysiology",
     "year": 2016,
+    "doiOrURL": "https://doi.org/10.1111/psyp.12736",
     "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "limitations": "Effets moyens modestes, très hétérogènes selon l'âge, la forme et la tâche.",
+    "supportedWording": [
+      "Une session de mouvement modéré peut avoir un petit bénéfice cognitif chez certaines personnes.",
+      "Tester soi-même si une marche courte change la qualité de la session suivante."
+    ],
+    "unsupportedWording": [
+      "Dix minutes de marche « restaurent l'attention exécutive ».",
+      "Le mouvement remplace le sommeil."
+    ],
+    "topic": "ENERGY",
+    "notes": "Tone prudent : bénéfice potentiel modeste, à mesurer individuellement."
   },
   {
-    "id": "EV_011",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 11)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.011",
+    "id": "EV_FLOW_BOOK_001",
+    "canonicalClaim": "Le flow est décrit comme un état d'absorption totale dans une activité, souvent associé à des objectifs clairs, un feedback immédiat et un équilibre défi-compétence.",
+    "sourceType": "BOOK",
+    "authors": "Mihaly Csikszentmihalyi",
+    "title": "Flow: The Psychology of Optimal Experience",
+    "journalOrPublisher": "Harper & Row",
+    "year": 1990,
+    "doiOrURL": "ISBN 978-0-06-016253-5 (Harper & Row)",
+    "confidence": "MODERATE",
+    "limitations": "Ouvrage fondateur, descriptions qualitatives ; le flow reste un construit difficile à mesurer.",
+    "supportedWording": [
+      "Les conditions décrites du flow incluent des objectifs clairs, un feedback immédiat et un défi adapté.",
+      "Le flow décrit une expérience subjective d'absorption."
+    ],
+    "unsupportedWording": [
+      "On peut « entrer en flow » à volonté.",
+      "Le flow est un état neurologique mesurable de façon fiable."
+    ],
+    "topic": "FLOW_CONDITIONS",
+    "notes": "Source historique du construit ; ne pas l'utiliser pour des promesses physiologiques."
+  },
+  {
+    "id": "EV_FLOW_CHALLENGE_SKILL_001",
+    "canonicalClaim": "L'équilibre défi-compétence est associé au flow, mais cette association est de force modérée et dépend d'autres conditions (objectifs clairs, sentiment de contrôle).",
+    "sourceType": "META_ANALYSIS",
+    "authors": "Carlton J. Fong, Diana J. Zaleski & Jennifer Kay Leach",
+    "title": "The challenge–skill balance and antecedents of flow: A meta-analytic investigation",
+    "journalOrPublisher": "The Journal of Positive Psychology",
+    "year": 2015,
+    "doiOrURL": "https://doi.org/10.1080/17439760.2014.967799",
+    "confidence": "MODERATE",
+    "limitations": "Corrélations issues d'études transversales pour la plupart ; pas de preuve causale stricte.",
+    "supportedWording": [
+      "Un défi perçu comme à la limite de ses compétences est associé à l'absorption.",
+      "Ennui et surcharge sont deux formes de déséquilibre défi-compétence."
+    ],
+    "unsupportedWording": [
+      "Le flow apparaît automatiquement quand défi = compétence.",
+      "La « zone » est un état garanti."
+    ],
+    "topic": "FLOW_CONDITIONS",
+    "notes": "Complète EV_FLOW_BOOK_001 avec une base quantitative."
+  },
+  {
+    "id": "EV_HABIT_CONTEXT_001",
+    "canonicalClaim": "Les habitudes sont largement déclenchées par des signaux contextuels stables (lieu, moment, objets), plus que par la volonté à chaque instant.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Wendy Wood & David T. Neal",
+    "title": "A new look at habits and the habit–goal interface",
+    "journalOrPublisher": "Psychological Review",
+    "year": 2007,
+    "doiOrURL": "https://doi.org/10.1037/0033-295X.114.4.843",
+    "confidence": "HIGH",
+    "limitations": "Revue théorique ; le rôle exact du contexte varie selon le type d'habitude.",
+    "supportedWording": [
+      "Changer le contexte rend une habitude moins automatique.",
+      "Les signaux stables déclenchent les comportements répétés."
+    ],
+    "unsupportedWording": [
+      "Il faut 21 jours pour créer une habitude.",
+      "L'environnement détermine tout."
+    ],
+    "topic": "ENVIRONMENT",
+    "notes": "Source canonique du rôle de l'environnement dans les habitudes."
+  },
+  {
+    "id": "EV_HABIT_FORMATION_001",
+    "canonicalClaim": "La formation d'une habitude réelle varie fortement selon les personnes et les comportements ; les durées moyennes observées (66 jours en médiane dans cette étude) ne constituent pas une règle universelle.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Phillippa Lally, Cornelia H. M. van Jaarsveld, Henry W. W. Potts & Jane Wardle",
+    "title": "How are habits formed: Modelling habit formation in the real world",
+    "journalOrPublisher": "European Journal of Social Psychology",
+    "year": 2010,
+    "doiOrURL": "https://doi.org/10.1002/ejsp.674",
+    "confidence": "MODERATE",
+    "limitations": "Un seul échantillon, comportements choisis par les participants ; l'automaticité mesurée est un indicateur indirect.",
+    "supportedWording": [
+      "Le temps nécessaire pour automatiser un comportement varie beaucoup.",
+      "Répéter dans un contexte stable favorise l'automaticité."
+    ],
+    "unsupportedWording": [
+      "Une habitude se crée en exactement 21 jours.",
+      "Il suffit de répéter pour automatiser n'importe quel comportement."
+    ],
+    "topic": "SELF_REGULATION",
+    "notes": "A utiliser pour nuancer les promesses de durée."
+  },
+  {
+    "id": "EV_PHONE_PRESENCE_001",
+    "canonicalClaim": "La simple présence de son propre téléphone (visible ou à proximité, éteint ou silencieux) est associée à une réduction de la capacité cognitive disponible dans des tâches contrôlées.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Adrian F. Ward, Kristen Duke, Ayelet Gneezy & Maarten W. Bos",
+    "title": "Brain drain: The mere presence of one's own smartphone reduces available cognitive capacity",
+    "journalOrPublisher": "Journal of the Association for Consumer Research",
+    "year": 2017,
+    "doiOrURL": "https://doi.org/10.1086/691462",
+    "confidence": "MODERATE",
+    "limitations": "Tâches de laboratoire (mémoire de travail, attention) ; les effets sur le travail réel sont moins documentés.",
+    "supportedWording": [
+      "Garder son téléphone hors de vue réduit la tentation de vérification.",
+      "La présence du téléphone peut coûter de la capacité mentale même silencieux."
+    ],
+    "unsupportedWording": [
+      "Le téléphone « vide le cerveau » dans toutes les situations.",
+      "Mettre le téléphone dans une autre pièce triple la productivité."
+    ],
+    "topic": "DIGITAL_REFLEX",
+    "notes": "Source pour la distance physique ; pas de multiplicateur magique."
+  },
+  {
+    "id": "EV_INTERRUPTION_COST_001",
+    "canonicalClaim": "Les interruptions brèves pendant un travail sur ordinateur s'accompagnent d'une exécution plus rapide mais plus stressante, et d'un nombre de bascules plus élevé.",
+    "sourceType": "PEER_REVIEWED_CONFERENCE",
+    "authors": "Gloria Mark, Daniela Gudith & Ulrich Klocke",
+    "title": "The cost of interrupted work: More speed and stress",
+    "journalOrPublisher": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI)",
+    "year": 2008,
+    "doiOrURL": "https://doi.org/10.1145/1357054.1357072",
+    "confidence": "MODERATE",
+    "limitations": "Étude en situation réelle de bureau, échantillon limité ; observationnelle.",
+    "supportedWording": [
+      "Les interruptions s'accompagnent de plus de bascules et d'un rythme plus rapide.",
+      "Réduire les interruptions externes protège les sessions de travail."
+    ],
+    "unsupportedWording": [
+      "Une interruption coûte 23 minutes et 15 secondes à chaque fois.",
+      "Tout travail interrompu est perdu."
+    ],
+    "topic": "DEEP_WORK",
+    "notes": "Aucun chiffre précis cité dans le contenu ; uniquement la direction de l'effet."
+  },
+  {
+    "id": "EV_MEDIA_MULTITASKING_001",
+    "canonicalClaim": "Des différences de contrôle cognitif ont été observées entre personnes qui multitaskent beaucoup avec les médias et personnes qui multitaskent peu ; l'étude ne démontre pas de lien causal.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Eyal Ophir, Clifford Nass & Anthony D. Wagner",
+    "title": "Cognitive control in media multitaskers",
+    "journalOrPublisher": "Proceedings of the National Academy of Sciences",
     "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "doiOrURL": "https://doi.org/10.1073/pnas.0903620106",
+    "confidence": "EMERGING",
+    "limitations": "Corrélationnelle, échantillon d'étudiants, réplications mitigées.",
+    "supportedWording": [
+      "Le multitâche média fréquent est associé à des différences de filtrage de l'information.",
+      "On ne peut pas conclure que le multitâche « abîme » le cerveau."
+    ],
+    "unsupportedWording": [
+      "Le multitâche réduit le QI de 10 points.",
+      "Le cerveau ne peut jamais faire deux choses à la fois."
+    ],
+    "topic": "ATTENTION_CONTROL",
+    "notes": "Confidence EMERGING : littérature corrélationnelle et réplications mitigées."
   },
   {
-    "id": "EV_012",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 12)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.012",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "id": "EV_TASK_SWITCHING_001",
+    "canonicalClaim": "Changer de tâche a un coût mesurable (latence et erreurs), y compris quand les deux tâches sont simples.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Stephen Monsell",
+    "title": "Task switching",
+    "journalOrPublisher": "Trends in Cognitive Sciences",
+    "year": 2003,
+    "doiOrURL": "https://doi.org/10.1016/S1364-6613(03)00028-7",
+    "confidence": "HIGH",
+    "limitations": "Revue de laboratoire ; les coûts dépendent de la préparation et de la similarité des tâches.",
+    "supportedWording": [
+      "Chaque changement de tâche a un coût en temps et en erreurs.",
+      "Les bascules fréquentes fragmentent l'attention."
+    ],
+    "unsupportedWording": [
+      "Changer de tâche coûte toujours exactement 15 minutes.",
+      "Toute bascule est interdite."
+    ],
+    "topic": "ATTENTION_CONTROL",
+    "notes": "Source conceptuelle des coûts de bascule."
   },
   {
-    "id": "EV_013",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 13)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.013",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "id": "EV_DUAL_TASK_001",
+    "canonicalClaim": "Réaliser deux tâches exigeantes simultanément produit une interférence : la performance d'au moins une tâche se dégrade.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Harold Pashler",
+    "title": "Dual-task interference in simple tasks: Data and theory",
+    "journalOrPublisher": "Psychological Bulletin",
+    "year": 1994,
+    "doiOrURL": "https://doi.org/10.1037/0033-2909.116.2.220",
+    "confidence": "HIGH",
+    "limitations": "Tâches simples en laboratoire ; certains couples de tâches automatisées interfèrent peu.",
+    "supportedWording": [
+      "Deux tâches qui demandent de l'attention se gênent mutuellement.",
+      "Le « multitâche simultané » réel est souvent une alternance rapide."
+    ],
+    "unsupportedWording": [
+      "Les femmes/hommes sont meilleurs au multitâche.",
+      "Écouter de la musique pendant le travail est toujours une interférence."
+    ],
+    "topic": "ATTENTION_CONTROL",
+    "notes": "Utiliser pour le concept d'interférence, pas pour des verdicts sur la musique."
   },
   {
-    "id": "EV_014",
+    "id": "EV_COGNITIVE_LOAD_001",
+    "canonicalClaim": "La charge cognitive d'une tâche dépend de la quantité d'éléments à traiter en même temps ; un problème présenté avec trop d'informations concurrentes peut nuire à l'apprentissage.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "John Sweller",
+    "title": "Cognitive load during problem solving: Effects on learning",
+    "journalOrPublisher": "Cognitive Science",
+    "year": 1988,
+    "doiOrURL": "https://doi.org/10.1207/s15516709cog1202_4",
+    "confidence": "MODERATE",
+    "limitations": "Matériel pédagogique spécifique ; la théorie a évolué depuis.",
+    "supportedWording": [
+      "Une tâche surchargée d'informations concurrentes est plus difficile à traiter.",
+      "Réduire le superflu dans l'environnement de travail libère du traitement."
+    ],
+    "unsupportedWording": [
+      "Le cerveau ne peut traiter que 4 choses à la fois.",
+      "Toute information visuelle supplémentaire est nuisible."
+    ],
     "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 14)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.014",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "notes": "Source de la théorie de la charge cognitive."
   },
   {
-    "id": "EV_015",
+    "id": "EV_WM_MODEL_001",
+    "canonicalClaim": "Le modèle multicomposant de la mémoire de travail (administrateur central, boucle phonologique, calepin visuospatial, buffer épisodique) est un modèle théorique, pas une description anatomique.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Alan D. Baddeley",
+    "title": "The episodic buffer: A new component of working memory?",
+    "journalOrPublisher": "Trends in Cognitive Sciences",
+    "year": 2000,
+    "doiOrURL": "https://doi.org/10.1016/S1364-6613(00)01538-2",
+    "confidence": "HIGH",
+    "limitations": "Modèle en évolution, débats ouverts sur la nature des composants.",
+    "supportedWording": [
+      "La mémoire de travail est décrite comme un système à composants multiples.",
+      "Le modèle de Baddeley est un outil théorique pour penser le maintien et la manipulation de l'information."
+    ],
+    "unsupportedWording": [
+      "La mémoire de travail est un organe situé dans le cortex préfrontal.",
+      "Le modèle décrit des zones exactes du cerveau."
+    ],
     "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 15)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.015",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "notes": "Présenter le modèle comme modèle, jamais comme anatomie."
   },
   {
-    "id": "EV_016",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 16)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.016",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_017",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 17)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.017",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_018",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 18)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.018",
+    "id": "EV_WM_CAPACITY_001",
+    "canonicalClaim": "Les estimations de capacité de la mémoire de travail varient selon la tâche, le matériel et la mesure ; l'idée d'un « nombre magique 4 » est une estimation moyenne, pas une loi universelle.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Nelson Cowan",
+    "title": "The magical number 4 in short-term memory: A reconsideration of mental storage capacity",
+    "journalOrPublisher": "Behavioral and Brain Sciences",
     "year": 2001,
+    "doiOrURL": "https://doi.org/10.1017/S0140525X01003922",
     "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "limitations": "Estimation moyenne dans des conditions de laboratoire ; fortement dépendante du chunking et de la tâche.",
+    "supportedWording": [
+      "Les estimations de capacité varient selon le matériel et la tâche.",
+      "Le groupement (chunking) augmente ce qu'on peut retenir."
+    ],
+    "unsupportedWording": [
+      "On ne peut retenir que 4 éléments, point.",
+      "Chaque personne a une capacité fixe et mesurable."
+    ],
+    "topic": "LEARNING",
+    "notes": "Nuancier obligatoire pour toute mention de capacité."
   },
   {
-    "id": "EV_019",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 19)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.019",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_020",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 20)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.020",
-    "year": 2016,
+    "id": "EV_MILLER_7_001",
+    "canonicalClaim": "Miller a documenté une limite apparente de l'ordre de 7 ± 2 unités dans certaines tâches de jugement absolu et de mémoire immédiate ; il s'agissait d'une observation, pas d'une loi biologique.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "George A. Miller",
+    "title": "The magical number seven, plus or minus two: Some limits on our capacity for processing information",
+    "journalOrPublisher": "Psychological Review",
+    "year": 1956,
+    "doiOrURL": "https://doi.org/10.1037/h0043158",
     "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_021",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 21)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.021",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_022",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 22)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.022",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_023",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 23)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.023",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_024",
+    "limitations": "Article fondateur historique ; les capacités dépendent du type de tâche et de l'entraînement.",
+    "supportedWording": [
+      "Miller a popularisé l'idée d'une capacité limitée autour de 7 ± 2 unités.",
+      "Le chunking étend ce qui peut être tenu en tête."
+    ],
+    "unsupportedWording": [
+      "Le cerveau retient 7 choses maximum.",
+      "La mémoire de travail contient exactement 7 emplacements."
+    ],
     "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 24)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.024",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "notes": "Historique ; à associer à EV_WM_CAPACITY_001 pour la nuance."
   },
   {
-    "id": "EV_025",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 25)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.025",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "id": "EV_GOAL_SETTING_001",
+    "canonicalClaim": "Des objectifs spécifiques et difficiles mais atteignables améliorent la performance par rapport à des consignes vagues (« fais de ton mieux »), lorsque l'engagement est présent.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Edwin A. Locke & Gary P. Latham",
+    "title": "Building a practically useful theory of goal setting and task motivation: A 35-year odyssey",
+    "journalOrPublisher": "American Psychologist",
+    "year": 2002,
+    "doiOrURL": "https://doi.org/10.1037/0003-066X.57.9.705",
+    "confidence": "HIGH",
+    "limitations": "Revue fondée sur des décennies d'études ; l'effet dépend du feedback et de l'engagement.",
+    "supportedWording": [
+      "Un objectif précis et ambitieux guide mieux l'action qu'une intention vague.",
+      "Des critères de fin clairs aident à démarrer et à terminer."
+    ],
+    "unsupportedWording": [
+      "Se fixer un objectif garantit le résultat.",
+      "Les objectifs flous sont toujours inutiles."
+    ],
+    "topic": "DEEP_WORK",
+    "notes": "Source pour les objectifs clairs et la ligne d'arrivée."
   },
   {
-    "id": "EV_026",
+    "id": "EV_FEEDBACK_001",
+    "canonicalClaim": "Les interventions de feedback ont des effets variables : un feedback focalisé sur la tâche et son exécution aide davantage qu'un feedback centré sur la personne.",
+    "sourceType": "META_ANALYSIS",
+    "authors": "Avraham N. Kluger & Angelo DeNisi",
+    "title": "The effects of feedback interventions on performance: A historical review, a meta-analysis, and a preliminary feedback intervention theory",
+    "journalOrPublisher": "Psychological Bulletin",
+    "year": 1996,
+    "doiOrURL": "https://doi.org/10.1037/0033-2909.119.2.254",
+    "confidence": "MODERATE",
+    "limitations": "Effets moyens modestes et très variables ; le type de feedback compte.",
+    "supportedWording": [
+      "Un feedback court sur l'exécution de la tâche aide à ajuster l'action.",
+      "Le feedback n'est pas automatiquement bénéfique : son contenu compte."
+    ],
+    "unsupportedWording": [
+      "Tout feedback améliore la performance.",
+      "Sans feedback, aucun apprentissage n'est possible."
+    ],
+    "topic": "FLOW_CONDITIONS",
+    "notes": "Source pour les leçons de feedback dans le travail."
+  },
+  {
+    "id": "EV_TRANSFER_001",
+    "canonicalClaim": "Le transfert d'un apprentissage vers une nouvelle situation est rare et dépend de la similarité entre le contexte d'apprentissage et le contexte d'application.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Susan M. Barnett & Stephen J. Ceci",
+    "title": "When and where do we apply what we learn? A taxonomy for far transfer",
+    "journalOrPublisher": "Psychological Bulletin",
+    "year": 2002,
+    "doiOrURL": "https://doi.org/10.1037/0033-2909.128.4.612",
+    "confidence": "HIGH",
+    "limitations": "Revue conceptuelle ; le transfert « lointain » est particulièrement difficile à obtenir.",
+    "supportedWording": [
+      "Le transfert dépend de la proximité entre contexte d'apprentissage et d'application.",
+      "Varier les contextes d'entraînement favorise l'adaptation."
+    ],
+    "unsupportedWording": [
+      "S'entraîner à une tâche améliore automatiquement toutes les autres.",
+      "Le transfert lointain est garanti."
+    ],
     "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 26)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.026",
+    "notes": "Source pour les leçons sur le transfert."
+  },
+  {
+    "id": "EV_PROCRASTINATION_001",
+    "canonicalClaim": "La procrastination est corrélée à l'impulsivité et à l'aversion pour la tâche ; les interventions les plus soutenues ciblent le démarrage et réduisent la distance à l'action.",
+    "sourceType": "META_ANALYSIS",
+    "authors": "Piers Steel",
+    "title": "The nature of procrastination: A meta-analytic and theoretical review of quintessential self-regulatory failure",
+    "journalOrPublisher": "Psychological Bulletin",
     "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_027",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 27)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.027",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_028",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 28)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.028",
-    "year": 2001,
+    "doiOrURL": "https://doi.org/10.1037/0033-2909.133.1.65",
     "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 1"
+    "limitations": "Méta-analyse corrélationnelle ; les causes varient selon les personnes.",
+    "supportedWording": [
+      "La procrastination est liée au délai de récompense et à l'aversion pour la tâche.",
+      "Réduire la friction de démarrage aide à commencer."
+    ],
+    "unsupportedWording": [
+      "La procrastination est une maladie du cerveau.",
+      "La discipline suffit à tout régler."
+    ],
+    "topic": "SELF_REGULATION",
+    "notes": "Source pour l'amorçage et la décomposition."
   },
   {
-    "id": "EV_029",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 29)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.029",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_030",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 30)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.030",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_031",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 31)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.031",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_032",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 32)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.032",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 1"
-  },
-  {
-    "id": "EV_033",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 33)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.033",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_034",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 34)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.034",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_035",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 35)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.035",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_036",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 36)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.036",
+    "id": "EV_MINDFULNESS_ATTENTION_001",
+    "canonicalClaim": "Un entraînement bref à la méditation de pleine conscience a été associé à des modifications de sous-systèmes attentionnels dans une étude contrôlée.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Amishi P. Jha, Jason Krompinger & Michael J. Baime",
+    "title": "Mindfulness training modifies subsystems of attention",
+    "journalOrPublisher": "Cognitive, Affective, & Behavioral Neuroscience",
     "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
+    "doiOrURL": "https://doi.org/10.3758/cabn.7.2.109",
+    "confidence": "EMERGING",
+    "limitations": "Échantillon modeste, entraînement auto-déclaré, effets de groupe partiels.",
+    "supportedWording": [
+      "Des pratiques attentionnelles brèves peuvent modifier la façon dont on oriente l'attention.",
+      "La pleine conscience est un entraînement, pas un état instantané."
+    ],
+    "unsupportedWording": [
+      "La méditation « recâble le cerveau » en 8 semaines.",
+      "Méditer garantit une meilleure attention."
+    ],
+    "topic": "ATTENTION_CONTROL",
+    "notes": "Confidence EMERGING."
   },
   {
-    "id": "EV_037",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 37)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.037",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
+    "id": "EV_MINDFULNESS_BRIEF_001",
+    "canonicalClaim": "Une session brève d'entraînement à la pleine conscience a amélioré certaines mesures cognitives et la régulation de la douleur dans une étude contrôlée sur des étudiants novices.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Fadel Zeidan, Susan K. Johnson, Bruce J. Diamond, Zhanna David & Paula Goolkasian",
+    "title": "Mindfulness meditation improves cognition: Evidence of brief mental training",
+    "journalOrPublisher": "Consciousness and Cognition",
+    "year": 2010,
+    "doiOrURL": "https://doi.org/10.1016/j.concog.2010.03.014",
+    "confidence": "EMERGING",
+    "limitations": "Échantillon restreint, effets sur des tâches spécifiques, réplications limitées.",
+    "supportedWording": [
+      "Quelques jours de pratique courte peuvent suffire à observer des différences sur certaines tâches.",
+      "Les effets sont mesurés sur des tâches précises, pas sur la vie entière."
+    ],
+    "unsupportedWording": [
+      "4 jours de méditation rendent plus intelligent.",
+      "La pleine conscience est un remède universel."
+    ],
+    "topic": "ATTENTION_CONTROL",
+    "notes": "Confidence EMERGING."
   },
   {
-    "id": "EV_038",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 38)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.038",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_039",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 39)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.039",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_040",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 40)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.040",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_041",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 41)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.041",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_042",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 42)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.042",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_043",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 43)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.043",
+    "id": "EV_NATURE_ATTENTION_001",
+    "canonicalClaim": "Interagir avec un environnement naturel (marche ou photos) a été associé à de meilleures performances sur une tâche d'attention dirigée par rapport à un environnement urbain.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Marc G. Berman, John Jonides & Stephen Kaplan",
+    "title": "The cognitive benefits of interacting with nature",
+    "journalOrPublisher": "Psychological Science",
     "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
+    "doiOrURL": "https://doi.org/10.1111/j.1467-9280.2008.02225.x",
+    "confidence": "EMERGING",
+    "limitations": "Échantillons étudiants, effets modestes, généralisation limitée.",
+    "supportedWording": [
+      "Une pause dans un environnement naturel peut aider à recharger l'attention dirigée.",
+      "L'effet est modeste et mesuré en laboratoire."
+    ],
+    "unsupportedWording": [
+      "La nature « restaure le cerveau ».",
+      "Regarder des photos de forêt triple la concentration."
+    ],
+    "topic": "RECOVERY",
+    "notes": "Tone prudent, confidence EMERGING."
   },
   {
-    "id": "EV_044",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 44)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.044",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_045",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 45)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.045",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_046",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 46)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.046",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_047",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 47)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.047",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_048",
+    "id": "EV_SLEEP_MEMORY_001",
+    "canonicalClaim": "Le sommeil joue un rôle dans la consolidation de la mémoire : une nuit de sommeil favorise la stabilisation des souvenirs déclaratifs.",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Björn Rasch & Jan Born",
+    "title": "About sleep's role in memory",
+    "journalOrPublisher": "Physiological Reviews",
+    "year": 2013,
+    "doiOrURL": "https://doi.org/10.1152/physrev.00032.2012",
+    "confidence": "HIGH",
+    "limitations": "Revue massive mais les mécanismes précis restent débattus.",
+    "supportedWording": [
+      "Le sommeil participe à la consolidation des apprentissages.",
+      "Étudier puis dormir aide la rétention."
+    ],
+    "unsupportedWording": [
+      "Apprendre pendant le sommeil fonctionne.",
+      "Une sieste remplace une nuit complète."
+    ],
     "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 48)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.048",
-    "year": 2001,
+    "notes": "Source sommeil-mémoire."
+  },
+  {
+    "id": "EV_INATTENTIONAL_BLINDNESS_001",
+    "canonicalClaim": "Les observateurs d'une scène visuelle peuvent manquer un événement saillant lorsqu'ils sont concentrés sur une autre tâche (cécité d'inattention).",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Daniel J. Simons & Christopher F. Chabris",
+    "title": "Gorillas in our midst: Sustained inattentional blindness for dynamic events",
+    "journalOrPublisher": "Perception",
+    "year": 1999,
+    "doiOrURL": "https://doi.org/10.1068/p281059",
+    "confidence": "HIGH",
+    "limitations": "Tâche de laboratoire célèbre ; la généralisation au monde réel est nuancée.",
+    "supportedWording": [
+      "Être concentré sur une tâche peut faire manquer des événements évidents.",
+      "L'attention est sélective : tout ne peut pas être traité."
+    ],
+    "unsupportedWording": [
+      "Le cerveau ignore systématiquement tout ce qui n'est pas la tâche.",
+      "Les gorilles dans la vidéo n'ont jamais existé."
+    ],
+    "topic": "ATTENTION_CONTROL",
+    "notes": "Lecture fascinante autonome, pas une leçon morale sur le téléphone."
+  },
+  {
+    "id": "EV_EYEWITNESS_001",
+    "canonicalClaim": "Des questions suggestives peuvent modifier le rapport d'un témoin oculaire : le souvenir rapporté reflète la question posée.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "Elizabeth F. Loftus",
+    "title": "Leading questions and the eyewitness report",
+    "journalOrPublisher": "Cognitive Psychology",
+    "year": 1975,
+    "doiOrURL": "https://doi.org/10.1016/0010-0285(75)90023-7",
     "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 2"
+    "limitations": "Étude fondatrice en laboratoire ; les effets réels sur les témoignages font débat.",
+    "supportedWording": [
+      "La formulation d'une question peut influencer ce qu'un témoin rapporte.",
+      "La mémoire reconstructive est sensible au langage."
+    ],
+    "unsupportedWording": [
+      "Les témoignages oculaires sont toujours faux.",
+      "La mémoire est une vidéo que l'on peut réécrire entièrement."
+    ],
+    "topic": "LEARNING",
+    "notes": "Lecture autonome sur la mémoire reconstructive."
   },
   {
-    "id": "EV_049",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 49)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.049",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
+    "id": "EV_CONFIRMATION_BIAS_001",
+    "canonicalClaim": "Les personnes tendent à chercher, interpréter et se souvenir d'informations qui confirment leurs croyances (biais de confirmation).",
+    "sourceType": "PEER_REVIEWED_REVIEW",
+    "authors": "Raymond S. Nickerson",
+    "title": "Confirmation bias: A ubiquitous phenomenon in many guises",
+    "journalOrPublisher": "Review of General Psychology",
+    "year": 1998,
+    "doiOrURL": "https://doi.org/10.1037/1089-2680.2.2.175",
+    "confidence": "HIGH",
+    "limitations": "Revue de synthèse ; le biais varie selon les domaines et les personnes.",
+    "supportedWording": [
+      "On cherche plus facilement ce qui confirme une hypothèse que ce qui la contredit.",
+      "La réfutation délibérée est un contrepoids utile."
+    ],
+    "unsupportedWording": [
+      "Tout le monde est victime du biais de confirmation à chaque instant.",
+      "Un biais cognitif est un défaut de caractère."
+    ],
+    "topic": "LEARNING",
+    "notes": "Lecture autonome sur les biais."
   },
   {
-    "id": "EV_050",
+    "id": "EV_STROOP_001",
+    "canonicalClaim": "Un stimulus automatique (le sens d'un mot) peut interférer avec une réponse contrôlée (nommer la couleur d'encre) : l'effet Stroop classique.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "John Ridley Stroop",
+    "title": "Studies of interference in serial verbal reactions",
+    "journalOrPublisher": "Journal of Experimental Psychology",
+    "year": 1935,
+    "doiOrURL": "https://doi.org/10.1037/h0054651",
+    "confidence": "HIGH",
+    "limitations": "Tâche classique de laboratoire, répliquée massivement ; l'interprétation cognitive a évolué.",
+    "supportedWording": [
+      "Un mot automatiquement lu peut gêner la réponse à nommer sa couleur.",
+      "Certains traitements sont automatiques et difficiles à supprimer."
+    ],
+    "unsupportedWording": [
+      "Le test de Stroop mesure l'intelligence.",
+      "L'effet Stroop prouve que le cerveau est paresseux."
+    ],
+    "topic": "ATTENTION_CONTROL",
+    "notes": "Lecture historique autonome."
+  },
+  {
+    "id": "EV_AUCTION_001",
+    "canonicalClaim": "Dans certaines enchères, révéler honnêtement son évaluation maximale est une stratégie dominante ; l'article fondateur a lancé la théorie des enchères.",
+    "sourceType": "PEER_REVIEWED_STUDY",
+    "authors": "William Vickrey",
+    "title": "Counterspeculation, auctions, and competitive sealed tenders",
+    "journalOrPublisher": "The Journal of Finance",
+    "year": 1961,
+    "doiOrURL": "https://doi.org/10.1111/j.1540-6261.1961.tb02789.x",
+    "confidence": "HIGH",
+    "limitations": "Article théorique fondateur ; les enchères réelles ajoutent des complexités (collusion, valeurs communes).",
+    "supportedWording": [
+      "Dans une enchère au second prix, annoncer sa vraie évaluation est optimal.",
+      "La conception d'une enchère change les comportements de mise."
+    ],
+    "unsupportedWording": [
+      "Vickrey a inventé les enchères.",
+      "Toutes les enchères sont équivalentes."
+    ],
+    "topic": "LEARNING",
+    "notes": "Lecture autonome : les enchères pour elles-mêmes."
+  },
+  {
+    "id": "EV_WAYFINDING_001",
+    "canonicalClaim": "Les gens se construisent une image mentale de la ville à partir de cinq éléments (voies, limites, quartiers, nœuds, points de repère) ; l'ouvrage a fondé l'étude du wayfinding.",
+    "sourceType": "BOOK",
+    "authors": "Kevin Lynch",
+    "title": "The Image of the City",
+    "journalOrPublisher": "MIT Press",
+    "year": 1960,
+    "doiOrURL": "https://mitpress.mit.edu/9780262620017/the-image-of-the-city/",
+    "confidence": "MODERATE",
+    "limitations": "Travail fondateur basé sur des entretiens dans trois villes ; cadre descriptif, pas une loi.",
+    "supportedWording": [
+      "L'orientation repose sur une image mentale construite à partir d'éléments urbains repérables.",
+      "La lisibilité d'un espace facilite la navigation."
+    ],
+    "unsupportedWording": [
+      "Les aéroports sont conçus selon les cinq éléments de Lynch.",
+      "Le wayfinding est une science exacte."
+    ],
     "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 50)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.050",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_051",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 51)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.051",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_052",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 52)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.052",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_053",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 53)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.053",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_054",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 54)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.054",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_055",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 55)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.055",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_056",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 56)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.056",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_057",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 57)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.057",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_058",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 58)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.058",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_059",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 59)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.059",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_060",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 60)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.060",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_061",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 61)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.061",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_062",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 62)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.062",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_063",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 63)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.063",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_064",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 64)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.064",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 2"
-  },
-  {
-    "id": "EV_065",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 65)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.065",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_066",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 66)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.066",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_067",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 67)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.067",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_068",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 68)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.068",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_069",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 69)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.069",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_070",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 70)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.070",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_071",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 71)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.071",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_072",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 72)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.072",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_073",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 73)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.073",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_074",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 74)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.074",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_075",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 75)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.075",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_076",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 76)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.076",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_077",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 77)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.077",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_078",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 78)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.078",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_079",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 79)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.079",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_080",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 80)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.080",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_081",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 81)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.081",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_082",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 82)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.082",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_083",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 83)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.083",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_084",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 84)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.084",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_085",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 85)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.085",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_086",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 86)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.086",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_087",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 87)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.087",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_088",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 88)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.088",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_089",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 89)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.089",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_090",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 90)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.090",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_091",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 91)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.091",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_092",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 92)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.092",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_093",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 93)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.093",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_094",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 94)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.094",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_095",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 95)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.095",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_096",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 96)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.096",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 3"
-  },
-  {
-    "id": "EV_097",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 97)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.097",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_098",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 98)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.098",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_099",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 99)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.099",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_100",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 100)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.100",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_101",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 101)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.101",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_102",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 102)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.102",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_103",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 103)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.103",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_104",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 104)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.104",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_105",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 105)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.105",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_106",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 106)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.106",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_107",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 107)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.107",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_108",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 108)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.108",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_109",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 109)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.109",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_110",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 110)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.110",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_111",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 111)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.111",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_112",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 112)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.112",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_113",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 113)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.113",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_114",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 114)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.114",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_115",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 115)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.115",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_116",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 116)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.116",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_117",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 117)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.117",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_118",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 118)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.118",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_119",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 119)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.119",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_120",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 120)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.120",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_121",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 121)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.121",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_122",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 122)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.122",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_123",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 123)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.123",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_124",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 124)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.124",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_125",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 125)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.125",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_126",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 126)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.126",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_127",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 127)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.127",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_128",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 128)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.128",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 4"
-  },
-  {
-    "id": "EV_129",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 129)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.129",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_130",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 130)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.130",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_131",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 131)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.131",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_132",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 132)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.132",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_133",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 133)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.133",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_134",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 134)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.134",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_135",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 135)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.135",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_136",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 136)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.136",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_137",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 137)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.137",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_138",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 138)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.138",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_139",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 139)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.139",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_140",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 140)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.140",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_141",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 141)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.141",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_142",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 142)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.142",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_143",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 143)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.143",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_144",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 144)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.144",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_145",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 145)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.145",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_146",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 146)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.146",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_147",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 147)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.147",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_148",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 148)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.148",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_149",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 149)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.149",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_150",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 150)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.150",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_151",
-    "topic": "ATTENTION",
-    "claim": "Attentional residue from task switching degrades performance on subsequent tasks. (Facet 151)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Leroy (2009) / Org. Behavior and Human Decision Processes",
-    "url": "https://doi.org/10.1016/reboot.evidence.151",
-    "year": 2009,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_152",
-    "topic": "ATTENTION",
-    "claim": "Smartphone presence on desk reduces available working memory capacity even when silent and turned off. (Facet 152)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Ward et al. (2017) / J. of the Association for Consumer Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.152",
-    "year": 2017,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_153",
-    "topic": "ATTENTION",
-    "claim": "Median focus duration in open office knowledge work before switch or interruption is under 3 minutes. (Facet 153)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Mark et al. (2008) / CHI Conference on Human Factors",
-    "url": "https://doi.org/10.1016/reboot.evidence.153",
-    "year": 2008,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_154",
-    "topic": "LEARNING",
-    "claim": "Retrieval practice produces significantly higher long-term retention than repeated passive restudy. (Facet 154)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Roediger & Karpicke (2006) / Psychological Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.154",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_155",
-    "topic": "LEARNING",
-    "claim": "Spacing study intervals over time beats massed cramming for retention across delay intervals. (Facet 155)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Cepeda et al. (2006) / Psychological Bulletin",
-    "url": "https://doi.org/10.1016/reboot.evidence.155",
-    "year": 2006,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_156",
-    "topic": "LEARNING",
-    "claim": "Interleaving related but distinct problem types improves categorization and transfer skills. (Facet 156)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Rohrer & Taylor (2007) / Instructional Science",
-    "url": "https://doi.org/10.1016/reboot.evidence.156",
-    "year": 2007,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_157",
-    "topic": "FLOW",
-    "claim": "Clear goals, immediate feedback and challenge-skill balance are core prerequisites of flow experience. (Facet 157)",
-    "sourceType": "ACADEMIC_REFERENCE",
-    "citation": "Csikszentmihalyi (1990) / Flow: The Psychology of Optimal Experience",
-    "url": "https://doi.org/10.1016/reboot.evidence.157",
-    "year": 1990,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_158",
-    "topic": "ENERGY",
-    "claim": "Moderate caffeine timing (60-90 min post-waking) avoids interfering with adenosine clearance and morning cortisol peak. (Facet 158)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Institute of Medicine (2001) / Caffeine for the Maintainance of Mental Performance",
-    "url": "https://doi.org/10.1016/reboot.evidence.158",
-    "year": 2001,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_159",
-    "topic": "ENERGY",
-    "claim": "Short bouts of physical movement between cognitive blocks restore executive attention and reduce fatigue. (Facet 159)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Chang et al. (2012) / Brain Research",
-    "url": "https://doi.org/10.1016/reboot.evidence.159",
-    "year": 2012,
-    "confidence": "HIGH CONFIDENCE",
-    "notes": "Relevance to REBOOT protocol level 5"
-  },
-  {
-    "id": "EV_160",
-    "topic": "ENVIRONMENT",
-    "claim": "Visual friction (grayscale, hidden icons, distance) reduces unthinking reflexive unlocks. (Facet 160)",
-    "sourceType": "PEER_REVIEWED_PAPER",
-    "citation": "Hiniker et al. (2016) / ACM Proceedings on Interactive Systems",
-    "url": "https://doi.org/10.1016/reboot.evidence.160",
-    "year": 2016,
-    "confidence": "MODERATE",
-    "notes": "Relevance to REBOOT protocol level 5"
+    "notes": "Lecture autonome sur la navigation et la signalétique."
   }
 ]
