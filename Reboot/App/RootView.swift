@@ -110,6 +110,40 @@ struct RootView: View {
     private func configureForUITest() {
         DevState.mockEvaluation = UITestDriver.mockEval
         DevState.forceEvaluationOffline = UITestDriver.forceOffline
+        #if DEBUG
+        if UITestDriver.autoTour {
+            let profile = AdaptiveRebootEngineDriver.ensureProfile(context: modelContext)
+            let injected = AdaptiveDebug.profile(name: "A")
+            profile.goalsRaw = injected.goalsRaw
+            profile.primaryGoal = injected.primaryGoal
+            profile.primaryDistractor = injected.primaryDistractor
+            profile.checkMomentsRaw = injected.checkMomentsRaw
+            profile.capacityBucket = injected.capacityBucket
+            profile.returnDifficulty = injected.returnDifficulty
+            profile.readsTenPages = injected.readsTenPages
+            profile.switchingFrequency = injected.switchingFrequency
+            profile.existingFlowActivitiesRaw = injected.existingFlowActivitiesRaw
+            profile.flowDifferenceRaw = injected.flowDifferenceRaw
+            profile.phoneLocation = injected.phoneLocation
+            profile.notificationsLevel = injected.notificationsLevel
+            profile.openTabsBucket = injected.openTabsBucket
+            profile.usesScreenTimeLimits = injected.usesScreenTimeLimits
+            profile.bestWindow = injected.bestWindow
+            profile.typicalSleep = injected.typicalSleep
+            profile.currentEnergy = injected.currentEnergy
+            profile.caffeine = injected.caffeine
+            try? modelContext.save()
+            DevDataFactory.populate(
+                progress: progressList.first,
+                sessions: (try? modelContext.fetch(FetchDescriptor<TrainingSession>())) ?? [],
+                context: modelContext
+            )
+            if let progress = progressList.first {
+                DevDataFactory.setDay(10, progress: progress, context: modelContext)
+            }
+            AdaptiveRebootEngineDriver.generatePrescription(forDay: 10, context: modelContext)
+        }
+        #endif
         if UITestDriver.resetOnboarding {
             PreferencesStore.shared.onboardingCompleted = false
             onboardingCompleted = false
@@ -204,6 +238,11 @@ struct RootView: View {
 
 struct MainTabsView: View {
     @State private var selection: AppTab
+    @State private var showProgramSheet = false
+    @State private var showFlowLabSheet = false
+    @State private var showExperimentsSheet = false
+    @State private var showSession = false
+    @Environment(\.modelContext) private var modelContext
 
     enum AppTab: Hashable {
         case today
@@ -249,5 +288,73 @@ struct MainTabsView: View {
                 ]
             )
         }
+        .fullScreenCover(isPresented: $showProgramSheet) {
+            NavigationStack {
+                ProgramView()
+            }
+        }
+        .fullScreenCover(isPresented: $showFlowLabSheet) {
+            FlowLabView()
+        }
+        .fullScreenCover(isPresented: $showExperimentsSheet) {
+            ExperimentsView()
+        }
+        .fullScreenCover(isPresented: $showSession) {
+            SessionFlowView(
+                request: SessionRequest(
+                    mode: .stay,
+                    day: 10,
+                    duration: 10,
+                    title: ProtocolCurriculum.day(10).title,
+                    contentID: nil,
+                    skipSetup: true,
+                    fastTimer: true
+                )
+            )
+        }
+        .onAppear {
+            #if DEBUG
+            if UITestDriver.autoTour {
+                runTour()
+            }
+            #endif
+        }
     }
+
+    #if DEBUG
+    private func runTour() {
+        Task {
+            // Today with adaptive prescription.
+            try? await Task.sleep(nanoseconds: 6_000_000_000)
+            // STAY session: active timer → completion → debrief.
+            showSession = true
+            try? await Task.sleep(nanoseconds: 16_000_000_000)
+            showSession = false
+            // Train.
+            withAnimation(RBMotion.tabTransition) { selection = .train }
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            // Program.
+            showProgramSheet = true
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            showProgramSheet = false
+            // Trace.
+            withAnimation(RBMotion.tabTransition) { selection = .trace }
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            // Profile.
+            withAnimation(RBMotion.tabTransition) { selection = .profile }
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            // Flow Lab.
+            showFlowLabSheet = true
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            showFlowLabSheet = false
+            // Experiments.
+            showExperimentsSheet = true
+            try? await Task.sleep(nanoseconds: 4_000_000_000)
+            showExperimentsSheet = false
+            // Back to Today.
+            withAnimation(RBMotion.tabTransition) { selection = .today }
+            try? await Task.sleep(nanoseconds: 3_000_000_000)
+        }
+    }
+    #endif
 }
