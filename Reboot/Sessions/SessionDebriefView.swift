@@ -98,23 +98,23 @@ struct SessionDebriefView: View {
             VStack(alignment: .leading, spacing: 14) {
                 RBScanLine(color: .signalCyan.opacity(0.5))
                     .frame(height: 60)
-                RBSystemLabel(text: "ANALYSING…", color: .signalCyan)
+                RBSystemLabel(text: "ANALYSE EN COURS…", color: .signalCyan)
             }
             .padding(.top, 26)
         case .success:
             if let evaluation = session.evaluation {
                 VStack(alignment: .leading, spacing: 0) {
                     dimensionRail(evaluation)
-                    debriefBlock(title: "WHAT HELD", text: evaluation.strength, color: .signalCyan)
-                    debriefBlock(title: "WHAT BROKE", text: evaluation.mainGap, color: .signalRed)
+                    debriefBlock(title: "CE QUI TIENT", text: evaluation.strength, color: .signalCyan)
+                    debriefBlock(title: "CE QUI CASSE", text: evaluation.mainGap, color: .signalRed)
                     debriefBlock(title: "CORRECTION", text: evaluation.correction, color: .bone)
-                    debriefBlock(title: "NEXT TARGET", text: evaluation.nextChallenge, color: .acid)
+                    debriefBlock(title: "PROCHAINE CIBLE", text: evaluation.nextChallenge, color: .acid)
                 }
                 .padding(.top, 22)
             }
         case .offline:
             VStack(alignment: .leading, spacing: 14) {
-                RBStatusChip(text: "ANALYSIS OFFLINE.", color: .acid, pulse: false)
+                RBStatusChip(text: "ANALYSE HORS-LIGNE.", color: .acid, pulse: false)
                 Text("TA SESSION EST SAUVEGARDÉE.")
                     .font(.system(size: 16, weight: .bold, design: .default))
                     .foregroundStyle(.bone)
@@ -126,7 +126,7 @@ struct SessionDebriefView: View {
                     runAnalysis()
                 } label: {
                     HStack {
-                        Text("RETRY ANALYSIS")
+                        Text("RÉESSAYER L'ANALYSE")
                         Spacer()
                         Image(systemName: "arrow.clockwise")
                     }

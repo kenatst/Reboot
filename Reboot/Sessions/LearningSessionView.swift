@@ -7,10 +7,11 @@ struct LearningSessionView: View {
     var onComplete: (TrainingSession) -> Void
 
     @State private var reading = true
+    @State private var transitioning = false
     @State private var response = ""
 
     private var module: LearningModule? {
-        ContentStore.learning(id: ((session.protocolDay - 1) % 35) + 1)
+        ContentStore.learning(id: ((session.protocolDay - 1) % 45) + 1)
     }
 
     private var text: String {
@@ -26,23 +27,23 @@ struct LearningSessionView: View {
             if reading {
                 reader
                     .transition(.opacity)
+            } else if transitioning {
+                transitionScreen
+                    .transition(.opacity)
             } else {
                 teaching
                     .transition(.opacity)
             }
         }
-        .animation(.easeInOut(duration: 0.3), value: reading)
+        .animation(.easeInOut(duration: RBMotion.standard), value: reading)
+        .animation(.easeInOut(duration: RBMotion.standard), value: transitioning)
         .onAppear {
             #if DEBUG
             if fastTimer {
                 Task {
                     try? await Task.sleep(nanoseconds: 2_000_000_000)
-                    if reading {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            reading = false
-                        }
-                    }
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    closeLesson()
+                    try? await Task.sleep(nanoseconds: 1_000_000_000)
                     response = "Ce que j'enseigne : la mémoire de travail est une scène étroite, et tout ce qui entre en compétition la dégrade. L'exemple du téléphone montre que la distraction n'est pas une invasion mais une transaction. En pratique, je ferme les fenêtres avant de commencer, et je note les intrusions pour les voir."
                     finish()
                 }
@@ -76,37 +77,66 @@ struct LearningSessionView: View {
                         .padding(.top, 20)
 
                     Rectangle()
-                        .fill(Color.ink.opacity(0.25))
+                        .fill(Color.ink.opacity(0.2))
                         .frame(height: 1)
                         .padding(.top, 16)
 
                     Text(text)
-                        .font(.reading(size: 19))
+                        .font(.reading(size: 21))
                         .foregroundStyle(.ink)
-                        .lineSpacing(8)
+                        .lineSpacing(9)
                         .padding(.top, 22)
-                        .padding(.bottom, 30)
+                        .padding(.bottom, 24)
+
+                    VStack(alignment: .center, spacing: 14) {
+                        Rectangle()
+                            .fill(Color.ink.opacity(0.15))
+                            .frame(height: 1)
+
+                        Text("FIN DE LA LEÇON")
+                            .font(.metadata(size: 11))
+                            .tracking(2)
+                            .foregroundStyle(.ink.opacity(0.45))
+                    }
+                    .padding(.top, 16)
+                    .padding(.bottom, 100)
                 }
                 .padding(.horizontal, 26)
             }
+        }
+        .safeAreaInset(edge: .bottom) {
+            VStack(spacing: 0) {
+                Rectangle()
+                    .fill(Color.ink.opacity(0.12))
+                    .frame(height: 1)
 
-            VStack {
-                Spacer()
                 Button {
-                    withAnimation(.easeInOut(duration: 0.28)) {
-                        reading = false
-                    }
-                    RBHaptics.play(.lock)
+                    closeLesson()
                 } label: {
                     HStack {
-                        Text("LESSON CLOSED. TEACH IT.")
+                        Text("FERMER LA LEÇON")
                         Spacer()
                         Image(systemName: "arrow.right")
                     }
                 }
                 .buttonStyle(.rbPrimary(scheme: .light))
                 .padding(.horizontal, RBSpacing.screen)
-                .padding(.bottom, 18)
+                .padding(.top, 12)
+                .padding(.bottom, 14)
+            }
+            .background(Color.bone)
+        }
+    }
+
+    private var transitionScreen: some View {
+        ZStack {
+            Color.void.ignoresSafeArea()
+            VStack(spacing: 16) {
+                Text("LA LEÇON EST FERMÉE.")
+                    .font(.heroBlack(size: 32))
+                    .foregroundStyle(.bone)
+                    .multilineTextAlignment(.center)
+                RBSignalPulse(color: .signalCyan, diameter: 10)
             }
         }
     }
@@ -116,43 +146,58 @@ struct LearningSessionView: View {
             Color.void.ignoresSafeArea()
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    RBSystemLabel(text: "EXPLAIN / LESSON CLOSED", color: .signalCyan)
+                    RBSystemLabel(text: "EXPLAIN / RESTITUTION", color: .signalCyan)
                         .padding(.top, 14)
 
-                    Text("ENSEIGNE\nLA LEÇON.")
-                        .font(.heroBlack(size: 42))
+                    Text("ENSEIGNE-LE\nCOMME SI TU DEVAIS\nLE FAIRE COMPRENDRE.")
+                        .font(.heroBlack(size: 34))
                         .foregroundStyle(.bone)
-                        .padding(.top, 20)
+                        .lineSpacing(-3)
+                        .padding(.top, 18)
 
-                    Text("\(prompt)\n\nAucun minimum de mots. Ce que tu peux enseigner est ce que tu as compris.")
+                    Text(prompt)
                         .font(.body(size: 16))
                         .foregroundStyle(.softBone)
                         .lineSpacing(4)
-                        .padding(.top, 18)
+                        .padding(.top, 16)
 
                     RBReconstructionEditor(
                         text: $response,
-                        placeholder: "Enseigne-la comme à quelqu'un qui n'y connaît rien…",
+                        placeholder: "Enseigne le principe, le mécanisme et un exemple…",
                         accent: .signalCyan
                     )
-                    .padding(.top, 22)
+                    .padding(.top, 20)
 
                     Button {
                         finish()
                     } label: {
                         HStack {
-                            Text("TERMINER LA SESSION")
+                            Text("ANALYSER MA RESTITUTION")
                             Spacer()
-                            Image(systemName: "checkmark")
+                            Image(systemName: "arrow.right")
                         }
                     }
                     .buttonStyle(.rbPrimary())
                     .padding(.top, 24)
-                    .padding(.bottom, 28)
+                    .padding(.bottom, 36)
                 }
                 .padding(.horizontal, RBSpacing.screen)
             }
             .scrollDismissesKeyboard(.interactively)
+        }
+    }
+
+    private func closeLesson() {
+        RBHaptics.play(.lock)
+        withAnimation(.easeInOut(duration: 0.25)) {
+            reading = false
+            transitioning = true
+        }
+        Task {
+            try? await Task.sleep(nanoseconds: 400_000_000)
+            withAnimation(.easeOut(duration: 0.3)) {
+                transitioning = false
+            }
         }
     }
 

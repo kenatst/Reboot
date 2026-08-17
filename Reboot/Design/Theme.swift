@@ -93,13 +93,45 @@ enum RBSpacing {
     static let md: CGFloat = 20
     static let lg: CGFloat = 28
     static let xl: CGFloat = 40
+    static let xxl: CGFloat = 56
     static let screen: CGFloat = 24
+}
+
+enum RBLayout {
+    static let horizontalMargin: CGFloat = 24
+    static let heroTopSpacing: CGFloat = 24
+    static let sectionSpacing: CGFloat = 38
+    static let bottomNavigationHeight: CGFloat = 68
+    static let maxReadingWidth: CGFloat = 680
+    static let compactWidthThreshold: CGFloat = 380
+
+    /// Returns a responsive hero font size adapted to screen width
+    static func heroFontSize(base: CGFloat, width: CGFloat) -> CGFloat {
+        if width < 380 {
+            return base * 0.85
+        } else if width > 420 {
+            return base * 1.05
+        }
+        return base
+    }
+
+    /// Horizontal padding that adapts to compact vs larger screens
+    static func horizontalPadding(for width: CGFloat) -> CGFloat {
+        if width < 380 {
+            return 20
+        } else if width > 420 {
+            return 28
+        }
+        return 24
+    }
 }
 
 enum RBRadius {
     static let none: CGFloat = 0
+    static let xs: CGFloat = 2
     static let sm: CGFloat = 4
     static let md: CGFloat = 8
+    static let lg: CGFloat = 12
     static let pill: CGFloat = 999
 }
 
@@ -115,9 +147,14 @@ extension String {
 // MARK: - Haptics
 
 enum RBHapticKind {
+    case light
+    case selection
     case interruption
     case transition
     case lock
+    case success
+    case activation
+    case phaseComplete
 }
 
 /// Routes haptic feedback through user preferences (respects system setting too).
@@ -130,12 +167,27 @@ enum RBHaptics {
     static func play(_ kind: RBHapticKind) {
         guard enabled else { return }
         switch kind {
+        case .light:
+            UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.4)
+        case .selection:
+            UISelectionFeedbackGenerator().selectionChanged()
         case .interruption:
-            UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.55)
+            UINotificationFeedbackGenerator().notificationOccurred(.warning)
         case .transition:
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
+            UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.6)
         case .lock:
+            UIImpactFeedbackGenerator(style: .heavy).impactOccurred(intensity: 0.9)
+        case .success:
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        case .activation:
             UIImpactFeedbackGenerator(style: .heavy).impactOccurred(intensity: 1.0)
+        case .phaseComplete:
+            UIImpactFeedbackGenerator(style: .heavy).impactOccurred(intensity: 0.9)
+            Task {
+                try? await Task.sleep(nanoseconds: 120_000_000)
+                guard enabled else { return }
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
+            }
         }
     }
 }

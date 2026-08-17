@@ -26,61 +26,63 @@ struct TrainView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     RBProtocolHeader(day: dayNumber, phase: ProtocolCurriculum.day(dayNumber).phase)
-                        .padding(.top, 14)
+                        .padding(.top, 10)
 
                     Text("CHOISIS TON\nENTRAÎNEMENT.")
                         .font(.heroBlack(size: 38))
-                        .tracking(-0.4)
+                        .tracking(-0.5)
                         .foregroundStyle(.bone)
-                        .padding(.top, 30)
+                        .lineSpacing(-4)
+                        .padding(.top, 28)
 
                     Button {
                         activeRequest = SessionRequestFactory.today(day: dayNumber)
                     } label: {
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("AUJOURD'HUI")
+                                Text("RECOMMANDÉ AUJOURD'HUI")
                                     .font(.metadata(size: 10))
                                     .tracking(2)
                                     .foregroundStyle(.signalCyan)
-                                Text("DAY \(String(format: "%03d", dayNumber)) — \(ProtocolCurriculum.day(dayNumber).mode.frenchLabel) · \(ProtocolCurriculum.day(dayNumber).recommendedDuration) MIN")
+                                Text("JOUR \(String(format: "%03d", dayNumber)) — \(ProtocolCurriculum.day(dayNumber).mode.frenchLabel) · \(ProtocolCurriculum.day(dayNumber).recommendedDuration) MIN")
                                     .font(.system(size: 15, weight: .bold, design: .default))
                                     .foregroundStyle(.bone)
                             }
                             Spacer()
-                            Image(systemName: "play.fill")
+                            Image(systemName: "arrow.right")
                                 .font(.system(size: 13, weight: .bold))
                                 .foregroundStyle(.signalCyan)
                         }
                         .padding(18)
+                        .background(Color.graphite.opacity(0.4))
                         .overlay(
                             RoundedRectangle(cornerRadius: RBRadius.sm)
                                 .stroke(Color.signalCyan.opacity(0.6), lineWidth: 1)
                         )
                     }
                     .buttonStyle(.plain)
-                    .padding(.top, 24)
+                    .padding(.top, 22)
 
-                    Text("LES DISCIPLINES")
+                    Text("LES 5 DISCIPLINES")
                         .font(.metadata(size: 11))
                         .tracking(2)
                         .foregroundStyle(.ash)
-                        .padding(.top, 34)
+                        .padding(.top, 32)
 
                     VStack(spacing: 12) {
-                        ForEach(SessionMode.allCases) { mode in
+                        ForEach(Array(SessionMode.allCases.enumerated()), id: \.element) { index, mode in
                             Button {
                                 activeRequest = SessionRequestFactory.discipline(mode, day: dayNumber)
                             } label: {
-                                RBSessionRow(mode: mode, accent: disciplineAccent(mode))
+                                RBSessionRow(index: index + 1, mode: mode, accent: disciplineAccent(mode))
                             }
                             .buttonStyle(.plain)
                         }
                     }
-                    .padding(.top, 14)
+                    .padding(.top, 12)
 
                     HStack {
-                        Text("PROTOCOL")
+                        Text("PROGRAMME COMPLET")
                             .font(.metadata(size: 11))
                             .tracking(2)
                             .foregroundStyle(.ash)
@@ -90,7 +92,7 @@ struct TrainView: View {
                                 showCurriculum.toggle()
                             }
                         } label: {
-                            Text(showCurriculum ? "FERMER" : "VOIR LES 90 JOURS")
+                            Text(showCurriculum ? "MASQUER" : "VOIR LES 90 JOURS")
                                 .font(.metadata(size: 10))
                                 .tracking(1.4)
                                 .foregroundStyle(.signalCyan)
@@ -106,7 +108,7 @@ struct TrainView: View {
                     }
                 }
                 .padding(.horizontal, RBSpacing.screen)
-                .padding(.bottom, 40)
+                .padding(.bottom, 100)
             }
         }
         .fullScreenCover(item: $activeRequest) { request in

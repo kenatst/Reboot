@@ -5,9 +5,9 @@ import SwiftUI
 struct OnboardingDiagnosticView: View {
     var advance: () -> Void
 
-    @State private var fragmentsTrigger = false
-    @State private var labelsVisible = false
-    @State private var contentVisible = false
+    @State private var fragmentsTrigger = true
+    @State private var labelsVisible = true
+    @State private var contentVisible = true
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -44,7 +44,7 @@ struct OnboardingDiagnosticView: View {
                 }
                 .frame(height: compact ? geo.size.height * 0.5 : geo.size.height * 0.56)
                 .allowsHitTesting(false)
-                .opacity(labelsVisible ? 0.15 : 1)
+                .opacity(0.3)
 
                 if labelsVisible {
                     RBDiagnosticTag(label: "SIGNAL", value: "FRAGMENTÉ", valueColor: .signalRed, alignment: .leading)
@@ -71,8 +71,6 @@ struct OnboardingDiagnosticView: View {
                         text: "CECI EST\nTON ATTENTION\nSOUS BRUIT.",
                         size: compact ? 36 : 44
                     )
-                    .opacity(contentVisible ? 1 : 0)
-                    .offset(y: contentVisible ? 0 : 14)
 
                     Text("Quand chaque seconde peut apporter un nouveau stimulus, rester avec une seule chose demande davantage d'effort.")
                         .font(.body(size: 16))
@@ -95,25 +93,10 @@ struct OnboardingDiagnosticView: View {
                     }
                     .buttonStyle(.rbPrimary())
                     .padding(.top, 26)
-                    .opacity(contentVisible ? 1 : 0)
                 }
                 .padding(.horizontal, RBSpacing.screen)
                 .padding(.bottom, max(18, geo.safeAreaInsets.bottom + 12))
                 .frame(maxWidth: .infinity, alignment: .leading)
-            }
-        }
-        .onAppear {
-            fragmentsTrigger = true
-            let delay = RBMotion.duration(0.5, reduceMotion: reduceMotion)
-            Task {
-                try? await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
-                withAnimation(.easeOut(duration: RBMotion.duration(0.5, reduceMotion: reduceMotion))) {
-                    labelsVisible = true
-                }
-                try? await Task.sleep(nanoseconds: 600_000_000)
-                withAnimation(.easeOut(duration: 0.45)) {
-                    contentVisible = true
-                }
             }
         }
     }

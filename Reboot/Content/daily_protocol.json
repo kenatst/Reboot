@@ -1,0 +1,1352 @@
+[
+  {
+    "day": 1,
+    "phase": 1,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 001",
+    "intention": "Pendant 10 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 1
+  },
+  {
+    "day": 2,
+    "phase": 1,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 002",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 2
+  },
+  {
+    "day": 3,
+    "phase": 1,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 003",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 12,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 3
+  },
+  {
+    "day": 4,
+    "phase": 1,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 004",
+    "intention": "Pendant 5 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 5,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 4
+  },
+  {
+    "day": 5,
+    "phase": 1,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 005",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 5
+  },
+  {
+    "day": 6,
+    "phase": 1,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 006",
+    "intention": "Pendant 10 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 6
+  },
+  {
+    "day": 7,
+    "phase": 1,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 007",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 7
+  },
+  {
+    "day": 8,
+    "phase": 1,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 008",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 12,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 8
+  },
+  {
+    "day": 9,
+    "phase": 1,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 009",
+    "intention": "Pendant 5 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 5,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 9
+  },
+  {
+    "day": 10,
+    "phase": 1,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 010",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 10
+  },
+  {
+    "day": 11,
+    "phase": 1,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 011",
+    "intention": "Pendant 10 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 11
+  },
+  {
+    "day": 12,
+    "phase": 1,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 012",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 12
+  },
+  {
+    "day": 13,
+    "phase": 1,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 013",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 12,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 13
+  },
+  {
+    "day": 14,
+    "phase": 1,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 014",
+    "intention": "Pendant 5 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 5,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 14
+  },
+  {
+    "day": 15,
+    "phase": 2,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 015",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 15
+  },
+  {
+    "day": 16,
+    "phase": 2,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 016",
+    "intention": "Pendant 20 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 16
+  },
+  {
+    "day": 17,
+    "phase": 2,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 017",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 17
+  },
+  {
+    "day": 18,
+    "phase": 2,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 018",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 18
+  },
+  {
+    "day": 19,
+    "phase": 2,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 019",
+    "intention": "Pendant 10 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 19
+  },
+  {
+    "day": 20,
+    "phase": 2,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 020",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 20
+  },
+  {
+    "day": 21,
+    "phase": 2,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 021",
+    "intention": "Pendant 20 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 21
+  },
+  {
+    "day": 22,
+    "phase": 2,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 022",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 22
+  },
+  {
+    "day": 23,
+    "phase": 2,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 023",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 23
+  },
+  {
+    "day": 24,
+    "phase": 2,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 024",
+    "intention": "Pendant 10 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 24
+  },
+  {
+    "day": 25,
+    "phase": 2,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 025",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 25
+  },
+  {
+    "day": 26,
+    "phase": 2,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 026",
+    "intention": "Pendant 20 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 26
+  },
+  {
+    "day": 27,
+    "phase": 2,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 027",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 27
+  },
+  {
+    "day": 28,
+    "phase": 2,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 028",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 28
+  },
+  {
+    "day": 29,
+    "phase": 2,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 029",
+    "intention": "Pendant 10 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 10,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 29
+  },
+  {
+    "day": 30,
+    "phase": 2,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 030",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 30
+  },
+  {
+    "day": 31,
+    "phase": 3,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 031",
+    "intention": "Pendant 35 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 31
+  },
+  {
+    "day": 32,
+    "phase": 3,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 032",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 25,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 32
+  },
+  {
+    "day": 33,
+    "phase": 3,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 033",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 33
+  },
+  {
+    "day": 34,
+    "phase": 3,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 034",
+    "intention": "Pendant 15 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 34
+  },
+  {
+    "day": 35,
+    "phase": 3,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 035",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 35
+  },
+  {
+    "day": 36,
+    "phase": 3,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 036",
+    "intention": "Pendant 35 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 36
+  },
+  {
+    "day": 37,
+    "phase": 3,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 037",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 25,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 37
+  },
+  {
+    "day": 38,
+    "phase": 3,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 038",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 38
+  },
+  {
+    "day": 39,
+    "phase": 3,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 039",
+    "intention": "Pendant 15 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 39
+  },
+  {
+    "day": 40,
+    "phase": 3,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 040",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 40
+  },
+  {
+    "day": 41,
+    "phase": 3,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 041",
+    "intention": "Pendant 35 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 41
+  },
+  {
+    "day": 42,
+    "phase": 3,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 042",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 25,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 42
+  },
+  {
+    "day": 43,
+    "phase": 3,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 043",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 43
+  },
+  {
+    "day": 44,
+    "phase": 3,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 044",
+    "intention": "Pendant 15 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 44
+  },
+  {
+    "day": 45,
+    "phase": 3,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 045",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 45
+  },
+  {
+    "day": 46,
+    "phase": 3,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 046",
+    "intention": "Pendant 35 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 46
+  },
+  {
+    "day": 47,
+    "phase": 3,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 047",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 25,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 47
+  },
+  {
+    "day": 48,
+    "phase": 3,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 048",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 48
+  },
+  {
+    "day": 49,
+    "phase": 3,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 049",
+    "intention": "Pendant 15 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 49
+  },
+  {
+    "day": 50,
+    "phase": 3,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 050",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 50
+  },
+  {
+    "day": 51,
+    "phase": 3,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 051",
+    "intention": "Pendant 35 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 51
+  },
+  {
+    "day": 52,
+    "phase": 3,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 052",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 25,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 52
+  },
+  {
+    "day": 53,
+    "phase": 3,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 053",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 53
+  },
+  {
+    "day": 54,
+    "phase": 3,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 054",
+    "intention": "Pendant 15 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 54
+  },
+  {
+    "day": 55,
+    "phase": 3,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 055",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 55
+  },
+  {
+    "day": 56,
+    "phase": 3,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 056",
+    "intention": "Pendant 35 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 56
+  },
+  {
+    "day": 57,
+    "phase": 3,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 057",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 25,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 57
+  },
+  {
+    "day": 58,
+    "phase": 3,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 058",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 58
+  },
+  {
+    "day": 59,
+    "phase": 3,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 059",
+    "intention": "Pendant 15 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 15,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 59
+  },
+  {
+    "day": 60,
+    "phase": 3,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 060",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 30,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 60
+  },
+  {
+    "day": 61,
+    "phase": 4,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 061",
+    "intention": "Pendant 50 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 50,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 1
+  },
+  {
+    "day": 62,
+    "phase": 4,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 062",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 2
+  },
+  {
+    "day": 63,
+    "phase": 4,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 063",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 40,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 3
+  },
+  {
+    "day": 64,
+    "phase": 4,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 064",
+    "intention": "Pendant 20 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 4
+  },
+  {
+    "day": 65,
+    "phase": 4,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 065",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 5
+  },
+  {
+    "day": 66,
+    "phase": 4,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 066",
+    "intention": "Pendant 50 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 50,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 6
+  },
+  {
+    "day": 67,
+    "phase": 4,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 067",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 7
+  },
+  {
+    "day": 68,
+    "phase": 4,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 068",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 40,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 8
+  },
+  {
+    "day": 69,
+    "phase": 4,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 069",
+    "intention": "Pendant 20 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 9
+  },
+  {
+    "day": 70,
+    "phase": 4,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 070",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 10
+  },
+  {
+    "day": 71,
+    "phase": 4,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 071",
+    "intention": "Pendant 50 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 50,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 11
+  },
+  {
+    "day": 72,
+    "phase": 4,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 072",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 12
+  },
+  {
+    "day": 73,
+    "phase": 4,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 073",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 40,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 13
+  },
+  {
+    "day": 74,
+    "phase": 4,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 074",
+    "intention": "Pendant 20 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 14
+  },
+  {
+    "day": 75,
+    "phase": 4,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 075",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 15
+  },
+  {
+    "day": 76,
+    "phase": 4,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 076",
+    "intention": "Pendant 50 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 50,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 16
+  },
+  {
+    "day": 77,
+    "phase": 4,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 077",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 17
+  },
+  {
+    "day": 78,
+    "phase": 4,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 078",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 40,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 18
+  },
+  {
+    "day": 79,
+    "phase": 4,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 079",
+    "intention": "Pendant 20 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 19
+  },
+  {
+    "day": 80,
+    "phase": 4,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 080",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 20
+  },
+  {
+    "day": 81,
+    "phase": 4,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 081",
+    "intention": "Pendant 50 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 50,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 21
+  },
+  {
+    "day": 82,
+    "phase": 4,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 082",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 22
+  },
+  {
+    "day": 83,
+    "phase": 4,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 083",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 40,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 23
+  },
+  {
+    "day": 84,
+    "phase": 4,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 084",
+    "intention": "Pendant 20 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 24
+  },
+  {
+    "day": 85,
+    "phase": 4,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 085",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 25
+  },
+  {
+    "day": 86,
+    "phase": 4,
+    "mode": "stay",
+    "title": "Concentration sur tâche unique — Jour 086",
+    "intention": "Pendant 50 minutes, une seule tâche. Pas de second écran, pas de consultation réflexe.",
+    "recommendedDuration": 50,
+    "instructions": [
+      "Écris précisément l'unique tâche à accomplir.",
+      "Éloigne tout objet de distraction hors de ton champ de vision.",
+      "Si l'impulsion de changer survient, clique sur 'J'AI CHANGÉ' et reviens immédiatement."
+    ],
+    "optionalChallenge": "Effectuer la session entière avec zéro changement consigné.",
+    "contentID": 26
+  },
+  {
+    "day": 87,
+    "phase": 4,
+    "mode": "recall",
+    "title": "Lecture active et reconstruction — Jour 087",
+    "intention": "Lis attentivement le texte jusqu'au bout, ferme-le, puis reconstruis sa thèse centrale.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Lis le texte sélectionné à vitesse naturelle sans prendre de notes.",
+      "Clique sur FERMER LE TEXTE une fois arrivé à la fin.",
+      "Reconstruis de mémoire la logique et les points clés de l'auteur."
+    ],
+    "optionalChallenge": "Ne pas utiliser les mêmes mots que l'auteur pour vérifier la compréhension.",
+    "contentID": 27
+  },
+  {
+    "day": 88,
+    "phase": 4,
+    "mode": "explain",
+    "title": "Apprentissage et enseignement — Jour 088",
+    "intention": "Assimile le concept fondamental puis enseigne-le avec clarté comme à un profane.",
+    "recommendedDuration": 40,
+    "instructions": [
+      "Étudie la leçon du jour avec ses exemples et contre-exemples.",
+      "Ferme la leçon et formule ton explication orale ou écrite.",
+      "Assure-toi d'exposer le principe, son mécanisme et une application concrète."
+    ],
+    "optionalChallenge": "Utiliser une métaphore originale qui n'était pas dans la leçon.",
+    "contentID": 28
+  },
+  {
+    "day": 89,
+    "phase": 4,
+    "mode": "nothing",
+    "title": "Sanctuaire de basse stimulation — Jour 089",
+    "intention": "Pendant 20 minutes, aucun nouvel apport d'information. Laisse ton esprit s'apaiser.",
+    "recommendedDuration": 20,
+    "instructions": [
+      "Installe-toi confortablement dans un endroit calme.",
+      "Pose tes mains et ne consulte aucun appareil.",
+      "Observe simplement le silence sans chercher à méditer ou contrôler tes pensées."
+    ],
+    "optionalChallenge": "Garder les yeux ouverts sans fixer aucun objet précis.",
+    "contentID": 29
+  },
+  {
+    "day": 90,
+    "phase": 4,
+    "mode": "observe",
+    "title": "Mission d'observation du réel — Jour 090",
+    "intention": "Sors ou regarde ton environnement sans ton téléphone. Découvre ce que le regard rapide ignore.",
+    "recommendedDuration": 35,
+    "instructions": [
+      "Prends connaissance de la mission et des repères visuels.",
+      "Effectue la marche ou l'observation pendant la durée allouée.",
+      "Rédige ta réflexion au retour pour ancrer ce que tu as appris."
+    ],
+    "optionalChallenge": "Ne prendre aucune photo mentale ou réelle : laisser l'expérience être entière.",
+    "contentID": 30
+  }
+]

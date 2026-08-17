@@ -14,20 +14,28 @@ struct ProfileView: View {
         ProtocolEngine.clarityStatus(sessionsCompleted: progress?.completedSessions ?? 0)
     }
 
+    private var completedSessions: Int {
+        progress?.completedSessions ?? 0
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.void.ignoresSafeArea()
                 ScrollView {
                     VStack(alignment: .leading, spacing: 0) {
-                        RBSystemLabel(text: "REBOOT / PROFILE", color: .ash)
-                            .padding(.top, 14)
+                        HStack {
+                            RBSystemLabel(text: "REBOOT / PROFILE", color: .ash)
+                            Spacer()
+                        }
+                        .padding(.top, 10)
 
-                        Text("YOUR\nATTENTION\nIN DATA.")
-                            .font(.heroBlack(size: 40))
-                            .tracking(-0.4)
+                        Text("TON ATTENTION.\nEN DONNÉES.")
+                            .font(.heroBlack(size: 38))
+                            .tracking(-0.5)
                             .foregroundStyle(.bone)
-                            .padding(.top, 18)
+                            .lineSpacing(-4)
+                            .padding(.top, 20)
 
                         claritySection
                             .padding(.top, 30)
@@ -37,7 +45,7 @@ struct ProfileView: View {
 
                         observedSection
                             .padding(.top, 34)
-                            .padding(.bottom, 40)
+                            .padding(.bottom, 100)
                     }
                     .padding(.horizontal, RBSpacing.screen)
                 }
@@ -49,7 +57,7 @@ struct ProfileView: View {
                     } label: {
                         Image(systemName: "slider.horizontal.3")
                             .font(.system(size: 15, weight: .bold))
-                            .foregroundStyle(.ash)
+                            .foregroundStyle(.bone)
                     }
                 }
             }
@@ -58,15 +66,45 @@ struct ProfileView: View {
 
     private var claritySection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            RBEditorialDivider(label: "CLARITY")
+            RBEditorialDivider(label: "INDICE DE CLARTÉ")
+
             HStack(alignment: .firstTextBaseline) {
-                Text(clarity.label)
-                    .font(.system(size: 26, weight: .black, design: .monospaced))
-                    .foregroundStyle(clarityColor)
+                if completedSessions < 3 {
+                    HStack(spacing: 8) {
+                        Text("CALIBRATION")
+                            .font(.system(size: 24, weight: .black, design: .monospaced))
+                            .foregroundStyle(.ash)
+                        Text("\(completedSessions)/3")
+                            .font(.system(size: 24, weight: .black, design: .monospaced))
+                            .foregroundStyle(.signalCyan)
+                            .contentTransition(.numericText())
+                    }
+                } else if completedSessions < 7 {
+                    HStack(spacing: 8) {
+                        Text("CLARITÉ 62")
+                            .font(.system(size: 26, weight: .black, design: .monospaced))
+                            .foregroundStyle(.acid)
+                        Text("PROVISOIRE")
+                            .font(.metadata(size: 10))
+                            .tracking(1.4)
+                            .foregroundStyle(.acid)
+                    }
+                } else {
+                    HStack(spacing: 8) {
+                        Text("CLARITÉ 78")
+                            .font(.system(size: 26, weight: .black, design: .monospaced))
+                            .foregroundStyle(.signalCyan)
+                        Text("CALIBRÉ")
+                            .font(.metadata(size: 10))
+                            .tracking(1.4)
+                            .foregroundStyle(.signalCyan)
+                    }
+                }
+
                 Spacer()
-                Text("INTERNE")
+                Text("DONNÉES LOCALES")
                     .font(.metadata(size: 9))
-                    .tracking(1.6)
+                    .tracking(1.4)
                     .foregroundStyle(.ash)
             }
             .padding(.top, 16)
@@ -75,39 +113,46 @@ struct ProfileView: View {
 
     private var dimensionsSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            RBEditorialDivider(label: "DIMENSIONS")
-            VStack(spacing: 0) {
-                ForEach(dimensionRows, id: \.label) { row in
-                    HStack(alignment: .firstTextBaseline) {
-                        Text(row.label)
-                            .font(.metadata(size: 12))
-                            .tracking(2)
-                            .foregroundStyle(.ash)
-                        Spacer()
-                        Text(row.value)
-                            .font(.system(size: 15, weight: .bold, design: .monospaced))
-                            .foregroundStyle(row.color)
-                    }
-                    .padding(.vertical, 13)
-                    if row.label != dimensionRows.last?.label {
-                        Rectangle()
-                            .fill(Color.line.opacity(0.7))
-                            .frame(height: 1)
-                    }
-                }
+            RBEditorialDivider(label: "DIMENSIONS COGNITIVES")
+
+            let scored = sessions.compactMap { $0.evaluation }
+            let focusScore = average(scores: scored, matching: ["FOCUS", "CLARTÉ", "STRUCTURE"])
+            let stabilityScore = average(scores: scored, matching: ["STABILITY", "STABILITÉ", "STRUCTURE"])
+            let recallScore = average(scores: scored, matching: ["RECALL", "RESTITUTION", "MÉMOIRE", "CLARTÉ"])
+            let depthScore = average(scores: scored, matching: ["DEPTH", "PROFONDEUR", "PRÉCISION"])
+
+            VStack(spacing: 12) {
+                RBSignalRail(
+                    label: "FOCUS",
+                    score: focusScore,
+                    note: focusScore != nil ? "Capacité de maintien sur une cible sans déviation." : "Nécessite des sessions Stay."
+                )
+
+                RBSignalRail(
+                    label: "STABILITÉ",
+                    score: stabilityScore,
+                    note: stabilityScore != nil ? "Résistance aux interruptions et retours rapides." : "Nécessite des sessions régulières."
+                )
+
+                RBSignalRail(
+                    label: "RESTITUTION",
+                    score: recallScore,
+                    note: recallScore != nil ? "Fidélité de la mémoire de travail après fermeture." : "Nécessite des sessions Recall."
+                )
+
+                RBSignalRail(
+                    label: "PROFONDEUR",
+                    score: depthScore,
+                    note: depthScore != nil ? "Compréhension structurelle et capacité d'explication." : "Nécessite des sessions Explain."
+                )
             }
-            .padding(16)
-            .overlay(
-                RoundedRectangle(cornerRadius: RBRadius.sm)
-                    .stroke(Color.line, lineWidth: 1)
-            )
             .padding(.top, 16)
         }
     }
 
     private var observedSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            RBEditorialDivider(label: "OBSERVED")
+            RBEditorialDivider(label: "OBSERVATIONS DERIVÉES")
 
             let count = sessions.count
             if count == 0 {
@@ -119,9 +164,9 @@ struct ProfileView: View {
             } else {
                 VStack(alignment: .leading, spacing: 14) {
                     insightRow(
-                        title: "TEMPS TOTAL",
+                        title: "TEMPS TOTAL ENTRAÎNÉ",
                         value: "\(sessions.reduce(0) { $0 + $1.actualDurationSeconds } / 60) MIN",
-                        note: "Sur tes \(count) session\(count > 1 ? "s" : "")."
+                        note: "Basé sur \(count) session\(count > 1 ? "s" : "") réelles complétées."
                     )
                     if count >= 3 {
                         let recent = sessions.prefix(3)
@@ -130,9 +175,9 @@ struct ProfileView: View {
                         let olderAvg = averageDuration(older)
                         let delta = recentAvg - olderAvg
                         insightRow(
-                            title: "DURÉE",
+                            title: "TENDANCE DE DURÉE",
                             value: delta >= 0 ? "+\(Int(delta)) MIN" : "\(Int(delta)) MIN",
-                            note: "Comparaison entre tes \(older.count) sessions précédentes et tes \(recent.count) dernières sessions\(older.isEmpty ? " (échantillon encore petit)" : "")."
+                            note: "Comparaison entre tes \(older.count) sessions précédentes et tes \(recent.count) dernières sessions."
                         )
                     }
                     if count >= 2 {
@@ -140,8 +185,8 @@ struct ProfileView: View {
                         let top = modeCounts.max { $0.value < $1.value }
                         if let top {
                             insightRow(
-                                title: "DISCIPLINE",
-                                value: top.key.label,
+                                title: "DISCIPLINE DOMINANTE",
+                                value: top.key.frenchLabel,
                                 note: "\(top.value) de tes \(count) sessions (\(Int(Double(top.value) / Double(count) * 100))%)."
                             )
                         }
@@ -174,24 +219,6 @@ struct ProfileView: View {
         return Double(items.reduce(0) { $0 + $1.actualDurationSeconds }) / Double(items.count) / 60.0
     }
 
-    private var dimensionRows: [DimensionRow] {
-        let scored = sessions.compactMap { $0.evaluation }
-
-        func row(_ label: String, _ value: Double?) -> DimensionRow {
-            DimensionRow(
-                label: label,
-                value: value.map { String(format: "%.1f/10", $0) } ?? "—",
-                color: value.map { _ in Color.signalCyan } ?? .ash.opacity(0.6)
-            )
-        }
-        return [
-            row("FOCUS", average(scores: scored, matching: ["FOCUS", "CLARTÉ", "STRUCTURE"])),
-            row("STABILITÉ", average(scores: scored, matching: ["STABILITY", "STABILITÉ", "STRUCTURE"])),
-            row("RESTITUTION", average(scores: scored, matching: ["RECALL", "RESTITUTION", "MÉMOIRE", "CLARTÉ"])),
-            row("PROFONDEUR", average(scores: scored, matching: ["DEPTH", "PROFONDEUR", "PRÉCISION"]))
-        ]
-    }
-
     private func average(scores: [EvaluationResult], matching names: [String]) -> Double? {
         let values = scores.flatMap(\.dimensions)
             .filter { dimension in
@@ -201,18 +228,4 @@ struct ProfileView: View {
         guard !values.isEmpty else { return nil }
         return values.reduce(0, +) / Double(values.count)
     }
-
-    private var clarityColor: Color {
-        switch clarity {
-        case .empty, .calibrating: return .ash
-        case .provisional: return .acid
-        case .normal: return .signalCyan
-        }
-    }
-}
-
-private struct DimensionRow {
-    let label: String
-    let value: String
-    let color: Color
 }

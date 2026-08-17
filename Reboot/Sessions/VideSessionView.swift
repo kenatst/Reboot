@@ -6,17 +6,23 @@ struct VideSessionView: View {
     var fastTimer = false
     var onComplete: (TrainingSession) -> Void
 
+    @Environment(\.scenePhase) private var scenePhase
     @State private var remaining: Int
     @State private var finished = false
     @State private var reflection = ""
     @State private var difference = ""
     @State private var timerTask: Task<Void, Never>?
+    @State private var targetEndDate: Date
+    @State private var isDimmed = false
+    @State private var userInteracted = false
 
     init(session: TrainingSession, fastTimer: Bool = false, onComplete: @escaping (TrainingSession) -> Void) {
         self.session = session
         self.fastTimer = fastTimer
         self.onComplete = onComplete
-        self._remaining = State(initialValue: session.plannedDurationSeconds)
+        let total = session.plannedDurationSeconds
+        self._remaining = State(initialValue: total)
+        self._targetEndDate = State(initialValue: Date.now.addingTimeInterval(TimeInterval(total)))
     }
 
     var body: some View {
@@ -24,6 +30,12 @@ struct VideSessionView: View {
             Color.void.ignoresSafeArea()
             if !finished {
                 silentPhase
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            userInteracted.toggle()
+                        }
+                    }
             } else {
                 reflectionPhase
             }
@@ -33,6 +45,11 @@ struct VideSessionView: View {
         }
         .onDisappear {
             timerTask?.cancel()
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .active && !finished {
+                recalculateRemaining()
+            }
         }
         .overlay(alignment: .bottomTrailing) {
             #if DEBUG
@@ -60,7 +77,8 @@ struct VideSessionView: View {
                 RBSystemLabel(text: "STATUS / SILENT", color: .ash)
             }
             .padding(.horizontal, RBSpacing.screen)
-            .padding(.top, 12)
+            .padding(.top, 14)
+            .opacity(isDimmed && !userInteracted ? 0.2 : 1)
 
             Spacer()
 
@@ -68,10 +86,12 @@ struct VideSessionView: View {
                 .font(.heroBlack(size: 40))
                 .foregroundStyle(.bone)
                 .multilineTextAlignment(.center)
-                .opacity(0.9)
+                .opacity(isDimmed && !userInteracted ? 0.15 : 0.9)
+                .animation(.easeInOut(duration: 2.0), value: isDimmed)
 
             RBTimerDisplay(seconds: remaining, size: 64, color: .ash, dimmed: true)
                 .padding(.top, 30)
+                .opacity(isDimmed && !userInteracted ? 0.35 : 0.9)
 
             Spacer()
             Spacer()
@@ -85,9 +105,9 @@ struct VideSessionView: View {
                     .padding(.top, 14)
 
                 Text("QU'EST-CE QUI\nOCCUPAIT TON\nESPRIT ?")
-                    .font(.heroBlack(size: 38))
+                    .font(.heroBlack(size: 36))
                     .foregroundStyle(.bone)
-                    .padding(.top, 20)
+                    .padding(.top, 18)
 
                 Text("Rien à produire. Juste ce qui est apparu pendant que rien ne te nourrissait.")
                     .font(.body(size: 15))
@@ -126,20 +146,49 @@ struct VideSessionView: View {
                 }
                 .buttonStyle(.rbPrimary())
                 .padding(.top, 26)
-                .padding(.bottom, 30)
+                .padding(.bottom, 36)
             }
             .padding(.horizontal, RBSpacing.screen)
         }
         .scrollDismissesKeyboard(.interactively)
     }
 
+    private func recalculateRemaining() {
+        if !fastTimer {
+            let diff = Int(targetEndDate.timeIntervalSince(Date.now))
+            remaining = max(0, diff)
+            if remaining <= 0 {
+                withAnimation(.easeInOut(duration: 0.4)) {
+                    finished = true
+                }
+                RBHaptics.play(.transition)
+            }
+        }
+    }
+
     private func startTimer() {
         timerTask?.cancel()
+        targetEndDate = Date.now.addingTimeInterval(TimeInterval(remaining))
+        
+        // Trigger soft dimming after 20 seconds
+        Task {
+            try? await Task.sleep(nanoseconds: 20_000_000_000)
+            if !Task.isCancelled {
+                withAnimation(.easeInOut(duration: 2.0)) {
+                    isDimmed = true
+                }
+            }
+        }
+
         timerTask = Task {
             while remaining > 0 && !Task.isCancelled {
                 try? await Task.sleep(nanoseconds: 1_000_000_000)
                 guard !Task.isCancelled else { return }
-                remaining -= fastTimer ? 60 : 1
+                if fastTimer {
+                    remaining -= 60
+                } else {
+                    recalculateRemaining()
+                }
                 if remaining <= 0 {
                     withAnimation(.easeInOut(duration: 0.4)) {
                         finished = true

@@ -12,7 +12,7 @@ struct ObserveSessionView: View {
     @State private var timerTask: Task<Void, Never>?
 
     private var mission: ObservationMission? {
-        ContentStore.mission(id: ((session.protocolDay - 1) % 35) + 1)
+        ContentStore.mission(id: ((session.protocolDay - 1) % 60) + 1)
     }
 
     var body: some View {
@@ -55,34 +55,34 @@ struct ObserveSessionView: View {
                 RBSystemLabel(text: "PROTOCOL / OBSERVE", color: .signalRed)
                 Spacer()
                 Text(String(format: "%02d:%02d", elapsed / 60, elapsed % 60))
-                    .font(.metadata(size: 12))
-                    .foregroundStyle(.ash)
+                    .font(.metadata(size: 13))
+                    .foregroundStyle(.bone)
                     .monospacedDigit()
             }
             .padding(.horizontal, RBSpacing.screen)
-            .padding(.top, 12)
+            .padding(.top, 14)
 
             Spacer()
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("MISSION \(String(format: "%03d", mission?.id ?? session.protocolDay))")
-                    .font(.metadata(size: 12))
+                    .font(.metadata(size: 11))
                     .tracking(2)
                     .foregroundStyle(.signalRed)
 
-                Text(mission?.mission ?? "Observe sans téléphone. Regarde avant de scroller.")
-                    .font(.system(size: 30, weight: .black, design: .default))
+                Text(mission?.mission.uppercased() ?? "OBSERVE SANS TÉLÉPHONE. REGARDE AVANT DE SCROLLER.")
+                    .font(.system(size: 26, weight: .heavy, design: .default))
                     .foregroundStyle(.bone)
                     .lineSpacing(2)
-                    .padding(.top, 16)
+                    .padding(.top, 14)
 
                 if let cues = mission?.cues, !cues.isEmpty {
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 12) {
                         ForEach(Array(cues.enumerated()), id: \.offset) { index, cue in
-                            HStack(alignment: .top, spacing: 10) {
+                            HStack(alignment: .top, spacing: 12) {
                                 Text(String(format: "%02d", index + 1))
                                     .font(.metadata(size: 10))
-                                    .foregroundStyle(.ash)
+                                    .foregroundStyle(.signalRed.opacity(0.8))
                                 Text(cue)
                                     .font(.body(size: 14))
                                     .foregroundStyle(.softBone)
@@ -90,7 +90,7 @@ struct ObserveSessionView: View {
                             }
                         }
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 24)
                 }
             }
             .padding(.horizontal, RBSpacing.screen)
@@ -99,19 +99,20 @@ struct ObserveSessionView: View {
 
             Button {
                 timerTask?.cancel()
+                RBHaptics.play(.lock)
                 withAnimation(.easeInOut(duration: 0.3)) {
                     showingReflection = true
                 }
             } label: {
                 HStack {
-                    Text("RÉFLÉCHIR")
+                    Text("TERMINER L'OBSERVATION")
                     Spacer()
                     Image(systemName: "arrow.right")
                 }
             }
             .buttonStyle(.rbPrimary())
             .padding(.horizontal, RBSpacing.screen)
-            .padding(.bottom, 26)
+            .padding(.bottom, 34)
         }
     }
 
@@ -122,13 +123,14 @@ struct ObserveSessionView: View {
                     .padding(.top, 14)
 
                 Text(mission?.reflection ?? "Qu'est-ce que tu as vu que tu n'aurais pas vu en scrollant ?")
-                    .font(.heroBlack(size: 34))
+                    .font(.heroBlack(size: 30))
                     .foregroundStyle(.bone)
+                    .lineSpacing(-2)
                     .padding(.top, 18)
 
                 RBReconstructionEditor(
                     text: $reflection,
-                    placeholder: "Ce que ton regard a attrapé…",
+                    placeholder: "Ce que ton regard a attrapé de singulier…",
                     accent: .signalCyan
                 )
                 .padding(.top, 22)
@@ -144,7 +146,7 @@ struct ObserveSessionView: View {
                 }
                 .buttonStyle(.rbPrimary())
                 .padding(.top, 26)
-                .padding(.bottom, 30)
+                .padding(.bottom, 36)
             }
             .padding(.horizontal, RBSpacing.screen)
         }

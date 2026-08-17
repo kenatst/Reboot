@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "title": "Cessation de tout input",
+    "prompt": "Pendant 5 minutes, aucun écran, aucune lecture, aucun son. Laisse ton esprit décanter.",
+    "durationMinutes": 5,
+    "context": "Phase 1 - Rupture du réflexe"
+  },
+  {
+    "id": 2,
+    "title": "L'immobilité des mains",
+    "prompt": "Pose tes mains sur tes cuisses. Ne les déplace pas pendant 5 minutes entières.",
+    "durationMinutes": 5,
+    "context": "Phase 1 - Contrôle moteur"
+  },
+  {
+    "id": 3,
+    "title": "Observer l'impulsion de départ",
+    "prompt": "Reste assis. Dès qu'une envie de te lever ou de toucher un objet survient, contente-toi de la nommer.",
+    "durationMinutes": 7,
+    "context": "Phase 1 - Conscience de l'impulsion"
+  },
+  {
+    "id": 4,
+    "title": "Le regard défocalisé",
+    "prompt": "Fixe le mur en face de toi sans converger sur un point précis. Embrasse tout le champ visuel.",
+    "durationMinutes": 7,
+    "context": "Phase 1 - Vision panoramique"
+  },
+  {
+    "id": 5,
+    "title": "L'écoute du silence ambiant",
+    "prompt": "Identifie le son le plus lointain et le plus discret de ton environnement. Reste avec lui.",
+    "durationMinutes": 8,
+    "context": "Phase 1 - Seuil auditif"
+  },
+  {
+    "id": 6,
+    "title": "Tolérer l'ennui premier",
+    "prompt": "Lorsque l'ennui apparaît, ne lutte pas. Accueille-le comme un signal de retour au calme.",
+    "durationMinutes": 10,
+    "context": "Phase 2 - Stabilisation"
+  },
+  {
+    "id": 7,
+    "title": "La respiration naturelle",
+    "prompt": "Ne modifie pas ton souffle. Observe simplement l'air qui entre et sort par tes narines.",
+    "durationMinutes": 10,
+    "context": "Phase 2 - Ancrage respiratoire"
+  },
+  {
+    "id": 8,
+    "title": "Le scan corporel passif",
+    "prompt": "Porte ton attention des orteils jusqu'au sommet du crâne, zone par zone, sans bouger.",
+    "durationMinutes": 10,
+    "context": "Phase 2 - Cartographie sensorielle"
+  },
+  {
+    "id": 9,
+    "title": "L'extinction des attentes",
+    "prompt": "Il n'y a rien à réussir, rien à produire, aucun score à atteindre. Juste être assis là.",
+    "durationMinutes": 10,
+    "context": "Phase 2 - Non-performance"
+  },
+  {
+    "id": 10,
+    "title": "La dissipation des pensées parasites",
+    "prompt": "Traite chaque pensée qui surgit comme un nuage qui traverse le ciel sans t'y accrocher.",
+    "durationMinutes": 12,
+    "context": "Phase 2 - Décentrement"
+  },
+  {
+    "id": 11,
+    "title": "L'interstice entre deux pensées",
+    "prompt": "Cherche l'espace de silence immédiat qui sépare la fin d'une pensée et le début de la suivante.",
+    "durationMinutes": 12,
+    "context": "Phase 2 - Intervalle"
+  },
+  {
+    "id": 12,
+    "title": "La pesanteur du corps",
+    "prompt": "Ressens le poids exact de ton corps appuyé sur le siège ou le sol. Laisse la gravité agir.",
+    "durationMinutes": 15,
+    "context": "Phase 3 - Approfondissement"
+  },
+  {
+    "id": 13,
+    "title": "L'immersion dans l'obscurité",
+    "prompt": "Ferme les yeux et explore le champ visuel intérieur sans chercher à fabriquer des images.",
+    "durationMinutes": 15,
+    "context": "Phase 3 - Obscurité"
+  },
+  {
+    "id": 14,
+    "title": "L'absence de commentaire",
+    "prompt": "Suspends tout jugement intérieur sur ce qui t'entoure pendant 15 minutes.",
+    "durationMinutes": 15,
+    "context": "Phase 3 - Suspension"
+  },
+  {
+    "id": 15,
+    "title": "Le retour à l'instant brut",
+    "prompt": "Dépouille l'instant présent de tout passé et de tout projet futur. Rien d'autre n'existe.",
+    "durationMinutes": 15,
+    "context": "Phase 3 - Présence"
+  },
+  {
+    "id": 16,
+    "title": "L'endurance du repos éveillé",
+    "prompt": "Maintiens une vigilance lucide et éveillée sans t'endormir ni t'agiter pendant 18 minutes.",
+    "durationMinutes": 18,
+    "context": "Phase 3 - Vigilance"
+  },
+  {
+    "id": 17,
+    "title": "La décompression cognitive",
+    "prompt": "Laisse les tensions accumulées dans la journée se relâcher d'elles-mêmes sans forcer.",
+    "durationMinutes": 18,
+    "context": "Phase 3 - Décompression"
+  },
+  {
+    "id": 18,
+    "title": "L'observation de l'impatience",
+    "prompt": "Quand l'esprit demande « combien de temps reste-t-il ? », regarde cette question sans y répondre.",
+    "durationMinutes": 20,
+    "context": "Phase 3 - Tolérance temporelle"
+  },
+  {
+    "id": 19,
+    "title": "Le sanctuaire intérieur",
+    "prompt": "Crée mentalement un espace inviolable où aucune sollicitation du monde extérieur n'a d'accès.",
+    "durationMinutes": 20,
+    "context": "Phase 3 - Sanctuarisation"
+  },
+  {
+    "id": 20,
+    "title": "La réconciliation avec le vide",
+    "prompt": "Le vide n'est pas une menace mais la matrice de toute clarté future. Habite-le avec confiance.",
+    "durationMinutes": 20,
+    "context": "Phase 3 - Matrice"
+  },
+  {
+    "id": 21,
+    "title": "L'immersion prolongée",
+    "prompt": "25 minutes de présence silencieuse absolue. Le point culminant de l'entraînement au calme.",
+    "durationMinutes": 25,
+    "context": "Phase 4 - Maîtrise"
+  },
+  {
+    "id": 22,
+    "title": "La clarté sans effort",
+    "prompt": "L'attention n'a plus besoin d'effort pour rester stable. Elle repose dans son état naturel.",
+    "durationMinutes": 25,
+    "context": "Phase 4 - Stabilité naturelle"
+  },
+  {
+    "id": 23,
+    "title": "Le silence avant l'action",
+    "prompt": "Utilise ces 20 minutes pour vider entièrement ton esprit avant d'entamer ton travail capital.",
+    "durationMinutes": 20,
+    "context": "Phase 4 - Préparation"
+  },
+  {
+    "id": 24,
+    "title": "Le bilan intérieur silencieux",
+    "prompt": "Laisse les 90 jours de transformation infuser dans ta mémoire sans chercher à analyser.",
+    "durationMinutes": 25,
+    "context": "Phase 4 - Intégration"
+  },
+  {
+    "id": 25,
+    "title": "La souveraineté finale",
+    "prompt": "30 minutes de liberté attentionnelle totale. Tu es désormais maître de ton espace mental.",
+    "durationMinutes": 30,
+    "context": "Phase 4 - Autonomie"
+  }
+]

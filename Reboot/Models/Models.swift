@@ -361,6 +361,21 @@ struct ObservationMission: Codable, Identifiable, Hashable {
     let reflection: String
 }
 
+struct VoidPrompt: Codable, Identifiable, Hashable {
+    let id: Int
+    let title: String
+    let prompt: String
+    let durationMinutes: Int
+    let context: String
+}
+
+struct MicroInsight: Codable, Identifiable, Hashable {
+    let day: Int
+    let text: String
+
+    var id: Int { day }
+}
+
 // MARK: - Protocol curriculum
 
 struct ProtocolDay: Identifiable, Hashable, Codable {

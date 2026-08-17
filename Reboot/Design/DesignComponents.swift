@@ -17,9 +17,10 @@ struct RBSystemLabel: View {
     }
 }
 
-// MARK: - Hero statement
+// MARK: - Hero statement & responsive typography
 
-/// Display headline with intentional line breaks supplied in the string.
+/// Display headline with intentional line breaks supplied in the string,
+/// respecting word boundaries and adapting cleanly to screen width.
 struct RBHeroStatement: View {
     let text: String
     var size: CGFloat = 46
@@ -31,15 +32,49 @@ struct RBHeroStatement: View {
         Text(text)
             .font(.heroBlack(size: size))
             .tracking(tracking)
-            .lineSpacing(-6)
+            .lineSpacing(-4)
             .multilineTextAlignment(alignment)
             .foregroundStyle(color)
             .fixedSize(horizontal: false, vertical: true)
     }
 }
 
-// MARK: - Buttons
+/// Hero title that guarantees words will NEVER break inside a word (e.g. CONCENTRATION stays intact).
+struct RBNonBreakingHero: View {
+    let title: String
+    var baseSize: CGFloat = 42
+    var color: Color = .bone
+    var tracking: CGFloat = -0.5
 
+    var body: some View {
+        ViewThatFits(in: .horizontal) {
+            Text(title)
+                .font(.heroBlack(size: baseSize))
+                .tracking(tracking)
+                .foregroundStyle(color)
+                .lineLimit(1)
+            
+            Text(title)
+                .font(.heroBlack(size: baseSize * 0.85))
+                .tracking(tracking)
+                .foregroundStyle(color)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+
+            Text(title)
+                .font(.heroBlack(size: baseSize * 0.72))
+                .tracking(tracking)
+                .foregroundStyle(color)
+                .lineLimit(2)
+                .minimumScaleFactor(0.75)
+        }
+        .fixedSize(horizontal: false, vertical: true)
+    }
+}
+
+// MARK: - Button system
+
+/// Signature primary action: Bone filled, black text. Used for Begin, Lock, Complete.
 struct RBPrimaryButtonStyle: ButtonStyle {
     var scheme: ColorScheme = .dark
     var fullWidth = true
@@ -48,13 +83,13 @@ struct RBPrimaryButtonStyle: ButtonStyle {
         let foreground: Color = scheme == .dark ? .ink : .bone
         let background: Color = scheme == .dark ? .bone : .ink
         configuration.label
-            .font(.system(size: 16, weight: .heavy, design: .default))
+            .font(.system(size: 15, weight: .heavy, design: .default))
             .tracking(1.2)
             .textCase(.uppercase)
             .foregroundStyle(foreground)
             .frame(maxWidth: fullWidth ? .infinity : nil)
-            .padding(.vertical, 17)
-            .padding(.horizontal, 26)
+            .padding(.vertical, 16)
+            .padding(.horizontal, 24)
             .background(background)
             .opacity(configuration.isPressed ? 0.78 : 1)
             .scaleEffect(configuration.isPressed ? 0.985 : 1)
@@ -62,6 +97,7 @@ struct RBPrimaryButtonStyle: ButtonStyle {
     }
 }
 
+/// Secondary action: Subtle border with bone/ash text.
 struct RBSecondaryButtonStyle: ButtonStyle {
     var scheme: ColorScheme = .dark
     var fullWidth = true
@@ -69,18 +105,81 @@ struct RBSecondaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         let foreground: Color = scheme == .dark ? .bone : .ink
         configuration.label
-            .font(.system(size: 14, weight: .semibold, design: .default))
+            .font(.system(size: 14, weight: .bold, design: .default))
             .tracking(1.2)
             .textCase(.uppercase)
             .foregroundStyle(foreground)
             .frame(maxWidth: fullWidth ? .infinity : nil)
-            .padding(.vertical, 15)
-            .padding(.horizontal, 26)
+            .padding(.vertical, 14)
+            .padding(.horizontal, 22)
             .overlay(
                 RoundedRectangle(cornerRadius: RBRadius.sm)
                     .stroke(foreground.opacity(0.35), lineWidth: 1)
             )
             .opacity(configuration.isPressed ? 0.6 : 1)
+            .scaleEffect(configuration.isPressed ? 0.985 : 1)
+            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
+    }
+}
+
+/// Signal action: Transparent/dark, cyan border, cyan text. Used for Retry, secondary protocol actions.
+struct RBSignalButtonStyle: ButtonStyle {
+    var fullWidth = true
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 14, weight: .bold, design: .default))
+            .tracking(1.4)
+            .textCase(.uppercase)
+            .foregroundStyle(Color.signalCyan)
+            .frame(maxWidth: fullWidth ? .infinity : nil)
+            .padding(.vertical, 14)
+            .padding(.horizontal, 22)
+            .background(Color.signalCyan.opacity(configuration.isPressed ? 0.12 : 0.04))
+            .overlay(
+                RoundedRectangle(cornerRadius: RBRadius.sm)
+                    .stroke(Color.signalCyan.opacity(0.6), lineWidth: 1)
+            )
+            .opacity(configuration.isPressed ? 0.8 : 1)
+            .scaleEffect(configuration.isPressed ? 0.985 : 1)
+            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
+    }
+}
+
+/// Text action: No container, subtle ash/bone hover. Used for back, skip, optional challenges.
+struct RBTextButtonStyle: ButtonStyle {
+    var color: Color = .ash
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.metadata(size: 11))
+            .tracking(1.8)
+            .textCase(.uppercase)
+            .foregroundStyle(configuration.isPressed ? Color.bone : color)
+            .opacity(configuration.isPressed ? 0.6 : 1)
+            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
+    }
+}
+
+/// Danger action: Red minimal treatment. Used for reset/delete.
+struct RBDangerButtonStyle: ButtonStyle {
+    var fullWidth = true
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 13, weight: .bold, design: .default))
+            .tracking(1.4)
+            .textCase(.uppercase)
+            .foregroundStyle(Color.signalRed)
+            .frame(maxWidth: fullWidth ? .infinity : nil)
+            .padding(.vertical, 13)
+            .padding(.horizontal, 20)
+            .overlay(
+                RoundedRectangle(cornerRadius: RBRadius.sm)
+                    .stroke(Color.signalRed.opacity(0.4), lineWidth: 1)
+            )
+            .opacity(configuration.isPressed ? 0.6 : 1)
+            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
     }
 }
 
@@ -93,6 +192,24 @@ extension ButtonStyle where Self == RBPrimaryButtonStyle {
 extension ButtonStyle where Self == RBSecondaryButtonStyle {
     static func rbSecondary(scheme: ColorScheme = .dark, fullWidth: Bool = true) -> RBSecondaryButtonStyle {
         RBSecondaryButtonStyle(scheme: scheme, fullWidth: fullWidth)
+    }
+}
+
+extension ButtonStyle where Self == RBSignalButtonStyle {
+    static func rbSignal(fullWidth: Bool = true) -> RBSignalButtonStyle {
+        RBSignalButtonStyle(fullWidth: fullWidth)
+    }
+}
+
+extension ButtonStyle where Self == RBTextButtonStyle {
+    static func rbText(color: Color = .ash) -> RBTextButtonStyle {
+        RBTextButtonStyle(color: color)
+    }
+}
+
+extension ButtonStyle where Self == RBDangerButtonStyle {
+    static func rbDanger(fullWidth: Bool = true) -> RBDangerButtonStyle {
+        RBDangerButtonStyle(fullWidth: fullWidth)
     }
 }
 
@@ -274,52 +391,72 @@ struct RBTraceRow: View {
     let session: TrainingSession
 
     var body: some View {
-        HStack(spacing: 14) {
-            VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
                 Text(session.formattedDate)
                     .font(.metadata(size: 10))
                     .tracking(1.2)
                     .foregroundStyle(.ash)
+                
                 Text("DAY \(String(format: "%03d", session.protocolDay))")
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
+                    .font(.system(size: 11, weight: .bold, design: .monospaced))
                     .foregroundStyle(.softBone)
+                
+                Spacer()
+                
+                Text("\(session.actualDurationSeconds / 60)M")
+                    .font(.system(size: 12, weight: .bold, design: .monospaced))
+                    .foregroundStyle(.ash)
             }
-            .frame(width: 74, alignment: .leading)
 
-            Text(session.mode.label)
-                .font(.metadata(size: 12))
-                .tracking(1.6)
-                .foregroundStyle(modeColor)
-                .frame(width: 58, alignment: .leading)
+            HStack(alignment: .center, spacing: 10) {
+                Circle()
+                    .fill(modeColor)
+                    .frame(width: 5, height: 5)
+                
+                Text(session.mode.label)
+                    .font(.system(size: 13, weight: .bold, design: .monospaced))
+                    .tracking(1.4)
+                    .foregroundStyle(.bone)
+                    .lineLimit(1)
+                    .layoutPriority(2)
 
-            Text("\(session.actualDurationSeconds / 60)M")
-                .font(.metadata(size: 12))
-                .foregroundStyle(.ash)
-                .frame(width: 40, alignment: .leading)
+                if !session.title.isEmpty {
+                    Text("·")
+                        .foregroundStyle(.ash.opacity(0.5))
+                    Text(session.title)
+                        .font(.body(size: 13))
+                        .foregroundStyle(.ash)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .layoutPriority(1)
+                }
 
-            Spacer()
+                Spacer()
 
-            if let evaluation = session.evaluation {
-                Text(String(format: "%.0f/10", evaluation.overallScore))
-                    .font(.system(size: 14, weight: .bold, design: .monospaced))
-                    .foregroundStyle(.signalCyan)
-            } else if session.analysisOffline {
-                Text("OFFLINE")
-                    .font(.metadata(size: 10))
-                    .foregroundStyle(.acid)
-            } else {
-                Text("—")
-                    .font(.metadata(size: 14))
-                    .foregroundStyle(.ash.opacity(0.6))
+                if let evaluation = session.evaluation {
+                    Text(String(format: "%.0f/10", evaluation.overallScore))
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
+                        .foregroundStyle(.signalCyan)
+                } else if session.analysisOffline {
+                    Text("OFFLINE")
+                        .font(.metadata(size: 10))
+                        .foregroundStyle(.acid)
+                } else {
+                    Text("—")
+                        .font(.metadata(size: 14))
+                        .foregroundStyle(.ash.opacity(0.6))
+                }
             }
         }
-        .padding(.vertical, 13)
+        .padding(.vertical, 14)
     }
 
     private var modeColor: Color {
         switch session.mode {
         case .stay: return .signalCyan
-        case .recall, .explain: return .softBone
+        case .recall: return .bone
+        case .explain: return .softBone
         case .nothing: return .ash
         case .observe: return .signalRed
         }
@@ -327,35 +464,224 @@ struct RBTraceRow: View {
 }
 
 struct RBSessionRow: View {
+    let index: Int
     let mode: SessionMode
     let accent: Color
 
     var body: some View {
-        HStack(alignment: .top, spacing: 18) {
-            VStack(alignment: .leading, spacing: 6) {
-                Text(mode.label)
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .firstTextBaseline) {
+                Text(String(format: "%02d / %@", index, mode.label))
                     .font(.metadata(size: 11))
                     .tracking(2)
                     .foregroundStyle(accent)
-                Text(mode.frenchLabel)
-                    .font(.system(size: 19, weight: .heavy, design: .default))
-                    .foregroundStyle(.bone)
-                Text(mode.tagline)
-                    .font(.system(size: 13, weight: .medium, design: .default))
-                    .foregroundStyle(.ash)
-                    .lineSpacing(2)
+                Spacer()
+                Image(systemName: "arrow.right")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(.ash.opacity(0.7))
             }
-            Spacer()
-            Image(systemName: "arrow.right")
-                .font(.system(size: 14, weight: .bold))
+            .padding(.bottom, 8)
+
+            Text(mode.frenchLabel)
+                .font(.system(size: 20, weight: .black, design: .default))
+                .foregroundStyle(.bone)
+                .lineLimit(1)
+                .padding(.bottom, 6)
+
+            Text(mode.tagline.replacingOccurrences(of: "\n", with: " "))
+                .font(.body(size: 13))
                 .foregroundStyle(.ash)
-                .padding(.top, 6)
+                .lineLimit(1)
         }
-        .padding(20)
+        .padding(.vertical, 18)
+        .padding(.horizontal, 20)
+        .background(Color.graphite.opacity(0.4))
         .overlay(
             RoundedRectangle(cornerRadius: RBRadius.sm)
-                .stroke(Color.line, lineWidth: 1)
+                .stroke(Color.line.opacity(0.8), lineWidth: 1)
         )
+    }
+}
+
+// MARK: - Protocol Vector Glyphs
+
+enum RBProtocolGlyphKind {
+    case today
+    case train
+    case trace
+    case profile
+}
+
+struct RBProtocolGlyph: View {
+    let kind: RBProtocolGlyphKind
+    var color: Color = .ash
+    var isSelected: Bool = false
+    var size: CGFloat = 20
+
+    var body: some View {
+        Canvas { context, canvasSize in
+            let rect = CGRect(origin: .zero, size: canvasSize)
+            let center = CGPoint(x: rect.midX, y: rect.midY)
+            let strokeColor = isSelected ? Color.signalCyan : color
+            let fillColor = isSelected ? Color.signalCyan : color
+
+            switch kind {
+            case .today:
+                // TODAY = signal / filled core (inner filled core + outer precision ring segment)
+                let radius: CGFloat = 8
+                context.stroke(
+                    Path { p in
+                        p.addArc(center: center, radius: radius, startAngle: .degrees(-140), endAngle: .degrees(140), clockwise: false)
+                    },
+                    with: .color(strokeColor),
+                    lineWidth: 1.8
+                )
+                context.fill(
+                    Path(ellipseIn: CGRect(x: center.x - 3.5, y: center.y - 3.5, width: 7, height: 7)),
+                    with: .color(fillColor)
+                )
+
+            case .train:
+                // TRAIN = split square / training block
+                let bSize: CGFloat = 6.5
+                let gap: CGFloat = 2.5
+                // Top left
+                context.stroke(
+                    Path(roundedRect: CGRect(x: center.x - bSize - gap/2, y: center.y - bSize - gap/2, width: bSize, height: bSize), cornerRadius: 1),
+                    with: .color(strokeColor),
+                    lineWidth: 1.5
+                )
+                // Top right (filled if selected)
+                if isSelected {
+                    context.fill(
+                        Path(roundedRect: CGRect(x: center.x + gap/2, y: center.y - bSize - gap/2, width: bSize, height: bSize), cornerRadius: 1),
+                        with: .color(fillColor)
+                    )
+                } else {
+                    context.stroke(
+                        Path(roundedRect: CGRect(x: center.x + gap/2, y: center.y - bSize - gap/2, width: bSize, height: bSize), cornerRadius: 1),
+                        with: .color(strokeColor),
+                        lineWidth: 1.5
+                    )
+                }
+                // Bottom left
+                context.stroke(
+                    Path(roundedRect: CGRect(x: center.x - bSize - gap/2, y: center.y + gap/2, width: bSize, height: bSize), cornerRadius: 1),
+                    with: .color(strokeColor),
+                    lineWidth: 1.5
+                )
+                // Bottom right
+                context.stroke(
+                    Path(roundedRect: CGRect(x: center.x + gap/2, y: center.y + gap/2, width: bSize, height: bSize), cornerRadius: 1),
+                    with: .color(strokeColor),
+                    lineWidth: 1.5
+                )
+
+            case .trace:
+                // TRACE = directional trace / triangular signal
+                var path = Path()
+                let h: CGFloat = 16
+                let w: CGFloat = 15
+                path.move(to: CGPoint(x: center.x, y: center.y - h/2))
+                path.addLine(to: CGPoint(x: center.x + w/2, y: center.y + h/2))
+                path.addLine(to: CGPoint(x: center.x - w/2, y: center.y + h/2))
+                path.closeSubpath()
+                context.stroke(path, with: .color(strokeColor), lineWidth: 1.6)
+                if isSelected {
+                    context.fill(
+                        Path(ellipseIn: CGRect(x: center.x - 2.5, y: center.y + 1, width: 5, height: 5)),
+                        with: .color(fillColor)
+                    )
+                }
+
+            case .profile:
+                // PROFILE = structured node / hexagonal profile
+                var path = Path()
+                let r: CGFloat = 8.5
+                for i in 0..<6 {
+                    let angle = Double(i) * .pi / 3.0 - .pi / 6.0
+                    let pt = CGPoint(x: center.x + r * CGFloat(cos(angle)), y: center.y + r * CGFloat(sin(angle)))
+                    if i == 0 { path.move(to: pt) } else { path.addLine(to: pt) }
+                }
+                path.closeSubpath()
+                context.stroke(path, with: .color(strokeColor), lineWidth: 1.6)
+                if isSelected {
+                    context.fill(
+                        Path(ellipseIn: CGRect(x: center.x - 2.5, y: center.y - 2.5, width: 5, height: 5)),
+                        with: .color(fillColor)
+                    )
+                }
+            }
+        }
+        .frame(width: size, height: size)
+    }
+}
+
+// MARK: - Horizontal Signal Rail
+
+struct RBSignalRail: View {
+    let label: String
+    let score: Double?
+    var maxScore: Double = 10.0
+    var note: String? = nil
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(alignment: .firstTextBaseline) {
+                Text(label)
+                    .font(.metadata(size: 11))
+                    .tracking(2)
+                    .foregroundStyle(.ash)
+                Spacer()
+                if let score {
+                    Text(String(format: "%.1f/10", score))
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
+                        .foregroundStyle(Color.signalCyan)
+                } else {
+                    Text("—")
+                        .font(.metadata(size: 13))
+                        .foregroundStyle(.ash.opacity(0.5))
+                }
+            }
+
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    // Track
+                    Rectangle()
+                        .fill(Color.line.opacity(0.8))
+                        .frame(height: 3)
+                    
+                    // Segments marks
+                    HStack(spacing: 0) {
+                        ForEach(0..<10, id: \.self) { i in
+                            Rectangle()
+                                .fill(Color.void)
+                                .frame(width: 1.5, height: 3)
+                            if i < 9 {
+                                Spacer()
+                            }
+                        }
+                    }
+
+                    // Active fill
+                    if let score {
+                        let fillWidth = max(0, min(geo.size.width, geo.size.width * CGFloat(score / maxScore)))
+                        Rectangle()
+                            .fill(Color.signalCyan)
+                            .frame(width: fillWidth, height: 3)
+                    }
+                }
+            }
+            .frame(height: 3)
+
+            if let note, !note.isEmpty {
+                Text(note)
+                    .font(.body(size: 12))
+                    .foregroundStyle(.ash)
+                    .padding(.top, 2)
+            }
+        }
+        .padding(.vertical, 8)
     }
 }
 
@@ -656,5 +982,76 @@ struct RBSignalBracket: View {
             Rectangle().fill(color.opacity(0.35)).frame(width: 2, height: 26)
             Rectangle().fill(color.opacity(0.12)).frame(width: 2, height: 26)
         }
+    }
+}
+
+// MARK: - Custom Bottom Navigation Bar
+
+struct RBCustomTabBar<Tab: Hashable>: View {
+    @Binding var selection: Tab
+    let tabs: [(tab: Tab, label: String, glyph: RBProtocolGlyphKind)]
+    @Namespace private var tabNamespace
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(tabs, id: \.tab) { item in
+                let isSelected = selection == item.tab
+                Button {
+                    if selection != item.tab {
+                        RBHaptics.play(.selection)
+                        withAnimation(RBMotion.tabTransition) {
+                            selection = item.tab
+                        }
+                    }
+                } label: {
+                    ZStack {
+                        if isSelected {
+                            // Refined industrial capsule with ~25% reduced mass
+                            RoundedRectangle(cornerRadius: RBRadius.pill)
+                                .fill(Color.graphite.opacity(0.85))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: RBRadius.pill)
+                                        .stroke(Color.line.opacity(0.9), lineWidth: 1)
+                                )
+                                .matchedGeometryEffect(id: "activeTabCapsule", in: tabNamespace)
+                                .frame(height: 48)
+                                .padding(.horizontal, 4)
+                        }
+
+                        VStack(spacing: 4) {
+                            RBProtocolGlyph(
+                                kind: item.glyph,
+                                color: isSelected ? .signalCyan : .ash.opacity(0.8),
+                                isSelected: isSelected,
+                                size: 18
+                            )
+
+                            Text(item.label)
+                                .font(.metadata(size: 9))
+                                .tracking(1.2)
+                                .foregroundStyle(isSelected ? Color.bone : Color.ash.opacity(0.7))
+                                .textCase(.uppercase)
+                                .lineLimit(1)
+                        }
+                        .padding(.vertical, 6)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 8)
+        .padding(.bottom, 6)
+        .background(
+            Color.void.opacity(0.96)
+                .overlay(alignment: .top) {
+                    Rectangle()
+                        .fill(Color.line.opacity(0.6))
+                        .frame(height: 1)
+                }
+                .ignoresSafeArea(edges: .bottom)
+        )
     }
 }

@@ -34,6 +34,14 @@ enum ContentStore {
         (try? load("missions", as: [ObservationMission].self)) ?? []
     }
 
+    static var voidPrompts: [VoidPrompt] {
+        (try? load("void_prompts", as: [VoidPrompt].self)) ?? []
+    }
+
+    static var microInsights: [MicroInsight] {
+        (try? load("micro_insights", as: [MicroInsight].self)) ?? []
+    }
+
     static func reading(id: Int) -> ReadingExercise? {
         readings.first { $0.id == id }
     }
@@ -44,5 +52,16 @@ enum ContentStore {
 
     static func mission(id: Int) -> ObservationMission? {
         observationMissions.first { $0.id == id }
+    }
+
+    static func voidPrompt(id: Int) -> VoidPrompt? {
+        voidPrompts.first { $0.id == id }
+    }
+
+    static func microInsight(day: Int) -> String {
+        if let insight = microInsights.first(where: { $0.day == day }) {
+            return insight.text
+        }
+        return "L'attention n'est pas un don : c'est un muscle qui répond strictement à l'entraînement régulier."
     }
 }

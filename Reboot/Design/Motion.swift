@@ -1,15 +1,23 @@
 import SwiftUI
 
-/// Central motion vocabulary. Duration range is intentionally tight (120–350ms).
+/// Central motion vocabulary. Precise, mechanical, controlled, cinematic.
 enum RBMotion {
-    static let fast: Double = 0.12
-    static let standard: Double = 0.24
+    static let fast: Double = 0.16
+    static let standard: Double = 0.28
+    static let hero: Double = 0.45
+    static let cinematic: Double = 0.70
     static let slow: Double = 0.35
 
     static func duration(_ base: Double, reduceMotion: Bool) -> Double {
         reduceMotion ? 0.0 : base
     }
 
+    static let fastAnim = Animation.easeOut(duration: 0.16)
+    static let standardAnim = Animation.easeInOut(duration: 0.28)
+    static let heroAnim = Animation.easeInOut(duration: 0.45)
+    static let cinematicAnim = Animation.easeInOut(duration: 0.70)
+
+    static let tabTransition = Animation.easeOut(duration: 0.20)
     static let noiseJitter = Animation.easeOut(duration: 0.18)
     static let signalPulse = Animation.easeInOut(duration: 1.6).repeatForever(autoreverses: true)
 

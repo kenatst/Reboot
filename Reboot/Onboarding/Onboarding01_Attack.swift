@@ -5,11 +5,11 @@ import SwiftUI
 struct OnboardingAttackView: View {
     var advance: () -> Void
 
-    @State private var noiseActive = false
+    @State private var noiseActive = true
     @State private var noiseFrozen = false
-    @State private var heroVisible = false
-    @State private var adaptLineVisible = false
-    @State private var ctaVisible = false
+    @State private var heroVisible = true
+    @State private var adaptLineVisible = true
+    @State private var ctaVisible = true
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private let noiseWords = ["CHECK", "NEXT", "NEW", "OPEN", "SWIPE", "NOW", "LIVE", "MORE"]
@@ -53,13 +53,7 @@ struct OnboardingAttackView: View {
 
                     RBHeroStatement(
                         text: "TON ATTENTION\nEST SOUS\nATTAQUE.",
-                        size: geo.size.height < 730 ? 40 : 46
-                    )
-                    .opacity(heroVisible ? 1 : 0)
-                    .offset(y: heroVisible ? 0 : 18)
-                    .animation(
-                        .easeOut(duration: RBMotion.duration(0.4, reduceMotion: reduceMotion)),
-                        value: heroVisible
+                        size: geo.size.height < 730 ? 38 : 46
                     )
 
                     if adaptLineVisible {
@@ -72,21 +66,20 @@ struct OnboardingAttackView: View {
                                 .foregroundStyle(.signalRed)
                                 .lineSpacing(2)
                         }
-                        .padding(.top, 18)
-                        .transition(.opacity.combined(with: .move(edge: .leading)))
+                        .padding(.top, 16)
                     }
 
                     Text("Tu ouvres. Tu scrolles. Tu vérifies. Tu changes. Tu recommences.")
                         .font(.body(size: 16))
                         .foregroundStyle(.softBone)
                         .lineSpacing(3)
-                        .padding(.top, 22)
+                        .padding(.top, 18)
 
                     Text("Le problème n'est pas que tu ne peux plus te concentrer. Tu t'entraînes toute la journée à changer.")
                         .font(.body(size: 14))
                         .foregroundStyle(.ash)
                         .lineSpacing(3)
-                        .padding(.top, 12)
+                        .padding(.top, 10)
 
                     if ctaVisible {
                         Button(action: advance) {
@@ -97,8 +90,7 @@ struct OnboardingAttackView: View {
                             }
                         }
                         .buttonStyle(.rbPrimary())
-                        .padding(.top, 28)
-                        .transition(.opacity)
+                        .padding(.top, 24)
                     }
                 }
                 .padding(.horizontal, RBSpacing.screen)
@@ -112,21 +104,10 @@ struct OnboardingAttackView: View {
     }
 
     private func runTimeline() {
-        let stage1 = RBMotion.duration(0.55, reduceMotion: reduceMotion)
-        let stage2 = RBMotion.duration(1.4, reduceMotion: reduceMotion)
-        let stage3 = RBMotion.duration(0.7, reduceMotion: reduceMotion)
         Task {
-            try? await Task.sleep(nanoseconds: UInt64(stage1 * 1_000_000_000))
-            withAnimation { noiseActive = true }
-            try? await Task.sleep(nanoseconds: UInt64(stage2 * 1_000_000_000))
-            withAnimation(.easeOut(duration: RBMotion.duration(0.4, reduceMotion: reduceMotion))) {
+            try? await Task.sleep(nanoseconds: 1_200_000_000)
+            withAnimation(.easeOut(duration: 0.35)) {
                 noiseFrozen = true
-                heroVisible = true
-            }
-            try? await Task.sleep(nanoseconds: UInt64(stage3 * 1_000_000_000))
-            withAnimation(.easeOut(duration: 0.3)) {
-                adaptLineVisible = true
-                ctaVisible = true
             }
         }
     }

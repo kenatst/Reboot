@@ -7,15 +7,17 @@ struct ReadingSessionView: View {
     var onComplete: (TrainingSession) -> Void
 
     @State private var reading = true
+    @State private var transitioning = false
     @State private var response = ""
+    @State private var scrollOffset: CGFloat = 0
 
     private var exercise: ReadingExercise? {
-        let id = ((session.protocolDay - 1) % 50) + 1
+        let id = ((session.protocolDay - 1) % 60) + 1
         return session.task.isEmpty ? ContentStore.reading(id: id) : nil
     }
 
     private var text: String {
-        exercise?.text ?? "Texte indisponible. Ferme le texte et reconstruis ce que tu retiens de ta journée."
+        exercise?.text ?? "Texte indisponible. Ferme le texte et reconstruis ce que tu retiens de ta lecture."
     }
 
     private var question: String {
@@ -27,23 +29,23 @@ struct ReadingSessionView: View {
             if reading {
                 reader
                     .transition(.opacity)
+            } else if transitioning {
+                transitionScreen
+                    .transition(.opacity)
             } else {
                 reconstruction
                     .transition(.opacity)
             }
         }
-        .animation(.easeInOut(duration: 0.3), value: reading)
+        .animation(.easeInOut(duration: RBMotion.standard), value: reading)
+        .animation(.easeInOut(duration: RBMotion.standard), value: transitioning)
         .onAppear {
             #if DEBUG
             if fastTimer {
                 Task {
                     try? await Task.sleep(nanoseconds: 2_000_000_000)
-                    if reading {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            reading = false
-                        }
-                    }
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    closeText()
+                    try? await Task.sleep(nanoseconds: 1_000_000_000)
                     response = "Je retiens l'idée centrale : l'attention se reconstruit par la répétition du retour. L'exemple du texte montre que rester sur une chose change la qualité de la compréhension. La leçon que j'en tire : fermer les concurrents avant de commencer."
                     finish()
                 }
@@ -77,42 +79,70 @@ struct ReadingSessionView: View {
                         .font(.heroBlack(size: 34))
                         .tracking(-0.4)
                         .foregroundStyle(.ink)
-                        .padding(.top, 22)
+                        .padding(.top, 20)
 
                     Rectangle()
-                        .fill(Color.ink.opacity(0.25))
+                        .fill(Color.ink.opacity(0.2))
                         .frame(height: 1)
-                        .padding(.top, 18)
+                        .padding(.top, 16)
 
                     Text(text)
-                        .font(.reading(size: 19))
+                        .font(.reading(size: 21))
                         .foregroundStyle(.ink)
-                        .lineSpacing(8)
+                        .lineSpacing(9)
                         .padding(.top, 24)
-                        .padding(.bottom, 30)
+                        .padding(.bottom, 24)
 
-                    Spacer(minLength: 0)
+                    // Dedicated finish mark at the end of the text
+                    VStack(alignment: .center, spacing: 14) {
+                        Rectangle()
+                            .fill(Color.ink.opacity(0.15))
+                            .frame(height: 1)
+
+                        Text("FIN DU TEXTE")
+                            .font(.metadata(size: 11))
+                            .tracking(2)
+                            .foregroundStyle(.ink.opacity(0.45))
+                    }
+                    .padding(.top, 16)
+                    .padding(.bottom, 100)
                 }
                 .padding(.horizontal, 26)
             }
+        }
+        .safeAreaInset(edge: .bottom) {
+            VStack(spacing: 0) {
+                Rectangle()
+                    .fill(Color.ink.opacity(0.12))
+                    .frame(height: 1)
 
-            VStack {
-                Spacer()
                 Button {
-                    withAnimation(.easeInOut(duration: 0.28)) {
-                        reading = false
-                    }
-                    RBHaptics.play(.lock)
+                    closeText()
                 } label: {
                     HStack {
-                        Text("CLOSE THE TEXT")
+                        Text("FERMER LE TEXTE")
                         Spacer()
                         Image(systemName: "arrow.right")
                     }
                 }
                 .buttonStyle(.rbPrimary(scheme: .light))
                 .padding(.horizontal, RBSpacing.screen)
-                .padding(.bottom, 18)
+                .padding(.top, 12)
+                .padding(.bottom, 14)
+            }
+            .background(Color.bone)
+        }
+    }
+
+    private var transitionScreen: some View {
+        ZStack {
+            Color.void.ignoresSafeArea()
+            VStack(spacing: 16) {
+                Text("LE TEXTE EST FERMÉ.")
+                    .font(.heroBlack(size: 32))
+                    .foregroundStyle(.bone)
+                    .multilineTextAlignment(.center)
+                RBSignalPulse(color: .signalCyan, diameter: 10)
             }
         }
     }
@@ -122,43 +152,57 @@ struct ReadingSessionView: View {
             Color.void.ignoresSafeArea()
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    RBSystemLabel(text: "RECALL / THE TEXT IS GONE", color: .signalCyan)
+                    RBSystemLabel(text: "RECALL / RECONSTRUCTION", color: .signalCyan)
                         .padding(.top, 14)
 
-                    Text("LE TEXTE\nEST FERMÉ.")
-                        .font(.heroBlack(size: 42))
+                    Text("QU'EST-CE QUI\nRESTE ?")
+                        .font(.heroBlack(size: 40))
                         .foregroundStyle(.bone)
-                        .padding(.top, 20)
+                        .padding(.top, 18)
 
-                    Text("\(question)\n\nAucun minimum de mots. Ce qui est resté est ce qui compte.")
+                    Text(question)
                         .font(.body(size: 16))
                         .foregroundStyle(.softBone)
                         .lineSpacing(4)
-                        .padding(.top, 18)
+                        .padding(.top, 16)
 
                     RBReconstructionEditor(
                         text: $response,
-                        placeholder: "Reconstruis ce qui est resté…",
+                        placeholder: "Reconstruis l'argument central sans notes…",
                         accent: .signalCyan
                     )
-                    .padding(.top, 22)
+                    .padding(.top, 20)
 
                     Button {
                         finish()
                     } label: {
                         HStack {
-                            Text("TERMINER LA SESSION")
+                            Text("ANALYSER MA RESTITUTION")
                             Spacer()
-                            Image(systemName: "checkmark")
+                            Image(systemName: "arrow.right")
                         }
                     }
                     .buttonStyle(.rbPrimary())
                     .padding(.top, 24)
-                    .padding(.bottom, 28)
+                    .padding(.bottom, 36)
                 }
                 .padding(.horizontal, RBSpacing.screen)
             }
             .scrollDismissesKeyboard(.interactively)
+        }
+    }
+
+    private func closeText() {
+        RBHaptics.play(.lock)
+        withAnimation(.easeInOut(duration: 0.25)) {
+            reading = false
+            transitioning = true
+        }
+        Task {
+            try? await Task.sleep(nanoseconds: 400_000_000)
+            withAnimation(.easeOut(duration: 0.3)) {
+                transitioning = false
+            }
         }
     }
 

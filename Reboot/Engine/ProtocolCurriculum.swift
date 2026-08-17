@@ -122,7 +122,7 @@ enum ProtocolCurriculum {
                 "Reconstruis ce qui est resté, sans minimum de mots."
             ]
             challenge = "Après la restitution, relis une seule section qui a disparu."
-            contentID = ((day - 1) % 50) + 1
+            contentID = ((day - 1) % 60) + 1
         case .explain:
             title = explainTitles[(indexInPhase + variant) % explainTitles.count]
             intention = explainIntentions[(indexInPhase + variant) % explainIntentions.count]
@@ -132,7 +132,7 @@ enum ProtocolCurriculum {
                 "Enseigne-la comme à quelqu'un qui n'y connaît rien."
             ]
             challenge = "Trouve un contre-exemple de la notion et explique pourquoi il en est un."
-            contentID = ((day - 1) % 35) + 1
+            contentID = ((day - 1) % 45) + 1
         case .nothing:
             title = nothingTitles[(indexInPhase + variant) % nothingTitles.count]
             intention = nothingIntentions[(indexInPhase + variant) % nothingIntentions.count]
@@ -142,7 +142,7 @@ enum ProtocolCurriculum {
                 "Laisse ce qui vient venir, sans l'attraper."
             ]
             challenge = "Après la session, attends une minute avant de toucher ton téléphone."
-            contentID = nil
+            contentID = ((day - 1) % 25) + 1
         case .observe:
             title = observeTitles[(indexInPhase + variant) % observeTitles.count]
             intention = observeIntentions[(indexInPhase + variant) % observeIntentions.count]
@@ -152,7 +152,7 @@ enum ProtocolCurriculum {
                 "Réponds à la question de réflexion sans chercher la bonne réponse."
             ]
             challenge = "Pendant l'observation, aucune photo, aucune note, aucun téléphone."
-            contentID = ((day - 1) % 35) + 1
+            contentID = ((day - 1) % 60) + 1
         }
 
         return ProtocolDay(

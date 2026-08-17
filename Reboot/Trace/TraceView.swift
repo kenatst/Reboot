@@ -13,25 +13,26 @@ struct TraceView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     RBSystemLabel(text: "REBOOT / TRACE", color: .ash)
-                        .padding(.top, 14)
+                        .padding(.top, 10)
 
                     Text("CE QUE\nTU AS\nENTRAÎNÉ.")
-                        .font(.heroBlack(size: 40))
-                        .tracking(-0.4)
+                        .font(.heroBlack(size: 38))
+                        .tracking(-0.5)
                         .foregroundStyle(.bone)
+                        .lineSpacing(-4)
                         .padding(.top, 18)
 
                     if sessions.isEmpty {
                         emptyState
-                            .padding(.top, 46)
+                            .padding(.top, 40)
                     } else {
-                        if sessions.count >= 4 {
+                        if sessions.count >= 7 {
                             charts
-                                .padding(.top, 32)
+                                .padding(.top, 28)
                         }
 
-                        RBEditorialDivider(label: "SESSIONS")
-                            .padding(.top, 32)
+                        RBEditorialDivider(label: "HISTORIQUE DES SESSIONS")
+                            .padding(.top, 30)
 
                         LazyVStack(spacing: 0) {
                             ForEach(sessions) { session in
@@ -49,8 +50,8 @@ struct TraceView: View {
                                 }
                             }
                         }
-                        .padding(.top, 8)
-                        .padding(.bottom, 40)
+                        .padding(.top, 6)
+                        .padding(.bottom, 100)
                     }
                 }
                 .padding(.horizontal, RBSpacing.screen)

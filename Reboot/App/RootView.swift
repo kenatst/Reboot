@@ -160,28 +160,37 @@ struct MainTabsView: View {
         self._selection = State(initialValue: initialSelection)
     }
 
+    private let tabItems: [(tab: AppTab, label: String, glyph: RBProtocolGlyphKind)] = [
+        (.today, "AUJOURD'HUI", .today),
+        (.train, "ENTRAÎNER", .train),
+        (.trace, "TRACE", .trace),
+        (.profile, "PROFIL", .profile)
+    ]
+
     var body: some View {
-        TabView(selection: $selection) {
-            TodayView()
-                .tabItem {
-                    Label("AUJOURD'HUI", systemImage: "circle")
+        ZStack {
+            Color.void.ignoresSafeArea()
+
+            Group {
+                switch selection {
+                case .today:
+                    TodayView()
+                case .train:
+                    TrainView()
+                case .trace:
+                    TraceView()
+                case .profile:
+                    ProfileView()
                 }
-                .tag(AppTab.today)
-            TrainView()
-                .tabItem {
-                    Label("ENTRAÎNER", systemImage: "square")
-                }
-                .tag(AppTab.train)
-            TraceView()
-                .tabItem {
-                    Label("TRACE", systemImage: "triangle")
-                }
-                .tag(AppTab.trace)
-            ProfileView()
-                .tabItem {
-                    Label("PROFIL", systemImage: "hexagon")
-                }
-                .tag(AppTab.profile)
+            }
+            .transition(.asymmetric(
+                insertion: .opacity.combined(with: .offset(y: 8)),
+                removal: .opacity
+            ))
+            .id(selection)
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            RBCustomTabBar(selection: $selection, tabs: tabItems)
         }
     }
 }

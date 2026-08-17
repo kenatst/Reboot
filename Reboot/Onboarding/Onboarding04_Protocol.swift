@@ -5,8 +5,8 @@ import SwiftUI
 struct OnboardingProtocolView: View {
     var advance: () -> Void
 
-    @State private var timelineVisible = false
-    @State private var contentVisible = false
+    @State private var timelineVisible = true
+    @State private var contentVisible = true
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -64,13 +64,6 @@ struct OnboardingProtocolView: View {
                                 noiseMeter(phase.number)
                             }
                             .padding(.vertical, 8)
-                            .opacity(timelineVisible ? 1 : 0)
-                            .offset(x: timelineVisible ? 0 : -14)
-                            .animation(
-                                .easeOut(duration: RBMotion.duration(0.35, reduceMotion: reduceMotion))
-                                    .delay(Double(phase.number) * 0.12),
-                                value: timelineVisible
-                            )
                             if phase.number < 4 {
                                 Rectangle()
                                     .fill(Color.line.opacity(0.7))
@@ -96,24 +89,10 @@ struct OnboardingProtocolView: View {
                     }
                     .buttonStyle(.rbPrimary())
                     .padding(.top, 22)
-                    .opacity(contentVisible ? 1 : 0)
                 }
                 .padding(.horizontal, RBSpacing.screen)
                 .padding(.bottom, max(16, geo.safeAreaInsets.bottom + 10))
                 .frame(maxWidth: .infinity, alignment: .leading)
-            }
-        }
-        .onAppear {
-            let delay = RBMotion.duration(0.3, reduceMotion: reduceMotion)
-            Task {
-                try? await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
-                withAnimation(.easeOut(duration: 0.3)) {
-                    timelineVisible = true
-                }
-                try? await Task.sleep(nanoseconds: 700_000_000)
-                withAnimation(.easeOut(duration: 0.4)) {
-                    contentVisible = true
-                }
             }
         }
     }
