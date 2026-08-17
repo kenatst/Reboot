@@ -1,0 +1,4 @@
+// REBOOT build configuration.
+// Remote evaluation endpoint is injected at build time; the app never
+// ships with a secret key. Override in Release with a production URL.
+REBOOT_EVALUATION_ENDPOINT = https://evaluation.example.invalid/reboot
